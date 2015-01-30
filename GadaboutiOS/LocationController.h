@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef GadaboutiOS_LocationController_h
-#define GadaboutiOS_LocationController_h
+@interface LocationController : NSObject {
 
+}
 
-#endif
+// Instance Methods
+
+// Class Methods
+
+@end
