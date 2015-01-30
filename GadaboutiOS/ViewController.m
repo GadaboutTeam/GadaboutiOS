@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    LocationController *locationController = [[LocationController alloc] init];
+    [locationController startUpdatingLocation];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

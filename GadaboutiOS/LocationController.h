@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface LocationController : NSObject {
-
+@interface LocationController : NSObject<CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
 }
 
-// Instance Methods
-
-// Class Methods
+- (void)startUpdatingLocation;
 
 @end
