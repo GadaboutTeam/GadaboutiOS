@@ -16,9 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LocationController *locationController = [[LocationController alloc] init];
-    [locationController startUpdatingLocation];
+
     // Do any additional setup after loading the view, typically from a nib.
+    locationController = [[LocationController alloc] init];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [locationController startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {

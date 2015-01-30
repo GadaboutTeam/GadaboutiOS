@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LocationController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    LocationController *locationController;
+}
 
 
 @end

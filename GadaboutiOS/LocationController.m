@@ -40,7 +40,7 @@
 }
 
 - (void)dealloc {
-    
+
 }
 
 #pragma mark LocationManager Methods
@@ -60,19 +60,26 @@
 }
 
 - (void)startUpdatingLocation {
-    if (IS_OS_8_OR_LATER) {
-        [self getAuthorization];
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse ||
+        [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
+        [locationManager startUpdatingLocation];
+    } else {
+        NSLog(@"The user did not grant the app location permission");
     }
+}
 
-    [locationManager startUpdatingLocation];
+- (void)stopUpdatingLocation {
+    [locationManager stopUpdatingLocation];
+    NSLog(@"The location controller stopped updating the location");
 }
 
 
 - (void)getAuthorization {
-    NSLog(@"Requesting location tracking permission");
-    NSUInteger authCode = [CLLocationManager authorizationStatus];
-    if (authCode == kCLAuthorizationStatusNotDetermined && ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
-        if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+    if(IS_OS_8_OR_LATER) {
+        NSLog(@"Requesting location tracking permission");
+        NSUInteger authCode = [CLLocationManager authorizationStatus];
+
+        if ((unsigned long)authCode == kCLAuthorizationStatusNotDetermined && [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [locationManager requestWhenInUseAuthorization];
         }
     }
