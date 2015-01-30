@@ -14,6 +14,7 @@
 		63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBA1A7BD895009A212E /* Images.xcassets */; };
 		63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */; };
 		63BA5ECA1A7BD895009A212E /* GadaboutiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */; };
+		FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		63BA5EC31A7BD895009A212E /* GadaboutiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GadaboutiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EC81A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GadaboutiOSTests.m; sourceTree = "<group>"; };
+		FA1923B21A7BE1ED00561568 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
+		FA1923B41A7BE20800561568 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +84,11 @@
 		63BA5EAC1A7BD895009A212E /* GadaboutiOS */ = {
 			isa = PBXGroup;
 			children = (
+				FA1923AE1A7BE14300561568 /* View */,
+				FA1923AC1A7BE13700561568 /* Model */,
+				FA1923AB1A7BE12C00561568 /* Controllers */,
 				63BA5EB11A7BD895009A212E /* AppDelegate.h */,
 				63BA5EB21A7BD895009A212E /* AppDelegate.m */,
-				63BA5EB41A7BD895009A212E /* ViewController.h */,
-				63BA5EB51A7BD895009A212E /* ViewController.m */,
 				63BA5EB71A7BD895009A212E /* Main.storyboard */,
 				63BA5EBA1A7BD895009A212E /* Images.xcassets */,
 				63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */,
@@ -117,6 +121,31 @@
 				63BA5EC81A7BD895009A212E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA1923AB1A7BE12C00561568 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63BA5EB41A7BD895009A212E /* ViewController.h */,
+				63BA5EB51A7BD895009A212E /* ViewController.m */,
+				FA1923B21A7BE1ED00561568 /* LocationController.m */,
+				FA1923B41A7BE20800561568 /* LocationController.h */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FA1923AC1A7BE13700561568 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FA1923AE1A7BE14300561568 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB61A7BD895009A212E /* ViewController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
@@ -412,6 +442,7 @@
 				63BA5ECF1A7BD895009A212E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63BA5ED01A7BD895009A212E /* Build configuration list for PBXNativeTarget "GadaboutiOSTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +451,7 @@
 				63BA5ED21A7BD895009A212E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
