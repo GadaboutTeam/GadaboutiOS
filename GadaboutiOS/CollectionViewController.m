@@ -31,12 +31,12 @@ NSMutableArray *array;
     
     array = [[NSMutableArray alloc] init];
     
-    [array addObject:@"Apple"];
-    [array addObject:@"Is"];
-    [array addObject:@"The"];
-    [array addObject:@"Bomb"];
-    [array addObject:@".com"];
-    [array addObject:@":D"];
+    [array addObject:@"1"];
+    [array addObject:@"2"];
+    [array addObject:@"3"];
+    [array addObject:@"4"];
+    [array addObject:@"5"];
+    [array addObject:@"6"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
