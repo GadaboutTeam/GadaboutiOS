@@ -4,6 +4,7 @@
 target 'GadaboutiOS' do
   pod 'Realm'
   pod 'pop'
+  pod 'Facebook-iOS-SDK'
 end
 
 target 'GadaboutiOSTests' do
