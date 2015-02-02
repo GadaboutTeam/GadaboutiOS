@@ -60,17 +60,24 @@
 }
 
 - (void)startUpdatingLocation {
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse ||
-        [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
-        [locationManager startUpdatingLocation];
-    } else {
-        NSLog(@"The user did not grant the app location permission");
-    }
+    [self getAuthorization];
 }
 
 - (void)stopUpdatingLocation {
     [locationManager stopUpdatingLocation];
     NSLog(@"The location controller stopped updating the location");
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    switch ([CLLocationManager authorizationStatus]) {
+        case kCLAuthorizationStatusAuthorizedAlways:
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            [locationManager startUpdatingLocation];
+            break;
+        default:
+            NSLog(@"The user did not grant the app location permission");
+            break;
+    }
 }
 
 

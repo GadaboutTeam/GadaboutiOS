@@ -132,8 +132,8 @@
 			children = (
 				63BA5EB41A7BD895009A212E /* ViewController.h */,
 				63BA5EB51A7BD895009A212E /* ViewController.m */,
-				FA1923B21A7BE1ED00561568 /* LocationController.m */,
 				FA1923B41A7BE20800561568 /* LocationController.h */,
+				FA1923B21A7BE1ED00561568 /* LocationController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
