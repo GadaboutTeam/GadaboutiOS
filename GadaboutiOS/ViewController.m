@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "SetupViewController.h"
 
 
 @interface ViewController ()
@@ -24,8 +23,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    //[locationController startUpdatingLocation];
-    [self presentViewController:[[SetupViewController alloc] init] animated:animated completion:nil];
+    [locationController startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
