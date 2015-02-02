@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58BF25DD2611AA4E0A5CB560 /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB10657CD108D8915B2AE6AF /* libPods-GadaboutiOS.a */; };
+		63778E0B1A7F214A00B68D48 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 63778E0A1A7F214A00B68D48 /* Person.m */; };
+		63778E0E1A7F224700B68D48 /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63778E0D1A7F224700B68D48 /* Invitation.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
 		63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EB21A7BD895009A212E /* AppDelegate.m */; };
 		63BA5EB61A7BD895009A212E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EB51A7BD895009A212E /* ViewController.m */; };
@@ -29,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63778E091A7F214A00B68D48 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
+		63778E0A1A7F214A00B68D48 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
+		63778E0C1A7F224700B68D48 /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Invitation.h; path = Model/Invitation.h; sourceTree = "<group>"; };
+		63778E0D1A7F224700B68D48 /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Invitation.m; path = Model/Invitation.m; sourceTree = "<group>"; };
 		63BA5EAA1A7BD895009A212E /* GadaboutiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GadaboutiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EAE1A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EAF1A7BD895009A212E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +49,9 @@
 		63BA5EC31A7BD895009A212E /* GadaboutiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GadaboutiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EC81A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GadaboutiOSTests.m; sourceTree = "<group>"; };
+		7FA473F32C8A75C989156375 /* Pods-GadaboutiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BB10657CD108D8915B2AE6AF /* libPods-GadaboutiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GadaboutiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB2E5C5BE4A0B2E6D3546FF5 /* Pods-GadaboutiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.release.xcconfig"; sourceTree = "<group>"; };
 		FA1923B21A7BE1ED00561568 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
 		FA1923B41A7BE20800561568 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 		FA1923B51A7BE57A00561568 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -53,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */,
+				58BF25DD2611AA4E0A5CB560 /* libPods-GadaboutiOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		457B654A03EF89905EAF8068 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB10657CD108D8915B2AE6AF /* libPods-GadaboutiOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63BA5EA11A7BD895009A212E = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +92,8 @@
 				63BA5EAC1A7BD895009A212E /* GadaboutiOS */,
 				63BA5EC61A7BD895009A212E /* GadaboutiOSTests */,
 				63BA5EAB1A7BD895009A212E /* Products */,
+				EB0DC7D23AAEF8E71B7E6718 /* Pods */,
+				457B654A03EF89905EAF8068 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +148,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EB0DC7D23AAEF8E71B7E6718 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FA473F32C8A75C989156375 /* Pods-GadaboutiOS.debug.xcconfig */,
+				EB2E5C5BE4A0B2E6D3546FF5 /* Pods-GadaboutiOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA1923AB1A7BE12C00561568 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +171,10 @@
 		FA1923AC1A7BE13700561568 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63778E091A7F214A00B68D48 /* Person.h */,
+				63778E0A1A7F214A00B68D48 /* Person.m */,
+				63778E0C1A7F224700B68D48 /* Invitation.h */,
+				63778E0D1A7F224700B68D48 /* Invitation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -159,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BA5ECD1A7BD895009A212E /* Build configuration list for PBXNativeTarget "GadaboutiOS" */;
 			buildPhases = (
+				99C2A97F8389804EE67071D4 /* Check Pods Manifest.lock */,
 				63BA5EA61A7BD895009A212E /* Sources */,
 				63BA5EA71A7BD895009A212E /* Frameworks */,
 				63BA5EA81A7BD895009A212E /* Resources */,
+				DB9B69693654F0224E3DE0D5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,13 +283,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		99C2A97F8389804EE67071D4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DB9B69693654F0224E3DE0D5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63BA5EA61A7BD895009A212E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63778E0E1A7F224700B68D48 /* Invitation.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB61A7BD895009A212E /* ViewController.m in Sources */,
+				63778E0B1A7F214A00B68D48 /* Person.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
 			);
@@ -375,6 +446,7 @@
 		};
 		63BA5ECE1A7BD895009A212E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FA473F32C8A75C989156375 /* Pods-GadaboutiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GadaboutiOS/Info.plist;
@@ -385,6 +457,7 @@
 		};
 		63BA5ECF1A7BD895009A212E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB2E5C5BE4A0B2E6D3546FF5 /* Pods-GadaboutiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GadaboutiOS/Info.plist;
