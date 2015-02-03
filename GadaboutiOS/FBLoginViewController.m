@@ -41,7 +41,7 @@
 
 #pragma mark - FBLoginViewDelegate methods
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
-    NSLog(@"User %@ has logged in. ID: %@", user.name, user.id);
+    NSLog(@"User %@ has logged in. ID: %@", user.name, user.objectID);
 
     //Segue to the main screen
     [self performSegueWithIdentifier:@"CollectionView@Main" sender:self];
