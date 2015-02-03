@@ -16,4 +16,4 @@
 
 // This protocol enables typed collections. i.e.:
 // RLMArray<Person>
-RLM_ARRAY_TYPE(Person)
+RLM_ARRAY_TYPE(Friend)

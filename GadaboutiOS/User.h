@@ -10,4 +10,10 @@
 
 @interface User : RLMObject
 
+@property NSString *name;
+
 @end
+
+// This protocol enables typed collections. i.e.:
+// RLMArray<User>
+RLM_ARRAY_TYPE(User)
