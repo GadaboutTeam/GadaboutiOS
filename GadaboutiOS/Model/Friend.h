@@ -8,10 +8,9 @@
 
 #import <Realm/Realm.h>
 
-@interface Person : RLMObject
+@interface Friend : RLMObject
 
 @property NSString *name;
-@property BOOL isLoggedIn;
 
 @end
 

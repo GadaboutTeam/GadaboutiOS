@@ -6,16 +6,15 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "Person.h"
+#import "Friend.h"
 
-@implementation Person
+@implementation Friend
 
 // Specify default values for properties
 
 + (NSDictionary *)defaultPropertyValues
 {
-    return @{
-             @"isLoggedIn" : @false,};
+    return @{};
 }
 
 // Specify properties to ignore (Realm won't persist these)
@@ -24,9 +23,5 @@
 //{
 //    return @[];
 //}
-
-- (BOOL)isUserLoggedIn {
-    return _isLoggedIn;
-}
 
 @end
