@@ -12,10 +12,11 @@
 
 // Specify default values for properties
 
-//+ (NSDictionary *)defaultPropertyValues
-//{
-//    return @{};
-//}
++ (NSDictionary *)defaultPropertyValues
+{
+    return @{
+             @"isLoggedIn" : @false,};
+}
 
 // Specify properties to ignore (Realm won't persist these)
 
@@ -23,5 +24,9 @@
 //{
 //    return @[];
 //}
+
+- (BOOL)isUserLoggedIn {
+    return _isLoggedIn;
+}
 
 @end

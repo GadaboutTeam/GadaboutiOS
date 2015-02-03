@@ -11,6 +11,7 @@
 @interface Person : RLMObject
 
 @property NSString *name;
+@property BOOL isLoggedIn;
 
 @end
 
