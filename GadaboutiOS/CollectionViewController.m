@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "CollectionViewController.h"
 #import <Realm/Realm.h>
+#import "CollectionViewController.h"
 
 @interface CollectionViewController ()
 

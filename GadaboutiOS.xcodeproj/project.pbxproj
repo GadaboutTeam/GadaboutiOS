@@ -17,6 +17,8 @@
 		FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationController.m */; };
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
 		FA99118E1A80660900714F7D /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99118D1A80660900714F7D /* CollectionViewController.m */; };
+		FA9911931A8069CB00714F7D /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911901A8069CB00714F7D /* Invitation.m */; };
+		FA9911941A8069CB00714F7D /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		FA1923B51A7BE57A00561568 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FA99118C1A80660900714F7D /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		FA99118D1A80660900714F7D /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		FA99118F1A8069CB00714F7D /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Invitation.h; path = Model/Invitation.h; sourceTree = "<group>"; };
+		FA9911901A8069CB00714F7D /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Invitation.m; path = Model/Invitation.m; sourceTree = "<group>"; };
+		FA9911911A8069CB00714F7D /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
+		FA9911921A8069CB00714F7D /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,10 @@
 		FA1923AC1A7BE13700561568 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA99118F1A8069CB00714F7D /* Invitation.h */,
+				FA9911901A8069CB00714F7D /* Invitation.m */,
+				FA9911911A8069CB00714F7D /* Person.h */,
+				FA9911921A8069CB00714F7D /* Person.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,6 +321,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9911941A8069CB00714F7D /* Person.m in Sources */,
+				FA9911931A8069CB00714F7D /* Invitation.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				FA99118E1A80660900714F7D /* CollectionViewController.m in Sources */,

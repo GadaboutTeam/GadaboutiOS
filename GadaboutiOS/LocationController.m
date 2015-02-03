@@ -80,12 +80,10 @@
     }
 }
 
-
 - (void)getAuthorization {
     if(IS_OS_8_OR_LATER) {
-        NSLog(@"Requesting location tracking permission");
         NSUInteger authCode = [CLLocationManager authorizationStatus];
-
+        NSLog(@"Requesting location tracking permission; Auth status: %d", authCode);
         if ((unsigned long)authCode == kCLAuthorizationStatusNotDetermined && [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [locationManager requestWhenInUseAuthorization];
         }
