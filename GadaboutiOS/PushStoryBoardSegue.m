@@ -38,7 +38,32 @@
 
 - (void)perform {
     UIViewController *source = (UIViewController *)self.sourceViewController;
-    [source.navigationController setViewControllers:@[self.destinationViewController] animated:YES];
+    UIViewController *destination = (UIViewController *)self.destinationViewController;
+    destination.view.layer.opacity = 0.0f; //Initially the new view controller is transparent
+
+    // Define Animations
+    POPSpringAnimation *sourceAnimation = [POPSpringAnimation animation];
+    sourceAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
+    sourceAnimation.toValue = [NSValue valueWithCGRect:CGRectOffset(source.view.frame, 0.0, source.view.frame.size.height)];
+    sourceAnimation.springBounciness = 2.0f;
+    sourceAnimation.springSpeed = 7.0f;
+    sourceAnimation.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+        if (finished) {
+            [source.navigationController setViewControllers:@[self.destinationViewController] animated:YES];
+        }
+    };
+
+    POPBasicAnimation *fadeOutAnimation = [POPBasicAnimation animation];
+    fadeOutAnimation.property = [POPAnimatableProperty propertyWithName:kPOPLayerOpacity];
+    fadeOutAnimation.toValue = @(0.0f);
+
+    POPBasicAnimation *fadeInAnimation = [POPBasicAnimation animation];
+    fadeInAnimation.property = [POPAnimatableProperty propertyWithName:kPOPLayerOpacity];
+    fadeInAnimation.toValue = @(1.0f);
+
+    [source.view pop_addAnimation:sourceAnimation forKey:@"moveOffScreen"];
+    [source.view.layer pop_addAnimation:fadeOutAnimation forKey:@"moveOffScreen"];
+    [destination.view.layer pop_addAnimation:fadeInAnimation forKey:@"moveOffScreen"];
 }
 
 @end

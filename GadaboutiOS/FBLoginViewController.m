@@ -8,6 +8,7 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 #import "FBLoginViewController.h"
+#import "PushStoryBoardSegue.h"
 
 @interface FBLoginViewController ()
 
@@ -41,6 +42,9 @@
 #pragma mark - FBLoginViewDelegate methods
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
     NSLog(@"User %@ has logged in. ID: %@", user.name, user.id);
+
+    //Segue to the main screen
+    [self performSegueWithIdentifier:@"CollectionView@Main" sender:self];
 }
 
 // Handle possible errors that can occur during login

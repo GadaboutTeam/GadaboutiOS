@@ -54,6 +54,11 @@
                             <constraint firstAttribute="bottom" secondItem="sdL-aJ-6tM" secondAttribute="bottom" constant="20" id="g7e-IC-Uuv"/>
                             <constraint firstItem="bxY-D1-tze" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="8" symbolic="YES" id="jp4-K1-AXi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bxY-D1-tze"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="hhE-LM-KZx"/>
                     <connections>
