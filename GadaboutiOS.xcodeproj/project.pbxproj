@@ -11,6 +11,7 @@
 		63778E0B1A7F214A00B68D48 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 63778E0A1A7F214A00B68D48 /* Person.m */; };
 		63778E0E1A7F224700B68D48 /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63778E0D1A7F224700B68D48 /* Invitation.m */; };
 		63778E111A80121F00B68D48 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63778E101A80121F00B68D48 /* CollectionViewController.m */; };
+		63778E171A80317C00B68D48 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63778E161A80317C00B68D48 /* AuthViewController.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
 		63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EB21A7BD895009A212E /* AppDelegate.m */; };
 		63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EB71A7BD895009A212E /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 		63778E0D1A7F224700B68D48 /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Invitation.m; path = Model/Invitation.m; sourceTree = "<group>"; };
 		63778E0F1A80121F00B68D48 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		63778E101A80121F00B68D48 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		63778E151A80317C00B68D48 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		63778E161A80317C00B68D48 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		63BA5EAA1A7BD895009A212E /* GadaboutiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GadaboutiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EAE1A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EAF1A7BD895009A212E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 		FA1923AB1A7BE12C00561568 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63778E151A80317C00B68D48 /* AuthViewController.h */,
+				63778E161A80317C00B68D48 /* AuthViewController.m */,
 				63778E0F1A80121F00B68D48 /* CollectionViewController.h */,
 				63778E101A80121F00B68D48 /* CollectionViewController.m */,
 				FA1923B41A7BE20800561568 /* LocationController.h */,
@@ -322,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63778E0E1A7F224700B68D48 /* Invitation.m in Sources */,
+				63778E171A80317C00B68D48 /* AuthViewController.m in Sources */,
 				63778E111A80121F00B68D48 /* CollectionViewController.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63778E0B1A7F214A00B68D48 /* Person.m in Sources */,
