@@ -22,6 +22,7 @@
 		FA9911971A807B2900714F7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911961A807B2900714F7D /* User.m */; };
 		FA9911991A80933100714F7D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9911981A80933100714F7D /* Login.storyboard */; };
 		FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */; };
+		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		FA9911981A80933100714F7D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FA99119A1A80A3DF00714F7D /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
 		FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
+		FA9911A01A80BCB800714F7D /* PushStoryBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushStoryBoardSegue.h; sourceTree = "<group>"; };
+		FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushStoryBoardSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 		63BA5EAC1A7BD895009A212E /* GadaboutiOS */ = {
 			isa = PBXGroup;
 			children = (
+				FA9911A31A810A8100714F7D /* Animations */,
 				FA1923AE1A7BE14300561568 /* View */,
 				FA1923AC1A7BE13700561568 /* Model */,
 				FA1923AB1A7BE12C00561568 /* Controllers */,
@@ -197,6 +201,15 @@
 			children = (
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		FA9911A31A810A8100714F7D /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				FA9911A01A80BCB800714F7D /* PushStoryBoardSegue.h */,
+				FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */,
+			);
+			name = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +351,7 @@
 				FA9911941A8069CB00714F7D /* Friend.m in Sources */,
 				FA9911971A807B2900714F7D /* User.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */,
+				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
 				FA9911931A8069CB00714F7D /* Invitation.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,

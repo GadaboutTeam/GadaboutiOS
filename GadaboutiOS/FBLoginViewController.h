@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBLoginViewController : UIViewController <FBLoginViewDelegate>
+@interface FBLoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
 @property IBOutlet FBLoginView *fbLoginView;
 @end
