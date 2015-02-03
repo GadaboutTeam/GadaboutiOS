@@ -10,4 +10,5 @@
 
 @interface FBLoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
 @property IBOutlet FBLoginView *fbLoginView;
+@property IBOutlet UILabel *welcomeLabel;
 @end

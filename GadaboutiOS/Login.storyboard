@@ -9,7 +9,9 @@
         <!--FBNavController-->
         <scene sceneID="gTu-M6-2Fv">
             <objects>
-                <navigationController storyboardIdentifier="FBLoginNavigationController" title="FBNavController" id="MbQ-g1-0Dd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FBLoginNavigationController" title="FBNavController" navigationBarHidden="YES" id="MbQ-g1-0Dd" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rMc-Mc-pHS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -38,6 +40,16 @@
                                 <rect key="frame" x="125" y="518" width="350" height="62"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Signals!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opS-4X-WwU">
+                                <rect key="frame" x="184" y="275" width="232" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="232" id="PAI-kM-91m"/>
+                                    <constraint firstAttribute="height" constant="49" id="nDB-n9-2DH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxY-D1-tze">
                                 <rect key="frame" x="530" y="72" width="54" height="30"/>
                                 <state key="normal" title="Dismiss">
@@ -48,12 +60,14 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.4208929496936864" green="1" blue="0.67563793151085982" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="opS-4X-WwU" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="275" id="Dcr-bF-ezx"/>
                             <constraint firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="cbD-vm-tpQ"/>
                             <constraint firstItem="bxY-D1-tze" firstAttribute="trailing" secondItem="ZBl-sI-2Dd" secondAttribute="trailingMargin" id="fTk-jt-1iH"/>
                             <constraint firstAttribute="bottom" secondItem="sdL-aJ-6tM" secondAttribute="bottom" constant="20" id="g7e-IC-Uuv"/>
                             <constraint firstItem="bxY-D1-tze" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="8" symbolic="YES" id="jp4-K1-AXi"/>
+                            <constraint firstItem="opS-4X-WwU" firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="uI0-5b-n87"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -65,6 +79,7 @@
                     <connections>
                         <outlet property="fbLoginView" destination="sdL-aJ-6tM" id="V7y-13-P8c"/>
                         <outlet property="view" destination="ZBl-sI-2Dd" id="wbS-xm-Bf5"/>
+                        <outlet property="welcomeLabel" destination="opS-4X-WwU" id="s0n-Lb-BBA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUB-k6-Hve" userLabel="First Responder" sceneMemberID="firstResponder"/>
