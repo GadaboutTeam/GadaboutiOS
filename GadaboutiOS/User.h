@@ -1,19 +1,19 @@
 //
-//  Person.h
+//  User.h
 //  GadaboutiOS
 //
-//  Created by David Barsky on 2/1/15.
+//  Created by Alex Bardasu on 02/02/15.
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import <Realm/Realm.h>
+#import "RLMObject.h"
 
-@interface Person : RLMObject
+@interface User : RLMObject
 
 @property NSString *name;
 
 @end
 
 // This protocol enables typed collections. i.e.:
-// RLMArray<Person>
-RLM_ARRAY_TYPE(Person)
+// RLMArray<User>
+RLM_ARRAY_TYPE(User)
