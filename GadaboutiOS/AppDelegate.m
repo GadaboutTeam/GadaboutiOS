@@ -28,6 +28,24 @@
 #pragma mark - Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    // Loads the login or main storyboard based on the user's FB login status
+    // Set to false to load the main story board
+    if (true) {
+        UIStoryboard *fbLoginStoryboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+        UIViewController *fbLoginNavigationController = [fbLoginStoryboard instantiateInitialViewController];
+
+        self.window.rootViewController = fbLoginNavigationController;
+    } else {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *mainViewController = [mainStoryboard instantiateInitialViewController];
+
+        self.window.rootViewController = mainViewController;
+    }
+
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
