@@ -7,14 +7,14 @@
 //
 
 #import <Realm/Realm.h>
-#import "Person.h"
+#import "Friend.h"
 
 @interface Invitation : RLMObject
 
 @property NSString *name;
 @property NSDate *timeOfOccurance;
 @property NSString *location;
-@property RLMArray<Person> *invitedPeople;
+@property RLMArray<Friend> *invitedPeople;
 
 @end
 

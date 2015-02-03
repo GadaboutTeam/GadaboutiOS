@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MbQ-g1-0Dd">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--FBNavController-->
+        <scene sceneID="gTu-M6-2Fv">
+            <objects>
+                <navigationController storyboardIdentifier="FBLoginNavigationController" title="FBNavController" id="MbQ-g1-0Dd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rMc-Mc-pHS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="On2-lu-iuI" kind="relationship" relationship="rootViewController" id="eIB-CK-e74"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oeU-7i-d6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-133" y="186"/>
+        </scene>
+        <!--Facebook Login-->
+        <scene sceneID="RiZ-0w-oy7">
+            <objects>
+                <viewController storyboardIdentifier="FBLoginViewController" title="Facebook Login" id="On2-lu-iuI" customClass="FBLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gXy-EW-rUY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gsk-bI-kHF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZBl-sI-2Dd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-aJ-6tM" customClass="FBLoginView">
+                                <rect key="frame" x="125" y="518" width="350" height="62"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxY-D1-tze">
+                                <rect key="frame" x="530" y="72" width="54" height="30"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WSC-nD-jVd" kind="custom" identifier="CollectionView@Main" customClass="PushStoryBoardSegue" id="nxR-Bf-cra"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="cbD-vm-tpQ"/>
+                            <constraint firstItem="bxY-D1-tze" firstAttribute="trailing" secondItem="ZBl-sI-2Dd" secondAttribute="trailingMargin" id="fTk-jt-1iH"/>
+                            <constraint firstAttribute="bottom" secondItem="sdL-aJ-6tM" secondAttribute="bottom" constant="20" id="g7e-IC-Uuv"/>
+                            <constraint firstItem="bxY-D1-tze" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="8" symbolic="YES" id="jp4-K1-AXi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bxY-D1-tze"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="hhE-LM-KZx"/>
+                    <connections>
+                        <outlet property="fbLoginView" destination="sdL-aJ-6tM" id="V7y-13-P8c"/>
+                        <outlet property="view" destination="ZBl-sI-2Dd" id="wbS-xm-Bf5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUB-k6-Hve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663" y="186"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="v41-9T-adu">
+            <objects>
+                <viewController id="WSC-nD-jVd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jf2-2W-rqk"/>
+                        <viewControllerLayoutGuide type="bottom" id="IOh-1d-jbb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KSI-Sr-bxk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZM-g6-IJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="186"/>
+        </scene>
+    </scenes>
+</document>
