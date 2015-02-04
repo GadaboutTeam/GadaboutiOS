@@ -85,6 +85,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Gadabout needs your permission to access your location. Press the button below to grant us access to your GPS coordinates." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y6u-pb-evx">
+                                <rect key="frame" x="104" y="260" width="393" height="79"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.42089294970000002" green="1" blue="0.67563793149999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
