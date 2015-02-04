@@ -77,9 +77,6 @@ NSMutableArray *array;
     
     label.text = [array objectAtIndex:indexPath.row];
     
-    [cell.layer setBorderWidth:2.0f];
-    [cell.layer setBorderColor:[UIColor whiteColor].CGColor];
-    
     return cell;
 }
 
