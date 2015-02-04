@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300E7A31A81A1DE0007CD3A /* CollectionView.m */; };
+		6300E7A81A81A3180007CD3A /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300E7A71A81A3180007CD3A /* CollectionViewCell.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
 		63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EB21A7BD895009A212E /* AppDelegate.m */; };
 		63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EB71A7BD895009A212E /* Main.storyboard */; };
@@ -39,6 +41,10 @@
 /* Begin PBXFileReference section */
 		2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GadaboutiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4339D894D1CC6D612DA5E6BB /* Pods-GadaboutiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.release.xcconfig"; sourceTree = "<group>"; };
+		6300E7A21A81A1DE0007CD3A /* CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
+		6300E7A31A81A1DE0007CD3A /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
+		6300E7A61A81A3180007CD3A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		6300E7A71A81A3180007CD3A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		63BA5EAA1A7BD895009A212E /* GadaboutiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GadaboutiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EAE1A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EAF1A7BD895009A212E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +114,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6300E7A51A81A1E50007CD3A /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				6300E7A21A81A1DE0007CD3A /* CollectionView.h */,
+				6300E7A31A81A1DE0007CD3A /* CollectionView.m */,
+				6300E7A61A81A3180007CD3A /* CollectionViewCell.h */,
+				6300E7A71A81A3180007CD3A /* CollectionViewCell.m */,
+			);
+			name = "Custom UI";
+			sourceTree = "<group>";
+		};
 		63BA5EA11A7BD895009A212E = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				FA9911A31A810A8100714F7D /* Animations */,
-				FA1923AE1A7BE14300561568 /* View */,
-				FA1923AC1A7BE13700561568 /* Model */,
+				6300E7A51A81A1E50007CD3A /* Custom UI */,
 				FA1923AB1A7BE12C00561568 /* Controllers */,
+				FA1923AC1A7BE13700561568 /* Model */,
+				FA1923AE1A7BE14300561568 /* View */,
 				63BA5EB11A7BD895009A212E /* AppDelegate.h */,
 				63BA5EB21A7BD895009A212E /* AppDelegate.m */,
 				63BA5EB71A7BD895009A212E /* Main.storyboard */,
@@ -355,12 +373,14 @@
 			files = (
 				FA9911941A8069CB00714F7D /* Friend.m in Sources */,
 				FA9911971A807B2900714F7D /* User.m in Sources */,
+				6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
 				FA9911931A8069CB00714F7D /* Invitation.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				FA99118E1A80660900714F7D /* CollectionViewController.m in Sources */,
+				6300E7A81A81A3180007CD3A /* CollectionViewCell.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
 				FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */,
 			);
