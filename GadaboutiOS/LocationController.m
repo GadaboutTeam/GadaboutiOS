@@ -15,6 +15,7 @@
 @end
 
 @implementation LocationController
+@synthesize delegate;
 
 #pragma mark Singleton Methods
 
@@ -69,10 +70,15 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    switch ([CLLocationManager authorizationStatus]) {
+    switch (status) {
         case kCLAuthorizationStatusAuthorizedAlways:
         case kCLAuthorizationStatusAuthorizedWhenInUse:
             [locationManager startUpdatingLocation];
+            [delegate permissionStatusChanged:self];
+            break;
+        case kCLAuthorizationStatusDenied:
+        case kCLAuthorizationStatusRestricted:
+            [delegate permissionStatusChanged:self];
             break;
         default:
             NSLog(@"The user did not grant the app location permission");
@@ -87,6 +93,14 @@
         if ((unsigned long)authCode == kCLAuthorizationStatusNotDetermined && [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [locationManager requestWhenInUseAuthorization];
         }
+    }
+}
+
+- (BOOL)hasAskedForAuthorization {
+    if ((unsigned long)[CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        return false;
+    } else {
+        return true;
     }
 }
 

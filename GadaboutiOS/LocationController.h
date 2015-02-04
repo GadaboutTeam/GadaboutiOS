@@ -10,10 +10,19 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+@class LocationController;
+
+@protocol LocationControllerDelegate
+- (void)permissionStatusChanged:(id)locationController;
+@end
+
 @interface LocationController : NSObject<CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
 }
 
+@property (nonatomic, assign)id delegate;
+
 - (void)startUpdatingLocation;
+- (BOOL)hasAskedForAuthorization;
 
 @end

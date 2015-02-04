@@ -47,6 +47,57 @@
             </objects>
             <point key="canvasLocation" x="417" y="747"/>
         </scene>
+        <!--Grant Location Access-->
+        <scene sceneID="oqP-Cw-XaJ">
+            <objects>
+                <viewController storyboardIdentifier="LocationAuthorizationView" title="Grant Location Access" id="gdp-7p-lzm" customClass="LocationAuthorizationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MR0-Sn-Zxp"/>
+                        <viewControllerLayoutGuide type="bottom" id="mLR-Aa-l6r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RgV-Wc-43R">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOv-ci-48H">
+                                <rect key="frame" x="148" y="534" width="304" height="46"/>
+                                <color key="backgroundColor" red="0.1625021156" green="0.65598486040000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Grant Location Permissions">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestAuthorization:" destination="gdp-7p-lzm" eventType="touchUpInside" id="62p-Wn-sey"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="qoj-FF-YaX">
+                                <rect key="frame" x="16" y="148" width="568" height="303"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location Authorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sG2-6w-4WW">
+                                <rect key="frame" x="16" y="35" width="568" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.42089294970000002" green="1" blue="0.67563793149999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="qoj-FF-YaX" secondAttribute="centerX" id="2BT-8u-ojG"/>
+                            <constraint firstAttribute="centerX" secondItem="sG2-6w-4WW" secondAttribute="centerX" id="XZl-hS-i6c"/>
+                            <constraint firstAttribute="centerX" secondItem="DOv-ci-48H" secondAttribute="centerX" id="Y03-8Y-lbS"/>
+                            <constraint firstAttribute="centerY" secondItem="qoj-FF-YaX" secondAttribute="centerY" id="sxE-gG-RpZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="requestAuthorizationButton" destination="DOv-ci-48H" id="DwQ-Rp-nRI"/>
+                        <outlet property="view" destination="RgV-Wc-43R" id="HRL-Rh-UKm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Is-tW-QHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="1495"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvU-my-8ry">
             <objects>
@@ -59,6 +110,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="QnP-oa-wAQ" kind="relationship" relationship="rootViewController" id="Uge-o5-BNI"/>
+                        <segue destination="gdp-7p-lzm" kind="presentation" identifier="LocationAuthSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="UHc-68-KW4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="la3-WC-LcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,4 +118,7 @@
             <point key="canvasLocation" x="-395" y="747"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" width="783" height="401"/>
+    </resources>
 </document>
