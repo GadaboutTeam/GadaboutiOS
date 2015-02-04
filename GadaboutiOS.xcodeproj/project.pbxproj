@@ -23,6 +23,7 @@
 		FA9911991A80933100714F7D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9911981A80933100714F7D /* Login.storyboard */; };
 		FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */; };
 		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
+		FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
 		FA9911A01A80BCB800714F7D /* PushStoryBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushStoryBoardSegue.h; sourceTree = "<group>"; };
 		FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushStoryBoardSegue.m; sourceTree = "<group>"; };
+		FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAuthorizationViewController.h; sourceTree = "<group>"; };
+		FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAuthorizationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				FA99118D1A80660900714F7D /* CollectionViewController.m */,
 				FA99119A1A80A3DF00714F7D /* FBLoginViewController.h */,
 				FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */,
+				FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */,
+				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				FA99118E1A80660900714F7D /* CollectionViewController.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
+				FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
