@@ -22,3 +22,6 @@ build/
 *~
 *.dat
 *.dep
+
+# Cocoapods
+Pods/

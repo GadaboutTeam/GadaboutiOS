@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E115EA62-A6D6-4A41-8EDC-EE4D972BF158</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GadaboutiOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>580AAE1CD6CD53411AE43E6B68057C4A5742D3D7</key>
+		<string>github.com:GadaboutTeam/GadaboutiOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GadaboutiOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>580AAE1CD6CD53411AE43E6B68057C4A5742D3D7</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:GadaboutTeam/GadaboutiOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>580AAE1CD6CD53411AE43E6B68057C4A5742D3D7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>580AAE1CD6CD53411AE43E6B68057C4A5742D3D7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GadaboutiOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
