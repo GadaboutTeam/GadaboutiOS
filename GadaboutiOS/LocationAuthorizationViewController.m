@@ -8,6 +8,7 @@
 
 #import "LocationAuthorizationViewController.h"
 
+
 @interface LocationAuthorizationViewController ()
 
 @end
@@ -16,12 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    locationController = [[LocationController alloc] init];
+    locationController.delegate = self;
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)requestAuthorization:(id)sender {
+    [locationController startUpdatingLocation];
 }
 
 /*
@@ -33,5 +40,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)permissionStatusChanged:(id)locationController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

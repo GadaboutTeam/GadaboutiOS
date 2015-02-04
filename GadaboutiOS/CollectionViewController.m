@@ -40,7 +40,10 @@ NSMutableArray *array;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [locationController startUpdatingLocation];
+    if (![locationController hasAskedForAuthorization]) {
+        LocationAuthorizationViewController *locationAuthController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LocationAuthorizationView"];
+        [self.navigationController presentViewController:locationAuthController animated:YES completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +64,6 @@ NSMutableArray *array;
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-
     return 1;
 }
 

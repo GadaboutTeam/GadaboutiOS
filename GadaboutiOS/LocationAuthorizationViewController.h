@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationController.h"
 
-@interface LocationAuthorizationViewController : UIViewController
+@interface LocationAuthorizationViewController : UIViewController <LocationControllerDelegate> {
+    LocationController *locationController;
+}
+
+@property IBOutlet UIButton *requestAuthorizationButton;
+- (IBAction)requestAuthorization:(id)sender;
 
 @end
