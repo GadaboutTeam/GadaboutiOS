@@ -32,13 +32,16 @@
                         <viewControllerLayoutGuide type="top" id="gXy-EW-rUY"/>
                         <viewControllerLayoutGuide type="bottom" id="Gsk-bI-kHF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZBl-sI-2Dd">
+                    <view key="view" contentMode="scaleToFill" id="ZBl-sI-2Dd" customClass="FacebookLoginView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-aJ-6tM" customClass="FBLoginView">
                                 <rect key="frame" x="125" y="518" width="350" height="62"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="On2-lu-iuI" id="LcW-t7-SZS"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Signals!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opS-4X-WwU">
                                 <rect key="frame" x="184" y="275" width="232" height="49"/>
@@ -74,12 +77,14 @@
                                 <exclude reference="bxY-D1-tze"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outlet property="fbLoginView" destination="sdL-aJ-6tM" id="eJK-gH-oiX"/>
+                            <outlet property="welcomeLabel" destination="opS-4X-WwU" id="ywB-MP-WuN"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="hhE-LM-KZx"/>
                     <connections>
-                        <outlet property="fbLoginView" destination="sdL-aJ-6tM" id="V7y-13-P8c"/>
-                        <outlet property="view" destination="ZBl-sI-2Dd" id="wbS-xm-Bf5"/>
-                        <outlet property="welcomeLabel" destination="opS-4X-WwU" id="s0n-Lb-BBA"/>
+                        <outlet property="view" destination="ZBl-sI-2Dd" id="nxh-2X-Amz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUB-k6-Hve" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,15 +16,14 @@
 @end
 
 @implementation FBLoginViewController
+@synthesize customView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    customView = (FacebookLoginView *)self.view;
     // Do any additional setup after loading the view.
-    _fbLoginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
-    _fbLoginView.delegate = self;
-    [_welcomeLabel.layer setOpacity:0.0];
-    [_fbLoginView.layer setOpacity:0.0];
+    customView.fbLoginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+    customView.fbLoginView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,38 +32,10 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self animateWelcomeLabel];
-    [self animateLoginButton];
+    [customView runAnimations];
 }
 
-- (void)animateWelcomeLabel {
-    //Pulse Animation
-    POPSpringAnimation *pulse = [POPSpringAnimation animation];
-    pulse.property = [POPAnimatableProperty propertyWithName:kPOPLayerScaleXY];
-    pulse.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];
-    pulse.velocity = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
-    pulse.springBounciness = 18.0;
-    pulse.springSpeed = 8.0;
 
-    //FadeIn Animation
-    POPBasicAnimation *fadeIn = [POPBasicAnimation animation];
-    fadeIn.property = [POPAnimatableProperty propertyWithName:kPOPLayerOpacity];
-    fadeIn.toValue = @(1.0);
-    fadeIn.duration = 0.5;
-
-    [_welcomeLabel.layer pop_addAnimation:fadeIn forKey:@"fadeInAnimation"];
-    [_welcomeLabel.layer pop_addAnimation:pulse forKey:@"pulseAnimation"];
-}
-
-- (void)animateLoginButton {
-    //FadeInAnimation
-    POPBasicAnimation *fadeIn = [POPBasicAnimation animation];
-    fadeIn.property = [POPAnimatableProperty propertyWithName:kPOPLayerOpacity];
-    fadeIn.toValue = @(1.0);
-    fadeIn.duration = 1;
-
-    [_fbLoginView.layer pop_addAnimation:fadeIn forKey:@"fadeInAnimation"];
-}
 
 /*
 #pragma mark - Navigation
@@ -77,7 +48,7 @@
 */
 
 #pragma mark - FBLoginViewDelegate methods
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
+- (void)loginViewFetchedUserInfo:(FacebookLoginView *)loginView user:(id<FBGraphUser>)user {
     NSLog(@"User %@ has logged in. ID: %@", user.name, user.objectID);
 
     //Segue to the main screen
@@ -85,7 +56,7 @@
 }
 
 // Handle possible errors that can occur during login
-- (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
+- (void)loginView:(FacebookLoginView *)loginView handleError:(NSError *)error {
     NSString *alertMessage, *alertTitle;
 
     // If the user should perform an action outside of you app to recover,

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FacebookLoginView.h"
 
 @interface FBLoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
-@property IBOutlet FBLoginView *fbLoginView;
-@property IBOutlet UILabel *welcomeLabel;
+@property FacebookLoginView *customView;
 @end

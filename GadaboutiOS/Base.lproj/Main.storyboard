@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24F-rL-NpA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Collection View Controller-->
@@ -59,9 +60,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOv-ci-48H">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOv-ci-48H">
                                 <rect key="frame" x="148" y="534" width="304" height="46"/>
                                 <color key="backgroundColor" red="0.1625021156" green="0.65598486040000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="IJp-1B-aYt"/>
+                                    <constraint firstAttribute="width" constant="304" id="MFf-ul-Tjn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Grant Location Permissions">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,10 +76,10 @@
                                     <action selector="requestAuthorization:" destination="gdp-7p-lzm" eventType="touchUpInside" id="62p-Wn-sey"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="qoj-FF-YaX">
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="qoj-FF-YaX">
                                 <rect key="frame" x="16" y="148" width="568" height="303"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location Authorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sG2-6w-4WW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Authorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sG2-6w-4WW">
                                 <rect key="frame" x="16" y="35" width="568" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,9 +89,15 @@
                         <color key="backgroundColor" red="0.42089294970000002" green="1" blue="0.67563793149999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="qoj-FF-YaX" secondAttribute="centerX" id="2BT-8u-ojG"/>
+                            <constraint firstItem="sG2-6w-4WW" firstAttribute="leading" secondItem="RgV-Wc-43R" secondAttribute="leadingMargin" id="IFP-C5-0bE"/>
+                            <constraint firstItem="sG2-6w-4WW" firstAttribute="leading" secondItem="qoj-FF-YaX" secondAttribute="leading" id="R2z-uk-wXb"/>
                             <constraint firstAttribute="centerX" secondItem="sG2-6w-4WW" secondAttribute="centerX" id="XZl-hS-i6c"/>
                             <constraint firstAttribute="centerX" secondItem="DOv-ci-48H" secondAttribute="centerX" id="Y03-8Y-lbS"/>
+                            <constraint firstItem="sG2-6w-4WW" firstAttribute="top" secondItem="MR0-Sn-Zxp" secondAttribute="bottom" constant="15" id="g5P-CD-lgH"/>
+                            <constraint firstItem="DOv-ci-48H" firstAttribute="top" secondItem="qoj-FF-YaX" secondAttribute="bottom" constant="83" id="hNu-AC-USa"/>
+                            <constraint firstAttribute="bottom" secondItem="DOv-ci-48H" secondAttribute="bottom" constant="20" symbolic="YES" id="hOv-5p-kbt"/>
                             <constraint firstAttribute="centerY" secondItem="qoj-FF-YaX" secondAttribute="centerY" id="sxE-gG-RpZ"/>
+                            <constraint firstItem="qoj-FF-YaX" firstAttribute="top" secondItem="sG2-6w-4WW" secondAttribute="bottom" constant="77" id="t9Q-2a-7Nh"/>
                         </constraints>
                     </view>
                     <connections>
