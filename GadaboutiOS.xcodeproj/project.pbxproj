@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300E7A31A81A1DE0007CD3A /* CollectionView.m */; };
 		6300E7A81A81A3180007CD3A /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300E7A71A81A3180007CD3A /* CollectionViewCell.m */; };
+		636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F31A81BA9100A9AE57 /* NavigationBar.m */; };
+		636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F61A81BCB700A9AE57 /* NavigationViewController.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
 		63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EB21A7BD895009A212E /* AppDelegate.m */; };
 		63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EB71A7BD895009A212E /* Main.storyboard */; };
@@ -45,6 +47,10 @@
 		6300E7A31A81A1DE0007CD3A /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
 		6300E7A61A81A3180007CD3A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		6300E7A71A81A3180007CD3A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		636185F21A81BA9100A9AE57 /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
+		636185F31A81BA9100A9AE57 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
+		636185F51A81BCB700A9AE57 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		636185F61A81BCB700A9AE57 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		63BA5EAA1A7BD895009A212E /* GadaboutiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GadaboutiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EAE1A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EAF1A7BD895009A212E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 				6300E7A31A81A1DE0007CD3A /* CollectionView.m */,
 				6300E7A61A81A3180007CD3A /* CollectionViewCell.h */,
 				6300E7A71A81A3180007CD3A /* CollectionViewCell.m */,
+				636185F21A81BA9100A9AE57 /* NavigationBar.h */,
+				636185F31A81BA9100A9AE57 /* NavigationBar.m */,
 			);
 			name = "Custom UI";
 			sourceTree = "<group>";
@@ -202,6 +210,8 @@
 				FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */,
 				FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */,
 				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
+				636185F51A81BCB700A9AE57 /* NavigationViewController.h */,
+				636185F61A81BCB700A9AE57 /* NavigationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -373,6 +383,7 @@
 			files = (
 				FA9911941A8069CB00714F7D /* Friend.m in Sources */,
 				FA9911971A807B2900714F7D /* User.m in Sources */,
+				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
 				6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
@@ -380,6 +391,7 @@
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				FA99118E1A80660900714F7D /* CollectionViewController.m in Sources */,
+				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,
 				6300E7A81A81A3180007CD3A /* CollectionViewCell.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
 				FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */,
