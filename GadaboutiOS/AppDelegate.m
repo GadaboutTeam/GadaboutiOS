@@ -40,11 +40,27 @@
     [self.window makeKeyAndVisible];
 }
 
+#pragma mark - Global Appearence
+
+- (void)setupAppearence {
+    UINavigationBar *navigationBarAppearence = [UINavigationBar appearance];
+    
+    navigationBarAppearence.tintColor = [UIColor whiteColor];
+    navigationBarAppearence.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+}
+
+
 #pragma mark - Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // load proper storyboard dependning if user is logged in
     [self loadProperStoryboard];
+    
+    // for white text in navigation bar controllers
+    [self setupAppearence];
     
     return YES;
 }

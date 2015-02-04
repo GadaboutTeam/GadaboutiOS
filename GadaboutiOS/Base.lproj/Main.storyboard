@@ -109,14 +109,16 @@
             </objects>
             <point key="canvasLocation" x="21" y="1495"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="OvU-my-8ry">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24F-rL-NpA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24F-rL-NpA" customClass="NavigationViewController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ukl-Wm-PhU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ukl-Wm-PhU" customClass="NavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.49019607840000001" green="0.54901960780000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.49019607840000001" green="0.54901960780000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
