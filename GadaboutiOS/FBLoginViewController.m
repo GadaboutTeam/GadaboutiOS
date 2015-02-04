@@ -7,6 +7,7 @@
 //
 
 #import <FacebookSDK/FacebookSDK.h>
+#import <pop/POP.h>
 #import "FBLoginViewController.h"
 #import "PushStoryBoardSegue.h"
 
@@ -22,11 +23,47 @@
     // Do any additional setup after loading the view.
     _fbLoginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     _fbLoginView.delegate = self;
+    [_welcomeLabel.layer setOpacity:0.0];
+    [_fbLoginView.layer setOpacity:0.0];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self animateWelcomeLabel];
+    [self animateLoginButton];
+}
+
+- (void)animateWelcomeLabel {
+    //Pulse Animation
+    POPSpringAnimation *pulse = [POPSpringAnimation animation];
+    pulse.property = [POPAnimatableProperty propertyWithName:kPOPLayerScaleXY];
+    pulse.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];
+    pulse.velocity = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
+    pulse.springBounciness = 18.0;
+    pulse.springSpeed = 8.0;
+
+    //FadeIn Animation
+    POPBasicAnimation *fadeIn = [POPBasicAnimation animation];
+    fadeIn.property = [POPAnimatableProperty propertyWithName:kPOPLayerOpacity];
+    fadeIn.toValue = @(1.0);
+    fadeIn.duration = 0.5;
+
+    [_welcomeLabel.layer pop_addAnimation:fadeIn forKey:@"fadeInAnimation"];
+    [_welcomeLabel.layer pop_addAnimation:pulse forKey:@"pulseAnimation"];
+}
+
+- (void)animateLoginButton {
+    //FadeInAnimation
+    POPBasicAnimation *fadeIn = [POPBasicAnimation animation];
+    fadeIn.property = [POPAnimatableProperty propertyWithName:kPOPLayerOpacity];
+    fadeIn.toValue = @(1.0);
+    fadeIn.duration = 1;
+
+    [_fbLoginView.layer pop_addAnimation:fadeIn forKey:@"fadeInAnimation"];
 }
 
 /*
