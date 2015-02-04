@@ -8,7 +8,7 @@ PODS:
   - Realm/Headers (0.90.4)
 
 DEPENDENCIES:
-  - Facebook-iOS-SDK (~> 3.22.0)
+  - Facebook-iOS-SDK
   - pop (~> 1.0.7)
   - Realm (~> 0.90.4)
 

@@ -4,7 +4,7 @@
 target 'GadaboutiOS' do
   pod 'Realm', '~> 0.90.4'
   pod 'pop', '~> 1.0.7'
-  pod 'Facebook-iOS-SDK', '~> 3.22.0'
+  pod 'Facebook-iOS-SDK'
 end
 
 target 'GadaboutiOSTests' do
