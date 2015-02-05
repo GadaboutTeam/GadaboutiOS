@@ -19,7 +19,6 @@
 
 @implementation FBLoginViewController
 @synthesize customView;
-@synthesize menu;
 @synthesize sidebarImages;
 
 - (void)viewDidLoad {
@@ -29,7 +28,6 @@
     customView.fbLoginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     customView.fbLoginView.delegate = self;
     [customView setupLayout];
-    [self setupMenu];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,22 +58,17 @@
 }
 */
 
-- (void)setupMenu {
-    //Get the current user
-    //TODO: Looks like theres an error with getting the values from the sidebarImages dictionary
-    RLMResults *result = [User allObjects];
-    User *user = [result firstObject];
-    UIImage *image = [UIImage imageWithData:user.profilePhoto];
-//    [sidebarImages setObject:image forKey:@"profilePicture"];
-
-//    NSArray *images = [sidebarImages allValues];
-    NSArray *images = @[image];
-    menu = [[RNFrostedSidebar alloc] initWithImages:images];
-}
-
-- (IBAction)showMenu:(id)sender {
-    [menu show];
-}
+//- (void)setupMenu {
+//    //Get the current user
+//    //TODO: Looks like theres an error with getting the values from the sidebarImages dictionary
+//    RLMResults *result = [User allObjects];
+//    User *user = [result firstObject];
+//    UIImage *image = [UIImage imageWithData:user.profilePhoto];
+////    [sidebarImages setObject:image forKey:@"profilePicture"];
+//
+////    NSArray *images = [sidebarImages allValues];
+//    NSArray *images = @[image];
+//}
 
 #pragma mark - FBLoginViewDelegate methods
 - (void)loginViewFetchedUserInfo:(FacebookLoginView *)loginView user:(id<FBGraphUser>)user {
@@ -155,11 +148,5 @@
 //
 //
 //}
-
-#pragma mark - RNFrostedSidebarDelegate methods
-
-- (void)sidebar:(RNFrostedSidebar *)sidebar didShowOnScreenAnimated:(BOOL)animatedYesOrNo {
-    
-}
 
 @end
