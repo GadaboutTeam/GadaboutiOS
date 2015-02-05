@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-aJ-6tM" customClass="FBLoginView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-aJ-6tM" customClass="FBLoginView">
                                 <rect key="frame" x="125" y="518" width="350" height="62"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -66,11 +67,14 @@
                         <color key="backgroundColor" red="0.4208929496936864" green="1" blue="0.67563793151085982" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="opS-4X-WwU" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="275" id="Dcr-bF-ezx"/>
+                            <constraint firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="PyJ-Vt-SS0"/>
                             <constraint firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="cbD-vm-tpQ"/>
                             <constraint firstItem="bxY-D1-tze" firstAttribute="trailing" secondItem="ZBl-sI-2Dd" secondAttribute="trailingMargin" id="fTk-jt-1iH"/>
+                            <constraint firstItem="sdL-aJ-6tM" firstAttribute="top" secondItem="ZBl-sI-2Dd" secondAttribute="top" constant="518" id="fbj-QF-TxF"/>
                             <constraint firstAttribute="bottom" secondItem="sdL-aJ-6tM" secondAttribute="bottom" constant="20" id="g7e-IC-Uuv"/>
                             <constraint firstItem="bxY-D1-tze" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="8" symbolic="YES" id="jp4-K1-AXi"/>
                             <constraint firstItem="opS-4X-WwU" firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="uI0-5b-n87"/>
+                            <constraint firstItem="sdL-aJ-6tM" firstAttribute="width" secondItem="ZBl-sI-2Dd" secondAttribute="height" multiplier="7:12" id="xcY-56-LDc"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
