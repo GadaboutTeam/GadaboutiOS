@@ -6,6 +6,7 @@ target 'GadaboutiOS' do
   pod 'pop', '~> 1.0.7'
   pod 'Facebook-iOS-SDK', '~> 3.22.0'
   pod 'RNFrostedSidebar', '~> 0.2.0'
+	pod 'UITintedButton'
 end
 
 target 'GadaboutiOSTests' do

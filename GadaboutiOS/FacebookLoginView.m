@@ -11,6 +11,7 @@
 @implementation FacebookLoginView
 @synthesize welcomeLabel;
 @synthesize fbLoginView;
+@synthesize menuButton;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -22,7 +23,6 @@
 
 - (id)initWithFrame:(CGRect)aRect {
     self = [super initWithFrame:aRect];
-
     return self;
 }
 
@@ -32,9 +32,9 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    [welcomeLabel.layer setOpacity:0.0];
-    [fbLoginView.layer setOpacity:0.0];
+- (void)setupLayout {
+    [menuButton setImageTintColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [menuButton setImageTintColor:[UIColor blackColor] forState:UIControlStateHighlighted];
 }
 
 - (void)runAnimations {

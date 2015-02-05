@@ -17,6 +17,7 @@
 
 @implementation FBLoginViewController
 @synthesize customView;
+@synthesize menu;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +25,8 @@
     // Do any additional setup after loading the view.
     customView.fbLoginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     customView.fbLoginView.delegate = self;
+    [customView setupLayout];
+    [self setupMenu];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,9 +40,9 @@
 
 
 
-/*
 #pragma mark - Navigation
 
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
@@ -47,12 +50,22 @@
 }
 */
 
+- (void)setupMenu {
+    NSArray *images = @[
+                        [UIImage imageNamed:@"profile_placeholder"]];
+    menu = [[RNFrostedSidebar alloc] initWithImages:images];
+}
+
+- (IBAction)showMenu:(id)sender {
+    [menu show];
+}
+
 #pragma mark - FBLoginViewDelegate methods
 - (void)loginViewFetchedUserInfo:(FacebookLoginView *)loginView user:(id<FBGraphUser>)user {
     NSLog(@"User %@ has logged in. ID: %@", user.name, user.objectID);
 
-    //Segue to the main screen
-    [self performSegueWithIdentifier:@"CollectionView@Main" sender:self];
+//    //Segue to the main screen
+//    [self performSegueWithIdentifier:@"CollectionView@Main" sender:self];
 }
 
 // Handle possible errors that can occur during login

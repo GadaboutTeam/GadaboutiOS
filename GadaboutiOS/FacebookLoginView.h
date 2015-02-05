@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <pop/POP.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <UIButton+tintImage.h>
 
 @interface FacebookLoginView : UIView
 
 @property IBOutlet FBLoginView *fbLoginView;
 @property IBOutlet UILabel *welcomeLabel;
+@property IBOutlet UIButton *menuButton;
 
 - (void)runAnimations;
+- (void)setupLayout;
 @end

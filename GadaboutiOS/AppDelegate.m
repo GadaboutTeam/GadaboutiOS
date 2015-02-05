@@ -14,6 +14,7 @@
 @end
 
 @implementation AppDelegate
+@synthesize user;
 
 #pragma mark - Facebook Login
 
@@ -30,7 +31,7 @@
     UIStoryboard *storyboard;
     
     // If the user is already logged in to FB, jump to the main storyboard
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+    if (false) {
         storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     } else {
         storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
@@ -61,6 +62,7 @@
     
     // for white text in navigation bar controllers
     [self setupAppearence];
+    user = [[User alloc] init];
     
     return YES;
 }

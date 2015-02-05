@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RNFrostedSidebar/RNFrostedSidebar.h>
 #import "FacebookLoginView.h"
 
 @interface FBLoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
 @property FacebookLoginView *customView;
+@property RNFrostedSidebar *menu;
+
+- (IBAction)showMenu:(id)sender;
 @end
