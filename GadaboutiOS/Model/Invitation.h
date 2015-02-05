@@ -11,6 +11,7 @@
 
 @interface Invitation : RLMObject
 
+@property NSInteger *invitationID;
 @property NSString *name;
 @property NSDate *timeOfOccurance;
 @property NSString *location;

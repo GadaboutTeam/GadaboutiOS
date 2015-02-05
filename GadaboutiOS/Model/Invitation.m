@@ -24,4 +24,8 @@
 //    return @[];
 //}
 
++ (NSString *)primaryKey {
+    return @"invitationID";
+}
+
 @end

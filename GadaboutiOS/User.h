@@ -6,11 +6,16 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "RLMObject.h"
+#import <Realm/Realm.h>
+#import "Friend.h"
 
 @interface User : RLMObject
 
+@property NSInteger *userID;
+@property NSString *facebookID;
 @property NSString *name;
+@property RLMArray<Friend> *friends;
+@property NSData *profilePhoto;
 
 @end
 
