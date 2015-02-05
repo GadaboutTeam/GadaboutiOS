@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import <Foundation/Foundation.h>
 
 @implementation User
 
@@ -14,15 +15,18 @@
 
 + (NSDictionary *)defaultPropertyValues
 {
-    return @{};
+    // Placeholder profile image
+    UIImage *image = [UIImage imageNamed:@"profile_placeholder"];
+    NSData *imageData = UIImagePNGRepresentation(image);
+    return @{@"profilePhoto" : imageData};
 }
 
 // Specify properties to ignore (Realm won't persist these)
 
-//+ (NSArray *)ignoredProperties
-//{
-//    return @[];
-//}
++ (NSArray *)ignoredProperties
+{
+    return @[@"facebookID", @"name", @"friends"];
+}
 
 + (NSString *)primaryKey {
     return @"userID";

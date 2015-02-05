@@ -8,13 +8,13 @@
 
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Realm/Realm.h>
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-@synthesize user;
 
 #pragma mark - Facebook Login
 
@@ -24,6 +24,12 @@
          annotation:(id)annotation {
     // attempt to extract a token from the url
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+}
+
+- (id)init {
+    self = [super init];
+
+    return self;
 }
 
 - (void)loadProperStoryboard {
@@ -41,7 +47,7 @@
     [self.window makeKeyAndVisible];
 }
 
-#pragma mark - Global Appearence
+#pragma mark - Global Setup
 
 - (void)setupAppearence {
     UINavigationBar *navigationBarAppearence = [UINavigationBar appearance];
@@ -53,6 +59,18 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
 }
 
+- (void)createUser {
+    RLMResults *result = [User allObjects];
+    if (result.count == 0) {
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        User *user = [[User alloc] init];
+        [user setUserID:@"0"];
+        [realm beginWriteTransaction];
+        [realm addObject:user];
+        [realm commitWriteTransaction];
+    }
+}
+
 
 #pragma mark - Application Lifecycle
 
@@ -62,8 +80,7 @@
     
     // for white text in navigation bar controllers
     [self setupAppearence];
-    user = [[User alloc] init];
-    
+    [self createUser];
     return YES;
 }
 

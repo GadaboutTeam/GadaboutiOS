@@ -7,11 +7,12 @@
 //
 
 #import <Realm/Realm.h>
+#import <UIKit/UIKit.h>
 #import "Friend.h"
 
 @interface User : RLMObject
 
-@property NSInteger *userID;
+@property NSString *userID;
 @property NSString *facebookID;
 @property NSString *name;
 @property RLMArray<Friend> *friends;

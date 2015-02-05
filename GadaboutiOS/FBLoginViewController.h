@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <RNFrostedSidebar/RNFrostedSidebar.h>
 #import "FacebookLoginView.h"
+#import "User.h"
 
-@interface FBLoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
+@interface FBLoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate,
+    RNFrostedSidebarDelegate>
 @property FacebookLoginView *customView;
+@property NSMutableDictionary *sidebarImages;
 @property RNFrostedSidebar *menu;
 
 - (IBAction)showMenu:(id)sender;

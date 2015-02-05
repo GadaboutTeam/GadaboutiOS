@@ -10,7 +10,7 @@
 
 @interface Friend : RLMObject
 
-@property NSInteger *userID;
+@property NSString *userID;
 @property NSString *facebookID;
 @property NSString *name;
 @property NSData *profilePhoto;

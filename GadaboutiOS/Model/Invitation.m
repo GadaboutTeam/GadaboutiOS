@@ -19,13 +19,13 @@
 
 // Specify properties to ignore (Realm won't persist these)
 
-//+ (NSArray *)ignoredProperties
-//{
-//    return @[];
-//}
-
-+ (NSString *)primaryKey {
-    return @"invitationID";
++ (NSArray *)ignoredProperties
+{
+    return @[@"invitationID", @"name", @"timeOfOccurance", @"location", @"invitedPeople"];
 }
+
+//+ (NSString *)primaryKey {
+//    return @"invitationID";
+//}
 
 @end

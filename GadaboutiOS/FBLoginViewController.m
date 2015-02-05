@@ -8,8 +8,10 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 #import <pop/POP.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "FBLoginViewController.h"
 #import "PushStoryBoardSegue.h"
+
 
 @interface FBLoginViewController ()
 
@@ -18,6 +20,7 @@
 @implementation FBLoginViewController
 @synthesize customView;
 @synthesize menu;
+@synthesize sidebarImages;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +41,13 @@
     [customView runAnimations];
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    sidebarImages = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"profilePicture",[UIImage imageNamed:@"menu"], nil];
+
+    return self;
+}
+
 
 
 #pragma mark - Navigation
@@ -51,8 +61,15 @@
 */
 
 - (void)setupMenu {
-    NSArray *images = @[
-                        [UIImage imageNamed:@"profile_placeholder"]];
+    //Get the current user
+    //TODO: Looks like theres an error with getting the values from the sidebarImages dictionary
+    RLMResults *result = [User allObjects];
+    User *user = [result firstObject];
+    UIImage *image = [UIImage imageWithData:user.profilePhoto];
+//    [sidebarImages setObject:image forKey:@"profilePicture"];
+
+//    NSArray *images = [sidebarImages allValues];
+    NSArray *images = @[image];
     menu = [[RNFrostedSidebar alloc] initWithImages:images];
 }
 
@@ -63,6 +80,26 @@
 #pragma mark - FBLoginViewDelegate methods
 - (void)loginViewFetchedUserInfo:(FacebookLoginView *)loginView user:(id<FBGraphUser>)user {
     NSLog(@"User %@ has logged in. ID: %@", user.name, user.objectID);
+
+    // Store user pic; Asynchronously of course
+    NSString *imageURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", user.objectID];
+    [SDWebImageDownloader.sharedDownloader downloadImageWithURL:[NSURL URLWithString:imageURL]
+                                                        options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                                            NSLog(@".");
+                                                        }completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                                                            if (image && finished) {
+//                                                                User *user = [[User allObjects] firstObject];
+//                                                                user.profilePhoto = UIImagePNGRepresentation(image);
+
+//                                                                RLMRealm *realm = [RLMRealm defaultRealm];
+//                                                                [realm beginWriteTransaction];
+//                                                                [realm addObject:user];
+//                                                                [realm commitWriteTransaction];
+
+                                                                // Reinitialize sidebar
+//                                                                [self setupMenu];
+                                                            }
+                                                        }];
 
 //    //Segue to the main screen
 //    [self performSegueWithIdentifier:@"CollectionView@Main" sender:self];
@@ -111,12 +148,18 @@
     }
 }
 
-#pragma mark - UIViewControllerTransitioningDelegate methods
+// #pragma mark - UIViewControllerTransitioningDelegate methods
 
 //- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
 //
 //
 //
 //}
+
+#pragma mark - RNFrostedSidebarDelegate methods
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didShowOnScreenAnimated:(BOOL)animatedYesOrNo {
+    
+}
 
 @end
