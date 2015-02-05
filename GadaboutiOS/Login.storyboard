@@ -34,8 +34,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-aJ-6tM" customClass="FBLoginView">
+                                <rect key="frame" x="166" y="524" width="269" height="56"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="269" id="1oG-Dc-QZH"/>
+                                    <constraint firstAttribute="height" constant="56" id="6xV-ac-0nC"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="On2-lu-iuI" id="LcW-t7-SZS"/>
+                                </connections>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Signals!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opS-4X-WwU">
-                                <rect key="frame" x="184" y="275" width="232" height="49"/>
+                                <rect key="frame" x="184" y="219" width="232" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="232" id="PAI-kM-91m"/>
                                     <constraint firstAttribute="height" constant="49" id="nDB-n9-2DH"/>
@@ -53,19 +64,14 @@
                                     <segue destination="WSC-nD-jVd" kind="custom" identifier="CollectionView@Main" customClass="PushStoryBoardSegue" id="nxR-Bf-cra"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-aJ-6tM" customClass="FBLoginView">
-                                <rect key="frame" x="125" y="518" width="350" height="62"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="On2-lu-iuI" id="LcW-t7-SZS"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.4208929496936864" green="1" blue="0.67563793151085982" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="opS-4X-WwU" secondAttribute="centerY" constant="0.5" id="G45-YC-GWg"/>
-                            <constraint firstItem="sdL-aJ-6tM" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="518" id="Km0-wG-yoH"/>
-                            <constraint firstItem="opS-4X-WwU" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="275" id="Ng0-jm-sW0"/>
+                            <constraint firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="3rR-Nc-dCO"/>
+                            <constraint firstItem="sdL-aJ-6tM" firstAttribute="centerX" secondItem="opS-4X-WwU" secondAttribute="centerX" id="AzE-KJ-74F"/>
+                            <constraint firstAttribute="centerY" secondItem="opS-4X-WwU" secondAttribute="centerY" constant="56.5" id="G45-YC-GWg"/>
+                            <constraint firstItem="opS-4X-WwU" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="219" id="Ng0-jm-sW0"/>
+                            <constraint firstItem="sdL-aJ-6tM" firstAttribute="top" secondItem="ZBl-sI-2Dd" secondAttribute="top" constant="524" id="jcp-9v-8m3"/>
                             <constraint firstAttribute="centerX" secondItem="opS-4X-WwU" secondAttribute="centerX" id="zop-ja-saI"/>
                         </constraints>
                         <variation key="default">
