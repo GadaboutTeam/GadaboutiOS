@@ -2,8 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MbQ-g1-0Dd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--FBNavController-->
@@ -36,15 +34,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-aJ-6tM" customClass="FBLoginView">
-                                <rect key="frame" x="125" y="518" width="350" height="62"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-aJ-6tM" customClass="FBLoginView">
+                                <rect key="frame" x="166" y="524" width="269" height="56"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="269" id="1oG-Dc-QZH"/>
+                                    <constraint firstAttribute="height" constant="56" id="6xV-ac-0nC"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="On2-lu-iuI" id="LcW-t7-SZS"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Signals!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opS-4X-WwU">
-                                <rect key="frame" x="184" y="275" width="232" height="49"/>
+                                <rect key="frame" x="184" y="219" width="232" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="232" id="PAI-kM-91m"/>
                                     <constraint firstAttribute="height" constant="49" id="nDB-n9-2DH"/>
@@ -72,12 +74,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.4208929496936864" green="1" blue="0.67563793151085982" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="opS-4X-WwU" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="275" id="Dcr-bF-ezx"/>
-                            <constraint firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="cbD-vm-tpQ"/>
-                            <constraint firstItem="bxY-D1-tze" firstAttribute="trailing" secondItem="ZBl-sI-2Dd" secondAttribute="trailingMargin" id="fTk-jt-1iH"/>
-                            <constraint firstAttribute="bottom" secondItem="sdL-aJ-6tM" secondAttribute="bottom" constant="20" id="g7e-IC-Uuv"/>
-                            <constraint firstItem="bxY-D1-tze" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="8" symbolic="YES" id="jp4-K1-AXi"/>
-                            <constraint firstItem="opS-4X-WwU" firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="uI0-5b-n87"/>
+                            <constraint firstAttribute="centerX" secondItem="sdL-aJ-6tM" secondAttribute="centerX" id="3rR-Nc-dCO"/>
+                            <constraint firstItem="sdL-aJ-6tM" firstAttribute="centerX" secondItem="opS-4X-WwU" secondAttribute="centerX" id="AzE-KJ-74F"/>
+                            <constraint firstAttribute="centerY" secondItem="opS-4X-WwU" secondAttribute="centerY" constant="56.5" id="G45-YC-GWg"/>
+                            <constraint firstItem="opS-4X-WwU" firstAttribute="top" secondItem="gXy-EW-rUY" secondAttribute="bottom" constant="219" id="Ng0-jm-sW0"/>
+                            <constraint firstItem="sdL-aJ-6tM" firstAttribute="top" secondItem="ZBl-sI-2Dd" secondAttribute="top" constant="524" id="jcp-9v-8m3"/>
+                            <constraint firstAttribute="centerX" secondItem="opS-4X-WwU" secondAttribute="centerX" id="zop-ja-saI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
