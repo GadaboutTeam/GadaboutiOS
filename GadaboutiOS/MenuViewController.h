@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuCell.h"
 
 @interface MenuViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
-
+@property (nonatomic, retain) NSArray *menuItemsArray;
 @end

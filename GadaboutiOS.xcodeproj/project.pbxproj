@@ -22,6 +22,7 @@
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
 		FA695C4B1A843FF100E1B4A0 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA695C4A1A843FF100E1B4A0 /* Menu.storyboard */; };
 		FA695C4E1A84402F00E1B4A0 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA695C4D1A84402F00E1B4A0 /* MenuViewController.m */; };
+		FA695C511A8446A200E1B4A0 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA695C501A8446A200E1B4A0 /* MenuCell.m */; };
 		FA99118E1A80660900714F7D /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99118D1A80660900714F7D /* CollectionViewController.m */; };
 		FA9911931A8069CB00714F7D /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911901A8069CB00714F7D /* Invitation.m */; };
 		FA9911941A8069CB00714F7D /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* Friend.m */; };
@@ -72,6 +73,8 @@
 		FA695C4A1A843FF100E1B4A0 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		FA695C4C1A84402F00E1B4A0 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		FA695C4D1A84402F00E1B4A0 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		FA695C4F1A8446A200E1B4A0 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		FA695C501A8446A200E1B4A0 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		FA99118C1A80660900714F7D /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		FA99118D1A80660900714F7D /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		FA99118F1A8069CB00714F7D /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Invitation.h; path = Model/Invitation.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				6300E7A71A81A3180007CD3A /* CollectionViewCell.m */,
 				636185F21A81BA9100A9AE57 /* NavigationBar.h */,
 				636185F31A81BA9100A9AE57 /* NavigationBar.m */,
+				FA695C4F1A8446A200E1B4A0 /* MenuCell.h */,
+				FA695C501A8446A200E1B4A0 /* MenuCell.m */,
 			);
 			name = "Custom UI";
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				FA9911941A8069CB00714F7D /* Friend.m in Sources */,
 				FA9911971A807B2900714F7D /* User.m in Sources */,
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
+				FA695C511A8446A200E1B4A0 /* MenuCell.m in Sources */,
 				FA695C4E1A84402F00E1B4A0 /* MenuViewController.m in Sources */,
 				6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */,
