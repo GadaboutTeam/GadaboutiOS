@@ -32,7 +32,7 @@
     return self;
 }
 
-- (void)loadProperStoryboard {
+- (void)configureInitialViewController {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard;
     
@@ -42,8 +42,16 @@
     } else {
         storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
     }
-    
-    self.window.rootViewController = [storyboard instantiateInitialViewController];
+
+    UIStoryboard *menuStoryboard = [UIStoryboard storyboardWithName:@"Menu" bundle:nil];
+
+    // Configure MFSideMenuController
+    MFSideMenuContainerViewController *container =
+    [MFSideMenuContainerViewController containerWithCenterViewController:[storyboard instantiateInitialViewController]
+                                                  leftMenuViewController:[menuStoryboard instantiateInitialViewController]
+                                                 rightMenuViewController:nil];
+
+    self.window.rootViewController = container;
     [self.window makeKeyAndVisible];
 }
 
@@ -76,7 +84,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // load proper storyboard dependning if user is logged in
-    [self loadProperStoryboard];
+    [self configureInitialViewController];
     
     // for white text in navigation bar controllers
     [self setupAppearence];

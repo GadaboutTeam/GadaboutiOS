@@ -55,6 +55,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZk-NS-yEY">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMenu:" destination="On2-lu-iuI" eventType="touchUpInside" id="2bw-tU-4cJ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxY-D1-tze">
                                 <rect key="frame" x="530" y="72" width="54" height="30"/>
                                 <state key="normal" title="Dismiss">
@@ -81,6 +90,7 @@
                         </variation>
                         <connections>
                             <outlet property="fbLoginView" destination="sdL-aJ-6tM" id="eJK-gH-oiX"/>
+                            <outlet property="menuButton" destination="CZk-NS-yEY" id="7Q2-5X-ieY"/>
                             <outlet property="welcomeLabel" destination="opS-4X-WwU" id="ywB-MP-WuN"/>
                         </connections>
                     </view>

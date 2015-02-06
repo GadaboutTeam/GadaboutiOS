@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MFSideMenu/MFSideMenu.h>
 #import "User.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {

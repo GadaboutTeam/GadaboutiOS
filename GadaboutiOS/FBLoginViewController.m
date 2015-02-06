@@ -149,4 +149,11 @@
 //
 //}
 
+- (IBAction)showMenu:(id)sender {
+    MFSideMenuContainerViewController *menuViewController = (MFSideMenuContainerViewController *)self.customView.window.rootViewController;
+    [menuViewController toggleLeftSideMenuCompletion:^{
+        NSLog(@"Menu triggered.");
+    }];
+}
+
 @end

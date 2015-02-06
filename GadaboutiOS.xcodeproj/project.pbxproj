@@ -20,6 +20,8 @@
 		65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */; };
 		FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationController.m */; };
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
+		FA695C4B1A843FF100E1B4A0 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA695C4A1A843FF100E1B4A0 /* Menu.storyboard */; };
+		FA695C4E1A84402F00E1B4A0 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA695C4D1A84402F00E1B4A0 /* MenuViewController.m */; };
 		FA99118E1A80660900714F7D /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99118D1A80660900714F7D /* CollectionViewController.m */; };
 		FA9911931A8069CB00714F7D /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911901A8069CB00714F7D /* Invitation.m */; };
 		FA9911941A8069CB00714F7D /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* Friend.m */; };
@@ -67,6 +69,9 @@
 		FA1923B21A7BE1ED00561568 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
 		FA1923B41A7BE20800561568 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 		FA1923B51A7BE57A00561568 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FA695C4A1A843FF100E1B4A0 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		FA695C4C1A84402F00E1B4A0 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		FA695C4D1A84402F00E1B4A0 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		FA99118C1A80660900714F7D /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		FA99118D1A80660900714F7D /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		FA99118F1A8069CB00714F7D /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Invitation.h; path = Model/Invitation.h; sourceTree = "<group>"; };
@@ -169,6 +174,7 @@
 				63BA5EB21A7BD895009A212E /* AppDelegate.m */,
 				63BA5EB71A7BD895009A212E /* Main.storyboard */,
 				FA9911981A80933100714F7D /* Login.storyboard */,
+				FA695C4A1A843FF100E1B4A0 /* Menu.storyboard */,
 				63BA5EBA1A7BD895009A212E /* Images.xcassets */,
 				63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */,
 				63BA5EAD1A7BD895009A212E /* Supporting Files */,
@@ -215,6 +221,8 @@
 				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
 				636185F51A81BCB700A9AE57 /* NavigationViewController.h */,
 				636185F61A81BCB700A9AE57 /* NavigationViewController.m */,
+				FA695C4C1A84402F00E1B4A0 /* MenuViewController.h */,
+				FA695C4D1A84402F00E1B4A0 /* MenuViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA695C4B1A843FF100E1B4A0 /* Menu.storyboard in Resources */,
 				FA9911991A80933100714F7D /* Login.storyboard in Resources */,
 				63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */,
 				63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */,
@@ -389,6 +398,7 @@
 				FA9911941A8069CB00714F7D /* Friend.m in Sources */,
 				FA9911971A807B2900714F7D /* User.m in Sources */,
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
+				FA695C4E1A84402F00E1B4A0 /* MenuViewController.m in Sources */,
 				6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
