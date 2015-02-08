@@ -14,7 +14,7 @@
     [super layoutSubviews];
     
     IBInspectable [self.layer setBorderWidth:2.0f];
-    IBInspectable [self.layer setBorderColor:[UIColor blackColor].CGColor];
+    IBInspectable [self.layer setBorderColor:[UIColor blueColor].CGColor];
 }
 
 @end

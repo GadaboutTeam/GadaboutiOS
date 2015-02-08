@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24F-rL-NpA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Collection View Controller-->
@@ -13,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UwQ-gN-7Yw">
-                            <size key="itemSize" width="90" height="90"/>
+                            <size key="itemSize" width="90" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="20" maxX="10" maxY="0.0"/>
@@ -23,18 +22,37 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbB-eK-Wdq">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbB-eK-Wdq">
                                             <rect key="frame" x="24" y="34" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="widthClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="93" width="90" height="21"/>
+                                            </variation>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kX6-vq-AVT">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <variation key="widthClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            </variation>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="kX6-vq-AVT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="kX6-vq-AVT"/>
+                                    </mask>
+                                </variation>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -60,7 +78,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOv-ci-48H">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOv-ci-48H">
                                 <rect key="frame" x="148" y="534" width="304" height="46"/>
                                 <color key="backgroundColor" red="0.1625021156" green="0.65598486040000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -72,38 +90,60 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="48" y="534" width="304" height="46"/>
+                                </variation>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="248" y="534" width="304" height="46"/>
+                                </variation>
                                 <connections>
                                     <action selector="requestAuthorization:" destination="gdp-7p-lzm" eventType="touchUpInside" id="62p-Wn-sey"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="qoj-FF-YaX">
-                                <rect key="frame" x="16" y="148" width="568" height="303"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Authorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sG2-6w-4WW">
-                                <rect key="frame" x="16" y="35" width="568" height="36"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Gadabout needs your permission to access your location. Press the button below to grant us access to your GPS coordinates." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y6u-pb-evx">
-                                <rect key="frame" x="104" y="260" width="393" height="79"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Gadabout needs your permission to access your location. Press the button below to grant us access to your GPS coordinates." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y6u-pb-evx">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="M7B-fe-hlA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M7B-fe-hlA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="M7B-fe-hlA"/>
+                                    </mask>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.42089294970000002" green="1" blue="0.67563793149999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="qoj-FF-YaX" secondAttribute="centerX" id="2BT-8u-ojG"/>
-                            <constraint firstItem="sG2-6w-4WW" firstAttribute="leading" secondItem="RgV-Wc-43R" secondAttribute="leadingMargin" id="IFP-C5-0bE"/>
-                            <constraint firstItem="sG2-6w-4WW" firstAttribute="leading" secondItem="qoj-FF-YaX" secondAttribute="leading" id="R2z-uk-wXb"/>
-                            <constraint firstAttribute="centerX" secondItem="sG2-6w-4WW" secondAttribute="centerX" id="XZl-hS-i6c"/>
-                            <constraint firstAttribute="centerX" secondItem="DOv-ci-48H" secondAttribute="centerX" id="Y03-8Y-lbS"/>
-                            <constraint firstItem="sG2-6w-4WW" firstAttribute="top" secondItem="MR0-Sn-Zxp" secondAttribute="bottom" constant="15" id="g5P-CD-lgH"/>
-                            <constraint firstItem="DOv-ci-48H" firstAttribute="top" secondItem="qoj-FF-YaX" secondAttribute="bottom" constant="83" id="hNu-AC-USa"/>
-                            <constraint firstAttribute="bottom" secondItem="DOv-ci-48H" secondAttribute="bottom" constant="20" symbolic="YES" id="hOv-5p-kbt"/>
-                            <constraint firstAttribute="centerY" secondItem="qoj-FF-YaX" secondAttribute="centerY" id="sxE-gG-RpZ"/>
-                            <constraint firstItem="qoj-FF-YaX" firstAttribute="top" secondItem="sG2-6w-4WW" secondAttribute="bottom" constant="77" id="t9Q-2a-7Nh"/>
+                            <constraint firstAttribute="centerY" secondItem="y6u-pb-evx" secondAttribute="centerY" constant="0.5" id="d2r-c9-7z6"/>
+                            <constraint firstAttribute="centerX" secondItem="y6u-pb-evx" secondAttribute="centerX" constant="-0.5" id="nL8-T3-LhO"/>
+                            <constraint firstItem="y6u-pb-evx" firstAttribute="centerX" secondItem="DOv-ci-48H" secondAttribute="centerX" id="qio-kl-hbU"/>
+                            <constraint firstItem="y6u-pb-evx" firstAttribute="top" secondItem="MR0-Sn-Zxp" secondAttribute="bottom" constant="240" id="vZP-ud-dNe"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="d2r-c9-7z6"/>
+                                <exclude reference="nL8-T3-LhO"/>
+                                <exclude reference="qio-kl-hbU"/>
+                                <exclude reference="vZP-ud-dNe"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="d2r-c9-7z6"/>
+                                <include reference="nL8-T3-LhO"/>
+                                <include reference="qio-kl-hbU"/>
+                                <include reference="vZP-ud-dNe"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="requestAuthorizationButton" destination="DOv-ci-48H" id="DwQ-Rp-nRI"/>
@@ -136,7 +176,4 @@
             <point key="canvasLocation" x="-395" y="747"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="map" width="783" height="401"/>
-    </resources>
 </document>

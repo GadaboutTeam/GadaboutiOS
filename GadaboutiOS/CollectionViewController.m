@@ -76,8 +76,10 @@ NSMutableArray *array;
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     UILabel *label = (UILabel *)[cell viewWithTag:100];
+    UIImageView *profilePicture = (UIImageView *)[cell viewWithTag:100];
     
     label.text = [array objectAtIndex:indexPath.row];
+    profilePicture.image = [UIImage imageNamed:[]
     
     return cell;
 }
