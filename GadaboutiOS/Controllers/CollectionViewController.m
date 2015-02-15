@@ -79,7 +79,6 @@ NSMutableArray *array;
     UIImageView *profilePicture = (UIImageView *)[cell viewWithTag:100];
     
     label.text = [array objectAtIndex:indexPath.row];
-    profilePicture.image = [UIImage imageNamed:[]
     
     return cell;
 }
