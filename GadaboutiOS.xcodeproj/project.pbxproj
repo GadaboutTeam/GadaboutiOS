@@ -208,12 +208,12 @@
 		FA1923AB1A7BE12C00561568 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA1923B41A7BE20800561568 /* LocationController.h */,
-				63BD18451A980D320017B58F /* FBGraphController.h */,
-				63BD18461A980D320017B58F /* FBGraphController.m */,
-				FA1923B21A7BE1ED00561568 /* LocationController.m */,
 				FA99118C1A80660900714F7D /* CollectionViewController.h */,
 				FA99118D1A80660900714F7D /* CollectionViewController.m */,
+				FA1923B41A7BE20800561568 /* LocationController.h */,
+				FA1923B21A7BE1ED00561568 /* LocationController.m */,
+				63BD18451A980D320017B58F /* FBGraphController.h */,
+				63BD18461A980D320017B58F /* FBGraphController.m */,
 				FA99119A1A80A3DF00714F7D /* FBLoginViewController.h */,
 				FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */,
 				FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */,

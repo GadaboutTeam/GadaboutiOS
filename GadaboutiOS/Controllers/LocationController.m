@@ -35,7 +35,7 @@
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
 
-        NSLog(@"Location Manager initialized");
+        NSLog(@"Graph Manager initialized");
     }
     return self;
 }

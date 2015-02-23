@@ -8,6 +8,7 @@
 
 #import <Realm/Realm.h>
 #import "CollectionViewController.h"
+#import "FBGraphController.h"
 
 @interface CollectionViewController ()
 
