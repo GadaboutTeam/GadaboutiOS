@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Page View Controller-->
+        <!--Setup View Controller-->
         <scene sceneID="9bU-IH-ebO">
             <objects>
-                <pageViewController storyboardIdentifier="Setup" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ifK-ky-cBl" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="Setup" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ifK-ky-cBl" customClass="SetupViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uw5-X1-MWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="405" y="289"/>
@@ -25,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Gaddabout." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-gD-PIo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome to Gadabout." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-gD-PIo">
                                 <rect key="frame" x="172" y="140" width="256" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,12 +97,12 @@
                                 <exclude reference="ifc-w6-8wU"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="17g-Vj-s10"/>
-                                <exclude reference="yDj-xK-Uog"/>
                                 <exclude reference="PiS-7o-Y13"/>
                                 <exclude reference="dqi-pc-NGV"/>
                                 <exclude reference="jhf-yF-CBr"/>
                                 <exclude reference="luU-VD-0wo"/>
+                                <exclude reference="17g-Vj-s10"/>
+                                <exclude reference="yDj-xK-Uog"/>
                                 <exclude reference="EJ8-dA-7Ue"/>
                             </mask>
                         </variation>
@@ -111,12 +112,12 @@
                                 <include reference="ifc-w6-8wU"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="17g-Vj-s10"/>
-                                <include reference="yDj-xK-Uog"/>
                                 <include reference="PiS-7o-Y13"/>
                                 <include reference="dqi-pc-NGV"/>
                                 <include reference="jhf-yF-CBr"/>
                                 <include reference="luU-VD-0wo"/>
+                                <include reference="17g-Vj-s10"/>
+                                <include reference="yDj-xK-Uog"/>
                                 <include reference="EJ8-dA-7Ue"/>
                             </mask>
                         </variation>

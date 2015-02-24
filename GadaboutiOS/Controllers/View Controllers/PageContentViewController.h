@@ -1,5 +1,5 @@
 //
-//  SetupViewController.h
+//  PageContentViewController.h
 //  GadaboutiOS
 //
 //  Created by David Barsky on 2/24/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetupViewController : UIViewController
+@interface PageContentViewController : UIViewController
 
 @end
