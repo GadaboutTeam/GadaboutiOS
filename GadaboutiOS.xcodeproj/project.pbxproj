@@ -134,14 +134,9 @@
 		6300E7A51A81A1E50007CD3A /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
-				6300E7A21A81A1DE0007CD3A /* CollectionView.h */,
-				6300E7A31A81A1DE0007CD3A /* CollectionView.m */,
-				6300E7A61A81A3180007CD3A /* CollectionViewCell.h */,
-				6300E7A71A81A3180007CD3A /* CollectionViewCell.m */,
-				636185F21A81BA9100A9AE57 /* NavigationBar.h */,
-				636185F31A81BA9100A9AE57 /* NavigationBar.m */,
-				6355B4221A9C028D00D25215 /* ProminentButton.h */,
-				6355B4231A9C028D00D25215 /* ProminentButton.m */,
+				6355B4281A9CFB7600D25215 /* Collection Views */,
+				6355B4291A9CFB8100D25215 /* Navigation Bar */,
+				6355B42A1A9CFB9000D25215 /* Buttons */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -154,6 +149,35 @@
 				FA9911981A80933100714F7D /* Login.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		6355B4281A9CFB7600D25215 /* Collection Views */ = {
+			isa = PBXGroup;
+			children = (
+				6300E7A21A81A1DE0007CD3A /* CollectionView.h */,
+				6300E7A31A81A1DE0007CD3A /* CollectionView.m */,
+				6300E7A61A81A3180007CD3A /* CollectionViewCell.h */,
+				6300E7A71A81A3180007CD3A /* CollectionViewCell.m */,
+			);
+			name = "Collection Views";
+			sourceTree = "<group>";
+		};
+		6355B4291A9CFB8100D25215 /* Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				636185F21A81BA9100A9AE57 /* NavigationBar.h */,
+				636185F31A81BA9100A9AE57 /* NavigationBar.m */,
+			);
+			name = "Navigation Bar";
+			sourceTree = "<group>";
+		};
+		6355B42A1A9CFB9000D25215 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				6355B4221A9C028D00D25215 /* ProminentButton.h */,
+				6355B4231A9C028D00D25215 /* ProminentButton.m */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 		63BA5EA11A7BD895009A212E = {
