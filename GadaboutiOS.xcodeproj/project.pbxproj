@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300E7A31A81A1DE0007CD3A /* CollectionView.m */; };
 		6300E7A81A81A3180007CD3A /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300E7A71A81A3180007CD3A /* CollectionViewCell.m */; };
+		6355B4241A9C028D00D25215 /* ProminentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4231A9C028D00D25215 /* ProminentButton.m */; };
 		636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F31A81BA9100A9AE57 /* NavigationBar.m */; };
 		636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F61A81BCB700A9AE57 /* NavigationViewController.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
@@ -49,6 +50,8 @@
 		6300E7A31A81A1DE0007CD3A /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
 		6300E7A61A81A3180007CD3A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		6300E7A71A81A3180007CD3A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		6355B4221A9C028D00D25215 /* ProminentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProminentButton.h; sourceTree = "<group>"; };
+		6355B4231A9C028D00D25215 /* ProminentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProminentButton.m; sourceTree = "<group>"; };
 		636185F21A81BA9100A9AE57 /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
 		636185F31A81BA9100A9AE57 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
 		636185F51A81BCB700A9AE57 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				6300E7A71A81A3180007CD3A /* CollectionViewCell.m */,
 				636185F21A81BA9100A9AE57 /* NavigationBar.h */,
 				636185F31A81BA9100A9AE57 /* NavigationBar.m */,
+				6355B4221A9C028D00D25215 /* ProminentButton.h */,
+				6355B4231A9C028D00D25215 /* ProminentButton.m */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				63BD18471A980D320017B58F /* FBGraphController.m in Sources */,
 				6300E7A81A81A3180007CD3A /* CollectionViewCell.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
+				6355B4241A9C028D00D25215 /* ProminentButton.m in Sources */,
 				FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
