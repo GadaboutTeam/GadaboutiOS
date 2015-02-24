@@ -31,13 +31,6 @@ NSMutableArray *array;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     array = [[NSMutableArray alloc] init];
-    
-    [array addObject:@"1"];
-    [array addObject:@"2"];
-    [array addObject:@"3"];
-    [array addObject:@"4"];
-    [array addObject:@"5"];
-    [array addObject:@"6"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -46,6 +39,7 @@ NSMutableArray *array;
         [self.navigationController presentViewController:locationAuthController animated:YES completion:nil];
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

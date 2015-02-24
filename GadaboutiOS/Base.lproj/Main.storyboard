@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24F-rL-NpA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24F-rL-NpA">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Collection View Controller-->
@@ -78,72 +79,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOv-ci-48H">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOv-ci-48H">
                                 <rect key="frame" x="148" y="534" width="304" height="46"/>
                                 <color key="backgroundColor" red="0.1625021156" green="0.65598486040000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="IJp-1B-aYt"/>
-                                    <constraint firstAttribute="width" constant="304" id="MFf-ul-Tjn"/>
+                                    <constraint firstAttribute="height" constant="46" id="3uA-Qa-PYq"/>
+                                    <constraint firstAttribute="width" secondItem="DOv-ci-48H" secondAttribute="height" multiplier="152:23" id="BQf-6l-djr"/>
+                                    <constraint firstAttribute="width" constant="304" id="CKI-qf-Gwf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="304" id="YqJ-vF-SdP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
                                 <state key="normal" title="Grant Location Permissions">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="48" y="534" width="304" height="46"/>
-                                </variation>
                                 <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="248" y="534" width="304" height="46"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="248" y="734" width="304" height="46"/>
                                 </variation>
                                 <connections>
                                     <action selector="requestAuthorization:" destination="gdp-7p-lzm" eventType="touchUpInside" id="62p-Wn-sey"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Gadabout needs your permission to access your location. Press the button below to grant us access to your GPS coordinates." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y6u-pb-evx">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="393" id="M7B-fe-hlA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="M7B-fe-hlA"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
-                                <variation key="widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="M7B-fe-hlA"/>
-                                    </mask>
-                                </variation>
-                            </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.42089294970000002" green="1" blue="0.67563793149999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="y6u-pb-evx" secondAttribute="centerY" constant="0.5" id="d2r-c9-7z6"/>
-                            <constraint firstAttribute="centerX" secondItem="y6u-pb-evx" secondAttribute="centerX" constant="-0.5" id="nL8-T3-LhO"/>
-                            <constraint firstItem="y6u-pb-evx" firstAttribute="centerX" secondItem="DOv-ci-48H" secondAttribute="centerX" id="qio-kl-hbU"/>
-                            <constraint firstItem="y6u-pb-evx" firstAttribute="top" secondItem="MR0-Sn-Zxp" secondAttribute="bottom" constant="240" id="vZP-ud-dNe"/>
+                            <constraint firstItem="mLR-Aa-l6r" firstAttribute="top" secondItem="DOv-ci-48H" secondAttribute="bottom" constant="20" id="b11-ec-1CZ"/>
+                            <constraint firstAttribute="centerX" secondItem="DOv-ci-48H" secondAttribute="centerX" id="fnP-4f-10l"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="d2r-c9-7z6"/>
-                                <exclude reference="nL8-T3-LhO"/>
-                                <exclude reference="qio-kl-hbU"/>
-                                <exclude reference="vZP-ud-dNe"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=regular">
-                            <mask key="constraints">
-                                <include reference="d2r-c9-7z6"/>
-                                <include reference="nL8-T3-LhO"/>
-                                <include reference="qio-kl-hbU"/>
-                                <include reference="vZP-ud-dNe"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="requestAuthorizationButton" destination="DOv-ci-48H" id="DwQ-Rp-nRI"/>
@@ -152,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Is-tW-QHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="1495"/>
+            <point key="canvasLocation" x="19.5" y="1520"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="OvU-my-8ry">
