@@ -50,15 +50,31 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yj-dX-kzE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yj-dX-kzE" customClass="GhostButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="lwZ-1d-7qe"/>
+                                    <constraint firstAttribute="height" constant="30" id="zKv-Bi-Uz9">
+                                        <variation key="widthClass=compact" constant="44"/>
+                                    </constraint>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
                                 <state key="normal" title="Get started.">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="130" y="523" width="140" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lwZ-1d-7qe"/>
+                                        <exclude reference="zKv-Bi-Uz9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="lwZ-1d-7qe"/>
+                                        <include reference="zKv-Bi-Uz9"/>
+                                    </mask>
                                 </variation>
                             </button>
                         </subviews>
@@ -69,7 +85,11 @@
                             <constraint firstItem="ifc-w6-8wU" firstAttribute="top" secondItem="cfJ-gD-PIo" secondAttribute="bottom" constant="8" symbolic="YES" id="7jh-LF-Z7N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cfJ-gD-PIo" secondAttribute="trailing" constant="47" id="8Xp-wQ-laZ"/>
                             <constraint firstItem="cfJ-gD-PIo" firstAttribute="top" secondItem="P4X-Al-azg" secondAttribute="bottom" constant="120" id="Aik-F7-Xw9"/>
+                            <constraint firstItem="V0K-Fd-xKX" firstAttribute="top" secondItem="5Yj-dX-kzE" secondAttribute="bottom" constant="47" id="EJ8-dA-7Ue">
+                                <variation key="widthClass=compact" constant="33"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="cfJ-gD-PIo" secondAttribute="centerX" id="XBO-B7-wUV"/>
+                            <constraint firstItem="5Yj-dX-kzE" firstAttribute="centerX" secondItem="ifc-w6-8wU" secondAttribute="centerX" id="b13-CU-YLN"/>
                             <constraint firstItem="ifc-w6-8wU" firstAttribute="leading" secondItem="cet-QB-doQ" secondAttribute="leadingMargin" constant="24" id="jGE-ao-Xnh"/>
                             <constraint firstItem="cfJ-gD-PIo" firstAttribute="leading" secondItem="cet-QB-doQ" secondAttribute="leadingMargin" constant="49" id="nrO-xS-Ly5"/>
                             <constraint firstItem="V0K-Fd-xKX" firstAttribute="top" secondItem="ifc-w6-8wU" secondAttribute="bottom" constant="374" id="p85-hd-hPc"/>
@@ -86,6 +106,8 @@
                                 <exclude reference="2rg-6J-o7N"/>
                                 <exclude reference="7jh-LF-Z7N"/>
                                 <exclude reference="jGE-ao-Xnh"/>
+                                <exclude reference="b13-CU-YLN"/>
+                                <exclude reference="EJ8-dA-7Ue"/>
                                 <exclude reference="p85-hd-hPc"/>
                             </mask>
                         </variation>
@@ -103,6 +125,8 @@
                                 <include reference="2rg-6J-o7N"/>
                                 <include reference="7jh-LF-Z7N"/>
                                 <include reference="jGE-ao-Xnh"/>
+                                <include reference="b13-CU-YLN"/>
+                                <include reference="EJ8-dA-7Ue"/>
                                 <include reference="p85-hd-hPc"/>
                             </mask>
                         </variation>

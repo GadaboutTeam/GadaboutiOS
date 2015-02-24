@@ -10,12 +10,16 @@
 
 @implementation GhostButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self setupButtonBorder];
 }
-*/
+
+- (void)setupButtonBorder {
+    [self.layer setBorderWidth:1.0f];
+    [self.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.layer setCornerRadius: 4.0f];
+}
 
 @end
