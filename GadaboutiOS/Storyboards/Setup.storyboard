@@ -27,29 +27,10 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Gaddabout." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-gD-PIo">
                                 <rect key="frame" x="172" y="140" width="256" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="oJH-cZ-xe9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="oJH-cZ-xe9"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="oJH-cZ-xe9"/>
-                                    </mask>
-                                </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Find out what your friends are doing." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ifc-w6-8wU">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yj-dX-kzE" customClass="GhostButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -60,7 +41,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
-                                <state key="normal" title="Get started.">
+                                <state key="normal" title="Get Started">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -77,57 +58,66 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Find out what your friends are doing." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ifc-w6-8wU">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="rJn-cb-iCb"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rJn-cb-iCb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="rJn-cb-iCb"/>
+                                    </mask>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="ifc-w6-8wU" secondAttribute="centerX" id="2rg-6J-o7N"/>
-                            <constraint firstItem="cfJ-gD-PIo" firstAttribute="top" secondItem="P4X-Al-azg" secondAttribute="bottom" constant="120" id="7f0-kh-kmt"/>
-                            <constraint firstItem="ifc-w6-8wU" firstAttribute="top" secondItem="cfJ-gD-PIo" secondAttribute="bottom" constant="8" symbolic="YES" id="7jh-LF-Z7N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cfJ-gD-PIo" secondAttribute="trailing" constant="47" id="8Xp-wQ-laZ"/>
-                            <constraint firstItem="cfJ-gD-PIo" firstAttribute="top" secondItem="P4X-Al-azg" secondAttribute="bottom" constant="120" id="Aik-F7-Xw9"/>
+                            <constraint firstAttribute="centerX" secondItem="cfJ-gD-PIo" secondAttribute="centerX" id="17g-Vj-s10"/>
                             <constraint firstItem="V0K-Fd-xKX" firstAttribute="top" secondItem="5Yj-dX-kzE" secondAttribute="bottom" constant="47" id="EJ8-dA-7Ue">
                                 <variation key="widthClass=compact" constant="33"/>
                             </constraint>
-                            <constraint firstAttribute="centerX" secondItem="cfJ-gD-PIo" secondAttribute="centerX" id="XBO-B7-wUV"/>
-                            <constraint firstItem="5Yj-dX-kzE" firstAttribute="centerX" secondItem="ifc-w6-8wU" secondAttribute="centerX" id="b13-CU-YLN"/>
-                            <constraint firstItem="ifc-w6-8wU" firstAttribute="leading" secondItem="cet-QB-doQ" secondAttribute="leadingMargin" constant="24" id="jGE-ao-Xnh"/>
-                            <constraint firstItem="cfJ-gD-PIo" firstAttribute="leading" secondItem="cet-QB-doQ" secondAttribute="leadingMargin" constant="49" id="nrO-xS-Ly5"/>
-                            <constraint firstItem="V0K-Fd-xKX" firstAttribute="top" secondItem="ifc-w6-8wU" secondAttribute="bottom" constant="374" id="p85-hd-hPc"/>
+                            <constraint firstItem="ifc-w6-8wU" firstAttribute="centerX" secondItem="5Yj-dX-kzE" secondAttribute="centerX" id="PiS-7o-Y13"/>
+                            <constraint firstItem="ifc-w6-8wU" firstAttribute="top" secondItem="cfJ-gD-PIo" secondAttribute="bottom" constant="8" symbolic="YES" id="dqi-pc-NGV"/>
+                            <constraint firstItem="ifc-w6-8wU" firstAttribute="centerX" secondItem="cfJ-gD-PIo" secondAttribute="centerX" id="jhf-yF-CBr"/>
+                            <constraint firstItem="ifc-w6-8wU" firstAttribute="leading" secondItem="cet-QB-doQ" secondAttribute="leadingMargin" constant="24" id="luU-VD-0wo"/>
+                            <constraint firstItem="cfJ-gD-PIo" firstAttribute="top" secondItem="P4X-Al-azg" secondAttribute="bottom" constant="120" id="yDj-xK-Uog"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="ifc-w6-8wU"/>
                                 <exclude reference="5Yj-dX-kzE"/>
+                                <exclude reference="ifc-w6-8wU"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="8Xp-wQ-laZ"/>
-                                <exclude reference="Aik-F7-Xw9"/>
-                                <exclude reference="nrO-xS-Ly5"/>
-                                <exclude reference="2rg-6J-o7N"/>
-                                <exclude reference="7jh-LF-Z7N"/>
-                                <exclude reference="jGE-ao-Xnh"/>
-                                <exclude reference="b13-CU-YLN"/>
+                                <exclude reference="17g-Vj-s10"/>
+                                <exclude reference="yDj-xK-Uog"/>
+                                <exclude reference="PiS-7o-Y13"/>
+                                <exclude reference="dqi-pc-NGV"/>
+                                <exclude reference="jhf-yF-CBr"/>
+                                <exclude reference="luU-VD-0wo"/>
                                 <exclude reference="EJ8-dA-7Ue"/>
-                                <exclude reference="p85-hd-hPc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="ifc-w6-8wU"/>
                                 <include reference="5Yj-dX-kzE"/>
+                                <include reference="ifc-w6-8wU"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7f0-kh-kmt"/>
-                                <include reference="8Xp-wQ-laZ"/>
-                                <include reference="Aik-F7-Xw9"/>
-                                <exclude reference="XBO-B7-wUV"/>
-                                <include reference="nrO-xS-Ly5"/>
-                                <include reference="2rg-6J-o7N"/>
-                                <include reference="7jh-LF-Z7N"/>
-                                <include reference="jGE-ao-Xnh"/>
-                                <include reference="b13-CU-YLN"/>
+                                <include reference="17g-Vj-s10"/>
+                                <include reference="yDj-xK-Uog"/>
+                                <include reference="PiS-7o-Y13"/>
+                                <include reference="dqi-pc-NGV"/>
+                                <include reference="jhf-yF-CBr"/>
+                                <include reference="luU-VD-0wo"/>
                                 <include reference="EJ8-dA-7Ue"/>
-                                <include reference="p85-hd-hPc"/>
                             </mask>
                         </variation>
                     </view>
