@@ -63,6 +63,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    MenuCell *menuCell = (MenuCell *)cell;
+    NSLog(@"Cell will display: %@", menuCell.itemTitle.text);
+}
+
 
 
 /*
