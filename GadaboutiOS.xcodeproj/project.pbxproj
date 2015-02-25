@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300E7A31A81A1DE0007CD3A /* CollectionView.m */; };
 		6300E7A81A81A3180007CD3A /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300E7A71A81A3180007CD3A /* CollectionViewCell.m */; };
-		630896511A9D299B00063D42 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630896501A9D299B00063D42 /* PageContentViewController.m */; };
 		6355B4241A9C028D00D25215 /* ProminentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4231A9C028D00D25215 /* ProminentButton.m */; };
 		6355B4261A9CF0BF00D25215 /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6355B4251A9CF0BF00D25215 /* Setup.storyboard */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
 		6355B4331A9D10FB00D25215 /* GhostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* GhostButton.m */; };
-		6355B4381A9D231300D25215 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4371A9D231300D25215 /* SetupViewController.m */; };
 		636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F31A81BA9100A9AE57 /* NavigationBar.m */; };
 		636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F61A81BCB700A9AE57 /* NavigationViewController.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
@@ -55,8 +53,6 @@
 		6300E7A31A81A1DE0007CD3A /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
 		6300E7A61A81A3180007CD3A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		6300E7A71A81A3180007CD3A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
-		6308964F1A9D299B00063D42 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
-		630896501A9D299B00063D42 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		6355B4221A9C028D00D25215 /* ProminentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProminentButton.h; sourceTree = "<group>"; };
 		6355B4231A9C028D00D25215 /* ProminentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProminentButton.m; sourceTree = "<group>"; };
 		6355B4251A9CF0BF00D25215 /* Setup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setup.storyboard; sourceTree = "<group>"; };
@@ -64,8 +60,6 @@
 		6355B42C1A9CFDF600D25215 /* SetupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupView.m; sourceTree = "<group>"; };
 		6355B4311A9D10FB00D25215 /* GhostButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GhostButton.h; sourceTree = "<group>"; };
 		6355B4321A9D10FB00D25215 /* GhostButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GhostButton.m; sourceTree = "<group>"; };
-		6355B4361A9D231300D25215 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
-		6355B4371A9D231300D25215 /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
 		636185F21A81BA9100A9AE57 /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
 		636185F31A81BA9100A9AE57 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
 		636185F51A81BCB700A9AE57 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
@@ -216,10 +210,6 @@
 				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
 				636185F51A81BCB700A9AE57 /* NavigationViewController.h */,
 				636185F61A81BCB700A9AE57 /* NavigationViewController.m */,
-				6355B4361A9D231300D25215 /* SetupViewController.h */,
-				6355B4371A9D231300D25215 /* SetupViewController.m */,
-				6308964F1A9D299B00063D42 /* PageContentViewController.h */,
-				630896501A9D299B00063D42 /* PageContentViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -470,14 +460,12 @@
 			files = (
 				FA9911941A8069CB00714F7D /* Friend.m in Sources */,
 				FA9911971A807B2900714F7D /* User.m in Sources */,
-				630896511A9D299B00063D42 /* PageContentViewController.m in Sources */,
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
 				6300E7A41A81A1DE0007CD3A /* CollectionView.m in Sources */,
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				6355B4331A9D10FB00D25215 /* GhostButton.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
-				6355B4381A9D231300D25215 /* SetupViewController.m in Sources */,
 				FA9911A91A81BC5F00714F7D /* FacebookLoginView.m in Sources */,
 				FA9911931A8069CB00714F7D /* Invitation.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
