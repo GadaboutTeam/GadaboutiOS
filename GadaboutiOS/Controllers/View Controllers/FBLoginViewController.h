@@ -10,5 +10,5 @@
 #import "FacebookLoginView.h"
 
 @interface FBLoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
-@property FacebookLoginView *customView;
+
 @end

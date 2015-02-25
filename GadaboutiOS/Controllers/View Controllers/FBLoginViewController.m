@@ -16,14 +16,9 @@
 @end
 
 @implementation FBLoginViewController
-@synthesize customView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    customView = (FacebookLoginView *)self.view;
-    // Do any additional setup after loading the view.
-    customView.fbLoginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
-    customView.fbLoginView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +27,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [customView runAnimations];
 }
 
 

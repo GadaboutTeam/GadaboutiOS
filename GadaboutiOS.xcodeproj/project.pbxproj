@@ -33,7 +33,6 @@
 		FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */; };
 		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
 		FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */; };
-		FA9911A91A81BC5F00714F7D /* FacebookLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A81A81BC5F00714F7D /* FacebookLoginView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,8 +95,6 @@
 		FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushStoryBoardSegue.m; sourceTree = "<group>"; };
 		FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAuthorizationViewController.h; sourceTree = "<group>"; };
 		FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAuthorizationViewController.m; sourceTree = "<group>"; };
-		FA9911A71A81BC5F00714F7D /* FacebookLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLoginView.h; sourceTree = "<group>"; };
-		FA9911A81A81BC5F00714F7D /* FacebookLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLoginView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,8 +303,6 @@
 			children = (
 				6355B42B1A9CFDF600D25215 /* SetupView.h */,
 				6355B42C1A9CFDF600D25215 /* SetupView.m */,
-				FA9911A71A81BC5F00714F7D /* FacebookLoginView.h */,
-				FA9911A81A81BC5F00714F7D /* FacebookLoginView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,7 +461,6 @@
 				6355B4331A9D10FB00D25215 /* GhostButton.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
-				FA9911A91A81BC5F00714F7D /* FacebookLoginView.m in Sources */,
 				FA9911931A8069CB00714F7D /* Invitation.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
