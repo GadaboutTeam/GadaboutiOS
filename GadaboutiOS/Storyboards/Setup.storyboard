@@ -160,6 +160,9 @@
                                         <include reference="hWq-Wo-aG4"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="loginWithFacebook:" destination="gru-P3-Ud7" eventType="touchUpInside" id="lL1-dp-ivB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sign up with Facebook." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBa-hM-GmM">
                                 <rect key="frame" x="172" y="140" width="256" height="21"/>
