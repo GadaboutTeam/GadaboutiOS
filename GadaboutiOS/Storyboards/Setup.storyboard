@@ -51,7 +51,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="gru-P3-Ud7" kind="custom" customClass="PushStoryBoardSegue" id="EOb-Ko-9nu"/>
+                                    <segue destination="gru-P3-Ud7" kind="show" id="fb5-34-dl4"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Find out what your friends are doing." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ifc-w6-8wU">
