@@ -28,13 +28,8 @@
 - (void)loadProperStoryboard {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard;
-    
-//    // If the user is already logged in to FB, jump to the main storyboard
-//    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-//        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    } else {
-//        storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-//    }
+
+
     
     storyboard = [UIStoryboard storyboardWithName:@"Setup" bundle:nil];
     
@@ -52,6 +47,14 @@
 
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [self.window setBackgroundColor:[UIColor whiteColor]];
+}
+
+#pragma mark - Facebook Helper
+- (void)openExistingFacebookSession {
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        // Not doing anything after the session is opened.
+        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:NO completionHandler:nil];
+    }
 }
 
 
