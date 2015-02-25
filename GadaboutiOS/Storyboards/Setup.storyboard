@@ -212,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="924" y="273"/>
         </scene>
-        <!--View Controller-->
+        <!--Location Authorization View Controller-->
         <scene sceneID="Idj-D0-Z32">
             <objects>
-                <viewController id="QiP-ov-0Nh" sceneMemberID="viewController">
+                <viewController id="QiP-ov-0Nh" customClass="LocationAuthorizationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bkg-lv-ZUi"/>
                         <viewControllerLayoutGuide type="bottom" id="EVD-hV-eyB"/>
@@ -251,6 +251,9 @@
                                         <include reference="aSa-BJ-uhT"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="requestAuthorization:" destination="QiP-ov-0Nh" eventType="touchUpInside" id="Ji1-35-GGb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
