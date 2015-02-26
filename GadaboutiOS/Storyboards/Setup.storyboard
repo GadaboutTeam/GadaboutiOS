@@ -60,7 +60,7 @@
                                     <constraint firstAttribute="height" constant="52" id="rJn-cb-iCb"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -224,6 +224,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="One more thing..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6N-Tm-LwW">
+                                <rect key="frame" x="172" y="140" width="256" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="84" y="140" width="233" height="37"/>
+                                </variation>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="We need your location so we can find your friends." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l67-pN-15x">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="60" y="185" width="280" height="97"/>
+                                </variation>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9L-zH-1IO" customClass="GhostButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -231,12 +249,12 @@
                                         <variation key="widthClass=compact" constant="44"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="140" id="ijW-IJ-1hc">
-                                        <variation key="widthClass=compact" constant="270"/>
+                                        <variation key="widthClass=compact" constant="220"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
-                                <state key="normal" title="Grant Location Permission">
+                                <state key="normal" title="Grant Permission">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -260,10 +278,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="q9L-zH-1IO" secondAttribute="centerX" id="Iba-Au-KnW"/>
-                            <constraint firstItem="EVD-hV-eyB" firstAttribute="top" secondItem="q9L-zH-1IO" secondAttribute="bottom" constant="33" id="XT8-BL-MjU"/>
+                            <constraint firstItem="EVD-hV-eyB" firstAttribute="top" secondItem="q9L-zH-1IO" secondAttribute="bottom" constant="33" id="XT8-BL-MjU">
+                                <variation key="widthClass=compact" constant="33"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="w6N-Tm-LwW"/>
+                                <exclude reference="l67-pN-15x"/>
                                 <exclude reference="q9L-zH-1IO"/>
                             </mask>
                             <mask key="constraints">
@@ -273,6 +295,8 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="w6N-Tm-LwW"/>
+                                <include reference="l67-pN-15x"/>
                                 <include reference="q9L-zH-1IO"/>
                             </mask>
                             <mask key="constraints">

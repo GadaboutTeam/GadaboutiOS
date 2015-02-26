@@ -23,8 +23,8 @@
 - (void)setupAppearence {
     // border
     [self.layer setBorderWidth:1.0f];
-    [self.layer setBorderColor:[UIColor whiteColor].CGColor];
-    [self.layer setCornerRadius: 4.0f];
+    [self.layer setBorderColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.8].CGColor];
+    [self.layer setCornerRadius: 5.0f];
     
     // background
     [self setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.2]];
