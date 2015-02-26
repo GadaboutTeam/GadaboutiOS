@@ -14,15 +14,20 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self setupButtonBorder];
+    [self setupAppearence];
+    [self animationSetup];
 }
 
 #pragma mark - UIButton Overrides
 
-- (void)setupButtonBorder {
+- (void)setupAppearence {
+    // border
     [self.layer setBorderWidth:1.0f];
     [self.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self.layer setCornerRadius: 4.0f];
+    
+    // background
+    [self setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.2]];
 }
 
 #pragma mark - Animations

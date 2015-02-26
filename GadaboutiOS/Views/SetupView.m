@@ -16,10 +16,12 @@
     [self setBackgroundGradient];
 }
 
+// previous color: [UIColor colorWithRed:0.14 green:0.18 blue:0.5 alpha:1]
+
 - (void)setBackgroundGradient {
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
-    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.36 green:0.62 blue:0.91 alpha:1] CGColor], (id)[[UIColor colorWithRed:0.16 green:0.38 blue:0.75 alpha:1] CGColor], nil];
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.14 green:0.18 blue:0.5 alpha:1] CGColor], (id)[[UIColor colorWithRed:0.41 green:0.5 blue:0.84 alpha:1] CGColor], nil];
     
     [self.layer insertSublayer:gradient atIndex:0];
 
