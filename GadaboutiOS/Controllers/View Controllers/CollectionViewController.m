@@ -34,10 +34,6 @@ NSMutableArray *array;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    if (![locationController hasAskedForAuthorization]) {
-        LocationAuthorizationViewController *locationAuthController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LocationAuthorizationView"];
-        [self.navigationController presentViewController:locationAuthController animated:YES completion:nil];
-    }
 }
 
 

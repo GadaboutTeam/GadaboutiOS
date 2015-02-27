@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24F-rL-NpA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24F-rL-NpA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Collection View Controller-->
@@ -67,62 +66,10 @@
             </objects>
             <point key="canvasLocation" x="417" y="747"/>
         </scene>
-        <!--Grant Location Access-->
-        <scene sceneID="oqP-Cw-XaJ">
-            <objects>
-                <viewController storyboardIdentifier="LocationAuthorizationView" title="Grant Location Access" id="gdp-7p-lzm" customClass="LocationAuthorizationViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MR0-Sn-Zxp"/>
-                        <viewControllerLayoutGuide type="bottom" id="mLR-Aa-l6r"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RgV-Wc-43R">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOv-ci-48H" customClass="ProminentButton">
-                                <rect key="frame" x="148" y="534" width="304" height="46"/>
-                                <color key="backgroundColor" red="0.1625021156" green="0.65598486040000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="3uA-Qa-PYq"/>
-                                    <constraint firstAttribute="width" secondItem="DOv-ci-48H" secondAttribute="height" multiplier="152:23" id="BQf-6l-djr"/>
-                                    <constraint firstAttribute="width" constant="304" id="CKI-qf-Gwf"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="304" id="YqJ-vF-SdP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
-                                <state key="normal" title="Grant Location Permissions">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="248" y="534" width="304" height="46"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="248" y="734" width="304" height="46"/>
-                                </variation>
-                                <connections>
-                                    <action selector="requestAuthorization:" destination="gdp-7p-lzm" eventType="touchUpInside" id="62p-Wn-sey"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="mLR-Aa-l6r" firstAttribute="top" secondItem="DOv-ci-48H" secondAttribute="bottom" constant="20" id="b11-ec-1CZ"/>
-                            <constraint firstAttribute="centerX" secondItem="DOv-ci-48H" secondAttribute="centerX" id="fnP-4f-10l"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="requestAuthorizationButton" destination="DOv-ci-48H" id="DwQ-Rp-nRI"/>
-                        <outlet property="view" destination="RgV-Wc-43R" id="HRL-Rh-UKm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Is-tW-QHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="19.5" y="1520"/>
-        </scene>
-        <!--Navigation View Controller-->
+        <!--Nearby Friends-->
         <scene sceneID="OvU-my-8ry">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24F-rL-NpA" customClass="NavigationViewController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nearby" title="Nearby Friends" automaticallyAdjustsScrollViewInsets="NO" id="24F-rL-NpA" customClass="NavigationViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ukl-Wm-PhU" customClass="NavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -133,7 +80,6 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="QnP-oa-wAQ" kind="relationship" relationship="rootViewController" id="Uge-o5-BNI"/>
-                        <segue destination="gdp-7p-lzm" kind="presentation" identifier="LocationAuthSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="UHc-68-KW4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="la3-WC-LcY" userLabel="First Responder" sceneMemberID="firstResponder"/>

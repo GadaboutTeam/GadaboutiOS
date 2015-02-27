@@ -36,6 +36,7 @@
     } else {
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
             NSLog(@"User successfully logged in.");
+            [self performSegueWithIdentifier:@"PushToLocation" sender:self];
         }];
     }
 }
