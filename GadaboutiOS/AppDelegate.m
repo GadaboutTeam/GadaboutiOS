@@ -31,7 +31,7 @@
 
 
     
-    storyboard = [UIStoryboard storyboardWithName:@"Setup" bundle:nil];
+    storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.window.rootViewController = [storyboard instantiateInitialViewController];
     [self.window makeKeyAndVisible];

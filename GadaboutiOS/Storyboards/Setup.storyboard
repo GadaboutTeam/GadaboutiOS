@@ -309,30 +309,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="mFD-Bb-oUq"/>
-                    <connections>
-                        <segue destination="vrg-Xd-oCJ" kind="custom" identifier="CollectionView@Main" customClass="PushStoryBoardSegue" id="zjs-9l-GQo"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgJ-jn-DnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1668" y="273"/>
-        </scene>
-        <!--Placeholder-->
-        <scene sceneID="yTV-7g-OcO">
-            <objects>
-                <viewController title="Placeholder" id="vrg-Xd-oCJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Sj-fA-Uyr"/>
-                        <viewControllerLayoutGuide type="bottom" id="IRy-5R-8Tb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ka1-DX-tl0">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzu-EF-5jF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2529" y="273"/>
         </scene>
     </scenes>
 </document>

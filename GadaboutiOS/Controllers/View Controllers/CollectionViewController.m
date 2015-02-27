@@ -23,6 +23,7 @@ NSMutableArray *array;
     [super viewDidLoad];
     
     locationController = [[LocationController alloc] init];
+    NSLog(@"Collection View is loaded.");
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
