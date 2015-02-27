@@ -29,7 +29,6 @@
 		FA9911931A8069CB00714F7D /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911901A8069CB00714F7D /* Invitation.m */; };
 		FA9911941A8069CB00714F7D /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* Friend.m */; };
 		FA9911971A807B2900714F7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911961A807B2900714F7D /* User.m */; };
-		FA9911991A80933100714F7D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9911981A80933100714F7D /* Login.storyboard */; };
 		FA99119C1A80A3DF00714F7D /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */; };
 		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
 		FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */; };
@@ -88,7 +87,6 @@
 		FA9911921A8069CB00714F7D /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		FA9911951A807B2900714F7D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FA9911961A807B2900714F7D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		FA9911981A80933100714F7D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FA99119A1A80A3DF00714F7D /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
 		FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
 		FA9911A01A80BCB800714F7D /* PushStoryBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushStoryBoardSegue.h; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			children = (
 				63BA5EB71A7BD895009A212E /* Main.storyboard */,
 				6355B4251A9CF0BF00D25215 /* Setup.storyboard */,
-				FA9911981A80933100714F7D /* Login.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -399,7 +396,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6355B4261A9CF0BF00D25215 /* Setup.storyboard in Resources */,
-				FA9911991A80933100714F7D /* Login.storyboard in Resources */,
 				63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */,
 				63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */,
 				63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */,

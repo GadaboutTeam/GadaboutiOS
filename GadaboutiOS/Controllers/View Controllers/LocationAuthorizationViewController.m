@@ -42,7 +42,7 @@
 */
 
 - (void)permissionStatusChanged:(id)locationController {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"CollectionView@Main" sender:self];
 }
 
 @end

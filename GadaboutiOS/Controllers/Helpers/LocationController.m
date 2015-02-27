@@ -91,7 +91,7 @@
         NSUInteger authCode = [CLLocationManager authorizationStatus];
         NSLog(@"Requesting location tracking permission; Auth status: %lu", (unsigned long)authCode);
         if ((unsigned long)authCode == kCLAuthorizationStatusNotDetermined && [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-            [locationManager requestWhenInUseAuthorization];
+            [locationManager requestAlwaysAuthorization];
         }
     }
 }
