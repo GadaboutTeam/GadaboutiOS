@@ -15,6 +15,7 @@
 		6355B4331A9D10FB00D25215 /* GhostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* GhostButton.m */; };
 		636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F31A81BA9100A9AE57 /* NavigationBar.m */; };
 		636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F61A81BCB700A9AE57 /* NavigationViewController.m */; };
+		63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
 		63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EB21A7BD895009A212E /* AppDelegate.m */; };
 		63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EB71A7BD895009A212E /* Main.storyboard */; };
@@ -62,6 +63,8 @@
 		636185F31A81BA9100A9AE57 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
 		636185F51A81BCB700A9AE57 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		636185F61A81BCB700A9AE57 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		63AA4CCF1AA0C86E00B25274 /* NetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingManager.h; sourceTree = "<group>"; };
+		63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingManager.m; sourceTree = "<group>"; };
 		63BA5EAA1A7BD895009A212E /* GadaboutiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GadaboutiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EAE1A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EAF1A7BD895009A212E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				FA1923B21A7BE1ED00561568 /* LocationController.m */,
 				63BD18451A980D320017B58F /* FBGraphController.h */,
 				63BD18461A980D320017B58F /* FBGraphController.m */,
+				63AA4CCF1AA0C86E00B25274 /* NetworkingManager.h */,
+				63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				FA99118E1A80660900714F7D /* CollectionViewController.m in Sources */,
+				63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */,
 				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,
 				63BD18471A980D320017B58F /* FBGraphController.m in Sources */,
 				6300E7A81A81A3180007CD3A /* CollectionViewCell.m in Sources */,
