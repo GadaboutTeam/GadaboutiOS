@@ -28,10 +28,13 @@
 - (void)loadProperStoryboard {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard;
-
-
     
-    storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    // If the user is already logged in to FB, jump to the main storyboard
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    } else {
+        storyboard = [UIStoryboard storyboardWithName:@"Setup" bundle:nil];
+    }
     
     self.window.rootViewController = [storyboard instantiateInitialViewController];
     [self.window makeKeyAndVisible];
