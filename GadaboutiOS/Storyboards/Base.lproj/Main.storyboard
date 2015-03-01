@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24F-rL-NpA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lvn-jU-gMX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -64,27 +64,25 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uH-IO-D9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="747"/>
+            <point key="canvasLocation" x="1229" y="747"/>
         </scene>
-        <!--Nearby Friends-->
-        <scene sceneID="OvU-my-8ry">
+        <!--Navigation View Controller-->
+        <scene sceneID="Wsu-sa-Xfn">
             <objects>
-                <navigationController storyboardIdentifier="Nearby" title="Nearby Friends" automaticallyAdjustsScrollViewInsets="NO" id="24F-rL-NpA" customClass="NavigationViewController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lvn-jU-gMX" customClass="NavigationViewController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ukl-Wm-PhU" customClass="NavigationBar">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jNa-6B-KgZ" customClass="NavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.49019607840000001" green="0.54901960780000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.49019607840000001" green="0.54901960780000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="QnP-oa-wAQ" kind="relationship" relationship="rootViewController" id="Uge-o5-BNI"/>
+                        <segue destination="QnP-oa-wAQ" kind="relationship" relationship="rootViewController" id="Sfi-Wz-NKS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="la3-WC-LcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rel-G7-mOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-395" y="747"/>
+            <point key="canvasLocation" x="417" y="747"/>
         </scene>
     </scenes>
 </document>
