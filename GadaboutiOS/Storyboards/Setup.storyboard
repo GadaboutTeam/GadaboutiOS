@@ -48,7 +48,7 @@
                                     <action selector="loginWithFacebook:" destination="gru-P3-Ud7" eventType="touchUpInside" id="lL1-dp-ivB"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="The best way to find out what your friends are doing." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUL-bO-SRp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="It's the best way to find out what your friends are doing." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUL-bO-SRp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="5F9-Yi-8hV"/>
