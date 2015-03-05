@@ -2,10 +2,11 @@
 # platform :ios, '6.0'
 
 target 'GadaboutiOS' do
-  pod 'Realm', '~> 0.90.4'
-  pod 'pop', '~> 1.0.7'
-  pod 'Facebook-iOS-SDK', '~> 3.22.0'
-  pod 'AFNetworking', '~> 2.0'
+  pod 'Realm', '~> 0.90.4' # persistence
+  pod 'pop', '~> 1.0.7' # animation
+  pod 'Facebook-iOS-SDK', '~> 3.22.0' # login
+  pod 'AFNetworking', '~> 2.0' # networking
+  pod 'VENTokenField', '~> 2.0' # for composing messages
 end
 
 target 'GadaboutiOSTests' do
