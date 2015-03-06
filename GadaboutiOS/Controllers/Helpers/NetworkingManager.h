@@ -6,8 +6,16 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "AFHTTPSessionManager.h"
+#import "AFNetworking.h"
 
-@interface NetworkingManager : AFHTTPSessionManager
+FOUNDATION_EXPORT NSString *const DomainURL;
+FOUNDATION_EXPORT NSString *const createUser;
+
+
+@interface NetworkingManager : AFHTTPSessionManager {
+    AFHTTPRequestOperationManager *manager;
+}
+
+- (void)sendDictionary:(NSDictionary*)dictionary toService:(NSString*)service;
 
 @end
