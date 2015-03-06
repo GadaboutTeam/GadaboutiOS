@@ -7,6 +7,7 @@
 //
 
 #import "AFNetworking.h"
+#import "User.h"
 
 FOUNDATION_EXPORT NSString *const DomainURL;
 FOUNDATION_EXPORT NSString *const createUser;

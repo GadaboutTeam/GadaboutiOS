@@ -24,6 +24,7 @@ NSString *const createUser = @"users";
 
 - (void)sendDictionary:(NSDictionary *)dictionary toService:(NSString *)service{
     NSString *postURL = [DomainURL stringByAppendingString:service];
+    User *currentUser = [[User allObjects] firstObject];
 
     [manager POST:postURL
        parameters:dictionary
