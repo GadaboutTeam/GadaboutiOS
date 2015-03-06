@@ -45,7 +45,6 @@
 - (void)setupAppearence {
     UINavigationBar *navigationBarAppearence = [UINavigationBar appearance];
     
-    navigationBarAppearence.tintColor = [UIColor whiteColor];
     navigationBarAppearence.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;

@@ -12,11 +12,6 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self setupAppearence];
-}
-
-- (void)setupAppearence {
-    self.backgroundColor = [UIColor whiteColor];
 }
 
 @end

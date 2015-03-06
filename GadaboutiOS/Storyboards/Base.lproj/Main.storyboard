@@ -60,7 +60,13 @@
                             <outlet property="delegate" destination="QnP-oa-wAQ" id="UuU-2S-pZK"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="L8o-ko-keR"/>
+                    <navigationItem key="navigationItem" id="L8o-ko-keR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="J7g-1P-YfC">
+                            <connections>
+                                <segue destination="zUy-Ku-iYc" kind="presentation" modalPresentationStyle="currentContext" id="AxR-nn-6h3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uH-IO-D9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

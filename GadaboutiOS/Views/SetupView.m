@@ -16,8 +16,6 @@
     [self setBackgroundGradient];
 }
 
-// previous color: [UIColor colorWithRed:0.14 green:0.18 blue:0.5 alpha:1]
-
 - (void)setBackgroundGradient {
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
