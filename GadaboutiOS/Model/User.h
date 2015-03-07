@@ -11,9 +11,12 @@
 
 @interface User : RLMObject
 
-@property NSInteger *userID;
+@property NSUInteger *userID;
 @property NSString *facebookID;
-@property NSString *name;
+@property NSString *authToken;
+@property NSString *firstName;
+@property NSString *lastName;
+@property NSString *email;
 @property RLMArray<Friend> *friends;
 @property NSData *profilePhoto;
 

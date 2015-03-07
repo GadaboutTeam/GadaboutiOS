@@ -31,8 +31,10 @@
     
     // If the user is already logged in to FB, jump to the main storyboard
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        NSLog(@"Presenting the main storyboard.");
         storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     } else {
+        NSLog(@"Presenting the setup storyboard.");
         storyboard = [UIStoryboard storyboardWithName:@"Setup" bundle:nil];
     }
     
