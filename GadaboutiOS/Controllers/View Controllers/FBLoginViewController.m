@@ -8,10 +8,13 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 #import <pop/POP.h>
+#import <Shimmer/FBShimmeringView.h>
 #import "FBLoginViewController.h"
 #import "PushStoryBoardSegue.h"
 
 @interface FBLoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -19,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupAnimatedTitleView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +45,17 @@
         }];
     }
     [FBGraphController updateUserInfo];
+}
+
+#pragma mark - Title View Animations
+
+- (void)setupAnimatedTitleView {
+    FBShimmeringView *shimmeringTitle = [[FBShimmeringView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:shimmeringTitle];
+    shimmeringTitle.contentView = _titleLabel;
+    
+    // start the actual shimmering
+    shimmeringTitle.shimmering = YES;
 }
 
 /*

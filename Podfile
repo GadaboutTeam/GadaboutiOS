@@ -7,6 +7,7 @@ target 'GadaboutiOS' do
   pod 'Facebook-iOS-SDK', '~> 3.22.0' # login
   pod 'AFNetworking', '~> 2.0' # networking
   pod 'VENTokenField', '~> 2.0' # for composing messages
+  pod 'Shimmer' # for aniamiting titles/loading indicators
 end
 
 target 'GadaboutiOSTests' do
