@@ -85,8 +85,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6F-lZ-VH5" customClass="VENTokenField">
-                                <rect key="frame" x="0.0" y="64" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="coY-mf-JgB"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,7 +97,6 @@
                             <constraint firstItem="i6F-lZ-VH5" firstAttribute="top" secondItem="oHq-3g-ZdL" secondAttribute="bottom" id="UMX-kj-Wsq"/>
                             <constraint firstItem="i6F-lZ-VH5" firstAttribute="leading" secondItem="OHF-ZF-MTk" secondAttribute="leading" id="Xla-Eb-NSW"/>
                             <constraint firstAttribute="trailing" secondItem="i6F-lZ-VH5" secondAttribute="trailing" id="bR9-VK-xea"/>
-                            <constraint firstItem="X5U-oc-XHO" firstAttribute="top" secondItem="i6F-lZ-VH5" secondAttribute="bottom" constant="476" id="vpN-1b-ijO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AMf-aO-sHL">
