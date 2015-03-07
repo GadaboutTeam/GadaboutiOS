@@ -2,6 +2,10 @@
 
 This is a social networking application.
 
+## Implementation Notes
+
+`VENTokenField`'s implemention of colors and labels in the `NewMessageController.m` folder, as there is no way to implement those tthrough subclassing or Storyboards.
+
 ## Design Notes
 
 ### Primary Colors

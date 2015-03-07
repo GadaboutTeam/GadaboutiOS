@@ -7,8 +7,12 @@
 //
 
 #import "NewMessageViewController.h"
+#import "VENTokenField.h"
 
-@interface NewMessageViewController ()
+@interface NewMessageViewController () <VENTokenFieldDelegate, VENTokenFieldDataSource>
+
+@property (weak, nonatomic) IBOutlet VENTokenField *tokenField;
+@property (strong, nonatomic) NSMutableArray *names;
 
 @end
 
@@ -16,12 +20,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTokenField];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - VENTokenField/Setup
+
+- (void)setupTokenField {
+    self.names = [NSMutableArray array];
+    self.tokenField.delegate = self;
+    self.tokenField.dataSource = self;
+    self.tokenField.placeholderText = NSLocalizedString(@"Name", nil);
+    self.tokenField.toLabelText = NSLocalizedString(@"For:", nil);
+    [self.tokenField setColorScheme:[UIColor colorWithRed:0.25 green:0.32 blue:0.63 alpha:1]];
+    [self.tokenField becomeFirstResponder];
+}
+
+#pragma mark - VENTokenField/Delegate
+
+- (void)tokenField:(VENTokenField *)tokenField didEnterText:(NSString *)text {
+    [self.names addObject:text];
+    [self.tokenField reloadData];
+}
+
+- (void)tokenField:(VENTokenField *)tokenField didDeleteTokenAtIndex:(NSUInteger)index {
+    [self.names removeObjectAtIndex:index];
+    [self.tokenField reloadData];
+}
+
+#pragma mark - VENTokenField/Data Source
+
+- (NSString *)tokenField:(VENTokenField *)tokenField titleForTokenAtIndex:(NSUInteger)index {
+    return self.names[index];
+}
+
+- (NSUInteger)numberOfTokensInTokenField:(VENTokenField *)tokenField {
+    return [self.names count];
+}
+
+- (NSString *)tokenFieldCollapsedText:(VENTokenField *)tokenField {
+    return [NSString stringWithFormat:@"%tu people", [self.names count]];
 }
 
 #pragma mark - IBActions
