@@ -27,7 +27,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-
+    
 }
 
 - (IBAction)loginWithFacebook:(id)sender {
@@ -36,20 +36,21 @@
     } else {
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
             NSLog(@"User successfully logged in.");
+            
             [self performSegueWithIdentifier:@"PushToLocation" sender:self];
         }];
     }
+    [FBGraphController updateUserInfo];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark - UIViewControllerTransitioningDelegate methods
 

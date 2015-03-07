@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBGraphController.h"
 
 @interface FBLoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
 
 - (IBAction)loginWithFacebook:(id)sender;
 
 @end
-

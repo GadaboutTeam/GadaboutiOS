@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <Realm/Realm.h>
+#import "User.h"
 
 @interface FBGraphController : NSObject
+
++ (void)updateUserInfo;
 
 @end
