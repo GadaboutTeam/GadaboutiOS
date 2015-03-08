@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'GadaboutiOS' do
-  pod 'Realm', '~> 0.90.4' # persistence
+  pod 'Realm', '~> 0.90.6' # persistence
   pod 'pop', '~> 1.0.7' # animation
   pod 'Facebook-iOS-SDK', '~> 3.22.0' # login
   pod 'AFNetworking', '~> 2.0' # networking

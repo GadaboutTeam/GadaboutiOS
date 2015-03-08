@@ -13,8 +13,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    IBInspectable [self.layer setBorderWidth:2.0f];
-    IBInspectable [self.layer setBorderColor:[UIColor blueColor].CGColor];
+    [self.layer setBorderWidth:2.0f];
 }
 
 @end

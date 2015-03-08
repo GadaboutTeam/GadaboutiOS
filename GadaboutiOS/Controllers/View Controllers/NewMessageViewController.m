@@ -7,11 +7,11 @@
 //
 
 #import "NewMessageViewController.h"
-#import "VENTokenField.h"
+#import "TokenField.h"
 
 @interface NewMessageViewController () <VENTokenFieldDelegate, VENTokenFieldDataSource>
 
-@property (weak, nonatomic) IBOutlet VENTokenField *tokenField;
+@property (weak, nonatomic) IBOutlet TokenField *tokenField;
 @property (strong, nonatomic) NSMutableArray *names;
 
 @end
@@ -21,7 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTokenField];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,12 +31,12 @@
 #pragma mark - VENTokenField/Setup
 
 - (void)setupTokenField {
+    // progamatic setup
     self.names = [NSMutableArray array];
     self.tokenField.delegate = self;
     self.tokenField.dataSource = self;
     self.tokenField.placeholderText = NSLocalizedString(@"Name", nil);
-    self.tokenField.toLabelText = NSLocalizedString(@"For:", nil);
-    [self.tokenField setColorScheme:[UIColor colorWithRed:0.25 green:0.32 blue:0.63 alpha:1]];
+    self.tokenField.toLabelText = NSLocalizedString(@"To:", nil);
     [self.tokenField becomeFirstResponder];
 }
 
