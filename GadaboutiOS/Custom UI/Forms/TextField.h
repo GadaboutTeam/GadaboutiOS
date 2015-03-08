@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 IB_DESIGNABLE
-@interface TextField : UITextField
+@interface TextField : UITextView
 
 @end

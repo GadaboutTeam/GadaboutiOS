@@ -45,6 +45,7 @@
 - (void)tokenField:(VENTokenField *)tokenField didEnterText:(NSString *)text {
     [self.names addObject:text];
     [self.tokenField reloadData];
+    NSLog(@"%@", self.names);
 }
 
 - (void)tokenField:(VENTokenField *)tokenField didDeleteTokenAtIndex:(NSUInteger)index {

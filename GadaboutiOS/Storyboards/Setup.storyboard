@@ -146,17 +146,27 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="84" y="140" width="233" height="37"/>
-                                </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="We need your location so we can find your friends." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l67-pN-15x">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="icg-BD-DM5"/>
+                                    <constraint firstAttribute="height" constant="97" id="v2t-WR-fih"/>
+                                </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="185" width="280" height="97"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="icg-BD-DM5"/>
+                                        <exclude reference="v2t-WR-fih"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="icg-BD-DM5"/>
+                                        <include reference="v2t-WR-fih"/>
+                                    </mask>
                                 </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9L-zH-1IO" customClass="GhostButton">
@@ -194,10 +204,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="l67-pN-15x" firstAttribute="top" secondItem="w6N-Tm-LwW" secondAttribute="bottom" constant="8" id="88K-Vh-22h"/>
                             <constraint firstAttribute="centerX" secondItem="q9L-zH-1IO" secondAttribute="centerX" id="Iba-Au-KnW"/>
+                            <constraint firstAttribute="centerX" secondItem="l67-pN-15x" secondAttribute="centerX" id="PBf-cu-fNC"/>
                             <constraint firstItem="EVD-hV-eyB" firstAttribute="top" secondItem="q9L-zH-1IO" secondAttribute="bottom" constant="33" id="XT8-BL-MjU">
                                 <variation key="widthClass=compact" constant="33"/>
                             </constraint>
+                            <constraint firstItem="w6N-Tm-LwW" firstAttribute="top" secondItem="bkg-lv-ZUi" secondAttribute="bottom" constant="120" id="l6j-cn-ftT"/>
+                            <constraint firstAttribute="centerX" secondItem="w6N-Tm-LwW" secondAttribute="centerX" constant="-0.5" id="lZo-pB-0yY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -206,8 +220,12 @@
                                 <exclude reference="q9L-zH-1IO"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="XT8-BL-MjU"/>
+                                <exclude reference="l6j-cn-ftT"/>
+                                <exclude reference="lZo-pB-0yY"/>
+                                <exclude reference="88K-Vh-22h"/>
+                                <exclude reference="PBf-cu-fNC"/>
                                 <exclude reference="Iba-Au-KnW"/>
+                                <exclude reference="XT8-BL-MjU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -217,8 +235,12 @@
                                 <include reference="q9L-zH-1IO"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="XT8-BL-MjU"/>
+                                <include reference="l6j-cn-ftT"/>
+                                <include reference="lZo-pB-0yY"/>
+                                <include reference="88K-Vh-22h"/>
+                                <include reference="PBf-cu-fNC"/>
                                 <include reference="Iba-Au-KnW"/>
+                                <include reference="XT8-BL-MjU"/>
                             </mask>
                         </variation>
                     </view>

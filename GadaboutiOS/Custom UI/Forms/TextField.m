@@ -10,15 +10,9 @@
 
 @implementation TextField
 
-static const CGFloat VENTokenFieldDefaultVerticalInset      = 7.0;
-static const CGFloat VENTokenFieldDefaultHorizontalInset    = 15.0;
-static const CGFloat VENTokenFieldDefaultToLabelPadding     = 5.0;
-static const CGFloat VENTokenFieldDefaultTokenPadding       = 2.0;
-static const CGFloat VENTokenFieldDefaultMinInputWidth      = 80.0;
-static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
-
 -(void)layoutSubviews {
     [super layoutSubviews];
+    [self setTextContainerInset:UIEdgeInsetsMake(13, 45, 0, 0)];
 }
 
 // for insetting the placeholder
