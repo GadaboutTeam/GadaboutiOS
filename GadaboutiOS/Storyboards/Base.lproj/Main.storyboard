@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lvn-jU-gMX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Collection View Controller-->
@@ -61,17 +63,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbZ-Yr-hQ2" customClass="TokenField">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="IAO-IF-RHX"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IAO-IF-RHX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="IAO-IF-RHX"/>
+                                    </mask>
                                 </variation>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQ1-DV-qcp" customClass="TextField">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Exi-vW-2Mx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="108" width="400" height="44"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Exi-vW-2Mx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Exi-vW-2Mx"/>
+                                    </mask>
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9o-yb-B29">
@@ -80,16 +102,61 @@
                                 <color key="textColor" red="0.43782448768615723" green="0.48648422956466675" blue="0.48673433065414429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="119" width="42" height="21"/>
+                                    <rect key="frame" x="16" y="119" width="30" height="21"/>
                                 </variation>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vFD-61-Zku">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="K83-qY-D4i">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K83-qY-D4i" id="zai-x4-Kd6">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FQQ-Ns-IMX">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQQ-Ns-IMX" id="knu-y5-Ckc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vFD-61-Zku" firstAttribute="trailing" secondItem="BQ1-DV-qcp" secondAttribute="trailing" id="EGu-c1-yBI"/>
+                            <constraint firstItem="tbZ-Yr-hQ2" firstAttribute="leading" secondItem="OHF-ZF-MTk" secondAttribute="leadingMargin" constant="-16" id="H9C-cf-Cz8"/>
+                            <constraint firstAttribute="centerX" secondItem="tbZ-Yr-hQ2" secondAttribute="centerX" id="LMx-SJ-GXR"/>
+                            <constraint firstItem="BQ1-DV-qcp" firstAttribute="leading" secondItem="OHF-ZF-MTk" secondAttribute="leadingMargin" constant="-16" id="T1V-Dv-7eZ"/>
+                            <constraint firstItem="BQ1-DV-qcp" firstAttribute="top" secondItem="oHq-3g-ZdL" secondAttribute="bottom" constant="44" id="TZ0-Jp-hfY"/>
+                            <constraint firstItem="vFD-61-Zku" firstAttribute="top" secondItem="BQ1-DV-qcp" secondAttribute="bottom" id="Yrx-wX-yZF"/>
+                            <constraint firstItem="vFD-61-Zku" firstAttribute="leading" secondItem="BQ1-DV-qcp" secondAttribute="leading" id="eYy-AE-wh9"/>
+                            <constraint firstItem="vFD-61-Zku" firstAttribute="bottom" secondItem="X5U-oc-XHO" secondAttribute="top" id="eh5-5S-yxs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BQ1-DV-qcp" secondAttribute="trailing" constant="-16" id="lpt-Q0-ZjF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tbZ-Yr-hQ2" secondAttribute="trailing" constant="-16" id="vVw-Ni-xSk"/>
+                            <constraint firstItem="tbZ-Yr-hQ2" firstAttribute="top" secondItem="oHq-3g-ZdL" secondAttribute="bottom" id="vqS-9I-xuE"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="tbZ-Yr-hQ2"/>
                                 <exclude reference="BQ1-DV-qcp"/>
                                 <exclude reference="z9o-yb-B29"/>
+                                <exclude reference="vFD-61-Zku"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="H9C-cf-Cz8"/>
+                                <exclude reference="LMx-SJ-GXR"/>
+                                <exclude reference="vVw-Ni-xSk"/>
+                                <exclude reference="vqS-9I-xuE"/>
+                                <exclude reference="T1V-Dv-7eZ"/>
+                                <exclude reference="TZ0-Jp-hfY"/>
+                                <exclude reference="lpt-Q0-ZjF"/>
+                                <exclude reference="EGu-c1-yBI"/>
+                                <exclude reference="Yrx-wX-yZF"/>
+                                <exclude reference="eYy-AE-wh9"/>
+                                <exclude reference="eh5-5S-yxs"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -97,6 +164,20 @@
                                 <include reference="tbZ-Yr-hQ2"/>
                                 <include reference="BQ1-DV-qcp"/>
                                 <include reference="z9o-yb-B29"/>
+                                <include reference="vFD-61-Zku"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="H9C-cf-Cz8"/>
+                                <include reference="LMx-SJ-GXR"/>
+                                <include reference="vVw-Ni-xSk"/>
+                                <include reference="vqS-9I-xuE"/>
+                                <include reference="T1V-Dv-7eZ"/>
+                                <include reference="TZ0-Jp-hfY"/>
+                                <include reference="lpt-Q0-ZjF"/>
+                                <include reference="EGu-c1-yBI"/>
+                                <include reference="Yrx-wX-yZF"/>
+                                <include reference="eYy-AE-wh9"/>
+                                <include reference="eh5-5S-yxs"/>
                             </mask>
                         </variation>
                     </view>
