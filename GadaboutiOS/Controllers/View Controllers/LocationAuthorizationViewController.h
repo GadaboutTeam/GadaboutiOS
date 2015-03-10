@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CollectionViewController.h"
 #import "LocationController.h"
 
 @interface LocationAuthorizationViewController : UIViewController <LocationControllerDelegate> {
