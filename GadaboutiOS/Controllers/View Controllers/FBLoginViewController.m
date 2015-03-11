@@ -8,13 +8,10 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 #import <pop/POP.h>
-#import <Shimmer/FBShimmeringView.h>
 #import "FBLoginViewController.h"
 #import "PushStoryBoardSegue.h"
 
 @interface FBLoginViewController ()
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -22,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupAnimatedTitleView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +27,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
+
 }
 
 - (IBAction)loginWithFacebook:(id)sender {
@@ -40,32 +36,22 @@
     } else {
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
             NSLog(@"User successfully logged in.");
-            
+
             [self performSegueWithIdentifier:@"PushToLocation" sender:self];
         }];
     }
     [FBGraphController updateUserInfo];
 }
 
-#pragma mark - Title View Animations
-
-- (void)setupAnimatedTitleView {
-    FBShimmeringView *shimmeringTitle = [[FBShimmeringView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:shimmeringTitle];
-    shimmeringTitle.contentView = _titleLabel;
-    
-    // start the actual shimmering
-    shimmeringTitle.shimmering = YES;
-}
-
 /*
- #pragma mark - Navigation
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 #pragma mark - UIViewControllerTransitioningDelegate methods
 

@@ -54,7 +54,6 @@
                                   [currentUser setFirstName:first_name];
                                   [currentUser setLastName:last_name];
                                   [currentUser setEmail:email];
-                                  
                                   [User createOrUpdateInDefaultRealmWithObject:currentUser];
                               }
                               

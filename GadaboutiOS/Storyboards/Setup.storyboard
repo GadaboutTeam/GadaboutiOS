@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gru-P3-Ud7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gru-P3-Ud7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -220,12 +220,12 @@
                                 <exclude reference="q9L-zH-1IO"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="l6j-cn-ftT"/>
-                                <exclude reference="lZo-pB-0yY"/>
+                                <exclude reference="XT8-BL-MjU"/>
+                                <exclude reference="Iba-Au-KnW"/>
                                 <exclude reference="88K-Vh-22h"/>
                                 <exclude reference="PBf-cu-fNC"/>
-                                <exclude reference="Iba-Au-KnW"/>
-                                <exclude reference="XT8-BL-MjU"/>
+                                <exclude reference="l6j-cn-ftT"/>
+                                <exclude reference="lZo-pB-0yY"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -235,12 +235,12 @@
                                 <include reference="q9L-zH-1IO"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="l6j-cn-ftT"/>
-                                <include reference="lZo-pB-0yY"/>
+                                <include reference="XT8-BL-MjU"/>
+                                <include reference="Iba-Au-KnW"/>
                                 <include reference="88K-Vh-22h"/>
                                 <include reference="PBf-cu-fNC"/>
-                                <include reference="Iba-Au-KnW"/>
-                                <include reference="XT8-BL-MjU"/>
+                                <include reference="l6j-cn-ftT"/>
+                                <include reference="lZo-pB-0yY"/>
                             </mask>
                         </variation>
                     </view>
