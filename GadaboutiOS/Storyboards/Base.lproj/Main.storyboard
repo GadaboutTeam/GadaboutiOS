@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PoD-aO-lq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PoD-aO-lq4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -104,13 +104,13 @@
                                 <exclude reference="vFD-61-Zku"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="T1V-Dv-7eZ"/>
+                                <exclude reference="TZ0-Jp-hfY"/>
+                                <exclude reference="lpt-Q0-ZjF"/>
                                 <exclude reference="H9C-cf-Cz8"/>
                                 <exclude reference="LMx-SJ-GXR"/>
                                 <exclude reference="vVw-Ni-xSk"/>
                                 <exclude reference="vqS-9I-xuE"/>
-                                <exclude reference="T1V-Dv-7eZ"/>
-                                <exclude reference="TZ0-Jp-hfY"/>
-                                <exclude reference="lpt-Q0-ZjF"/>
                                 <exclude reference="EGu-c1-yBI"/>
                                 <exclude reference="Yrx-wX-yZF"/>
                                 <exclude reference="eYy-AE-wh9"/>
@@ -125,13 +125,13 @@
                                 <include reference="vFD-61-Zku"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="T1V-Dv-7eZ"/>
+                                <include reference="TZ0-Jp-hfY"/>
+                                <include reference="lpt-Q0-ZjF"/>
                                 <include reference="H9C-cf-Cz8"/>
                                 <include reference="LMx-SJ-GXR"/>
                                 <include reference="vVw-Ni-xSk"/>
                                 <include reference="vqS-9I-xuE"/>
-                                <include reference="T1V-Dv-7eZ"/>
-                                <include reference="TZ0-Jp-hfY"/>
-                                <include reference="lpt-Q0-ZjF"/>
                                 <include reference="EGu-c1-yBI"/>
                                 <include reference="Yrx-wX-yZF"/>
                                 <include reference="eYy-AE-wh9"/>
@@ -162,8 +162,9 @@
         <!--Table View Controller-->
         <scene sceneID="Z4U-n4-ac8">
             <objects>
-                <tableViewController id="MNw-Bg-kLA" sceneMemberID="viewController">
+                <tableViewController id="MNw-Bg-kLA" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Di7-tz-Dl6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

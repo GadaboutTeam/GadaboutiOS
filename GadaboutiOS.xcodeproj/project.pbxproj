@@ -17,6 +17,7 @@
 		636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F61A81BCB700A9AE57 /* NavigationViewController.m */; };
 		6399F8171AABA7C300C60719 /* TokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6399F8161AABA7C300C60719 /* TokenField.m */; };
 		6399F81B1AABE3AE00C60719 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6399F81A1AABE3AE00C60719 /* TextField.m */; };
+		6399F8211AAE854500C60719 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6399F8201AAE854500C60719 /* TableViewController.m */; };
 		63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
 		63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EB21A7BD895009A212E /* AppDelegate.m */; };
@@ -68,6 +69,8 @@
 		6399F8161AABA7C300C60719 /* TokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TokenField.m; path = Forms/TokenField.m; sourceTree = "<group>"; };
 		6399F8191AABE3AE00C60719 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextField.h; path = Forms/TextField.h; sourceTree = "<group>"; };
 		6399F81A1AABE3AE00C60719 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextField.m; path = Forms/TextField.m; sourceTree = "<group>"; };
+		6399F81F1AAE854500C60719 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		6399F8201AAE854500C60719 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		63AA4CCF1AA0C86E00B25274 /* NetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingManager.h; sourceTree = "<group>"; };
 		63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingManager.m; sourceTree = "<group>"; };
 		63BA5EAA1A7BD895009A212E /* GadaboutiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GadaboutiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +196,8 @@
 		6355B4351A9D224D00D25215 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6399F81F1AAE854500C60719 /* TableViewController.h */,
+				6399F8201AAE854500C60719 /* TableViewController.m */,
 				FA99119A1A80A3DF00714F7D /* FBLoginViewController.h */,
 				FA99119B1A80A3DF00714F7D /* FBLoginViewController.m */,
 				FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */,
@@ -478,6 +483,7 @@
 				63BD18471A980D320017B58F /* FBGraphController.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
 				6355B4241A9C028D00D25215 /* ProminentButton.m in Sources */,
+				6399F8211AAE854500C60719 /* TableViewController.m in Sources */,
 				FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
