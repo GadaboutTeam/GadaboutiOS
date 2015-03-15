@@ -228,5 +228,129 @@
             </objects>
             <point key="canvasLocation" x="415.5" y="845"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Bb3-RZ-eKh">
+            <objects>
+                <viewController id="wJh-7R-SuN" customClass="FBLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eoy-uS-0fU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tnf-JQ-NUi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gfi-CQ-mWh" customClass="SetupView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvw-w4-5pk" customClass="GhostButton">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="EH3-W2-pjQ">
+                                        <variation key="widthClass=compact" constant="220"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="30" id="RLv-gA-G2Q">
+                                        <variation key="widthClass=compact" constant="44"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RLv-gA-G2Q"/>
+                                        <exclude reference="EH3-W2-pjQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="RLv-gA-G2Q"/>
+                                        <include reference="EH3-W2-pjQ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="loginWithFacebook:" destination="wJh-7R-SuN" eventType="touchUpInside" id="ZLi-f2-JdV"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="It's the best way to find out what your friends are doing." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-Wa-0Y8">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="B5L-AD-wHA"/>
+                                    <constraint firstAttribute="width" constant="320" id="PBr-8k-JRl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="aFu-2t-Bge"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aFu-2t-Bge"/>
+                                        <exclude reference="B5L-AD-wHA"/>
+                                        <exclude reference="PBr-8k-JRl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="aFu-2t-Bge"/>
+                                        <include reference="B5L-AD-wHA"/>
+                                        <include reference="PBr-8k-JRl"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Gadabout." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahe-7s-K3D">
+                                <rect key="frame" x="172" y="140" width="256" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ahe-7s-K3D" firstAttribute="top" secondItem="Eoy-uS-0fU" secondAttribute="bottom" constant="169" id="9O2-h8-TSf"/>
+                            <constraint firstAttribute="centerX" secondItem="Ahe-7s-K3D" secondAttribute="centerX" constant="-0.5" id="Aty-II-rDH"/>
+                            <constraint firstAttribute="centerX" secondItem="vs2-Wa-0Y8" secondAttribute="centerX" constant="3.5" id="LdK-tf-yIJ"/>
+                            <constraint firstAttribute="centerX" secondItem="hvw-w4-5pk" secondAttribute="centerX" id="M6u-zL-cpR"/>
+                            <constraint firstItem="vs2-Wa-0Y8" firstAttribute="top" secondItem="Ahe-7s-K3D" secondAttribute="bottom" constant="8" id="OjP-Tp-6Q8"/>
+                            <constraint firstItem="Tnf-JQ-NUi" firstAttribute="top" secondItem="hvw-w4-5pk" secondAttribute="bottom" constant="39" id="lBn-gD-Bqr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hvw-w4-5pk"/>
+                                <exclude reference="vs2-Wa-0Y8"/>
+                                <exclude reference="Ahe-7s-K3D"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="lBn-gD-Bqr"/>
+                                <exclude reference="M6u-zL-cpR"/>
+                                <exclude reference="LdK-tf-yIJ"/>
+                                <exclude reference="OjP-Tp-6Q8"/>
+                                <exclude reference="Aty-II-rDH"/>
+                                <exclude reference="9O2-h8-TSf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hvw-w4-5pk"/>
+                                <include reference="vs2-Wa-0Y8"/>
+                                <include reference="Ahe-7s-K3D"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="lBn-gD-Bqr"/>
+                                <include reference="M6u-zL-cpR"/>
+                                <include reference="LdK-tf-yIJ"/>
+                                <include reference="OjP-Tp-6Q8"/>
+                                <include reference="Aty-II-rDH"/>
+                                <include reference="9O2-h8-TSf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="Ahe-7s-K3D" id="sUK-CF-DvC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="1597"/>
+        </scene>
     </scenes>
 </document>
