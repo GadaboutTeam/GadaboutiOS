@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FBLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate ()
@@ -25,19 +26,14 @@
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
 
-- (void)loadProperStoryboard {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIStoryboard *storyboard;
+- (void)showLoginScreen {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    // If the user is already logged in to FB, jump to the main storyboard
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    } else {
-        storyboard = [UIStoryboard storyboardWithName:@"Setup" bundle:nil];
-    }
-    
-    self.window.rootViewController = [storyboard instantiateInitialViewController];
+    FBLoginViewController *loginViewController = (FBLoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginScreen"];
     [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:loginViewController
+                                                 animated:YES
+                                               completion:nil];
 }
 
 #pragma mark - Global Appearence
@@ -63,8 +59,10 @@
 #pragma mark - Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // load proper storyboard dependning if user is logged in
-    [self loadProperStoryboard];
+    
+    if (!FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        [self showLoginScreen];
+    }
     
     // for white text in navigation bar controllers
     [self setupAppearence];

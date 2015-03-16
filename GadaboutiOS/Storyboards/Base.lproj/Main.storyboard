@@ -231,7 +231,7 @@
         <!--Login View Controller-->
         <scene sceneID="Bb3-RZ-eKh">
             <objects>
-                <viewController id="wJh-7R-SuN" customClass="FBLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wJh-7R-SuN" customClass="FBLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eoy-uS-0fU"/>
                         <viewControllerLayoutGuide type="bottom" id="Tnf-JQ-NUi"/>
@@ -258,14 +258,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="RLv-gA-G2Q"/>
                                         <exclude reference="EH3-W2-pjQ"/>
+                                        <exclude reference="RLv-gA-G2Q"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="RLv-gA-G2Q"/>
                                         <include reference="EH3-W2-pjQ"/>
+                                        <include reference="RLv-gA-G2Q"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -284,16 +284,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="aFu-2t-Bge"/>
                                         <exclude reference="B5L-AD-wHA"/>
                                         <exclude reference="PBr-8k-JRl"/>
+                                        <exclude reference="aFu-2t-Bge"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="aFu-2t-Bge"/>
                                         <include reference="B5L-AD-wHA"/>
                                         <include reference="PBr-8k-JRl"/>
+                                        <include reference="aFu-2t-Bge"/>
                                     </mask>
                                 </variation>
                             </textView>
@@ -324,8 +324,8 @@
                                 <exclude reference="M6u-zL-cpR"/>
                                 <exclude reference="LdK-tf-yIJ"/>
                                 <exclude reference="OjP-Tp-6Q8"/>
-                                <exclude reference="Aty-II-rDH"/>
                                 <exclude reference="9O2-h8-TSf"/>
+                                <exclude reference="Aty-II-rDH"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -339,8 +339,8 @@
                                 <include reference="M6u-zL-cpR"/>
                                 <include reference="LdK-tf-yIJ"/>
                                 <include reference="OjP-Tp-6Q8"/>
-                                <include reference="Aty-II-rDH"/>
                                 <include reference="9O2-h8-TSf"/>
+                                <include reference="Aty-II-rDH"/>
                             </mask>
                         </variation>
                     </view>
@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="435" y="1597"/>
+            <point key="canvasLocation" x="415.5" y="1586"/>
         </scene>
     </scenes>
 </document>

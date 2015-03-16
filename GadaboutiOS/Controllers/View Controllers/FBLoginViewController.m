@@ -41,6 +41,12 @@
         }];
     }
     [FBGraphController updateUserInfo];
+    
+    // Send notification that user is logged in, and dismisses it.
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccessful" object:self];
+    
+    // Dismiss login screen
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
