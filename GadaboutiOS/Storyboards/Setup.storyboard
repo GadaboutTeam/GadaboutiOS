@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="HYR-AQ-WbF">
             <objects>
-                <viewController id="gru-P3-Ud7" customClass="FBLoginViewController" sceneMemberID="viewController">
+                <viewController id="gru-P3-Ud7" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jmz-vX-HPv"/>
                         <viewControllerLayoutGuide type="bottom" id="hEV-sc-2ob"/>

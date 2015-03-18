@@ -8,15 +8,15 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 #import <pop/POP.h>
-#import "FBLoginViewController.h"
+#import "LoginViewController.h"
 #import "PushStoryBoardSegue.h"
 #import <TwitterKit/TwitterKit.h>
 
-@interface FBLoginViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation FBLoginViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "FBLoginViewController.h"
+#import "LoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
@@ -31,7 +31,7 @@
 - (void)showLoginScreen {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    FBLoginViewController *loginViewController = (FBLoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginScreen"];
+    LoginViewController *loginViewController = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginScreen"];
     [self.window makeKeyAndVisible];
     [self.window.rootViewController presentViewController:loginViewController
                                                  animated:YES
