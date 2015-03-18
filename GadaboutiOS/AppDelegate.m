@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "FBLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
 
 @interface AppDelegate ()
 
@@ -59,10 +61,7 @@
 #pragma mark - Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    if (!FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        [self showLoginScreen];
-    }
+    [Fabric with:@[TwitterKit]];
     
     // for white text in navigation bar controllers
     [self setupAppearence];
