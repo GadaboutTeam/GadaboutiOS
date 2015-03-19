@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import <FacebookSDK/FacebookSDK.h>
 #import <pop/POP.h>
 #import "LoginViewController.h"
 #import "PushStoryBoardSegue.h"
@@ -20,12 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
-        // play with Digits session
-    }];
-    authenticateButton.center = self.view.center;
-    [self.view addSubview:authenticateButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +29,27 @@
 - (void)viewDidAppear:(BOOL)animated {
 
 }
+
+- (IBAction)loginWasPressed:(id)sender {
+    DGTAppearance *digitsAppearance = [[DGTAppearance alloc] init];
+    
+    digitsAppearance.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1];
+    digitsAppearance.accentColor = [UIColor colorWithRed:0.99 green:0.33 blue:0.33 alpha:1];
+   
+    Digits *digits = [Digits sharedInstance];
+    [digits authenticateWithDigitsAppearance:digitsAppearance
+                              viewController:nil
+                                       title:@"Hello!"
+                                  completion:^(DGTSession *session, NSError *error) {
+                                        if (session) {
+                                            NSLog(@"Button was pressed!");
+                                        } else {
+                                            NSLog(@"Something went weird!");
+                                        }
+                                  }];
+}
+
+
 
 - (IBAction)loginWithFacebook:(id)sender {
 //    if (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
@@ -74,4 +88,6 @@
 //
 //}
 
+- (IBAction)didTapLoginButton:(id)sender {
+}
 @end

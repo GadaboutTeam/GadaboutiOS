@@ -11,7 +11,6 @@
 
 @interface LoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
 
-- (IBAction)loginWithFacebook:(id)sender;
 
 @end
 

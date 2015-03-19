@@ -18,25 +18,6 @@
 
 @implementation AppDelegate
 
-#pragma mark - Facebook Login
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    // attempt to extract a token from the url
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-}
-
-- (void)showLoginScreen {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    LoginViewController *loginViewController = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginScreen"];
-    [self.window makeKeyAndVisible];
-    [self.window.rootViewController presentViewController:loginViewController
-                                                 animated:YES
-                                               completion:nil];
-}
 
 #pragma mark - Global Appearence
 
@@ -49,19 +30,11 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
 }
 
-#pragma mark - Facebook Helper
-- (void)openExistingFacebookSession {
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        // Not doing anything after the session is opened.
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:NO completionHandler:nil];
-    }
-}
-
-
 #pragma mark - Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[TwitterKit]];
+    [[Digits sharedInstance] logOut];
     
     // for white text in navigation bar controllers
     [self setupAppearence];
@@ -85,7 +58,6 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [FBAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

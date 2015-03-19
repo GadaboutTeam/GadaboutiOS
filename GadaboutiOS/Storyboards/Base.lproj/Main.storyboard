@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PoD-aO-lq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -252,8 +252,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Let’s get started.">
+                                    <color key="titleColor" red="0.97989374399185181" green="0.9800611138343811" blue="0.97988325357437134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -269,7 +269,8 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="loginWithFacebook:" destination="wJh-7R-SuN" eventType="touchUpInside" id="ZLi-f2-JdV"/>
+                                    <action selector="loginWasPressed:" destination="wJh-7R-SuN" eventType="touchUpInside" id="yeU-Tb-3He"/>
+                                    <segue destination="qKG-eX-hug" kind="show" id="Fk0-XF-7JS"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="It's the best way to find out what your friends are doing." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-Wa-0Y8">
@@ -279,7 +280,7 @@
                                     <constraint firstAttribute="width" constant="320" id="PBr-8k-JRl"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="aFu-2t-Bge"/>
                                 </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.22815200686454773" green="0.27869975566864014" blue="0.35288691520690918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
@@ -300,7 +301,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Gadabout." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahe-7s-K3D">
                                 <rect key="frame" x="172" y="140" width="256" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.22815200686454773" green="0.27869975566864014" blue="0.35288691520690918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -344,13 +345,27 @@
                             </mask>
                         </variation>
                     </view>
-                    <connections>
-                        <outlet property="titleLabel" destination="Ahe-7s-K3D" id="sUK-CF-DvC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415.5" y="1586"/>
+            <point key="canvasLocation" x="415.5" y="2284"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XVC-XD-PH7">
+            <objects>
+                <viewController id="qKG-eX-hug" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gWn-7j-0Uo"/>
+                        <viewControllerLayoutGuide type="bottom" id="WUi-lZ-1ii"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pYQ-8s-DWj">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gc2-WH-Lnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1216.5" y="2284"/>
         </scene>
     </scenes>
 </document>

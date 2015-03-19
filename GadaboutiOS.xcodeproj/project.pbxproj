@@ -204,18 +204,26 @@
 		6355B4351A9D224D00D25215 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				635E44B31AB9ECE600419FB9 /* Setup */,
 				6399F81F1AAE854500C60719 /* TableViewController.h */,
 				6399F8201AAE854500C60719 /* TableViewController.m */,
-				FA99119A1A80A3DF00714F7D /* LoginViewController.h */,
-				FA99119B1A80A3DF00714F7D /* LoginViewController.m */,
-				FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */,
-				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
 				636185F51A81BCB700A9AE57 /* NavigationViewController.h */,
 				636185F61A81BCB700A9AE57 /* NavigationViewController.m */,
 				634ECA921AA969BD0034D339 /* NewMessageViewController.h */,
 				634ECA931AA969BD0034D339 /* NewMessageViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		635E44B31AB9ECE600419FB9 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				FA99119A1A80A3DF00714F7D /* LoginViewController.h */,
+				FA99119B1A80A3DF00714F7D /* LoginViewController.m */,
+				FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */,
+				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
+			);
+			name = Setup;
 			sourceTree = "<group>";
 		};
 		6399F8181AABA7C700C60719 /* Forms */ = {
