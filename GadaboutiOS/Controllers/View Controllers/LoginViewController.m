@@ -42,8 +42,14 @@
                                        title:nil
                                   completion:^(DGTSession *session, NSError *error) {
                                         if (session) {
-                                            NSLog(@"Button was pressed!");
-                                            NSLog(@"%@", session.authToken);
+                                            DGTContacts *contacts = [[DGTContacts alloc] initWithUserSession:session];
+                                            [contacts startContactsUploadWithDigitsAppearance:digitsAppearance
+                                                                      presenterViewController:nil
+                                                                                        title:nil
+                                                                                   completion:^(DGTContactsUploadResult *result, NSError *error) {
+                                                                                       NSLog(@"Passed");
+                                                                                       [self dismissViewControllerAnimated:YES completion:nil];
+                                                                                   }];
                                         } else {
                                             NSLog(@"Something went weird!");
                                         }

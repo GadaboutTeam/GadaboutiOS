@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PoD-aO-lq4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -213,7 +213,7 @@
         <!--Navigation Controller-->
         <scene sceneID="SaV-ks-4bY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PoD-aO-lq4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainUI" automaticallyAdjustsScrollViewInsets="NO" id="PoD-aO-lq4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P6t-zm-2HE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -270,7 +270,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="loginWasPressed:" destination="wJh-7R-SuN" eventType="touchUpInside" id="yeU-Tb-3He"/>
-                                    <segue destination="qKG-eX-hug" kind="show" id="Fk0-XF-7JS"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="It's the best way to find out what your friends are doing." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-Wa-0Y8">
@@ -348,25 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415.5" y="2284"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="XVC-XD-PH7">
-            <objects>
-                <viewController id="qKG-eX-hug" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gWn-7j-0Uo"/>
-                        <viewControllerLayoutGuide type="bottom" id="WUi-lZ-1ii"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pYQ-8s-DWj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gc2-WH-Lnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1216.5" y="2284"/>
+            <point key="canvasLocation" x="403.5" y="1565"/>
         </scene>
     </scenes>
 </document>

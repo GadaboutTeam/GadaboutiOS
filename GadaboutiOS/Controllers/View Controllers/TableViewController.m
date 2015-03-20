@@ -22,13 +22,16 @@ static NSString * const CellID = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"loginScreen"];
+    [self presentViewController:vc animated:true completion:nil];
     
     // set weak notification block (observes changes in Realm, updates table view)
-    __weak typeof(self) weakSelf = self;
-    self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
-        [weakSelf.tableView reloadData];
-    }];
-    [self.tableView reloadData];
+//    __weak typeof(self) weakSelf = self;
+//    self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
+//        [weakSelf.tableView reloadData];
+//    }];
+//    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
