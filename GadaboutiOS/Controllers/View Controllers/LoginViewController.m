@@ -39,14 +39,16 @@
     Digits *digits = [Digits sharedInstance];
     [digits authenticateWithDigitsAppearance:digitsAppearance
                               viewController:nil
-                                       title:@"Hello!"
+                                       title:nil
                                   completion:^(DGTSession *session, NSError *error) {
                                         if (session) {
                                             NSLog(@"Button was pressed!");
+                                            NSLog(@"%@", session.authToken);
                                         } else {
                                             NSLog(@"Something went weird!");
                                         }
                                   }];
+    
 }
 
 
