@@ -57,27 +57,6 @@
     
 }
 
-
-
-- (IBAction)loginWithFacebook:(id)sender {
-//    if (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
-//        NSLog(@"User already logged in.");
-//    } else {
-//        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-//            NSLog(@"User successfully logged in.");
-//
-//            [self performSegueWithIdentifier:@"PushToLocation" sender:self];
-//        }];
-//    }
-//    [FBGraphController updateUserInfo];
-//    
-//    // Send notification that user is logged in, and dismisses it.
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccessful" object:self];
-//    
-//    // Dismiss login screen
-//    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 /*
 #pragma mark - Navigation
 

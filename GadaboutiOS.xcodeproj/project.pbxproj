@@ -28,7 +28,6 @@
 		63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBA1A7BD895009A212E /* Images.xcassets */; };
 		63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */; };
 		63BA5ECA1A7BD895009A212E /* GadaboutiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */; };
-		63BD18471A980D320017B58F /* FBGraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BD18461A980D320017B58F /* FBGraphController.m */; };
 		65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */; };
 		FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationController.m */; };
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
@@ -90,8 +89,6 @@
 		63BA5EC31A7BD895009A212E /* GadaboutiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GadaboutiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EC81A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GadaboutiOSTests.m; sourceTree = "<group>"; };
-		63BD18451A980D320017B58F /* FBGraphController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBGraphController.h; sourceTree = "<group>"; };
-		63BD18461A980D320017B58F /* FBGraphController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGraphController.m; sourceTree = "<group>"; };
 		D3B60062277E2CF1D1993697 /* Pods-GadaboutiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FA1923B21A7BE1ED00561568 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
 		FA1923B41A7BE20800561568 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
@@ -193,8 +190,6 @@
 			children = (
 				FA1923B41A7BE20800561568 /* LocationController.h */,
 				FA1923B21A7BE1ED00561568 /* LocationController.m */,
-				63BD18451A980D320017B58F /* FBGraphController.h */,
-				63BD18461A980D320017B58F /* FBGraphController.m */,
 				63AA4CCF1AA0C86E00B25274 /* NetworkingManager.h */,
 				63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */,
 			);
@@ -514,7 +509,6 @@
 				634ECA941AA969BD0034D339 /* NewMessageViewController.m in Sources */,
 				63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */,
 				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,
-				63BD18471A980D320017B58F /* FBGraphController.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
 				6355B4241A9C028D00D25215 /* ProminentButton.m in Sources */,
 				6399F8211AAE854500C60719 /* TableViewController.m in Sources */,

@@ -8,7 +8,6 @@
 
 #import "ProminentButton.h"
 
-
 @implementation ProminentButton
 
 -(void)layoutSubviews {

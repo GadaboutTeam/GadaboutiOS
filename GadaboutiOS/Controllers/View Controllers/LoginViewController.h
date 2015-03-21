@@ -1,5 +1,5 @@
 //
-//  FBLoginViewController.h
+//  LoginViewController.h
 //  GadaboutiOS
 //
 //  Created by Alex Bardasu on 03/02/15.
@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FBGraphController.h"
 
-@interface LoginViewController : UIViewController <FBLoginViewDelegate, UIViewControllerTransitioningDelegate>
-
+@interface LoginViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
 @end
 

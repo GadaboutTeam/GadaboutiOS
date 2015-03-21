@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 
