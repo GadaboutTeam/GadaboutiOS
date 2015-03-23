@@ -25,7 +25,6 @@
     [self.layer setCornerRadius: 5.0f];
     
     // background
-    // [self setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.2]];
     [self setBackgroundColor:[UIColor colorWithRed:0.99 green:0.33 blue:0.33 alpha:1]];
 }
 

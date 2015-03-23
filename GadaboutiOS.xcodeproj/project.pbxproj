@@ -10,7 +10,6 @@
 		634ECA941AA969BD0034D339 /* NewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA931AA969BD0034D339 /* NewMessageViewController.m */; };
 		634ECA971AA9FB970034D339 /* NewMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA961AA9FB970034D339 /* NewMessageView.m */; };
 		6355B4241A9C028D00D25215 /* ProminentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4231A9C028D00D25215 /* ProminentButton.m */; };
-		6355B4261A9CF0BF00D25215 /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6355B4251A9CF0BF00D25215 /* Setup.storyboard */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
 		6355B4331A9D10FB00D25215 /* GhostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* GhostButton.m */; };
 		635E44B01AB912B400419FB9 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635E44AD1AB912B400419FB9 /* TwitterKit.framework */; };
@@ -58,7 +57,6 @@
 		634ECA961AA9FB970034D339 /* NewMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMessageView.m; sourceTree = "<group>"; };
 		6355B4221A9C028D00D25215 /* ProminentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProminentButton.h; sourceTree = "<group>"; };
 		6355B4231A9C028D00D25215 /* ProminentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProminentButton.m; sourceTree = "<group>"; };
-		6355B4251A9CF0BF00D25215 /* Setup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setup.storyboard; sourceTree = "<group>"; };
 		6355B42B1A9CFDF600D25215 /* SetupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupView.h; sourceTree = "<group>"; };
 		6355B42C1A9CFDF600D25215 /* SetupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupView.m; sourceTree = "<group>"; };
 		6355B4311A9D10FB00D25215 /* GhostButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GhostButton.h; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				63BA5EB71A7BD895009A212E /* Main.storyboard */,
-				6355B4251A9CF0BF00D25215 /* Setup.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -425,7 +422,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6355B4261A9CF0BF00D25215 /* Setup.storyboard in Resources */,
 				63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */,
 				63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */,
 				63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */,

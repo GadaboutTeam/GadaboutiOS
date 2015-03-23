@@ -31,30 +31,34 @@
 }
 
 - (IBAction)loginWasPressed:(id)sender {
-    DGTAppearance *digitsAppearance = [[DGTAppearance alloc] init];
+    DGTAppearance *appearance = [[DGTAppearance alloc] init];
     
-    digitsAppearance.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1];
-    digitsAppearance.accentColor = [UIColor colorWithRed:0.99 green:0.33 blue:0.33 alpha:1];
+    appearance.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1];
+    appearance.accentColor = [UIColor colorWithRed:0.99 green:0.33 blue:0.33 alpha:1];
    
     Digits *digits = [Digits sharedInstance];
-    [digits authenticateWithDigitsAppearance:digitsAppearance
+    [digits authenticateWithDigitsAppearance:appearance
                               viewController:nil
                                        title:nil
                                   completion:^(DGTSession *session, NSError *error) {
                                         if (session) {
-                                            DGTContacts *contacts = [[DGTContacts alloc] initWithUserSession:session];
-                                            [contacts startContactsUploadWithDigitsAppearance:digitsAppearance
-                                                                      presenterViewController:nil
-                                                                                        title:nil
-                                                                                   completion:^(DGTContactsUploadResult *result, NSError *error) {
-                                                                                       NSLog(@"Passed");
-                                                                                       [self dismissViewControllerAnimated:YES completion:nil];
-                                                                                   }];
+                                            [self getContactsUsingDigitsSession:session appearence:appearance];
                                         } else {
                                             NSLog(@"Something went weird!");
                                         }
                                   }];
     
+}
+
+- (void)getContactsUsingDigitsSession:(DGTSession *)session appearence:(DGTAppearance *)appearence {
+    DGTContacts *contacts = [[DGTContacts alloc] initWithUserSession:session];
+    [contacts startContactsUploadWithDigitsAppearance:appearence
+                              presenterViewController:nil
+                                                title:nil
+                                           completion:^(DGTContactsUploadResult *result, NSError *error) {
+                                               NSLog(@"Passed");
+                                               [self dismissViewControllerAnimated:YES completion:nil];
+                                           }];
 }
 
 /*
