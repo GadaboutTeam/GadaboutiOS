@@ -1,8 +1,8 @@
 //
-//  User.m
+//  Person.m
 //  GadaboutiOS
 //
-//  Created by Alex Bardasu on 02/02/15.
+//  Created by David Barsky on 2/1/15.
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 

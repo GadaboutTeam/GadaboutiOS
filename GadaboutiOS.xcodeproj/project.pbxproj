@@ -30,9 +30,7 @@
 		65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */; };
 		FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationController.m */; };
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
-		FA9911931A8069CB00714F7D /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911901A8069CB00714F7D /* Invitation.m */; };
-		FA9911941A8069CB00714F7D /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* Friend.m */; };
-		FA9911971A807B2900714F7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911961A807B2900714F7D /* User.m */; };
+		FA9911941A8069CB00714F7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* User.m */; };
 		FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99119B1A80A3DF00714F7D /* LoginViewController.m */; };
 		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
 		FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */; };
@@ -91,12 +89,8 @@
 		FA1923B21A7BE1ED00561568 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
 		FA1923B41A7BE20800561568 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 		FA1923B51A7BE57A00561568 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		FA99118F1A8069CB00714F7D /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invitation.h; sourceTree = "<group>"; };
-		FA9911901A8069CB00714F7D /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invitation.m; sourceTree = "<group>"; };
-		FA9911911A8069CB00714F7D /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
-		FA9911921A8069CB00714F7D /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
-		FA9911951A807B2900714F7D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		FA9911961A807B2900714F7D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FA9911911A8069CB00714F7D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FA9911921A8069CB00714F7D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FA99119A1A80A3DF00714F7D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FA99119B1A80A3DF00714F7D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA9911A01A80BCB800714F7D /* PushStoryBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushStoryBoardSegue.h; sourceTree = "<group>"; };
@@ -309,12 +303,8 @@
 		FA1923AC1A7BE13700561568 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA99118F1A8069CB00714F7D /* Invitation.h */,
-				FA9911901A8069CB00714F7D /* Invitation.m */,
-				FA9911911A8069CB00714F7D /* Friend.h */,
-				FA9911921A8069CB00714F7D /* Friend.m */,
-				FA9911951A807B2900714F7D /* User.h */,
-				FA9911961A807B2900714F7D /* User.m */,
+				FA9911911A8069CB00714F7D /* User.h */,
+				FA9911921A8069CB00714F7D /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,8 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9911941A8069CB00714F7D /* Friend.m in Sources */,
-				FA9911971A807B2900714F7D /* User.m in Sources */,
+				FA9911941A8069CB00714F7D /* User.m in Sources */,
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				6399F81B1AABE3AE00C60719 /* TextField.m in Sources */,
@@ -498,7 +487,6 @@
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
 				634ECA971AA9FB970034D339 /* NewMessageView.m in Sources */,
-				FA9911931A8069CB00714F7D /* Invitation.m in Sources */,
 				6399F8171AABA7C300C60719 /* TokenField.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
