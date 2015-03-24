@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "ConversationViewController.h"
 #import <Realm/Realm.h>
+#import "User.h"
 
-@interface TableViewController ()
+@interface ConversationViewController ()
 
 @property (nonatomic, strong) RLMArray *array;
 @property (nonatomic, strong) RLMNotificationToken *notification;
@@ -18,13 +19,13 @@
 
 static NSString * const CellID = @"cell";
 
-@implementation TableViewController
+@implementation ConversationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"loginScreen"];
-    [self presentViewController:vc animated:true completion:nil];
+//    UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"loginScreen"];
+//    [self presentViewController:vc animated:true completion:nil];
     
     // set weak notification block (observes changes in Realm, updates table view)
 //    __weak typeof(self) weakSelf = self;

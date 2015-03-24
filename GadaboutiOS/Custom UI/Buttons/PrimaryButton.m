@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "GhostButton.h"
+#import "PrimaryButton.h"
 #import <pop/POP.h>
 
-@implementation GhostButton
+@implementation PrimaryButton
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -30,7 +30,7 @@
 
 #pragma mark - Animations
 
-- (void)touchUpInside:(GhostButton *)button {
+- (void)touchUpInside:(PrimaryButton *)button {
     
 }
 

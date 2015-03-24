@@ -7,9 +7,8 @@
 //
 
 #import <Realm/Realm.h>
-#import <Atlas/Atlas.h>
 
-@interface User : RLMObject <ATLParticipant>
+@interface User : RLMObject
 
 @property NSInteger *userID;
 
@@ -24,5 +23,4 @@
 @end
 
 // This protocol enables typed collections. i.e.:
-// RLMArray<Person>
-RLM_ARRAY_TYPE(Friend)
+RLM_ARRAY_TYPE(User)

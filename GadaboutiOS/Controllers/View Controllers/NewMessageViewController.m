@@ -7,12 +7,8 @@
 //
 
 #import "NewMessageViewController.h"
-#import "TokenField.h"
 
-@interface NewMessageViewController () <VENTokenFieldDelegate, VENTokenFieldDataSource>
-
-@property (weak, nonatomic) IBOutlet TokenField *tokenField;
-@property (strong, nonatomic) NSMutableArray *names;
+@interface NewMessageViewController () 
 
 @end
 
@@ -20,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupTokenField];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,50 +23,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - VENTokenField/Setup
-
-- (void)setupTokenField {
-    // progamatic setup
-    self.names = [NSMutableArray array];
-    self.tokenField.delegate = self;
-    self.tokenField.dataSource = self;
-    self.tokenField.placeholderText = NSLocalizedString(@"Name", nil);
-    self.tokenField.toLabelText = NSLocalizedString(@"To:", nil);
-    [self.tokenField becomeFirstResponder];
-}
-
-#pragma mark - VENTokenField/Delegate
-
-- (void)tokenField:(VENTokenField *)tokenField didEnterText:(NSString *)text {
-    [self.names addObject:text];
-    [self.tokenField reloadData];
-    NSLog(@"%@", self.names);
-}
-
-- (void)tokenField:(VENTokenField *)tokenField didDeleteTokenAtIndex:(NSUInteger)index {
-    [self.names removeObjectAtIndex:index];
-    [self.tokenField reloadData];
-}
-
-#pragma mark - VENTokenField/Data Source
-
-- (NSString *)tokenField:(VENTokenField *)tokenField titleForTokenAtIndex:(NSUInteger)index {
-    return self.names[index];
-}
-
-- (NSUInteger)numberOfTokensInTokenField:(VENTokenField *)tokenField {
-    return [self.names count];
-}
-
-- (NSString *)tokenFieldCollapsedText:(VENTokenField *)tokenField {
-    return [NSString stringWithFormat:@"%tu people", [self.names count]];
-}
-
 #pragma mark - IBActions
-
-- (IBAction)sendWasPressed:(id)sender {
-    [self dismissSelf];
-}
 
 - (IBAction)cancelWasPressed:(id)sender {
     [self dismissSelf];

@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Atlas/Atlas.h>
 
-@interface TableViewController : ATLConversationListViewController
+@interface ConversationViewController : UITableViewController
 
 @end

@@ -42,7 +42,7 @@
                                        title:nil
                                   completion:^(DGTSession *session, NSError *error) {
                                         if (session) {
-                                            [self getContactsUsingDigitsSession:session appearence:appearance];
+                                            NSLog(@"Logged in!");
                                         } else {
                                             NSLog(@"Something went weird!");
                                         }
@@ -50,16 +50,6 @@
     
 }
 
-- (void)getContactsUsingDigitsSession:(DGTSession *)session appearence:(DGTAppearance *)appearence {
-    DGTContacts *contacts = [[DGTContacts alloc] initWithUserSession:session];
-    [contacts startContactsUploadWithDigitsAppearance:appearence
-                              presenterViewController:nil
-                                                title:nil
-                                           completion:^(DGTContactsUploadResult *result, NSError *error) {
-                                               NSLog(@"Passed");
-                                               [self dismissViewControllerAnimated:YES completion:nil];
-                                           }];
-}
 
 /*
 #pragma mark - Navigation
@@ -79,6 +69,4 @@
 //
 //}
 
-- (IBAction)didTapLoginButton:(id)sender {
-}
 @end
