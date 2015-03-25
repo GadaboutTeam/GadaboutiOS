@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ipc-QV-cOD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--New Message View Controller-->
@@ -27,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPj-B1-Fgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2902.5" y="1565"/>
+            <point key="canvasLocation" x="3879.75" y="426.5"/>
         </scene>
         <!--Conversation View Controller-->
         <scene sceneID="Z4U-n4-ac8">
@@ -79,7 +80,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nA7-ml-pRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="1565"/>
+            <point key="canvasLocation" x="3053.25" y="442.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="SaV-ks-4bY">
@@ -222,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321.75" y="1908.5"/>
+            <point key="canvasLocation" x="336.75" y="2388.5"/>
         </scene>
         <!--Contacts Grant View Controller-->
         <scene sceneID="Xfk-xU-c77">
@@ -266,6 +267,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="affirmativeWasPressed:" destination="W01-T0-38a" eventType="touchUpInside" id="STP-Qp-wH3"/>
+                                    <segue destination="Ipc-QV-cOD" kind="show" id="PS1-aR-txo"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Can we get your contacts? We use them to find your friends." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-hv-Hd6">
@@ -293,12 +295,6 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One more thing..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLM-Gh-Wra">
-                                <rect key="frame" x="172" y="140" width="256" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
-                                <color key="textColor" red="0.22612965106964111" green="0.2765999436378479" blue="0.35500615835189819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Io4-Ma-nEu">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -323,6 +319,12 @@
                                     <action selector="optOutWasPressed:" destination="W01-T0-38a" eventType="touchUpInside" id="dpC-cO-b5R"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One more thing..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLM-Gh-Wra">
+                                <rect key="frame" x="172" y="140" width="256" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" red="0.22612965106964111" green="0.2765999436378479" blue="0.35500615835189819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -342,8 +344,8 @@
                             <mask key="subviews">
                                 <exclude reference="aem-wq-N5K"/>
                                 <exclude reference="eAg-hv-Hd6"/>
-                                <exclude reference="eLM-Gh-Wra"/>
                                 <exclude reference="Io4-Ma-nEu"/>
+                                <exclude reference="eLM-Gh-Wra"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="r7b-mg-vU4"/>
@@ -361,8 +363,8 @@
                             <mask key="subviews">
                                 <include reference="aem-wq-N5K"/>
                                 <include reference="eAg-hv-Hd6"/>
-                                <include reference="eLM-Gh-Wra"/>
                                 <include reference="Io4-Ma-nEu"/>
+                                <include reference="eLM-Gh-Wra"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="r7b-mg-vU4"/>
@@ -381,12 +383,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTU-3b-Vfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137.75" y="1908.5"/>
+            <point key="canvasLocation" x="1071.75" y="2388.5"/>
+        </scene>
+        <!--Display Name View Controller-->
+        <scene sceneID="Aed-qX-chT">
+            <objects>
+                <viewController storyboardIdentifier="DisplayNameVC" id="Ipc-QV-cOD" customClass="DisplayNameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6fc-uk-58r"/>
+                        <viewControllerLayoutGuide type="bottom" id="6H8-wr-CKr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FSv-nK-2R7">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8As-ZK-5y1">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="doneButtonWasPressed:" destination="Ipc-QV-cOD" eventType="editingDidEndOnExit" id="IfZ-rb-dAe"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9X-eD-AAh" customClass="PrimaryButton">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="117" y="229" width="140" height="54"/>
+                                </variation>
+                                <connections>
+                                    <action selector="doneButtonWasPressed:" destination="Ipc-QV-cOD" eventType="touchUpInside" id="wZr-21-3oB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8As-ZK-5y1" firstAttribute="top" secondItem="6fc-uk-58r" secondAttribute="bottom" constant="143" id="hrq-86-3iX"/>
+                            <constraint firstItem="8As-ZK-5y1" firstAttribute="leading" secondItem="FSv-nK-2R7" secondAttribute="leadingMargin" id="l5A-Hb-fvq"/>
+                            <constraint firstItem="8As-ZK-5y1" firstAttribute="trailing" secondItem="FSv-nK-2R7" secondAttribute="trailingMargin" id="ntH-O7-vXP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8As-ZK-5y1"/>
+                                <exclude reference="E9X-eD-AAh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="hrq-86-3iX"/>
+                                <exclude reference="l5A-Hb-fvq"/>
+                                <exclude reference="ntH-O7-vXP"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="8As-ZK-5y1"/>
+                                <include reference="E9X-eD-AAh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="hrq-86-3iX"/>
+                                <include reference="l5A-Hb-fvq"/>
+                                <include reference="ntH-O7-vXP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="displayNameTextField" destination="8As-ZK-5y1" id="FMX-b1-VLH"/>
+                        <outlet property="doneButton" destination="E9X-eD-AAh" id="kgU-SY-9qg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="08o-He-PgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848.75" y="2388.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ECf-3Z-sdH">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="O7g-nh-MZW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="O7g-nh-MZW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="iCp-XZ-oQO">
