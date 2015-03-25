@@ -10,15 +10,15 @@
 
 @interface User : RLMObject
 
-@property NSInteger *userID;
+typedef NS_ENUM(NSInteger, UserType) {
+    UserTypeSelf,
+    UserTypeFriend
+};
 
-// For ATLParticipant Protocol
-@property (nonatomic) NSString *firstName;
-@property (nonatomic) NSString *lastName;
-@property (nonatomic) NSString *fullName;
-@property (nonatomic) NSString *participantIdentifier;
-
-@property NSData *profilePhoto;
+@property (nonatomic) NSString *displayName;
+@property (nonatomic) NSString *phoneNumber;
+@property (nonatomic) NSString *authToken;
+@property (nonatomic) UserType userType;
 
 @end
 

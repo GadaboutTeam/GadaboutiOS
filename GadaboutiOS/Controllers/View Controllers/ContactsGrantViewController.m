@@ -8,6 +8,7 @@
 
 #import <APAddressBook.h>
 #import "ContactsGrantViewController.h"
+#import "DisplayNameViewController.h"
 
 @interface ContactsGrantViewController ()
 
@@ -40,21 +41,22 @@
     APAddressBook *addressBook = [[APAddressBook alloc] init];
     [addressBook loadContacts:^(NSArray *contacts, NSError *error) {
         if (!error) {
-            NSLog(@"We got the contacst!");
+            NSLog(@"We got the contacts!");
         } else {
             NSLog(@"%@", error);
         }
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    DisplayNameViewController *displayVC = (DisplayNameViewController *)segue.destinationViewController;
+    displayVC.user = _user;
 }
-*/
 
 @end

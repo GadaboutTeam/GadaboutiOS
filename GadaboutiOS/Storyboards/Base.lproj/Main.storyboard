@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ipc-QV-cOD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -267,7 +267,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="affirmativeWasPressed:" destination="W01-T0-38a" eventType="touchUpInside" id="STP-Qp-wH3"/>
-                                    <segue destination="Ipc-QV-cOD" kind="show" id="PS1-aR-txo"/>
+                                    <segue destination="Ipc-QV-cOD" kind="show" identifier="contactsToName" id="PS1-aR-txo"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Can we get your contacts? We use them to find your friends." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-hv-Hd6">
@@ -399,7 +399,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8As-ZK-5y1">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="displayNameChanged:" destination="Ipc-QV-cOD" eventType="editingChanged" id="zKC-vy-kno"/>
                                     <action selector="doneButtonWasPressed:" destination="Ipc-QV-cOD" eventType="editingDidEndOnExit" id="IfZ-rb-dAe"/>

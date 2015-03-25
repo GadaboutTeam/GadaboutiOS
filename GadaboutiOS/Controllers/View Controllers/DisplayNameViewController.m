@@ -7,12 +7,17 @@
 //
 
 #import "DisplayNameViewController.h"
+#import "NetworkingManager.h"
 #import "PrimaryButton.h"
+#import "User.h"
 
 @interface DisplayNameViewController ()
+
 @property IBOutlet UITextField *displayNameTextField;
 @property IBOutlet PrimaryButton *doneButton;
 @property (nonatomic, retain) NSString *displayName;
+@property RLMRealm *defaultRealm;
+
 @end
 
 @implementation DisplayNameViewController
@@ -20,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _defaultRealm = [RLMRealm defaultRealm];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +46,11 @@
 - (IBAction) doneButtonWasPressed:(id) sender {
     [self.view endEditing:YES];
     _displayName = [NSString stringWithString:[_displayNameTextField text]];
+    [_user setDisplayName:_displayName];
+
+    [_defaultRealm beginWriteTransaction];
+    [_defaultRealm addObject:_user];
+    [_defaultRealm commitWriteTransaction];
 
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     [self presentViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"TabBarController"] animated:YES completion:nil];
