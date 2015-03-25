@@ -28,13 +28,24 @@
     return @"authToken";
 }
 
-// username, auth_id, auth_token, lat, long
-- (NSDictionary *)prepareDictionary {
-    return @{@"username" : _displayName,
-              @"auth_id" : _phoneNumber,
-           @"auth_token" : _authToken,
-                  @"lat" : [NSString stringWithFormat:@"%ld", (long)_lat],
-                 @"long" : [NSString stringWithFormat:@"%ld", (long)_lon]};
++ (NSDictionary *)JSONInboundMappingDictionary {
+    return @{
+             @"username" : @"displayName",
+             @"auth_id"  : @"phoneNumber",
+             @"auth_token" : @"authToken",
+             @"lat" : @"lat",
+             @"long" : @"lon"
+             };
+}
+
++ (NSDictionary *)JSONOutboundMappingDictionary {
+    return @{
+             @"displayName" : @"username",
+             @"phoneNumber" : @"auth_id",
+             @"authToken" : @"auth_token",
+             @"lat" : @"lat",
+             @"lon" : @"long"
+             };
 }
 
 @end
