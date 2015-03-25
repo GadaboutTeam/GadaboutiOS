@@ -23,9 +23,26 @@
 - (void)setupAppearence {
     // border
     [self.layer setCornerRadius: 5.0f];
+
+    if([self isEnabled]) {
+        [self setEnabledState];
+    } else {
+        [self setDisabledState];
+    }
     
-    // background
+    // font
+    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0f];
+    self.titleLabel.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+}
+
+#pragma mark - Button State
+- (void)setDisabledState {
+    self.backgroundColor = [UIColor colorWithRed:0.99 green:0.33 blue:0.33 alpha:0.7];
+}
+
+- (void)setEnabledState {
     [self setBackgroundColor:[UIColor colorWithRed:0.99 green:0.33 blue:0.33 alpha:1]];
+    self.titleLabel.textColor = [UIColor whiteColor];
 }
 
 #pragma mark - Animations

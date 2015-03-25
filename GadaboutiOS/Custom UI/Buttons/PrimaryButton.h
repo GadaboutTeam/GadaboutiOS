@@ -11,4 +11,6 @@
 IB_DESIGNABLE
 @interface PrimaryButton : UIButton
 
+- (void)setDisabledState;
+- (void)setEnabledState;
 @end
