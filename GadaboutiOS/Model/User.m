@@ -19,13 +19,22 @@
 
 // Specify properties to ignore (Realm won't persist these)
 
-//+ (NSArray *)ignoredProperties
-//{
-//    return @[];
-//}
++ (NSArray *)ignoredProperties
+{
+    return @[@"lat", @"lon"];
+}
 
 + (NSString *)primaryKey {
     return @"authToken";
+}
+
+// username, auth_id, auth_token, lat, long
+- (NSDictionary *)prepareDictionary {
+    return @{@"username" : _displayName,
+              @"auth_id" : _phoneNumber,
+           @"auth_token" : _authToken,
+                  @"lat" : [NSString stringWithFormat:@"%ld", (long)_lat],
+                 @"long" : [NSString stringWithFormat:@"%ld", (long)_lon]};
 }
 
 @end
