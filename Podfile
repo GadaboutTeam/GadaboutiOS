@@ -3,9 +3,9 @@
 
 target 'GadaboutiOS' do
   # General Utilities
-  pod 'Realm', '~> 0.91.0' # persistence
-  pod 'pop', '~> 1.0.7' # animation
   pod 'AFNetworking', '~> 2.0' # networking
+  pod 'pop', '~> 1.0.7' # animation
+  pod 'Realm', '~> 0.91.0' # persistence
 
   # Messaging UIKit
   pod 'JSQMessagesViewController'
