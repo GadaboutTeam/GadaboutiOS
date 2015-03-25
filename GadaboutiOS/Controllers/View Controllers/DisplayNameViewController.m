@@ -43,7 +43,7 @@
 }
 */
 
-- (IBAction) doneButtonWasPressed:(id) sender {
+- (IBAction)doneButtonWasPressed:(id) sender {
     [self.view endEditing:YES];
     _displayName = [NSString stringWithString:[_displayNameTextField text]];
     [_user setDisplayName:_displayName];
@@ -51,6 +51,8 @@
     [_defaultRealm beginWriteTransaction];
     [_defaultRealm addObject:_user];
     [_defaultRealm commitWriteTransaction];
+    
+    NetworkingManager *networkingManager = [NetworkingManager sharedNetworkingManger];
 
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     [self presentViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"TabBarController"] animated:YES completion:nil];

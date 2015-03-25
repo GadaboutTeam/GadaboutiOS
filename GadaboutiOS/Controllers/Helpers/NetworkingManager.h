@@ -10,12 +10,12 @@
 #import "User.h"
 
 FOUNDATION_EXPORT NSString *const DomainURL;
-FOUNDATION_EXPORT NSString *const createUser;
 
 @interface NetworkingManager : AFHTTPSessionManager {
     AFHTTPRequestOperationManager *manager;
 }
 
++ (id)sharedNetworkingManger;
 - (void)sendDictionary:(NSDictionary*)dictionary toService:(NSString*)service;
 
 @end

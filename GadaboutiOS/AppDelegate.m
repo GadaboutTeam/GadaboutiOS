@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import "NetworkingManager.h"
 
 @interface AppDelegate ()
 
