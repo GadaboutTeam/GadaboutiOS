@@ -9,7 +9,7 @@
 #import "NetworkingManager.h"
 #import <Realm/Realm.h>
 
-NSString *const DomainURL = @"http://104.236.228.143/";
+NSString *const DomainURL = @"http://104.236.228.143:8080/";
 
 @implementation NetworkingManager
 
@@ -41,7 +41,7 @@ NSString *const DomainURL = @"http://104.236.228.143/";
               NSLog(@"Success");
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"Failure");
+              NSLog(@"Failure: %@", error.description);
           }];
 }
 

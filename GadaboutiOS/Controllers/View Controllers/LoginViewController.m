@@ -26,7 +26,7 @@
 
     if ([[User objectsWhere:@"userType = 0"] count] == 0) {
         _user = [[User alloc] init];
-        [_user setAuthToken:@"sketchAuthToken"];
+        [_user setPhoneNumber:@"phone number"];
         [_user setUserType:UserTypeSelf];
     } else {
         _user = [[User objectsWhere:@"userType = 0"] firstObject];
@@ -57,6 +57,7 @@
                                             NSLog(@"Logged in!");
 
                                             [_user setAuthToken:session.authToken];
+                                            [_user setPhoneNumber:session.phoneNumber];
                                         } else {
                                             NSLog(@"Something went weird!");
                                         }

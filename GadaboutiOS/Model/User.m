@@ -14,7 +14,7 @@
 
 + (NSDictionary *)defaultPropertyValues
 {
-    return @{@"displayName" : @"displayName", @"phoneNumber" : @"phoneNumber"};
+    return @{@"displayName" : @"displayName", @"authToken" : @"authToken"};
 }
 
 // Specify properties to ignore (Realm won't persist these)
@@ -25,7 +25,7 @@
 }
 
 + (NSString *)primaryKey {
-    return @"authToken";
+    return @"phoneNumber";
 }
 
 + (NSDictionary *)JSONInboundMappingDictionary {

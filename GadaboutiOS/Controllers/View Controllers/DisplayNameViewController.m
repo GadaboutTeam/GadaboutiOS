@@ -48,11 +48,21 @@
     _displayName = [NSString stringWithString:[_displayNameTextField text]];
     [_user setDisplayName:_displayName];
 
-    [_defaultRealm beginWriteTransaction];
-    [_defaultRealm addObject:_user];
-    [_defaultRealm commitWriteTransaction];
-    
+    if ([[User objectsWhere:@"userType = 0"] count] == 0) {
+        [_defaultRealm beginWriteTransaction];
+        [_defaultRealm addObject:_user];
+        [_defaultRealm commitWriteTransaction];
+    }
+    else {
+        User *tempUser = [[User objectsWhere:@"userType = 0"] firstObject];
+        [_defaultRealm beginWriteTransaction];
+        [tempUser setAuthToken:[_user authToken]];
+        [tempUser setDisplayName:[_user displayName]];
+        [_defaultRealm commitWriteTransaction];
+    }
+
     NetworkingManager *networkingManager = [NetworkingManager sharedNetworkingManger];
+    [networkingManager sendDictionary:[_user JSONDictionary] toService:@"users"];
 
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     [self presentViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"TabBarController"] animated:YES completion:nil];

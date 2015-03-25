@@ -7,6 +7,7 @@
 //
 
 #import <Realm/Realm.h>
+#import <Realm+JSON/RLMObject+JSON.h>
 
 @interface User : RLMObject
 
