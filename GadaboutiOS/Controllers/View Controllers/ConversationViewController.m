@@ -10,7 +10,7 @@
 #import <Realm/Realm.h>
 #import "User.h"
 
-@interface ConversationViewController ()
+@interface ConversationViewController () 
 
 @property (nonatomic, strong) RLMArray *array;
 @property (nonatomic, strong) RLMNotificationToken *notification;

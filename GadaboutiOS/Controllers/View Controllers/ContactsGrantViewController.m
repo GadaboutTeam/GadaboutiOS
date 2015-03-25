@@ -27,7 +27,7 @@
 
 #pragma mark - IBActions
 - (IBAction)affirmativeWasPressed:(id)sender {
-    [self getContacts];
+    // [self getContacts];
 }
 
 - (IBAction)optOutWasPressed:(id)sender {

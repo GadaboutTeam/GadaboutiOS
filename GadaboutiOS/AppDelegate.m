@@ -33,6 +33,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[TwitterKit]];
+    [[Digits sharedInstance] logOut];
     
     // for white text in navigation bar controllers
     [self setupAppearence];

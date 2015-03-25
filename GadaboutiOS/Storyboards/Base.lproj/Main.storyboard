@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PoD-aO-lq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -61,7 +61,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zH7-kb-dCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1333.5" y="845"/>
+            <point key="canvasLocation" x="2250.75" y="844.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F57-gZ-3Q6">
@@ -81,10 +81,11 @@
             </objects>
             <point key="canvasLocation" x="2091" y="1565"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="SaV-ks-4bY">
             <objects>
                 <navigationController storyboardIdentifier="mainUI" automaticallyAdjustsScrollViewInsets="NO" id="PoD-aO-lq4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Lh5-yc-iYB"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P6t-zm-2HE">
@@ -98,7 +99,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNb-m7-hbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415.5" y="845"/>
+            <point key="canvasLocation" x="1332.75" y="844.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bb3-RZ-eKh">
@@ -253,19 +254,18 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="DbW-8m-RwR"/>
                                         <exclude reference="0T8-c2-csF"/>
+                                        <exclude reference="DbW-8m-RwR"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="DbW-8m-RwR"/>
                                         <include reference="0T8-c2-csF"/>
+                                        <include reference="DbW-8m-RwR"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="affirmativeWasPressed:" destination="W01-T0-38a" eventType="touchUpInside" id="STP-Qp-wH3"/>
-                                    <action selector="loginWasPressed:" destination="W01-T0-38a" eventType="touchUpInside" id="eJU-Gr-14M"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Can we get your contacts? We use them to find your friends." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-hv-Hd6">
@@ -280,15 +280,15 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="r1s-5t-A7G"/>
                                         <exclude reference="Nwg-tw-oBK"/>
+                                        <exclude reference="r1s-5t-A7G"/>
                                         <exclude reference="xLK-eU-oWm"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="r1s-5t-A7G"/>
                                         <include reference="Nwg-tw-oBK"/>
+                                        <include reference="r1s-5t-A7G"/>
                                         <include reference="xLK-eU-oWm"/>
                                     </mask>
                                 </variation>
@@ -346,15 +346,15 @@
                                 <exclude reference="Io4-Ma-nEu"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="r7b-mg-vU4"/>
+                                <exclude reference="B5u-2w-in0"/>
+                                <exclude reference="N2P-lU-Jbc"/>
+                                <exclude reference="kmJ-LX-KSd"/>
+                                <exclude reference="cFf-xU-Cfm"/>
+                                <exclude reference="hhl-bY-WSA"/>
                                 <exclude reference="I0b-Ne-BeY"/>
                                 <exclude reference="Jd3-Pp-ooQ"/>
                                 <exclude reference="fMM-Lo-8sq"/>
-                                <exclude reference="cFf-xU-Cfm"/>
-                                <exclude reference="hhl-bY-WSA"/>
-                                <exclude reference="kmJ-LX-KSd"/>
-                                <exclude reference="B5u-2w-in0"/>
-                                <exclude reference="N2P-lU-Jbc"/>
-                                <exclude reference="r7b-mg-vU4"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -365,15 +365,15 @@
                                 <include reference="Io4-Ma-nEu"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="r7b-mg-vU4"/>
+                                <include reference="B5u-2w-in0"/>
+                                <include reference="N2P-lU-Jbc"/>
+                                <include reference="kmJ-LX-KSd"/>
+                                <include reference="cFf-xU-Cfm"/>
+                                <include reference="hhl-bY-WSA"/>
                                 <include reference="I0b-Ne-BeY"/>
                                 <include reference="Jd3-Pp-ooQ"/>
                                 <include reference="fMM-Lo-8sq"/>
-                                <include reference="cFf-xU-Cfm"/>
-                                <include reference="hhl-bY-WSA"/>
-                                <include reference="kmJ-LX-KSd"/>
-                                <include reference="B5u-2w-in0"/>
-                                <include reference="N2P-lU-Jbc"/>
-                                <include reference="r7b-mg-vU4"/>
                             </mask>
                         </variation>
                     </view>
@@ -382,6 +382,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTU-3b-Vfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137.75" y="1908.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ECf-3Z-sdH">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="O7g-nh-MZW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="iCp-XZ-oQO">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PoD-aO-lq4" kind="relationship" relationship="viewControllers" id="h6n-f2-Qlr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3FJ-F7-32w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433.5" y="844"/>
         </scene>
     </scenes>
 </document>

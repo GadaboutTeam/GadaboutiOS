@@ -8,11 +8,13 @@
 
 #import <Realm/Realm.h>
 #import "User.h"
+#import "Message.h"
 
 @interface Conversation : RLMObject
 
 @property NSString *converationName;
 @property RLMArray<User> *participants;
+@property RLMArray<Message> *messages;
 
 @end
 

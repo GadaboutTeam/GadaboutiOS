@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JSQMessages.h"
 
 @interface ConversationViewController : UITableViewController
 

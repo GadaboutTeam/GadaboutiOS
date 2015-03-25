@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63365B4F1AC1BBD000BF75CA /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 63365B4E1AC1BBD000BF75CA /* Message.m */; };
 		634ECA941AA969BD0034D339 /* NewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA931AA969BD0034D339 /* NewMessageViewController.m */; };
 		634ECA971AA9FB970034D339 /* NewMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA961AA9FB970034D339 /* NewMessageView.m */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
@@ -48,6 +49,8 @@
 /* Begin PBXFileReference section */
 		2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GadaboutiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4339D894D1CC6D612DA5E6BB /* Pods-GadaboutiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.release.xcconfig"; sourceTree = "<group>"; };
+		63365B4D1AC1BBD000BF75CA /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		63365B4E1AC1BBD000BF75CA /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		634ECA921AA969BD0034D339 /* NewMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMessageViewController.h; sourceTree = "<group>"; };
 		634ECA931AA969BD0034D339 /* NewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMessageViewController.m; sourceTree = "<group>"; };
 		634ECA951AA9FB970034D339 /* NewMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMessageView.h; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 			children = (
 				63E59EEF1AC0E7900085D160 /* Conversation.h */,
 				63E59EF01AC0E7900085D160 /* Conversation.m */,
+				63365B4D1AC1BBD000BF75CA /* Message.h */,
+				63365B4E1AC1BBD000BF75CA /* Message.m */,
 				FA9911911A8069CB00714F7D /* User.h */,
 				FA9911921A8069CB00714F7D /* User.m */,
 			);
@@ -473,6 +478,7 @@
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
 				634ECA971AA9FB970034D339 /* NewMessageView.m in Sources */,
+				63365B4F1AC1BBD000BF75CA /* Message.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				634ECA941AA969BD0034D339 /* NewMessageViewController.m in Sources */,
