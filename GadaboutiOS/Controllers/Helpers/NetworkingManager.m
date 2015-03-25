@@ -7,13 +7,23 @@
 //
 
 #import "NetworkingManager.h"
+#import <Realm/Realm.h>
 
 NSString *const DomainURL = @"http://104.236.228.143/";
-NSString *const createUser = @"users";
 
 @implementation NetworkingManager
 
-- (id)init {
++ (id)sharedNetworkingManger {
+    static NetworkingManager *sharedNetworkingManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedNetworkingManager = [[self alloc] init];
+    });
+    
+    return sharedNetworkingManager;
+}
+
+- (NetworkingManager *)init {
     self = [super init];
     if (self) {
         manager = [AFHTTPRequestOperationManager manager];
@@ -24,7 +34,6 @@ NSString *const createUser = @"users";
 
 - (void)sendDictionary:(NSDictionary *)dictionary toService:(NSString *)service{
     NSString *postURL = [DomainURL stringByAppendingString:service];
-    User *currentUser = [[User allObjects] firstObject];
     
     [manager POST:postURL
        parameters:dictionary
