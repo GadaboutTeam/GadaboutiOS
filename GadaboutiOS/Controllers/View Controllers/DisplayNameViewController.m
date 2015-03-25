@@ -7,10 +7,11 @@
 //
 
 #import "DisplayNameViewController.h"
+#import "PrimaryButton.h"
 
 @interface DisplayNameViewController ()
 @property IBOutlet UITextField *displayNameTextField;
-@property IBOutlet UIButton *doneButton;
+@property IBOutlet PrimaryButton *doneButton;
 @property (nonatomic, retain) NSString *displayName;
 @end
 
@@ -42,6 +43,16 @@
 
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     [self presentViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"TabBarController"] animated:YES completion:nil];
+}
+
+- (IBAction) displayNameChanged:(id) sender {
+    if ([[_displayNameTextField text] length] != 0) {
+        [_doneButton setEnabled:YES];
+        [_doneButton setEnabledState];
+    } else {
+        [_doneButton setEnabled:NO];
+        [_doneButton setDisabledState];
+    }
 }
 
 @end
