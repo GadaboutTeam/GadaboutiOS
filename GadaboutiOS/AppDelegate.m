@@ -33,13 +33,36 @@
 #pragma mark - Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     [Fabric with:@[TwitterKit]];
     [[Digits sharedInstance] logOut];
     
     // for white text in navigation bar controllers
     [self setupAppearence];
     
+    // for tokens
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
     return YES;
+}
+
+#pragma mark - Notication Token Setup
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
+    NSLog(@"Got device token: %@", [devToken description]);
+    
+    [self sendProviderDeviceToken:[devToken bytes]]; // custom method; e.g., send to a web service and store
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSLog(@"Error in registration. Error: %@", err);
+}
+
+- (void)sendProviderDeviceToken:(NSData *)devToken {
+    NSDictionary *tokenDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:devToken, @"token", nil];
+    
+    NetworkingManager *networkingManager = [NetworkingManager sharedNetworkingManger];
+    [networkingManager sendDictionary:tokenDictionary toService:@"users"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
