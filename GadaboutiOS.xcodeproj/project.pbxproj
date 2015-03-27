@@ -89,7 +89,6 @@
 		FA1923B51A7BE57A00561568 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FA2295991AC4B57B0047EF31 /* UserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserController.h; sourceTree = "<group>"; };
 		FA22959A1AC4B57B0047EF31 /* UserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserController.m; sourceTree = "<group>"; };
-		FA22959C1AC591590047EF31 /* RealmErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmErrors.h; sourceTree = "<group>"; };
 		FA9911911A8069CB00714F7D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FA9911921A8069CB00714F7D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FA99119A1A80A3DF00714F7D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -178,7 +177,6 @@
 				63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */,
 				FA2295991AC4B57B0047EF31 /* UserController.h */,
 				FA22959A1AC4B57B0047EF31 /* UserController.m */,
-				FA22959C1AC591590047EF31 /* RealmErrors.h */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

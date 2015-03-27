@@ -55,6 +55,7 @@
              @"displayName" : @"username",
              @"phoneNumber" : @"auth_id",
              @"authToken" : @"auth_token",
+             @"deviceID" : @"device_id",
              @"lat" : @"lat",
              @"lon" : @"long"
              };
