@@ -9,5 +9,11 @@
 #ifndef GadaboutiOS_RealmErrors_h
 #define GadaboutiOS_RealmErrors_h
 
+NSString *RealmErrorDomain = @"com.gadabout.Realm.ErrorDomain";
+
+enum {
+    RealmUserDoesNotExist,
+    RealmMultipleUsersStored
+};
 
 #endif
