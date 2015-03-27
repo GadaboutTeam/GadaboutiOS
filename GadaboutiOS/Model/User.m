@@ -52,12 +52,14 @@
 
 + (NSDictionary *)JSONOutboundMappingDictionary {
     return @{
-             @"displayName" : @"username",
-             @"phoneNumber" : @"auth_id",
-             @"authToken" : @"auth_token",
+          @"displayName" : @"username",
+          @"phoneNumber" : @"phone_number",
+            @"authToken" : @"auth_token",
+      @"authTokenSecret" : @"auth_token_secret",
              @"deviceID" : @"device_id",
-             @"lat" : @"lat",
-             @"lon" : @"long"
+             @"digitsID" : @"auth_id",
+                  @"lat" : @"lat",
+                  @"lon" : @"long"
              };
 }
 

@@ -99,6 +99,7 @@
                                           [_currentUser setAuthTokenSecret:session.authTokenSecret];
                                           [_currentUser setDigitsID:session.userID];
                                           [_currentUser setLoggedIn:YES];
+                                          [_currentUser setDeviceID:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
                                       } else {
                                           NSLog(@"Digits error: %@", [error description]);
                                       }
@@ -110,9 +111,15 @@
 }
 
 - (void)persistCurrentUser {
-    [[RLMRealm defaultRealm] beginWriteTransaction];
-    [User createOrUpdateInDefaultRealmWithObject:_currentUser];
-    [[RLMRealm defaultRealm] commitWriteTransaction];
+    @try {
+        [[RLMRealm defaultRealm] beginWriteTransaction];
+        [User createOrUpdateInDefaultRealmWithObject:_currentUser];
+        [[RLMRealm defaultRealm] commitWriteTransaction];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"User could not be persisted: %@", [exception description]);
+    }
+
 }
 
 - (void)persistUser:(User *)user {
@@ -121,6 +128,10 @@
 
     // Recreate the in-memory copy with an unpersisted copy of the realm version
     _currentUser = [[User alloc] initWithObject:[self getUserFromRealm]];
+}
+
+- (NSDictionary *)getUserAuthDetailsDictionary {
+    return nil;
 }
 
 @end

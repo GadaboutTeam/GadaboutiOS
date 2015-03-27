@@ -45,4 +45,20 @@ NSString *const DomainURL = @"http://104.236.228.143:8080/";
           }];
 }
 
+- (void)requestWithDictionary:(NSDictionary *)dictionary fromService:(NSString *)service
+                 completion:(void (^)(NSError *))completion{
+
+    NSString *postURL = [DomainURL stringByAppendingString:service];
+
+    [manager POST:postURL
+       parameters:dictionary
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              completion(nil);
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              completion(error);
+          }];
+
+}
+
 @end
