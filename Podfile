@@ -2,20 +2,27 @@
 # platform :ios, '6.0'
 
 target 'GadaboutiOS' do
-  # General Utilities
-  pod 'AFNetworking', '~> 2.0' # networking
+  # Facebook SDK
+  pod 'Facebook-iOS-SDK', '~> 4.0'
+
+  # Networking
+  pod 'AFNetworking', '~> 2.5.2'
+
+  # Animation
   pod 'pop', '~> 1.0.7' # animation
-  pod 'Realm', '~> 0.91.0' # persistence
+
+  # Persistance
+  pod 'Realm', '~> 0.91.0'
   pod 'Realm+JSON', '~> 0.2'
 
-  # Messaging UIKit
-  pod 'JSQMessagesViewController'
+  # Messaging UI
+  pod 'JSQMessagesViewController', '~> 7.0'
 
   # Contacts Grant
-  pod 'APAddressBook'
+  pod 'APAddressBook', '~> 0.1.5'
 
   # For programatic layout
-  pod 'PureLayout'
+  pod 'PureLayout', '~> 2.0.5'
 end
 
 target 'GadaboutiOSTests' do
