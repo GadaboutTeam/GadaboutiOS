@@ -13,6 +13,9 @@ target 'GadaboutiOS' do
 
   # Contacts Grant
   pod 'APAddressBook'
+
+  # For programatic layout
+  pod 'PureLayout'
 end
 
 target 'GadaboutiOSTests' do

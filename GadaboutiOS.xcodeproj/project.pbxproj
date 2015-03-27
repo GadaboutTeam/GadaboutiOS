@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		631FA79F1AC498BB00429B3E /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA79E1AC498BB00429B3E /* ConversationsViewController.m */; };
+		631FA7A11AC4BD1A00429B3E /* Popover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FA7A01AC4BD1A00429B3E /* Popover.xib */; };
 		634ECA941AA969BD0034D339 /* NewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA931AA969BD0034D339 /* NewMessageViewController.m */; };
 		634ECA971AA9FB970034D339 /* NewMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA961AA9FB970034D339 /* NewMessageView.m */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
@@ -50,6 +51,7 @@
 		4339D894D1CC6D612DA5E6BB /* Pods-GadaboutiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.release.xcconfig"; sourceTree = "<group>"; };
 		631FA79D1AC498BB00429B3E /* ConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationsViewController.h; sourceTree = "<group>"; };
 		631FA79E1AC498BB00429B3E /* ConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationsViewController.m; sourceTree = "<group>"; };
+		631FA7A01AC4BD1A00429B3E /* Popover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Popover.xib; sourceTree = "<group>"; };
 		634ECA921AA969BD0034D339 /* NewMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMessageViewController.h; sourceTree = "<group>"; };
 		634ECA931AA969BD0034D339 /* NewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMessageViewController.m; sourceTree = "<group>"; };
 		634ECA951AA9FB970034D339 /* NewMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMessageView.h; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		6300E7A51A81A1E50007CD3A /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				631FA7A01AC4BD1A00429B3E /* Popover.xib */,
 				6355B4291A9CFB8100D25215 /* Navigation Bar */,
 				6355B42A1A9CFB9000D25215 /* Buttons */,
 			);
@@ -400,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */,
+				631FA7A11AC4BD1A00429B3E /* Popover.xib in Resources */,
 				63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */,
 				63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */,
 				635E44B11AB912B400419FB9 /* TwitterKitResources.bundle in Resources */,
