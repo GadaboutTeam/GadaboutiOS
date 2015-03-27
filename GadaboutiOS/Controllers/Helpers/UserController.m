@@ -33,6 +33,8 @@
     if (self != nil) {
         @try {
             _currentUser = [self getCurrentUser];
+            // Remove the line below once we solve the registration issue with Fabric
+            [_currentUser setLoggedIn:YES];
         }
         @catch (NSException *exception) {
             @throw exception;
@@ -107,7 +109,7 @@
 }
 
 - (BOOL)isLoggedIn {
-    return [self getUserFromRealm] != nil;
+    return [_currentUser loggedIn];
 }
 
 - (void)persistCurrentUser {

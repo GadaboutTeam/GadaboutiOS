@@ -17,5 +17,5 @@ FOUNDATION_EXPORT NSString *const DomainURL;
 
 + (id)sharedNetworkingManger;
 - (void)sendDictionary:(NSDictionary*)dictionary toService:(NSString*)service;
-
+- (void)requestWithDictionary:(NSDictionary *)dictionary fromService:(NSString *)service completion:(void (^)(id, NSError *))completion;
 @end
