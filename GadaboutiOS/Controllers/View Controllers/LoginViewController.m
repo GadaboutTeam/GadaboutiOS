@@ -30,11 +30,11 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-//    [[UserController sharedUserController] login];
+
 }
 
 - (IBAction)loginWasPressed:(id)sender {
-    [[UserController sharedUserController] login];
+    [[UserController sharedUserController] signUp];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate methods

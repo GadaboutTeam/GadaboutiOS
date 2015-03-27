@@ -43,26 +43,25 @@
 }
 
 - (User *)getCurrentUser {
-    User *user;
+    User *persistedUser;
 
     if (_currentUser != nil) {
         return _currentUser;
     } else {
-
         @try {
-            user = [[User alloc] initWithObject:[self getUserFromRealm]];
+            persistedUser = [self getUserFromRealm];
         }
         @catch (NSException *exception) {
-            if ([[exception description] compare:@"USER_DOES_NOT_EXIST"] == 0) {
-                user = [[User alloc] init];
-            } else {
-                NSLog(@"UserController: %@", [exception description]);
-                @throw exception;
-            }
+            NSLog(@"UserController: %@", [exception description]);
+            @throw exception;
         }
     }
 
-    return user;
+    if (persistedUser != nil) {
+        return [[User alloc] initWithObject:persistedUser];
+    } else {
+        return [[User alloc] init];
+    }
 }
 
 
@@ -71,8 +70,8 @@
     RLMResults *userArray = [User objectsWhere:@"userType = 0"];
 
     if ([userArray count] == 0) {
-        [NSException raise:@"USER_DOES_NOT_EXIST" format:@"There are no users stored in the database."];
-    } else if ([userArray count] != 1) {
+        return nil;
+    } else if ([userArray count] > 1) {
         [NSException raise:@"MULTIPLE_USERS_STORED" format:@"There should only be one primary user in Realm."];
     } else {
         user = [userArray firstObject];
@@ -81,7 +80,7 @@
     return user;
 }
 
-- (void)login {
+- (void)signUp {
     DGTAppearance *appearance = [[DGTAppearance alloc] init];
 
     appearance.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1];
@@ -100,16 +99,27 @@
                                           [_currentUser setAuthTokenSecret:session.authTokenSecret];
                                           [_currentUser setDigitsID:session.userID];
                                           [_currentUser setLoggedIn:YES];
+                                          [_currentUser setDeviceID:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
                                       } else {
                                           NSLog(@"Digits error: %@", [error description]);
                                       }
                                   }];
 }
 
+- (BOOL)isLoggedIn {
+    return [self getUserFromRealm] != nil;
+}
+
 - (void)persistCurrentUser {
-    [[RLMRealm defaultRealm] beginWriteTransaction];
-    [User createOrUpdateInDefaultRealmWithObject:_currentUser];
-    [[RLMRealm defaultRealm] commitWriteTransaction];
+    @try {
+        [[RLMRealm defaultRealm] beginWriteTransaction];
+        [User createOrUpdateInDefaultRealmWithObject:_currentUser];
+        [[RLMRealm defaultRealm] commitWriteTransaction];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"User could not be persisted: %@", [exception description]);
+    }
+
 }
 
 - (void)persistUser:(User *)user {
@@ -118,6 +128,10 @@
 
     // Recreate the in-memory copy with an unpersisted copy of the realm version
     _currentUser = [[User alloc] initWithObject:[self getUserFromRealm]];
+}
+
+- (NSDictionary *)getUserAuthDetailsDictionary {
+    return nil;
 }
 
 @end

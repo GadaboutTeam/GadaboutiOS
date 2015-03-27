@@ -56,8 +56,8 @@
     NetworkingManager *networkingManager = [NetworkingManager sharedNetworkingManger];
     [networkingManager sendDictionary:[_user JSONDictionary] toService:@"users"];
 
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    [self presentViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"TabBarController"] animated:YES completion:nil];
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    [self presentViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"TabBarController"] animated:YES completion:nil];
 }
 
 - (IBAction) displayNameChanged:(id) sender {
