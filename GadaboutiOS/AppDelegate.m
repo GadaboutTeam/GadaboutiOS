@@ -11,6 +11,7 @@
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 #import "NetworkingManager.h"
+#import "UserController.h"
 
 @interface AppDelegate ()
 
@@ -30,6 +31,15 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
 }
 
+- (void)setViewController {
+    UserController *userController = [UserController sharedUserController];
+    if (![userController isLoggedIn]) {
+        NSString *initialViewControllerID = @"loginScreen";
+        UIViewController *rootVC = [[[[self window] rootViewController] storyboard] instantiateViewControllerWithIdentifier:initialViewControllerID];
+        [[self window] setRootViewController:rootVC];
+    }
+}
+
 #pragma mark - Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -43,6 +53,8 @@
     // for tokens
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
+
+    [self setViewController];
     
     return YES;
 }

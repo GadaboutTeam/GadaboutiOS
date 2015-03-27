@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PXa-SB-42q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -34,7 +34,7 @@
         <!--Conversations View Controller-->
         <scene sceneID="7gm-BO-Yd1">
             <objects>
-                <collectionViewController id="QDk-QO-Ahn" customClass="ConversationsViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ConversationsView" id="QDk-QO-Ahn" customClass="ConversationsViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="102-5n-SJ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232.75" y="1820.5"/>
+            <point key="canvasLocation" x="336.75" y="2388.5"/>
         </scene>
         <!--Contacts Grant View Controller-->
         <scene sceneID="Xfk-xU-c77">
@@ -367,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTU-3b-Vfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2967.75" y="1820.5"/>
+            <point key="canvasLocation" x="1071.75" y="2388.5"/>
         </scene>
         <!--Display Name View Controller-->
         <scene sceneID="Aed-qX-chT">
@@ -442,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08o-He-PgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3744.75" y="1820.5"/>
+            <point key="canvasLocation" x="1848.75" y="2388.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="e40-py-hgd">
@@ -467,7 +467,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="F9n-R0-63b">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="PXa-SB-42q" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="PXa-SB-42q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

@@ -14,12 +14,14 @@
 
 // Components
 #import "PrimaryButton.h"
+#import "FriendsController.h"
 
 @interface ConversationsViewController ()
 
 @property (nonatomic, strong) RLMArray *conversations;
 @property (nonatomic, assign) BOOL didSetupConstraints;
 @property (nonatomic, strong) PrimaryButton *findFriendsButton;
+@property (nonatomic, strong) FriendsController *friendsController;
 
 @end
 
@@ -35,16 +37,10 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    if ([self shouldShowFindFriendsButton]) {
-        [self.view setNeedsUpdateConstraints];
-        // positions button on center
-        [self.view addSubview:_findFriendsButton];
-        [self updateViewConstraints];
-    } else {
-        [self.collectionView reloadData];
-    }
-    
+
+    _friendsController = [FriendsController sharedFriendsController];
+    [_friendsController getNearbyFriends];
+
     // Do any additional setup after loading the view.
     [self.collectionView reloadData];
 }
@@ -52,6 +48,10 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+
 }
 
 /*
@@ -63,27 +63,6 @@ static NSString * const reuseIdentifier = @"Cell";
     // Pass the selected object to the new view controller.
 }
 */
-
-#pragma mark Empty State Handling
-
-- (BOOL)shouldShowFindFriendsButton {
-    if (_conversations.count == 0) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-- (void)updateViewConstraints {
-    if (!self.didSetupConstraints) {
-        [_findFriendsButton autoCenterInSuperview];
-        [_findFriendsButton autoSetDimensionsToSize:CGSizeMake(80.0, 50.0)];
-        
-        self.didSetupConstraints = YES;
-    }
-    
-    [super updateViewConstraints];
-}
 
 #pragma mark <UICollectionViewDataSource>
 
