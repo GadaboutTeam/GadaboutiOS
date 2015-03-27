@@ -7,11 +7,19 @@
 //
 
 #import "ConversationsViewController.h"
+
+// Frameworks
 #import <Realm/Realm.h>
+#import <PureLayout/PureLayout.h>
+
+// Components
+#import "PrimaryButton.h"
 
 @interface ConversationsViewController ()
 
 @property (nonatomic, strong) RLMArray *conversations;
+@property (nonatomic, assign) BOOL didSetupConstraints;
+@property (nonatomic, strong) PrimaryButton *findFriendsButton;
 
 @end
 
@@ -27,6 +35,15 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    
+    if ([self shouldShowFindFriendsButton]) {
+        [self.view setNeedsUpdateConstraints];
+        // positions button on center
+        [self.view addSubview:_findFriendsButton];
+        [self updateViewConstraints];
+    } else {
+        [self.collectionView reloadData];
+    }
     
     // Do any additional setup after loading the view.
     [self.collectionView reloadData];
@@ -47,6 +64,27 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 */
 
+#pragma mark Empty State Handling
+
+- (BOOL)shouldShowFindFriendsButton {
+    if (_conversations.count == 0) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (void)updateViewConstraints {
+    if (!self.didSetupConstraints) {
+        [_findFriendsButton autoCenterInSuperview];
+        [_findFriendsButton autoSetDimensionsToSize:CGSizeMake(80.0, 50.0)];
+        
+        self.didSetupConstraints = YES;
+    }
+    
+    [super updateViewConstraints];
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -55,7 +93,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.conversations.count;
+    return _conversations.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
