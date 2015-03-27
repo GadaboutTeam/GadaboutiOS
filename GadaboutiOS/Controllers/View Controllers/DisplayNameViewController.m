@@ -10,6 +10,7 @@
 #import "NetworkingManager.h"
 #import "PrimaryButton.h"
 #import "User.h"
+#import "UserController.h"
 
 @interface DisplayNameViewController ()
 
@@ -17,6 +18,7 @@
 @property IBOutlet PrimaryButton *doneButton;
 @property (nonatomic, retain) NSString *displayName;
 @property RLMRealm *defaultRealm;
+@property User *user;
 
 @end
 
@@ -26,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _defaultRealm = [RLMRealm defaultRealm];
+    _user = [[UserController sharedUserController] getCurrentUser];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,19 +50,8 @@
     [self.view endEditing:YES];
     _displayName = [NSString stringWithString:[_displayNameTextField text]];
     [_user setDisplayName:_displayName];
+    [[UserController sharedUserController] persistUser:_user];
 
-    if ([[User objectsWhere:@"userType = 0"] count] == 0) {
-        [_defaultRealm beginWriteTransaction];
-        [_defaultRealm addObject:_user];
-        [_defaultRealm commitWriteTransaction];
-    }
-    else {
-        User *tempUser = [[User objectsWhere:@"userType = 0"] firstObject];
-        [_defaultRealm beginWriteTransaction];
-        [tempUser setAuthToken:[_user authToken]];
-        [tempUser setDisplayName:[_user displayName]];
-        [_defaultRealm commitWriteTransaction];
-    }
 
     NetworkingManager *networkingManager = [NetworkingManager sharedNetworkingManger];
     [networkingManager sendDictionary:[_user JSONDictionary] toService:@"users"];

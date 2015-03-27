@@ -10,5 +10,5 @@
 #import "User.h"
 
 @interface ContactsGrantViewController : UIViewController
-@property User *user;
+
 @end

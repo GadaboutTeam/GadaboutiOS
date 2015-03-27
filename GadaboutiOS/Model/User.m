@@ -7,21 +7,33 @@
 //
 
 #import "User.h"
+#import "AppDelegate.h"
 
 @implementation User
+
+- (id)init {
+    self = [super init];
+
+    if (self != nil) {
+
+    }
+
+    return self;
+}
 
 // Specify default values for properties
 
 + (NSDictionary *)defaultPropertyValues
 {
-    return @{@"displayName" : @"displayName", @"authToken" : @"authToken"};
+    return @{@"displayName" : @"displayName", @"authToken" : @"authToken",
+             @"deviceID" : @""};
 }
 
 // Specify properties to ignore (Realm won't persist these)
 
 + (NSArray *)ignoredProperties
 {
-    return @[@"lat", @"lon"];
+    return @[@"lat", @"lon", @"loggedIn"];
 }
 
 + (NSString *)primaryKey {
@@ -46,6 +58,18 @@
              @"lat" : @"lat",
              @"lon" : @"long"
              };
+}
+
+- (BOOL)isLoggedIn {
+    return _loggedIn;
+}
+
+- (void)logIn {
+    _loggedIn = true;
+}
+
+- (void)logOut {
+    _loggedIn = false;
 }
 
 @end

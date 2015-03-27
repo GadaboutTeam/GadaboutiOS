@@ -19,9 +19,14 @@ typedef NS_ENUM(NSInteger, UserType) {
 @property (nonatomic) NSString *displayName;
 @property (nonatomic) NSString *phoneNumber;
 @property (nonatomic) NSString *authToken;
+@property (nonatomic) NSString *authTokenSecret;
+@property (nonatomic) NSString *deviceID;
+@property (nonatomic) NSString *digitsID;
 @property (nonatomic) UserType userType;
 @property (nonatomic) NSInteger lat;
 @property (nonatomic) NSInteger lon;
+
+@property (nonatomic) BOOL loggedIn;
 
 @end
 
