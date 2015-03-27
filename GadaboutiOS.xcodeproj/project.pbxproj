@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		631FA79F1AC498BB00429B3E /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA79E1AC498BB00429B3E /* ConversationsViewController.m */; };
-		631FA7A11AC4BD1A00429B3E /* Popover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FA7A01AC4BD1A00429B3E /* Popover.xib */; };
+		631FA7A11AC4BD1A00429B3E /* Permissions Popover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */; };
 		634ECA941AA969BD0034D339 /* NewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA931AA969BD0034D339 /* NewMessageViewController.m */; };
 		634ECA971AA9FB970034D339 /* NewMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA961AA9FB970034D339 /* NewMessageView.m */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
@@ -25,6 +25,7 @@
 		63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBA1A7BD895009A212E /* Images.xcassets */; };
 		63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */; };
 		63BA5ECA1A7BD895009A212E /* GadaboutiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */; };
+		63E103921AC59E6400C15E9B /* PermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E103911AC59E6400C15E9B /* PermissionsViewController.m */; };
 		63E59EF41AC0EB040085D160 /* ContactsGrantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E59EF31AC0EB040085D160 /* ContactsGrantViewController.m */; };
 		65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */; };
 		FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationController.m */; };
@@ -52,7 +53,7 @@
 		4339D894D1CC6D612DA5E6BB /* Pods-GadaboutiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.release.xcconfig"; sourceTree = "<group>"; };
 		631FA79D1AC498BB00429B3E /* ConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationsViewController.h; sourceTree = "<group>"; };
 		631FA79E1AC498BB00429B3E /* ConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationsViewController.m; sourceTree = "<group>"; };
-		631FA7A01AC4BD1A00429B3E /* Popover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Popover.xib; sourceTree = "<group>"; };
+		631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Permissions Popover.xib"; path = "Custom UI/Permissions Popover.xib"; sourceTree = "<group>"; };
 		634ECA921AA969BD0034D339 /* NewMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMessageViewController.h; sourceTree = "<group>"; };
 		634ECA931AA969BD0034D339 /* NewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMessageViewController.m; sourceTree = "<group>"; };
 		634ECA951AA9FB970034D339 /* NewMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMessageView.h; sourceTree = "<group>"; };
@@ -81,6 +82,8 @@
 		63BA5EC31A7BD895009A212E /* GadaboutiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GadaboutiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EC81A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GadaboutiOSTests.m; sourceTree = "<group>"; };
+		63E103901AC59E6400C15E9B /* PermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionsViewController.h; sourceTree = "<group>"; };
+		63E103911AC59E6400C15E9B /* PermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionsViewController.m; sourceTree = "<group>"; };
 		63E59EF21AC0EB040085D160 /* ContactsGrantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsGrantViewController.h; sourceTree = "<group>"; };
 		63E59EF31AC0EB040085D160 /* ContactsGrantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsGrantViewController.m; sourceTree = "<group>"; };
 		D3B60062277E2CF1D1993697 /* Pods-GadaboutiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +147,6 @@
 		6300E7A51A81A1E50007CD3A /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
-				631FA7A01AC4BD1A00429B3E /* Popover.xib */,
 				6355B4291A9CFB8100D25215 /* Navigation Bar */,
 				6355B42A1A9CFB9000D25215 /* Buttons */,
 			);
@@ -207,6 +209,8 @@
 				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
 				FAD941CA1AC23A2B00FEF499 /* DisplayNameViewController.h */,
 				FAD941CB1AC23A2B00FEF499 /* DisplayNameViewController.m */,
+				63E103901AC59E6400C15E9B /* PermissionsViewController.h */,
+				63E103911AC59E6400C15E9B /* PermissionsViewController.m */,
 			);
 			name = Setup;
 			sourceTree = "<group>";
@@ -245,7 +249,7 @@
 				FA1923AB1A7BE12C00561568 /* Controllers */,
 				63BA5EB11A7BD895009A212E /* AppDelegate.h */,
 				63BA5EB21A7BD895009A212E /* AppDelegate.m */,
-				63BA5EB71A7BD895009A212E /* Main.storyboard */,
+				63E103931AC5A17D00C15E9B /* Graphical Layout */,
 				63BA5EBA1A7BD895009A212E /* Images.xcassets */,
 				63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */,
 				63BA5EAD1A7BD895009A212E /* Supporting Files */,
@@ -277,6 +281,15 @@
 				63BA5EC81A7BD895009A212E /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63E103931AC5A17D00C15E9B /* Graphical Layout */ = {
+			isa = PBXGroup;
+			children = (
+				631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */,
+				63BA5EB71A7BD895009A212E /* Main.storyboard */,
+			);
+			name = "Graphical Layout";
 			sourceTree = "<group>";
 		};
 		63E59EEE1AC0E2530085D160 /* Helper Views */ = {
@@ -410,7 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */,
-				631FA7A11AC4BD1A00429B3E /* Popover.xib in Resources */,
+				631FA7A11AC4BD1A00429B3E /* Permissions Popover.xib in Resources */,
 				63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */,
 				63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */,
 				635E44B11AB912B400419FB9 /* TwitterKitResources.bundle in Resources */,
@@ -481,6 +494,7 @@
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				6355B4331A9D10FB00D25215 /* PrimaryButton.m in Sources */,
+				63E103921AC59E6400C15E9B /* PermissionsViewController.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
 				FA22959B1AC4B57B0047EF31 /* UserController.m in Sources */,

@@ -22,7 +22,7 @@
 
 - (void)setupAppearence {
     // border
-    [self.layer setCornerRadius: 5.0f];
+    [self.layer setCornerRadius: 20.0f];
 
     if([self isEnabled]) {
         [self setEnabledState];
@@ -31,7 +31,7 @@
     }
     
     // font
-    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0f];
+    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17.0f];
     self.titleLabel.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 }
 
@@ -41,7 +41,7 @@
 }
 
 - (void)setEnabledState {
-    [self setBackgroundColor:[UIColor colorWithRed:0.99 green:0.33 blue:0.33 alpha:1]];
+    [self setBackgroundColor:[UIColor colorWithRed:0.25 green:0.62 blue:0.85 alpha:1]];
     self.titleLabel.textColor = [UIColor whiteColor];
 }
 
