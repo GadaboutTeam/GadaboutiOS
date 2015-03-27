@@ -13,6 +13,7 @@
 		634ECA971AA9FB970034D339 /* NewMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634ECA961AA9FB970034D339 /* NewMessageView.m */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
 		6355B4331A9D10FB00D25215 /* PrimaryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* PrimaryButton.m */; };
+		635B80621AC5E84A006AED67 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635B80611AC5E84A006AED67 /* FriendCell.m */; };
 		635E44B01AB912B400419FB9 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635E44AD1AB912B400419FB9 /* TwitterKit.framework */; };
 		635E44B11AB912B400419FB9 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 635E44AE1AB912B400419FB9 /* TwitterKitResources.bundle */; };
 		635E44B21AB912B400419FB9 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635E44AF1AB912B400419FB9 /* Fabric.framework */; };
@@ -63,6 +64,8 @@
 		6355B42C1A9CFDF600D25215 /* SetupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupView.m; sourceTree = "<group>"; };
 		6355B4311A9D10FB00D25215 /* PrimaryButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaryButton.h; sourceTree = "<group>"; };
 		6355B4321A9D10FB00D25215 /* PrimaryButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryButton.m; sourceTree = "<group>"; };
+		635B80601AC5E84A006AED67 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		635B80611AC5E84A006AED67 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
 		635E44AD1AB912B400419FB9 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		635E44AE1AB912B400419FB9 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		635E44AF1AB912B400419FB9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -325,6 +328,8 @@
 		FA1923AE1A7BE14300561568 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				635B80601AC5E84A006AED67 /* FriendCell.h */,
+				635B80611AC5E84A006AED67 /* FriendCell.m */,
 				634ECA951AA9FB970034D339 /* NewMessageView.h */,
 				634ECA961AA9FB970034D339 /* NewMessageView.m */,
 				6355B42B1A9CFDF600D25215 /* SetupView.h */,
@@ -505,6 +510,7 @@
 				634ECA971AA9FB970034D339 /* NewMessageView.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
+				635B80621AC5E84A006AED67 /* FriendCell.m in Sources */,
 				634ECA941AA969BD0034D339 /* NewMessageViewController.m in Sources */,
 				FAD941CC1AC23A2B00FEF499 /* DisplayNameViewController.m in Sources */,
 				63E59EF41AC0EB040085D160 /* ContactsGrantViewController.m in Sources */,
