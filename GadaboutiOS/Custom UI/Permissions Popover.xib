@@ -125,13 +125,13 @@
                     <exclude reference="ZEv-Ot-N8F"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="ZFA-GG-gsa"/>
-                    <exclude reference="9ZE-7X-AJK"/>
-                    <exclude reference="vlQ-5W-fnD"/>
-                    <exclude reference="7KW-ju-lna"/>
-                    <exclude reference="xkr-x4-pGO"/>
                     <exclude reference="Wa4-7F-L5j"/>
                     <exclude reference="oWw-Qx-xTf"/>
+                    <exclude reference="9ZE-7X-AJK"/>
+                    <exclude reference="vlQ-5W-fnD"/>
+                    <exclude reference="ZFA-GG-gsa"/>
+                    <exclude reference="7KW-ju-lna"/>
+                    <exclude reference="xkr-x4-pGO"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -139,13 +139,13 @@
                     <include reference="ZEv-Ot-N8F"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="ZFA-GG-gsa"/>
-                    <include reference="9ZE-7X-AJK"/>
-                    <include reference="vlQ-5W-fnD"/>
-                    <include reference="7KW-ju-lna"/>
-                    <include reference="xkr-x4-pGO"/>
                     <include reference="Wa4-7F-L5j"/>
                     <include reference="oWw-Qx-xTf"/>
+                    <include reference="9ZE-7X-AJK"/>
+                    <include reference="vlQ-5W-fnD"/>
+                    <include reference="ZFA-GG-gsa"/>
+                    <include reference="7KW-ju-lna"/>
+                    <include reference="xkr-x4-pGO"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="473.5" y="416.5"/>

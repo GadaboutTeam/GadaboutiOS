@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PXa-SB-42q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PXa-SB-42q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -98,7 +98,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvw-w4-5pk" customClass="PrimaryButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvw-w4-5pk" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="EH3-W2-pjQ">
@@ -128,7 +128,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="loginWasPressed:" destination="wJh-7R-SuN" eventType="touchUpInside" id="yeU-Tb-3He"/>
-                                    <segue destination="W01-T0-38a" kind="show" id="DNG-94-uXr"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="It's the best way to find out what your friends are doing." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-Wa-0Y8">
@@ -207,167 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336.75" y="2388.5"/>
-        </scene>
-        <!--Contacts Grant View Controller-->
-        <scene sceneID="Xfk-xU-c77">
-            <objects>
-                <viewController storyboardIdentifier="contactsScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W01-T0-38a" customClass="ContactsGrantViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zWk-YN-aUo"/>
-                        <viewControllerLayoutGuide type="bottom" id="KNV-kw-Hps"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iwT-NN-Ydg" customClass="SetupView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aem-wq-N5K" customClass="PrimaryButton">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="0T8-c2-csF">
-                                        <variation key="widthClass=compact" constant="44"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="140" id="DbW-8m-RwR">
-                                        <variation key="widthClass=compact" constant="220"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
-                                <state key="normal" title="Sure, that's fine.">
-                                    <color key="titleColor" red="0.97989374399999996" green="0.98006111380000005" blue="0.97988325359999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0T8-c2-csF"/>
-                                        <exclude reference="DbW-8m-RwR"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="0T8-c2-csF"/>
-                                        <include reference="DbW-8m-RwR"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="affirmativeWasPressed:" destination="W01-T0-38a" eventType="touchUpInside" id="STP-Qp-wH3"/>
-                                    <segue destination="Ipc-QV-cOD" kind="show" identifier="contactsToName" id="PS1-aR-txo"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Can we get your contacts? We use them to find your friends." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-hv-Hd6">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Nwg-tw-oBK"/>
-                                    <constraint firstAttribute="height" constant="65" id="r1s-5t-A7G"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="xLK-eU-oWm"/>
-                                </constraints>
-                                <color key="textColor" red="0.22815200690000001" green="0.2786997557" blue="0.35288691519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Nwg-tw-oBK"/>
-                                        <exclude reference="r1s-5t-A7G"/>
-                                        <exclude reference="xLK-eU-oWm"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Nwg-tw-oBK"/>
-                                        <include reference="r1s-5t-A7G"/>
-                                        <include reference="xLK-eU-oWm"/>
-                                    </mask>
-                                </variation>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Io4-Ma-nEu">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="tmV-Nt-MZU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="Eh, I’d rather not.">
-                                    <color key="titleColor" red="0.22612965106964111" green="0.2765999436378479" blue="0.35500615835189819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="tmV-Nt-MZU"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="tmV-Nt-MZU"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="optOutWasPressed:" destination="W01-T0-38a" eventType="touchUpInside" id="dpC-cO-b5R"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One more thing..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLM-Gh-Wra">
-                                <rect key="frame" x="172" y="140" width="256" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
-                                <color key="textColor" red="0.22612965106964111" green="0.2765999436378479" blue="0.35500615835189819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Io4-Ma-nEu" firstAttribute="top" secondItem="aem-wq-N5K" secondAttribute="bottom" constant="8" symbolic="YES" id="B5u-2w-in0"/>
-                            <constraint firstItem="eLM-Gh-Wra" firstAttribute="top" secondItem="zWk-YN-aUo" secondAttribute="bottom" constant="169" id="I0b-Ne-BeY"/>
-                            <constraint firstItem="eLM-Gh-Wra" firstAttribute="trailing" secondItem="eAg-hv-Hd6" secondAttribute="trailing" id="Jd3-Pp-ooQ"/>
-                            <constraint firstItem="Io4-Ma-nEu" firstAttribute="centerX" secondItem="iwT-NN-Ydg" secondAttribute="centerX" id="N2P-lU-Jbc"/>
-                            <constraint firstItem="eAg-hv-Hd6" firstAttribute="top" secondItem="eLM-Gh-Wra" secondAttribute="bottom" constant="8" symbolic="YES" id="cFf-xU-Cfm"/>
-                            <constraint firstItem="eLM-Gh-Wra" firstAttribute="centerX" secondItem="aem-wq-N5K" secondAttribute="centerX" id="fMM-Lo-8sq"/>
-                            <constraint firstAttribute="centerX" secondItem="eAg-hv-Hd6" secondAttribute="centerX" constant="3.5" id="hhl-bY-WSA"/>
-                            <constraint firstAttribute="centerX" secondItem="aem-wq-N5K" secondAttribute="centerX" id="kmJ-LX-KSd"/>
-                            <constraint firstItem="KNV-kw-Hps" firstAttribute="top" secondItem="aem-wq-N5K" secondAttribute="bottom" constant="39" id="r7b-mg-vU4">
-                                <variation key="widthClass=compact" constant="70"/>
-                            </constraint>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="aem-wq-N5K"/>
-                                <exclude reference="eAg-hv-Hd6"/>
-                                <exclude reference="Io4-Ma-nEu"/>
-                                <exclude reference="eLM-Gh-Wra"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="r7b-mg-vU4"/>
-                                <exclude reference="B5u-2w-in0"/>
-                                <exclude reference="N2P-lU-Jbc"/>
-                                <exclude reference="kmJ-LX-KSd"/>
-                                <exclude reference="cFf-xU-Cfm"/>
-                                <exclude reference="hhl-bY-WSA"/>
-                                <exclude reference="I0b-Ne-BeY"/>
-                                <exclude reference="Jd3-Pp-ooQ"/>
-                                <exclude reference="fMM-Lo-8sq"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="aem-wq-N5K"/>
-                                <include reference="eAg-hv-Hd6"/>
-                                <include reference="Io4-Ma-nEu"/>
-                                <include reference="eLM-Gh-Wra"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="r7b-mg-vU4"/>
-                                <include reference="B5u-2w-in0"/>
-                                <include reference="N2P-lU-Jbc"/>
-                                <include reference="kmJ-LX-KSd"/>
-                                <include reference="cFf-xU-Cfm"/>
-                                <include reference="hhl-bY-WSA"/>
-                                <include reference="I0b-Ne-BeY"/>
-                                <include reference="Jd3-Pp-ooQ"/>
-                                <include reference="fMM-Lo-8sq"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wTU-3b-Vfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1071.75" y="2388.5"/>
+            <point key="canvasLocation" x="972.75" y="1900.5"/>
         </scene>
         <!--Display Name View Controller-->
         <scene sceneID="Aed-qX-chT">
@@ -442,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08o-He-PgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848.75" y="2388.5"/>
+            <point key="canvasLocation" x="1812.75" y="1924.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="e40-py-hgd">
