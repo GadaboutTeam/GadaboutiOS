@@ -6,26 +6,27 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "ConversationsViewController.h"
+#import "FriendsViewController.h"
 
 // Frameworks
 #import <Realm/Realm.h>
 #import <PureLayout/PureLayout.h>
 
 // Components
-#import "PrimaryButton.h"
 #import "FriendsController.h"
 
-@interface ConversationsViewController ()
+@interface FriendsViewController ()
 
-@property (nonatomic, strong) RLMArray *conversations;
-@property (nonatomic, assign) BOOL didSetupConstraints;
-@property (nonatomic, strong) PrimaryButton *findFriendsButton;
+// realm
+@property (nonatomic, strong) RLMArray *nearbyFriends;
+@property (nonatomic, strong) RLMNotificationToken *notification;
+
+// for accessing friends
 @property (nonatomic, strong) FriendsController *friendsController;
 
 @end
 
-@implementation ConversationsViewController
+@implementation FriendsViewController
 
 static NSString * const reuseIdentifier = @"Cell";
 
@@ -39,9 +40,14 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 
     _friendsController = [FriendsController sharedFriendsController];
-    [_friendsController getNearbyFriends];
+    #warning we still need to decide on how nearby friends will be accessed. right now, error.
+    self.nearbyFriends = [_friendsController getNearbyFriends];
 
-    // Do any additional setup after loading the view.
+    // updating collection view
+    __weak typeof(self) weakSelf = self;
+    self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
+        [weakSelf.collectionView reloadData];
+    }];
     [self.collectionView reloadData];
 }
 
@@ -72,7 +78,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _conversations.count;
+    return self.nearbyFriends.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

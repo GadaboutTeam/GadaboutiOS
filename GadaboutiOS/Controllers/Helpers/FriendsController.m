@@ -7,6 +7,9 @@
 //
 
 #import "FriendsController.h"
+
+// frameworks
+#import <Realm/Realm.h>
 #import "NetworkingManager.h"
 #import "UserController.h"
 
@@ -45,7 +48,7 @@
 
 //
 // /users/auth_id/friends
-- (NSArray *)getNearbyFriends {
+- (RLMArray *)getNearbyFriends {
 //    NSArray *nearbyFriends = [[NSArray alloc] init];
     NSString *serviceString = [NSString stringWithFormat:@"/users/%@/friends",[[_userController getCurrentUser] authToken]];
 

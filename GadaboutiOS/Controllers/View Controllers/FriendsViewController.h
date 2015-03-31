@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConversationsViewController : UICollectionViewController
+@interface FriendsViewController : UICollectionViewController
 
 @end
