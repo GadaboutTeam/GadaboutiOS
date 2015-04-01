@@ -12,6 +12,6 @@
 @interface FriendsController : NSObject
 
 + (id)sharedFriendsController;
-- (NSDictionary *)getNearbyFriends;
+- (void)getNearbyFriends;
 
 @end

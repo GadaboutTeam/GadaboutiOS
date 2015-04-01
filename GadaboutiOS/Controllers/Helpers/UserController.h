@@ -12,9 +12,10 @@
 @interface UserController : NSObject
 
 + (id)sharedUserController;
-- (void)signUp;
+- (void)login;
 - (User *)getCurrentUser;
 - (void)persistCurrentUser;
 - (void)persistUser:(User *)user;
+- (void)setCurrentUser:(User *)user;
 - (BOOL)isLoggedIn;
 @end

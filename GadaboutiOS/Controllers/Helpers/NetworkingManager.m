@@ -38,7 +38,7 @@ NSString *const DomainURL = @"http://104.236.228.143:8080/";
     [manager POST:postURL
        parameters:dictionary
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              NSLog(@"Success");
+              NSLog(@"Success for operation: %@", [operation description]);
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               NSLog(@"Failure: %@", error.description);

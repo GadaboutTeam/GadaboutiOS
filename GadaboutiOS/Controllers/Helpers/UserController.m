@@ -7,11 +7,14 @@
 //
 
 #import "UserController.h"
-#import <TwitterKit/TwitterKit.h>
+#import "NetworkingManager.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface UserController()
 @property (nonatomic, retain) User *currentUser;
-
+@property (nonatomic, retain) NSArray *permissions;
+@property (nonatomic, retain) NetworkingManager *networkManager;
 @end
 
 @implementation UserController
@@ -35,6 +38,11 @@
             _currentUser = [self getCurrentUser];
             // Remove the line below once we solve the registration issue with Fabric
             [_currentUser setLoggedIn:YES];
+            self.permissions = @[@"public_profile", @"email", @"user_friends"];
+
+            [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+
+            self.networkManager = [NetworkingManager sharedNetworkingManger];
         }
         @catch (NSException *exception) {
             @throw exception;
@@ -66,6 +74,9 @@
     }
 }
 
+- (void)setCurrentUser:(User *)user {
+    self.currentUser = user;
+}
 
 - (User *)getUserFromRealm {
     User *user;
@@ -82,30 +93,34 @@
     return user;
 }
 
-- (void)signUp {
-    DGTAppearance *appearance = [[DGTAppearance alloc] init];
+- (void)login {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions:_permissions handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error) {
 
-    appearance.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1];
-    appearance.accentColor = [UIColor colorWithRed:0.99 green:0.33 blue:0.33 alpha:1];
+        } else if (result.isCancelled) {
 
-    Digits *digits = [Digits sharedInstance];
-    [digits authenticateWithDigitsAppearance:appearance
-                              viewController:nil
-                                       title:nil
-                                  completion:^(DGTSession *session, NSError *error) {
-                                      if (session) {
-                                          NSLog(@"Logged in!");
+        } else {
+            NSLog(@"User logged in.");
+            NSLog(@"Access Token: %@", result.token);
+            if ([result.grantedPermissions containsObject:@"email"]) {
+                [self.currentUser setFacebookID:[[FBSDKProfile currentProfile] userID]];
+                [self.currentUser setDisplayName:[[FBSDKProfile currentProfile] name]];
+                [self.currentUser setAuthToken:result.token.tokenString];
 
-                                          [_currentUser setAuthToken:session.authToken];
-                                          [_currentUser setPhoneNumber:session.phoneNumber];
-                                          [_currentUser setAuthTokenSecret:session.authTokenSecret];
-                                          [_currentUser setDigitsID:session.userID];
-                                          [_currentUser setLoggedIn:YES];
-                                          [_currentUser setDeviceID:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
-                                      } else {
-                                          NSLog(@"Digits error: %@", [error description]);
-                                      }
-                                  }];
+                #warning Need to setup aps-environment entitlement string as specified in the documentation: https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingLocalAndPushNotifications.html
+                [self.currentUser setDeviceID:@"woof_woof"];
+
+
+
+                //Persist user
+                [self persistUser:self.currentUser];
+
+                //Send user to server
+                [self.networkManager sendDictionary:[[self getUserFromRealm] JSONDictionary] toService:@"users"];
+            }
+        }
+    }];
 }
 
 - (BOOL)isLoggedIn {

@@ -35,7 +35,7 @@
 }
 
 - (IBAction)loginWasPressed:(id)sender {
-    [[UserController sharedUserController] signUp];
+    [[UserController sharedUserController] login];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate methods

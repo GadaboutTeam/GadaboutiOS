@@ -71,10 +71,15 @@
     NSLog(@"Got device token: %@", [devToken description]);
     
     [self sendProviderDeviceToken:[devToken bytes]]; // custom method; e.g., send to a web service and store
+
+    UserController *userController = [UserController sharedUserController];
+    User *user = [userController getCurrentUser];
+    [user setDeviceID:[devToken description]];
+    [userController setCurrentUser: user];
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
-    NSLog(@"Error in registration. Error: %@", err);
+    NSLog(@"Error in registration. Error: %@", [err description]);
 }
 
 - (void)sendProviderDeviceToken:(NSData *)devToken {

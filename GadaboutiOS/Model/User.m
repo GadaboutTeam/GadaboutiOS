@@ -26,7 +26,7 @@
 + (NSDictionary *)defaultPropertyValues
 {
     return @{@"displayName" : @"displayName", @"authToken" : @"authToken",
-             @"deviceID" : @""};
+             @"deviceID" : @"" , @"email" : @"email"};
 }
 
 // Specify properties to ignore (Realm won't persist these)
@@ -37,13 +37,13 @@
 }
 
 + (NSString *)primaryKey {
-    return @"phoneNumber";
+    return @"facebookID";
 }
 
 + (NSDictionary *)JSONInboundMappingDictionary {
     return @{
              @"username" : @"displayName",
-             @"auth_id"  : @"phoneNumber",
+             @"auth_id"  : @"facebookID",
              @"auth_token" : @"authToken",
              @"lat" : @"lat",
              @"long" : @"lon"
@@ -52,12 +52,10 @@
 
 + (NSDictionary *)JSONOutboundMappingDictionary {
     return @{
+          @"facebookID" : @"auth_id",
           @"displayName" : @"username",
-          @"phoneNumber" : @"phone_number",
             @"authToken" : @"auth_token",
-      @"authTokenSecret" : @"auth_token_secret",
              @"deviceID" : @"device_id",
-             @"digitsID" : @"auth_id",
                   @"lat" : @"lat",
                   @"lon" : @"long"
              };

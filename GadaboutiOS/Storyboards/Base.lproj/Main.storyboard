@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PXa-SB-42q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -11,7 +11,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="ConversationsView" id="QDk-QO-Ahn" customClass="FriendsViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="102-5n-SJ9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98989266157150269" green="0.99006170034408569" blue="0.98988205194473267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ukz-g1-tqz">
@@ -56,6 +56,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="It's the best way to find out what your friends are doing." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-Wa-0Y8">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="B5L-AD-wHA"/>
+                                    <constraint firstAttribute="width" constant="320" id="PBr-8k-JRl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="aFu-2t-Bge"/>
+                                </constraints>
+                                <color key="textColor" red="0.22815200686454773" green="0.27869975566864014" blue="0.35288691520690918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="B5L-AD-wHA"/>
+                                        <exclude reference="PBr-8k-JRl"/>
+                                        <exclude reference="aFu-2t-Bge"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="B5L-AD-wHA"/>
+                                        <include reference="PBr-8k-JRl"/>
+                                        <include reference="aFu-2t-Bge"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Gadabout." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahe-7s-K3D">
+                                <rect key="frame" x="172" y="140" width="256" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" red="0.22815200686454773" green="0.27869975566864014" blue="0.35288691520690918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvw-w4-5pk" customClass="PrimaryButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -88,37 +119,6 @@
                                     <action selector="loginWasPressed:" destination="wJh-7R-SuN" eventType="touchUpInside" id="yeU-Tb-3He"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="It's the best way to find out what your friends are doing." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-Wa-0Y8">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="B5L-AD-wHA"/>
-                                    <constraint firstAttribute="width" constant="320" id="PBr-8k-JRl"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="aFu-2t-Bge"/>
-                                </constraints>
-                                <color key="textColor" red="0.22815200686454773" green="0.27869975566864014" blue="0.35288691520690918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="B5L-AD-wHA"/>
-                                        <exclude reference="PBr-8k-JRl"/>
-                                        <exclude reference="aFu-2t-Bge"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="B5L-AD-wHA"/>
-                                        <include reference="PBr-8k-JRl"/>
-                                        <include reference="aFu-2t-Bge"/>
-                                    </mask>
-                                </variation>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Gadabout." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahe-7s-K3D">
-                                <rect key="frame" x="172" y="140" width="256" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
-                                <color key="textColor" red="0.22815200686454773" green="0.27869975566864014" blue="0.35288691520690918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -131,9 +131,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="hvw-w4-5pk"/>
                                 <exclude reference="vs2-Wa-0Y8"/>
                                 <exclude reference="Ahe-7s-K3D"/>
+                                <exclude reference="hvw-w4-5pk"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="lBn-gD-Bqr"/>
@@ -146,9 +146,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="hvw-w4-5pk"/>
                                 <include reference="vs2-Wa-0Y8"/>
                                 <include reference="Ahe-7s-K3D"/>
+                                <include reference="hvw-w4-5pk"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="lBn-gD-Bqr"/>

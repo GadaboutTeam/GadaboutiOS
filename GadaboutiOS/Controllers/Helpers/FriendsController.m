@@ -46,27 +46,16 @@
     return self;
 }
 
-//
 // /users/auth_id/friends
-- (RLMArray *)getNearbyFriends {
+- (void)getNearbyFriends {
 //    NSArray *nearbyFriends = [[NSArray alloc] init];
     NSString *serviceString = [NSString stringWithFormat:@"/users/%@/friends",[[_userController getCurrentUser] authToken]];
 
-    [_networkingManager requestWithDictionary:nil
-                                  fromService:serviceString
-                                   completion:^(id response, NSError *error) {
-                                       if (error == nil) {
-                                           NSError *serializationError;
-                                           NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:&serializationError];
-                                           if (!error) {
-                                                NSLog(@"Friends array: %@", @"ugh");
-                                           } else {
-                                               NSLog(@"JSON parsing error: %@", [error description]);
-                                           }
-                                       }
-                                }];
 
-    return nil;
+}
+
+- (void)getFacebookFriends {
+
 }
 
 @end

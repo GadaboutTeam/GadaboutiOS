@@ -41,7 +41,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
     _friendsController = [FriendsController sharedFriendsController];
     #warning we still need to decide on how nearby friends will be accessed. right now, error.
-    self.nearbyFriends = [_friendsController getNearbyFriends];
+    [_friendsController getNearbyFriends];
 
     // updating collection view
     __weak typeof(self) weakSelf = self;
