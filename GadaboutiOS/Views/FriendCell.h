@@ -10,4 +10,7 @@
 
 @interface FriendCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (weak, nonatomic) IBOutlet UILabel *firstName;
+
 @end

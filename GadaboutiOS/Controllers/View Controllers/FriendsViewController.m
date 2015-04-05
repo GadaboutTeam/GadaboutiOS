@@ -14,6 +14,7 @@
 
 // Components
 #import "FriendsController.h"
+#import "FriendCell.h"
 
 @interface FriendsViewController ()
 
@@ -78,13 +79,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.nearbyFriends.count;
+//    return self.nearbyFriends.count;
+    return 5;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+- (FriendCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    FriendCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    cell.firstName.text = @"Hello!";
     
     return cell;
 }

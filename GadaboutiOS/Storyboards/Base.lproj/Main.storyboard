@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PXa-SB-42q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -15,21 +15,87 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98989266157150269" green="0.99006170034408569" blue="0.98988205194473267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ukz-g1-tqz">
-                            <size key="itemSize" width="320" height="50"/>
+                            <size key="itemSize" width="90" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="12" minY="12" maxX="12" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Khx-qH-S90">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Khx-qH-S90" customClass="FriendCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iC-ix-QMb">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="NtT-fA-5UF"/>
+                                                <constraint firstAttribute="width" constant="90" id="n5v-Ms-noM"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="NtT-fA-5UF"/>
+                                                    <exclude reference="n5v-Ms-noM"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="NtT-fA-5UF"/>
+                                                    <include reference="n5v-Ms-noM"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cZ-ke-jr3">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="0.43699091672897339" green="0.65729004144668579" blue="0.57238447666168213" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6cZ-ke-jr3" firstAttribute="top" secondItem="2iC-ix-QMb" secondAttribute="bottom" constant="4" id="TwR-NH-MFL"/>
+                                    <constraint firstItem="2iC-ix-QMb" firstAttribute="top" secondItem="Khx-qH-S90" secondAttribute="top" id="cmQ-8T-6oA"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="6cZ-ke-jr3" secondAttribute="bottom" constant="-3" id="dPO-Ib-chx"/>
+                                    <constraint firstItem="2iC-ix-QMb" firstAttribute="leading" secondItem="Khx-qH-S90" secondAttribute="leading" id="l9g-uz-JEm"/>
+                                    <constraint firstItem="6cZ-ke-jr3" firstAttribute="trailing" secondItem="2iC-ix-QMb" secondAttribute="trailing" id="ooG-8S-ntl"/>
+                                    <constraint firstItem="6cZ-ke-jr3" firstAttribute="leading" secondItem="2iC-ix-QMb" secondAttribute="leading" id="uDu-dq-ga0"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="2iC-ix-QMb"/>
+                                        <exclude reference="6cZ-ke-jr3"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="TwR-NH-MFL"/>
+                                        <exclude reference="dPO-Ib-chx"/>
+                                        <exclude reference="ooG-8S-ntl"/>
+                                        <exclude reference="uDu-dq-ga0"/>
+                                        <exclude reference="cmQ-8T-6oA"/>
+                                        <exclude reference="l9g-uz-JEm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="2iC-ix-QMb"/>
+                                        <include reference="6cZ-ke-jr3"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="TwR-NH-MFL"/>
+                                        <include reference="dPO-Ib-chx"/>
+                                        <include reference="ooG-8S-ntl"/>
+                                        <include reference="uDu-dq-ga0"/>
+                                        <include reference="cmQ-8T-6oA"/>
+                                        <include reference="l9g-uz-JEm"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="firstName" destination="6cZ-ke-jr3" id="leO-SW-e9f"/>
+                                    <outlet property="profilePicture" destination="2iC-ix-QMb" id="die-lL-DUk"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -42,7 +108,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="po1-jR-B5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3907.5" y="888"/>
+            <point key="canvasLocation" x="3906.75" y="887.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bb3-RZ-eKh">
@@ -283,5 +349,5 @@
             <point key="canvasLocation" x="2071.5" y="888"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.4826769232749939" green="0.85895568132400513" blue="0.97115737199783325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.48544144630432129" green="0.46188443899154663" blue="0.98959618806838989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

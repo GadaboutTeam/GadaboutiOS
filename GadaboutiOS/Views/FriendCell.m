@@ -8,6 +8,10 @@
 
 #import "FriendCell.h"
 
+@interface FriendCell()
+
+@end
+
 @implementation FriendCell
 
 @end

@@ -14,9 +14,6 @@
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
 		6355B4331A9D10FB00D25215 /* PrimaryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* PrimaryButton.m */; };
 		635B80621AC5E84A006AED67 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635B80611AC5E84A006AED67 /* FriendCell.m */; };
-		635E44B01AB912B400419FB9 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635E44AD1AB912B400419FB9 /* TwitterKit.framework */; };
-		635E44B11AB912B400419FB9 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 635E44AE1AB912B400419FB9 /* TwitterKitResources.bundle */; };
-		635E44B21AB912B400419FB9 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635E44AF1AB912B400419FB9 /* Fabric.framework */; };
 		636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F31A81BA9100A9AE57 /* NavigationBar.m */; };
 		636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F61A81BCB700A9AE57 /* NavigationViewController.m */; };
 		63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */; };
@@ -65,9 +62,6 @@
 		6355B4321A9D10FB00D25215 /* PrimaryButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryButton.m; sourceTree = "<group>"; };
 		635B80601AC5E84A006AED67 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
 		635B80611AC5E84A006AED67 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
-		635E44AD1AB912B400419FB9 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		635E44AE1AB912B400419FB9 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
-		635E44AF1AB912B400419FB9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		636185F21A81BA9100A9AE57 /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
 		636185F31A81BA9100A9AE57 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
 		636185F51A81BCB700A9AE57 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
@@ -114,8 +108,6 @@
 			files = (
 				FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */,
 				65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */,
-				635E44B01AB912B400419FB9 /* TwitterKit.framework in Frameworks */,
-				635E44B21AB912B400419FB9 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,9 +212,6 @@
 		63BA5EA11A7BD895009A212E = {
 			isa = PBXGroup;
 			children = (
-				635E44AD1AB912B400419FB9 /* TwitterKit.framework */,
-				635E44AE1AB912B400419FB9 /* TwitterKitResources.bundle */,
-				635E44AF1AB912B400419FB9 /* Fabric.framework */,
 				FA1923B51A7BE57A00561568 /* CoreLocation.framework */,
 				63BA5EAC1A7BD895009A212E /* GadaboutiOS */,
 				63BA5EC61A7BD895009A212E /* GadaboutiOSTests */,
@@ -429,7 +418,6 @@
 				631FA7A11AC4BD1A00429B3E /* Permissions Popover.xib in Resources */,
 				63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */,
 				63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */,
-				635E44B11AB912B400419FB9 /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
