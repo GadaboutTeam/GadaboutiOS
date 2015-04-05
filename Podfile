@@ -18,9 +18,6 @@ target 'GadaboutiOS' do
   # Messaging UI
   pod 'JSQMessagesViewController', '~> 7.0'
 
-  # Contacts Grant
-  pod 'APAddressBook', '~> 0.1.5'
-
   # For programatic layout
   pod 'PureLayout', '~> 2.0.5'
 end

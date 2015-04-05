@@ -7,8 +7,6 @@
 //
 
 #import <pop/POP.h>
-#import <TwitterKit/TwitterKit.h>
-#import "ContactsGrantViewController.h"
 #import "LoginViewController.h"
 #import "PushStoryBoardSegue.h"
 #import "User.h"
