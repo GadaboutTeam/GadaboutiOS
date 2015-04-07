@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "FriendsViewController.h"
+#import "NearbyFriendsViewController.h"
 
 // Frameworks
 #import <Realm/Realm.h>
@@ -16,7 +16,7 @@
 #import "FriendsController.h"
 #import "FriendCell.h"
 
-@interface FriendsViewController ()
+@interface NearbyFriendsViewController ()
 
 // realm
 @property (nonatomic, strong) RLMArray *nearbyFriends;
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation FriendsViewController
+@implementation NearbyFriendsViewController
 
 static NSString * const reuseIdentifier = @"Cell";
 

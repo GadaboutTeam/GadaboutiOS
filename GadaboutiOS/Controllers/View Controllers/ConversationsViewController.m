@@ -1,38 +1,28 @@
 //
-//  NewMessageViewController.m
+//  ConversationsViewController.m
 //  GadaboutiOS
 //
-//  Created by David Barsky on 3/5/15.
+//  Created by David Barsky on 4/7/15.
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "NewMessageViewController.h"
+#import "ConversationsViewController.h"
 
-@interface NewMessageViewController () 
+@interface ConversationsViewController ()
 
 @end
 
-@implementation NewMessageViewController
+@implementation ConversationsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - IBActions
-
-- (IBAction)cancelWasPressed:(id)sender {
-    [self dismissSelf];
-}
-
-- (void)dismissSelf {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 /*
 #pragma mark - Navigation

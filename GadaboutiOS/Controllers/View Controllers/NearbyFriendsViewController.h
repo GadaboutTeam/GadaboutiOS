@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FriendsViewController : UICollectionViewController
+@interface NearbyFriendsViewController : UICollectionViewController
 
 @end

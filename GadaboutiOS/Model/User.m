@@ -57,7 +57,7 @@
             @"authToken" : @"auth_token",
              @"deviceID" : @"device_id",
                   @"lat" : @"lat",
-                  @"lon" : @"long"
+                  @"lon" : @"long",
              };
 }
 
