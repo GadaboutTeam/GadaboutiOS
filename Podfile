@@ -16,7 +16,7 @@ target 'GadaboutiOS' do
   pod 'Realm+JSON', '~> 0.2'
 
   # Messaging UI
-  pod 'JSQMessagesViewController', '~> 7.0'
+  pod 'Atlas'
 
   # For programatic layout
   pod 'PureLayout', '~> 2.0.5'

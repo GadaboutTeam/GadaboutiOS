@@ -10,6 +10,7 @@
 
 // frameworks
 #import <Realm/Realm.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "NetworkingManager.h"
 #import "UserController.h"
 
@@ -48,10 +49,15 @@
 
 // /users/auth_id/friends
 - (void)getNearbyFriends {
-//    NSArray *nearbyFriends = [[NSArray alloc] init];
     NSString *serviceString = [NSString stringWithFormat:@"/users/%@/friends",[[_userController getCurrentUser] authToken]];
-
-
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:serviceString parameters:nil]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+         if (!error) {
+             NSLog(@"fetched results: %@", result);
+         } else {
+             NSLog(@"Error: %@", error);
+         }
+     }];
 }
 
 - (void)getFacebookFriends {

@@ -87,7 +87,7 @@ static NSString * const reuseIdentifier = @"Cell";
     FriendCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    cell.firstName.text = @"Hello!";
+//    cell.firstName.text = @"Hello!";
     
     return cell;
 }
