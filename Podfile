@@ -1,4 +1,5 @@
-# Uncomment this line to define a global platform for your project
+#
+#Uncomment this line to define a global platform for your project
 # platform :ios, '6.0'
 
 target 'GadaboutiOS' do
@@ -9,7 +10,8 @@ target 'GadaboutiOS' do
   pod 'AFNetworking', '~> 2.5.2'
 
   # Animation
-  pod 'pop', '~> 1.0.7' # animation
+  pod 'pop', '~> 1.0.7'
+  pod 'PulsingHalo', :git => 'https://github.com/shu223/PulsingHalo.git'
 
   # Persistance
   pod 'Realm', '~> 0.91.0'
@@ -18,8 +20,8 @@ target 'GadaboutiOS' do
   # Messaging UI
   pod 'Atlas'
 
-  # For programatic layout
-  pod 'PureLayout', '~> 2.0.5'
+  # Prepermissions for Location, Notifications, etc.
+  pod 'ClusterPrePermissions', '~> 0.1'
 end
 
 target 'GadaboutiOSTests' do

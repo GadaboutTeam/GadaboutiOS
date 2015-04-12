@@ -7,8 +7,12 @@
 //
 
 #import "ConversationsViewController.h"
+#import <Realm/Realm.h>
 
 @interface ConversationsViewController ()
+
+@property (nonatomic, strong) RLMResults *array;
+@property (nonatomic, strong) RLMNotificationToken *notification;
 
 @end
 
@@ -16,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,6 @@
 
 // Frameworks
 #import <Realm/Realm.h>
-#import <PureLayout/PureLayout.h>
 
 // Components
 #import "FriendsController.h"
