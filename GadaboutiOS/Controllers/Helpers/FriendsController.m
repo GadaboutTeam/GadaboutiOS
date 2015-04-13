@@ -50,7 +50,7 @@
     return self;
 }
 
-- (NSArray *)getNearbyFriends {
+- (RLMArray *)getNearbyFriends {
     // initialziation
     RLMArray *results = [User objectsWhere:@"UserType = 'UserTypeSelf'"];
     User *me = [results firstObject];

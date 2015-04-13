@@ -20,6 +20,9 @@ target 'GadaboutiOS' do
   # Messaging UI
   pod 'Atlas'
 
+  # Textview with a Placeholder. What a concept!
+  pod 'SZTextView', '~> 1.2.1'
+
   # Prepermissions for Location, Notifications, etc.
   pod 'ClusterPrePermissions', '~> 0.1'
 end

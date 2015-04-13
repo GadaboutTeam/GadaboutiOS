@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="h8k-SR-Mf9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -14,6 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98989266157150269" green="0.99006170034408569" blue="0.98988205194473267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ukz-g1-tqz">
                             <size key="itemSize" width="90" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -103,12 +104,159 @@
                             <outlet property="delegate" destination="QDk-QO-Ahn" id="rMc-9T-ueE"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Og8-zJ-qo0"/>
+                    <navigationItem key="navigationItem" id="Og8-zJ-qo0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6e5-OU-eHX">
+                            <connections>
+                                <segue destination="h8k-SR-Mf9" kind="presentation" id="Enf-aA-csY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="po1-jR-B5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3825.75" y="543.5"/>
+            <point key="canvasLocation" x="3858.75" y="543.5"/>
+        </scene>
+        <!--Invitation View Controller-->
+        <scene sceneID="wju-9e-eIk">
+            <objects>
+                <viewController id="h8k-SR-Mf9" customClass="InvitationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wr6-dR-eNE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jv1-CC-5T5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SCZ-kO-SB2" customClass="InvitationView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUc-dF-bbP" customClass="SignalsTextView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="1LS-3V-9UN"/>
+                                </constraints>
+                                <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="What do you want to do?"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeTime">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1LS-3V-9UN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1LS-3V-9UN"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etC-mh-ZLt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="cZu-Rf-dqs"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cZu-Rf-dqs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="cZu-Rf-dqs"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelWasPressed:" destination="h8k-SR-Mf9" eventType="touchUpInside" id="M8q-lM-LDz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc2-3M-qOd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="7sh-gD-iRZ"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7sh-gD-iRZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7sh-gD-iRZ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="nextWasPressed:" destination="h8k-SR-Mf9" eventType="touchUpInside" id="fw8-RF-ZrU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30901911854743958" green="0.59747892618179321" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="etC-mh-ZLt" firstAttribute="leading" secondItem="SCZ-kO-SB2" secondAttribute="leadingMargin" id="D2K-lY-hJs"/>
+                            <constraint firstItem="etC-mh-ZLt" firstAttribute="top" secondItem="Wr6-dR-eNE" secondAttribute="bottom" constant="8" id="Jfh-iq-sS6"/>
+                            <constraint firstItem="Gc2-3M-qOd" firstAttribute="top" secondItem="Wr6-dR-eNE" secondAttribute="bottom" constant="8" id="LNs-ZE-Vr2"/>
+                            <constraint firstItem="eUc-dF-bbP" firstAttribute="leading" secondItem="SCZ-kO-SB2" secondAttribute="leadingMargin" id="N4R-qQ-79q"/>
+                            <constraint firstItem="eUc-dF-bbP" firstAttribute="top" secondItem="Wr6-dR-eNE" secondAttribute="bottom" constant="130" id="U7L-kn-ed0"/>
+                            <constraint firstItem="Gc2-3M-qOd" firstAttribute="trailing" secondItem="SCZ-kO-SB2" secondAttribute="trailingMargin" id="UAR-6i-QhT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eUc-dF-bbP" secondAttribute="trailing" id="n52-Wt-tq7"/>
+                            <constraint firstItem="eUc-dF-bbP" firstAttribute="top" secondItem="Wr6-dR-eNE" secondAttribute="bottom" constant="100" id="veG-nl-X7E"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="eUc-dF-bbP"/>
+                                <exclude reference="etC-mh-ZLt"/>
+                                <exclude reference="Gc2-3M-qOd"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="LNs-ZE-Vr2"/>
+                                <exclude reference="UAR-6i-QhT"/>
+                                <exclude reference="D2K-lY-hJs"/>
+                                <exclude reference="Jfh-iq-sS6"/>
+                                <exclude reference="N4R-qQ-79q"/>
+                                <exclude reference="U7L-kn-ed0"/>
+                                <exclude reference="n52-Wt-tq7"/>
+                                <exclude reference="veG-nl-X7E"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="eUc-dF-bbP"/>
+                                <include reference="etC-mh-ZLt"/>
+                                <include reference="Gc2-3M-qOd"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="LNs-ZE-Vr2"/>
+                                <include reference="UAR-6i-QhT"/>
+                                <include reference="D2K-lY-hJs"/>
+                                <include reference="Jfh-iq-sS6"/>
+                                <include reference="N4R-qQ-79q"/>
+                                <exclude reference="U7L-kn-ed0"/>
+                                <include reference="n52-Wt-tq7"/>
+                                <include reference="veG-nl-X7E"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outlet property="textView" destination="eUc-dF-bbP" id="AJL-OM-6mo"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8p-xc-48J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4791.75" y="887.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bb3-RZ-eKh">
@@ -260,9 +408,6 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="117" y="229" width="140" height="54"/>
-                                </variation>
                                 <connections>
                                     <action selector="doneButtonWasPressed:" destination="Ipc-QV-cOD" eventType="touchUpInside" id="wZr-21-3oB"/>
                                 </connections>
@@ -349,5 +494,5 @@
             <point key="canvasLocation" x="2071.5" y="888"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.48544144630432129" green="0.46188443899154663" blue="0.98959618806838989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

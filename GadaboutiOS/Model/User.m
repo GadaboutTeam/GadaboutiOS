@@ -33,7 +33,7 @@
 
 + (NSArray *)ignoredProperties
 {
-    return @[@"lat", @"lon", @"loggedIn"];
+    return @[@"lat", @"lon", @"loggedIn", @"relativeDistance"];
 }
 
 + (NSString *)primaryKey {
