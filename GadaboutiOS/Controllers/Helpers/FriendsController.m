@@ -11,6 +11,9 @@
 // frameworks
 #import <Realm/Realm.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+// app specific imports
 #import "NetworkingManager.h"
 #import "UserController.h"
 
@@ -39,16 +42,32 @@
     self = [super init];
 
     if (self) {
-        _userController = [UserController sharedUserController];
-        _networkingManager = [NetworkingManager sharedNetworkingManger];
-        _friendsArray = [[NSMutableArray alloc] init];
+        self.userController = [UserController sharedUserController];
+        self.networkingManager = [NetworkingManager sharedNetworkingManger];
+        self.friendsArray = [[NSMutableArray alloc] init];
     }
 
     return self;
 }
 
+- (NSArray *)getNearbyFriends {
+    // initialziation
+    RLMArray *results = [User objectsWhere:@"UserType = 'UserTypeSelf'"];
+    User *me = [results firstObject];
+    CLLocation *myLocation = [[CLLocation alloc] initWithLatitude:me.lat longitude:me.lon];
+    
+    NSArray *sortedNearbyFriends;
+    
+    for (User *friend in self.friendsArray) {
+        CLLocation *friendLocation = [[CLLocation alloc] initWithLatitude:friend.lat longitude:friend.lon];
+        CLLocationDistance distance = [myLocation distanceFromLocation:friendLocation];
+    }
+    
+    return sortedNearbyFriends;
+}
+
 // /users/auth_id/friends
-- (void)getNearbyFriends {
+- (void)getFacebookFriends {
     NSString *serviceString = [NSString stringWithFormat:@"/users/%@/friends",[[_userController getCurrentUser] authToken]];
     [[[FBSDKGraphRequest alloc] initWithGraphPath:serviceString parameters:nil]
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
@@ -58,10 +77,6 @@
              NSLog(@"Error: %@", error);
          }
      }];
-}
-
-- (void)getFacebookFriends {
-
 }
 
 @end

@@ -32,15 +32,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 
     _friendsController = [FriendsController sharedFriendsController];
-    #warning we still need to decide on how nearby friends will be accessed. right now, error.
     [_friendsController getNearbyFriends];
 
     // updating collection view
@@ -78,8 +72,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    return self.nearbyFriends.count;
-    return 5;
+    return self.nearbyFriends.count;
 }
 
 - (FriendCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

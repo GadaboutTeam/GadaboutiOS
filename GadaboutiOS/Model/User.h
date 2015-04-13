@@ -17,13 +17,6 @@ typedef NS_ENUM(NSInteger, UserType) {
     UserTypeFriend
 };
 
-// ATLParticipant Protocol Adherence
-@property (nonatomic) NSString *userID;
-@property (nonatomic) NSString *firstName;
-@property (nonatomic) NSString *lastName;
-@property (nonatomic) NSString *fullName; // need to make displayName == fullName
-@property (nonatomic, readonly) NSString *participantIdentifier; // needed for Atlas
-
 // Facebook
 @property (nonatomic) NSString *displayName;
 @property (nonatomic) NSString *authToken;
@@ -37,6 +30,7 @@ typedef NS_ENUM(NSInteger, UserType) {
 // Location
 @property (nonatomic) NSInteger lat;
 @property (nonatomic) NSInteger lon;
+@property (nonatomic) double *relativeDistance;
 
 @property (nonatomic) BOOL loggedIn;
 
