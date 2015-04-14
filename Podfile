@@ -27,7 +27,7 @@ target 'GadaboutiOS' do
   pod 'ClusterPrePermissions', '~> 0.1'
 
   # Input Field
-  pod 'VENTokenField'
+  pod 'VENTokenField', '~> 2.0'
 end
 
 target 'GadaboutiOSTests' do

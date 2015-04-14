@@ -8,25 +8,41 @@
 
 // Frameworks
 #import <VENTokenField/VENTokenField.h>
+#import <Realm/Realm.h>
 
 // Project Imports
 #import "AddressingViewController.h"
+#import "SignalsTableViewCell.h"
 
 @interface AddressingViewController () <VENTokenFieldDataSource, VENTokenFieldDelegate>
 
+// token field
 @property (weak, nonatomic) IBOutlet VENTokenField *tokenField;
 @property (strong, nonatomic) NSMutableArray *names;
 
+// table view & data source
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) RLMResults *array;
+@property (nonatomic, strong) RLMNotificationToken *notification;
+
 @end
+
+static NSString *const cellID = @"Cell";
 
 @implementation AddressingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // token field setup
     [self setupTokenField];
     self.names = [NSMutableArray array];
-    NSLog(self.message);
+    
+    // table view setup
+    __weak typeof(self) weakSelf = self;
+    self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
+        [weakSelf.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +87,24 @@
 - (NSString *)tokenFieldCollapsedText:(VENTokenField *)tokenField {
     return [NSString stringWithFormat:@"%tu people", [self.names count]];
 }
+
+#pragma mark - TableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.array.count;
+}
+
+- (SignalsTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SignalsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    if (!cell) {
+        cell = [[SignalsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    
+    return cell;
+}
+
+
 
 /*
 #pragma mark - Navigation

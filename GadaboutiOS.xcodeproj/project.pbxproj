@@ -11,6 +11,7 @@
 		630347711ADC867400EB4AB3 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6303476F1ADC867400EB4AB3 /* close.png */; };
 		630347741ADC88FF00EB4AB3 /* InvitationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630347731ADC88FF00EB4AB3 /* InvitationView.m */; };
 		630347771ADC8A4000EB4AB3 /* InvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630347761ADC8A4000EB4AB3 /* InvitationViewController.m */; };
+		63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */; };
 		631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */; };
 		631FA7A11AC4BD1A00429B3E /* Permissions Popover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */; };
 		633004A51AD4826300AB4A2C /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 633004A41AD4826300AB4A2C /* ConversationsViewController.m */; };
@@ -61,6 +62,8 @@
 		630347731ADC88FF00EB4AB3 /* InvitationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationView.m; sourceTree = "<group>"; };
 		630347751ADC8A4000EB4AB3 /* InvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationViewController.h; sourceTree = "<group>"; };
 		630347761ADC8A4000EB4AB3 /* InvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationViewController.m; sourceTree = "<group>"; };
+		63121CC91ADD6FCD00344CA2 /* SignalsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalsTableViewCell.h; sourceTree = "<group>"; };
+		63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalsTableViewCell.m; sourceTree = "<group>"; };
 		631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyFriendsViewController.h; sourceTree = "<group>"; };
 		631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyFriendsViewController.m; sourceTree = "<group>"; };
 		631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Permissions Popover.xib"; path = "Custom UI/Permissions Popover.xib"; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 		6387C6DD1ADC769200BBACC2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				63121CC91ADD6FCD00344CA2 /* SignalsTableViewCell.h */,
+				63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */,
 				635B80601AC5E84A006AED67 /* FriendCell.h */,
 				635B80611AC5E84A006AED67 /* FriendCell.m */,
 				6387C6DE1ADC76B500BBACC2 /* InvitationAlert.h */,
@@ -528,6 +533,7 @@
 				FA2295A11AC5A9B90047EF31 /* FriendsController.m in Sources */,
 				6355B4331A9D10FB00D25215 /* PrimaryButton.m in Sources */,
 				63E103921AC59E6400C15E9B /* PermissionsViewController.m in Sources */,
+				63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
 				FA22959B1AC4B57B0047EF31 /* UserController.m in Sources */,
