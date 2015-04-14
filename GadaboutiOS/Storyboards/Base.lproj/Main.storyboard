@@ -249,11 +249,11 @@
                                 <include reference="veG-nl-X7E"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outlet property="textView" destination="eUc-dF-bbP" id="AJL-OM-6mo"/>
-                        </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="textField" destination="eUc-dF-bbP" id="Mtv-ju-leo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8p-xc-48J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

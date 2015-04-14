@@ -14,6 +14,5 @@
 
 IB_DESIGNABLE
 @interface InvitationView : UIView
-@property (weak, nonatomic) IBOutlet SignalsTextView *textView;
 
 @end

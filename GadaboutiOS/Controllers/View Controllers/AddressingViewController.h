@@ -10,4 +10,6 @@
 
 @interface AddressingViewController : UIViewController
 
+@property (strong, nonatomic) NSString *message;
+
 @end

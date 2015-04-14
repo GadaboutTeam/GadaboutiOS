@@ -26,6 +26,7 @@
     
     [self setupTokenField];
     self.names = [NSMutableArray array];
+    NSLog(self.message);
 }
 
 - (void)didReceiveMemoryWarning {
