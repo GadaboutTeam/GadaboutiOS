@@ -113,7 +113,7 @@ static NSString *const cellID = @"Cell";
 }
 
 - (void)tableView:(UITableView *)tableView filterUsingText:(NSString *)text {
-    RLMResults *filteredResults = [User objectsWhere:@"displayName = '%@'", text];
+    RLMResults *filteredResults = [User objectsWhere:@"displayName CONTAINS '%@'", text];
     self.array = filteredResults;
     [tableView reloadData];
 }
