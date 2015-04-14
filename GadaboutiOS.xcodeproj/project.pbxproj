@@ -29,6 +29,7 @@
 		63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */; };
 		63BA5ECA1A7BD895009A212E /* GadaboutiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */; };
 		63E103921AC59E6400C15E9B /* PermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E103911AC59E6400C15E9B /* PermissionsViewController.m */; };
+		63FDECE01ADD54C700393118 /* AddressingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDECDF1ADD54C700393118 /* AddressingViewController.m */; };
 		65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */; };
 		FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationController.m */; };
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
@@ -94,6 +95,8 @@
 		63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GadaboutiOSTests.m; sourceTree = "<group>"; };
 		63E103901AC59E6400C15E9B /* PermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionsViewController.h; sourceTree = "<group>"; };
 		63E103911AC59E6400C15E9B /* PermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionsViewController.m; sourceTree = "<group>"; };
+		63FDECDE1ADD54C700393118 /* AddressingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressingViewController.h; sourceTree = "<group>"; };
+		63FDECDF1ADD54C700393118 /* AddressingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressingViewController.m; sourceTree = "<group>"; };
 		D3B60062277E2CF1D1993697 /* Pods-GadaboutiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FA1923B21A7BE1ED00561568 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
 		FA1923B41A7BE20800561568 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 		6355B4351A9D224D00D25215 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63FDECDE1ADD54C700393118 /* AddressingViewController.h */,
+				63FDECDF1ADD54C700393118 /* AddressingViewController.m */,
 				630347751ADC8A4000EB4AB3 /* InvitationViewController.h */,
 				630347761ADC8A4000EB4AB3 /* InvitationViewController.m */,
 				635E44B31AB9ECE600419FB9 /* Setup */,
@@ -532,6 +537,7 @@
 				635B80621AC5E84A006AED67 /* FriendCell.m in Sources */,
 				6387C6E01ADC76B500BBACC2 /* InvitationAlert.m in Sources */,
 				FAD941CC1AC23A2B00FEF499 /* DisplayNameViewController.m in Sources */,
+				63FDECE01ADD54C700393118 /* AddressingViewController.m in Sources */,
 				631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */,
 				63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */,
 				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,

@@ -13,12 +13,12 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.tintColor = [UIColor whiteColor];
+    [self setupColors];
 }
 
 - (void)setupColors {
     self.tintColor = [UIColor whiteColor];
-    self.backgroundColor = [UIColor colorWithRed:0.32 green:0.61 blue:0.93 alpha:1];
+//    self.backgroundColor = [UIColor colorWithRed:0.32 green:0.61 blue:0.93 alpha:1];
 }
 
 @end

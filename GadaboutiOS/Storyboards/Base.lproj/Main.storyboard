@@ -199,6 +199,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="nextWasPressed:" destination="h8k-SR-Mf9" eventType="touchUpInside" id="fw8-RF-ZrU"/>
+                                    <segue destination="fbV-S3-D9B" kind="show" id="6oK-AM-FMH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -257,6 +258,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8p-xc-48J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4791.75" y="887.5"/>
+        </scene>
+        <!--Addressing View Controller-->
+        <scene sceneID="dJo-aj-a8I">
+            <objects>
+                <viewController id="iW8-7R-QF6" customClass="AddressingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HEU-7d-cJv"/>
+                        <viewControllerLayoutGuide type="bottom" id="EaC-Hi-aGe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DqH-hc-LSD">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzA-JZ-MVD" customClass="VENTokenField">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bb3-Bg-LaV"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bb3-Bg-LaV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="bb3-Bg-LaV"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nzA-JZ-MVD" firstAttribute="top" secondItem="HEU-7d-cJv" secondAttribute="bottom" id="MIy-Gk-7KC"/>
+                            <constraint firstAttribute="trailing" secondItem="nzA-JZ-MVD" secondAttribute="trailing" id="WZv-27-jg1"/>
+                            <constraint firstItem="nzA-JZ-MVD" firstAttribute="leading" secondItem="DqH-hc-LSD" secondAttribute="leading" id="q0h-30-F3b"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="nzA-JZ-MVD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="MIy-Gk-7KC"/>
+                                <exclude reference="WZv-27-jg1"/>
+                                <exclude reference="q0h-30-F3b"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="nzA-JZ-MVD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="MIy-Gk-7KC"/>
+                                <include reference="WZv-27-jg1"/>
+                                <include reference="q0h-30-F3b"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="tBZ-LG-1cS"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tokenField" destination="nzA-JZ-MVD" id="RiT-b6-wG3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4I-Iz-P8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6237.75" y="887.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bb3-RZ-eKh">
@@ -492,6 +559,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbU-HP-okE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2071.5" y="888"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hBV-Xh-hJc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fbV-S3-D9B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vqg-pO-ldv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iW8-7R-QF6" kind="relationship" relationship="rootViewController" id="RdX-Vn-69L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbE-nG-jHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5494.5" y="888"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

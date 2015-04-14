@@ -10,7 +10,7 @@
 #import <Atlas/Atlas.h>
 #import <Realm+JSON/RLMObject+JSON.h>
 
-@interface User : RLMObject <ATLParticipant>
+@interface User : RLMObject
 
 typedef NS_ENUM(NSInteger, UserType) {
     UserTypeSelf,

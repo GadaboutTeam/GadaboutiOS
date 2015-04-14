@@ -25,6 +25,9 @@ target 'GadaboutiOS' do
 
   # Prepermissions for Location, Notifications, etc.
   pod 'ClusterPrePermissions', '~> 0.1'
+
+  # Input Field
+  pod 'VENTokenField'
 end
 
 target 'GadaboutiOSTests' do
