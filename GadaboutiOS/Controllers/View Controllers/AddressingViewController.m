@@ -13,6 +13,7 @@
 // Project Imports
 #import "AddressingViewController.h"
 #import "SignalsTableViewCell.h"
+#import "User.h"
 
 @interface AddressingViewController () <VENTokenFieldDataSource, VENTokenFieldDelegate>
 
@@ -74,6 +75,10 @@ static NSString *const cellID = @"Cell";
     [self.tokenField reloadData];
 }
 
+- (void)tokenField:(VENTokenField *)tokenField didChangeText:(NSString *)text {
+    [self tableView:self.tableView filterUsingText:text];
+}
+
 #pragma mark - Token Field Datasource
 
 - (NSString *)tokenField:(VENTokenField *)tokenField titleForTokenAtIndex:(NSUInteger)index {
@@ -101,10 +106,17 @@ static NSString *const cellID = @"Cell";
         cell = [[SignalsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
+    User *user = self.array[indexPath.row];
+    cell.nameLabel.text = user.displayName;
+    
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView filterUsingText:(NSString *)text {
+    RLMResults *filteredResults = [User objectsWhere:@"displayName = '%@'", text];
+    self.array = filteredResults;
+    [tableView reloadData];
+}
 
 /*
 #pragma mark - Navigation

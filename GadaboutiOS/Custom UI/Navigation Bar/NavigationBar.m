@@ -14,7 +14,7 @@
     [super layoutSubviews];
     
     self.backgroundColor = [UIColor whiteColor];
-    self.barTintColor = [UIColor colorWithRed:0.27 green:0.52 blue:0.98 alpha:1];
+    self.barTintColor = [UIColor colorWithRed:0.34 green:0.62 blue:0.92 alpha:1];
 }
 
 @end

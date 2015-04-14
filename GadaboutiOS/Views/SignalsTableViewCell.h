@@ -11,4 +11,7 @@
 IB_DESIGNABLE
 @interface SignalsTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @end

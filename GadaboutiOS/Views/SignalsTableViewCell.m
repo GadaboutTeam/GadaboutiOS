@@ -10,9 +10,6 @@
 
 @interface SignalsTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
 @end
 
 @implementation SignalsTableViewCell
@@ -23,8 +20,9 @@
 }
 
 - (void)layoutProfilePicture {
-    self.profilePicture.layer.masksToBounds = YES;
-    self.profilePicture.layer.cornerRadius = 30;
+    self.profilePicture.backgroundColor = [UIColor blueColor];
+    self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
+    self.profilePicture.clipsToBounds = YES;
 }
 
 - (void)awakeFromNib {
