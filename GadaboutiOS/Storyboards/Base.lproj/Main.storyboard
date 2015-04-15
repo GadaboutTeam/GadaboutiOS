@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="h8k-SR-Mf9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zIR-HR-lcq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -50,6 +50,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cZ-ke-jr3">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <color key="backgroundColor" red="0.42089294970000002" green="1" blue="0.67563793149999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -94,7 +95,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="firstName" destination="6cZ-ke-jr3" id="leO-SW-e9f"/>
+                                    <outlet property="displayName" destination="6cZ-ke-jr3" id="zOh-jE-Pez"/>
                                     <outlet property="profilePicture" destination="2iC-ix-QMb" id="die-lL-DUk"/>
                                 </connections>
                             </collectionViewCell>
@@ -112,6 +113,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collectionView" destination="102-5n-SJ9" id="c15-hR-6Q8"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="po1-jR-B5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -303,7 +307,7 @@
                                                         <constraint firstAttribute="width" constant="200" id="5eI-BJ-HQV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -349,11 +353,11 @@
                                                     <exclude reference="LuZ-Ts-O9l"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="MZg-2A-VrY"/>
+                                                    <exclude reference="ot6-Qt-Juf"/>
                                                     <exclude reference="2xk-Te-DN5"/>
                                                     <exclude reference="Umt-oL-JhH"/>
                                                     <exclude reference="gtd-fM-xqc"/>
-                                                    <exclude reference="MZg-2A-VrY"/>
-                                                    <exclude reference="ot6-Qt-Juf"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -362,11 +366,11 @@
                                                     <include reference="LuZ-Ts-O9l"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="MZg-2A-VrY"/>
+                                                    <include reference="ot6-Qt-Juf"/>
                                                     <include reference="2xk-Te-DN5"/>
                                                     <include reference="Umt-oL-JhH"/>
                                                     <include reference="gtd-fM-xqc"/>
-                                                    <include reference="MZg-2A-VrY"/>
-                                                    <include reference="ot6-Qt-Juf"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -630,12 +634,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08o-He-PgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812.75" y="1924.5"/>
+            <point key="canvasLocation" x="1749.75" y="1900.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="e40-py-hgd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zIR-HR-lcq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainNavController" automaticallyAdjustsScrollViewInsets="NO" id="zIR-HR-lcq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="jsc-WN-99w"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -652,26 +656,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0x-pv-0nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2907.75" y="543.5"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="F9n-R0-63b">
-            <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="PXa-SB-42q" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="gwo-an-kt0" customClass="TabBar">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.15997791290283203" green="0.16001269221305847" blue="0.15997570753097534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="zIR-HR-lcq" kind="relationship" relationship="viewControllers" id="Dqt-NQ-NhZ"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lbU-HP-okE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2071.5" y="888"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="hBV-Xh-hJc">

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKProfilePictureView.h>
 
 @interface FriendCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
-@property (weak, nonatomic) IBOutlet UILabel *firstName;
+@property (retain, nonatomic) IBOutlet FBSDKProfilePictureView *profilePicture;
+@property (retain, nonatomic) IBOutlet UILabel *displayName;
 
 @end

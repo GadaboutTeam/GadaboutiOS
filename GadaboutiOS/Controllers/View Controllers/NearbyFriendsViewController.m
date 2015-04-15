@@ -7,9 +7,11 @@
 //
 
 #import "NearbyFriendsViewController.h"
+#import "UserController.h"
 
 // Frameworks
 #import <Realm/Realm.h>
+#import <FBSDKCoreKit/FBSDKProfilePictureView.h>
 
 // Components
 #import "FriendsController.h"
@@ -18,7 +20,7 @@
 @interface NearbyFriendsViewController ()
 
 // realm
-@property (nonatomic, strong) RLMArray *nearbyFriends;
+@property (nonatomic, strong) RLMResults *nearbyFriends;
 @property (nonatomic, strong) RLMNotificationToken *notification;
 
 // for accessing friends
@@ -32,14 +34,16 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-
+    [self.collectionView registerClass:[FriendCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    self.nearbyFriends = [User objectsWhere:@"userType = 1"];
     _friendsController = [FriendsController sharedFriendsController];
-    [_friendsController getNearbyFriends];
+    [self.friendsController getNearbyFriends];
+    [self.friendsController getFacebookFriends];
 
     // updating collection view
     __weak typeof(self) weakSelf = self;
     self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
+        weakSelf.nearbyFriends = [User objectsWhere:@"userType = 1"];
         [weakSelf.collectionView reloadData];
     }];
     [self.collectionView reloadData];
@@ -51,7 +55,13 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-
+    NSLog(@"User logged in: %ld", [[UserController sharedUserController] isLoggedIn]);
+    if(![[UserController sharedUserController] isLoggedIn]) {
+        UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"loginScreen"];
+        [self presentViewController:loginViewController animated:YES completion:^{
+            [self.friendsController getFacebookFriends];
+        }];
+    }
 }
 
 /*
@@ -72,15 +82,21 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSLog(@"nearby friends count: %ld", [self.nearbyFriends count]);
     return self.nearbyFriends.count;
 }
 
 - (FriendCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FriendCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
+    FriendCell *cell = (FriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+
+    User *friend = [self.nearbyFriends objectAtIndex:[indexPath row]];
+
     // Configure the cell
-//    cell.firstName.text = @"Hello!";
-    
+    [[cell displayName] setText:[friend displayName]];
+////    cell.profilePicture = [[FBSDKProfilePictureView alloc] init];
+////    cell.profilePicture.profileID = [friend facebookID];
+//    [cell.profilePicture setNeedsImageUpdate];
+
     return cell;
 }
 

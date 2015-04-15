@@ -26,7 +26,8 @@
 + (NSDictionary *)defaultPropertyValues
 {
     return @{@"displayName" : @"displayName", @"authToken" : @"authToken",
-             @"deviceID" : @"" , @"email" : @"email"};
+             @"deviceID" : @"" , @"email" : @"email",
+             @"hasApp" : @false, @"loggedIn" : @false};
 }
 
 // Specify properties to ignore (Realm won't persist these)

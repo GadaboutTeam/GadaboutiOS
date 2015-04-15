@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, UserType) {
 
 // Us
 @property (nonatomic) UserType userType;
+@property (nonatomic) BOOL hasApp;
 
 // Location
 @property (nonatomic) NSInteger lat;

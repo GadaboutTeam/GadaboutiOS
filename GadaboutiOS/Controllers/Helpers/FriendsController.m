@@ -11,6 +11,8 @@
 // frameworks
 #import <Realm/Realm.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <CoreLocation/CoreLocation.h>
 
 // app specific imports
@@ -50,33 +52,59 @@
     return self;
 }
 
-- (RLMArray *)getNearbyFriends {
+- (NSArray *)getNearbyFriends {
     // initialziation
-    RLMArray *results = [User objectsWhere:@"UserType = 'UserTypeSelf'"];
+    RLMResults *results = [User objectsWhere:[NSString stringWithFormat:@"userType = %ld", UserTypeSelf]];
     User *me = [results firstObject];
     CLLocation *myLocation = [[CLLocation alloc] initWithLatitude:me.lat longitude:me.lon];
-    
+
     NSArray *sortedNearbyFriends;
     
     for (User *friend in self.friendsArray) {
         CLLocation *friendLocation = [[CLLocation alloc] initWithLatitude:friend.lat longitude:friend.lon];
         CLLocationDistance distance = [myLocation distanceFromLocation:friendLocation];
     }
-    
+
     return sortedNearbyFriends;
 }
 
 // /users/auth_id/friends
 - (void)getFacebookFriends {
-    NSString *serviceString = [NSString stringWithFormat:@"/users/%@/friends",[[_userController getCurrentUser] authToken]];
+    NSString *serviceString = @"/me/friends?fields=name,installed";
     [[[FBSDKGraphRequest alloc] initWithGraphPath:serviceString parameters:nil]
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
          if (!error) {
              NSLog(@"fetched results: %@", result);
+             NSArray *friendsArray = [result valueForKey:@"data"];
+             NSString *nextPage = [[result valueForKey:@"paging"] valueForKey:@"next"];
+             [self persistFriends:friendsArray];
+             
          } else {
              NSLog(@"Error: %@", error);
          }
      }];
 }
+
+- (void)persistFriends:(NSArray *)friends {
+    for (NSDictionary *fbFriend in friends) {
+        User *friend = [[User alloc] init];
+        [friend setFacebookID:[fbFriend valueForKey:@"id"]];
+        [friend setDisplayName:[fbFriend valueForKey:@"name"]];
+        [friend setUserType:UserTypeFriend];
+
+        long hasApp = [[fbFriend valueForKey:@"installed"] integerValue];
+        if (hasApp == 1) {
+            [friend setHasApp:true];
+        } else {
+            [friend setHasApp:false];
+        }
+
+        [[RLMRealm defaultRealm] beginWriteTransaction];
+        [User createOrUpdateInDefaultRealmWithObject:friend];
+        [[RLMRealm defaultRealm] commitWriteTransaction];
+        
+    }
+}
+
 
 @end

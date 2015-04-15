@@ -12,6 +12,7 @@
 @interface FriendsController : NSObject
 
 + (id)sharedFriendsController;
-- (void)getNearbyFriends;
+- (NSArray *)getNearbyFriends;
+- (void)getFacebookFriends;
 
 @end
