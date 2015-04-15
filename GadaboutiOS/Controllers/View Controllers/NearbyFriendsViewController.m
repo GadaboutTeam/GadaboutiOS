@@ -11,6 +11,7 @@
 
 // Frameworks
 #import <Realm/Realm.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKCoreKit/FBSDKProfilePictureView.h>
 
 // Components
@@ -34,10 +35,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.collectionView registerClass:[FriendCell class] forCellWithReuseIdentifier:reuseIdentifier];
+
     self.nearbyFriends = [User objectsWhere:@"userType = 1"];
-    _friendsController = [FriendsController sharedFriendsController];
-    [self.friendsController getNearbyFriends];
+    self.friendsController = [FriendsController sharedFriendsController];
     [self.friendsController getFacebookFriends];
 
     // updating collection view
@@ -55,7 +55,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"User logged in: %ld", [[UserController sharedUserController] isLoggedIn]);
+#warning The logged in boolean doesn't update properly. Manually changing the value of below if to get access token.
     if(![[UserController sharedUserController] isLoggedIn]) {
         UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"loginScreen"];
         [self presentViewController:loginViewController animated:YES completion:^{
@@ -92,10 +92,12 @@ static NSString * const reuseIdentifier = @"Cell";
     User *friend = [self.nearbyFriends objectAtIndex:[indexPath row]];
 
     // Configure the cell
-    [[cell displayName] setText:[friend displayName]];
-////    cell.profilePicture = [[FBSDKProfilePictureView alloc] init];
-////    cell.profilePicture.profileID = [friend facebookID];
-//    [cell.profilePicture setNeedsImageUpdate];
+    [[cell displayName] setText:[friend getFirstName]];
+    cell.profilePicture = [[FBSDKProfilePictureView alloc] init];
+    [cell.profilePicture setPictureMode:FBSDKProfilePictureModeSquare];
+    [cell.profilePicture setProfileID:[friend facebookID]];
+
+    [cell.profilePictureView addSubview:cell.profilePicture];
 
     return cell;
 }

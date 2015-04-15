@@ -35,6 +35,9 @@ typedef NS_ENUM(NSInteger, UserType) {
 
 @property (nonatomic) BOOL loggedIn;
 
+- (NSString *)getFirstName;
+- (NSString *)getLastName;
+
 @end
 
 // This protocol enables typed collections. i.e.:

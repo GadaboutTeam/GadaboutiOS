@@ -68,7 +68,6 @@
     return sortedNearbyFriends;
 }
 
-// /users/auth_id/friends
 - (void)getFacebookFriends {
     NSString *serviceString = @"/me/friends?fields=name,installed";
     [[[FBSDKGraphRequest alloc] initWithGraphPath:serviceString parameters:nil]
@@ -78,12 +77,35 @@
              NSArray *friendsArray = [result valueForKey:@"data"];
              NSString *nextPage = [[result valueForKey:@"paging"] valueForKey:@"next"];
              [self persistFriends:friendsArray];
+             [self getNextFacebookFriends:nextPage];
              
          } else {
              NSLog(@"Error: %@", error);
          }
      }];
 }
+
+- (void)getNextFacebookFriends:(NSString *)graphURL {
+    if (graphURL != nil) {
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:graphURL]];
+
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            if (!connectionError) {
+                NSError *jsonError;
+                NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+                if (!jsonError) {
+                    [self persistFriends:[responseDictionary valueForKey:@"data"]];
+                    [self getNextFacebookFriends:[[responseDictionary valueForKey:@"paging"] valueForKey:@"next"]];
+                    NSLog(@"Loaded next page: %@", responseDictionary);
+                } else {
+                    NSLog(@"JSON parsing error: %@", [jsonError description]);
+                }
+            }
+        }];
+    }
+}
+
+
 
 - (void)persistFriends:(NSArray *)friends {
     for (NSDictionary *fbFriend in friends) {
@@ -102,7 +124,8 @@
         [[RLMRealm defaultRealm] beginWriteTransaction];
         [User createOrUpdateInDefaultRealmWithObject:friend];
         [[RLMRealm defaultRealm] commitWriteTransaction];
-        
+
+        NSLog(@"Persisted friend: %@", [friend displayName]);
     }
 }
 

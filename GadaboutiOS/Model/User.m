@@ -74,4 +74,12 @@
     _loggedIn = false;
 }
 
+- (NSString *)getFirstName {
+    return [[self.displayName componentsSeparatedByString:@" "] firstObject];
+}
+
+- (NSString *)getLastName {
+    return [[self.displayName componentsSeparatedByString:@" "] lastObject];
+}
+
 @end

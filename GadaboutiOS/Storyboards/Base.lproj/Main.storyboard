@@ -11,7 +11,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="ConversationsView" id="QDk-QO-Ahn" customClass="NearbyFriendsViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="102-5n-SJ9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98989266157150269" green="0.99006170034408569" blue="0.98988205194473267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -29,74 +29,49 @@
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iC-ix-QMb">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="90" id="NtT-fA-5UF"/>
-                                                <constraint firstAttribute="width" constant="90" id="n5v-Ms-noM"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="NtT-fA-5UF"/>
-                                                    <exclude reference="n5v-Ms-noM"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="constraints">
-                                                    <include reference="NtT-fA-5UF"/>
-                                                    <include reference="n5v-Ms-noM"/>
-                                                </mask>
-                                            </variation>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cZ-ke-jr3">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <color key="backgroundColor" red="0.42089294970000002" green="1" blue="0.67563793149999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                <rect key="frame" x="0.0" y="94" width="90" height="21"/>
+                                            </variation>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIJ-ZX-Kch">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                            </variation>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="6cZ-ke-jr3" firstAttribute="top" secondItem="2iC-ix-QMb" secondAttribute="bottom" constant="4" id="TwR-NH-MFL"/>
-                                    <constraint firstItem="2iC-ix-QMb" firstAttribute="top" secondItem="Khx-qH-S90" secondAttribute="top" id="cmQ-8T-6oA"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="6cZ-ke-jr3" secondAttribute="bottom" constant="-3" id="dPO-Ib-chx"/>
-                                    <constraint firstItem="2iC-ix-QMb" firstAttribute="leading" secondItem="Khx-qH-S90" secondAttribute="leading" id="l9g-uz-JEm"/>
-                                    <constraint firstItem="6cZ-ke-jr3" firstAttribute="trailing" secondItem="2iC-ix-QMb" secondAttribute="trailing" id="ooG-8S-ntl"/>
-                                    <constraint firstItem="6cZ-ke-jr3" firstAttribute="leading" secondItem="2iC-ix-QMb" secondAttribute="leading" id="uDu-dq-ga0"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="2iC-ix-QMb"/>
                                         <exclude reference="6cZ-ke-jr3"/>
+                                        <exclude reference="ZIJ-ZX-Kch"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="TwR-NH-MFL"/>
                                         <exclude reference="dPO-Ib-chx"/>
-                                        <exclude reference="ooG-8S-ntl"/>
-                                        <exclude reference="uDu-dq-ga0"/>
-                                        <exclude reference="cmQ-8T-6oA"/>
-                                        <exclude reference="l9g-uz-JEm"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="2iC-ix-QMb"/>
                                         <include reference="6cZ-ke-jr3"/>
+                                        <include reference="ZIJ-ZX-Kch"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="TwR-NH-MFL"/>
                                         <include reference="dPO-Ib-chx"/>
-                                        <include reference="ooG-8S-ntl"/>
-                                        <include reference="uDu-dq-ga0"/>
-                                        <include reference="cmQ-8T-6oA"/>
-                                        <include reference="l9g-uz-JEm"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <outlet property="displayName" destination="6cZ-ke-jr3" id="zOh-jE-Pez"/>
-                                    <outlet property="profilePicture" destination="2iC-ix-QMb" id="die-lL-DUk"/>
+                                    <outlet property="profilePictureView" destination="ZIJ-ZX-Kch" id="Yfd-Mu-giG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

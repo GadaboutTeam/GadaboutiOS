@@ -11,7 +11,8 @@
 
 @interface FriendCell : UICollectionViewCell
 
-@property (retain, nonatomic) IBOutlet FBSDKProfilePictureView *profilePicture;
+@property (retain, nonatomic) FBSDKProfilePictureView *profilePicture;
 @property (retain, nonatomic) IBOutlet UILabel *displayName;
+@property (retain, nonatomic) IBOutlet UIView *profilePictureView;
 
 @end
