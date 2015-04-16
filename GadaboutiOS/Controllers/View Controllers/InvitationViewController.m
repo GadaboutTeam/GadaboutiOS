@@ -48,10 +48,13 @@
 }
 
 - (void)configureTextField {
-    [[self.textField.rac_textSignal
-     filter:^BOOL(NSString *text) {
-         return text.length > 5;
-     }]
+    [[self.textField.rac_textSignal filter:^BOOL(NSString *text) {
+        // cludgy workaround. since filter only returns true, thereby activating the nextButton,
+        // the nextButton doesn’t get *deactivated* if the below condition isn't met anymore.
+        [self setInitalState];
+        
+        return text.length > 5;
+    }]
     subscribeNext:^(id x) {
         [self.nextButton setEnabled:YES];
         [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
