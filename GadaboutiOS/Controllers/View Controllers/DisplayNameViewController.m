@@ -8,14 +8,14 @@
 
 #import "DisplayNameViewController.h"
 #import "NetworkingManager.h"
-#import "PrimaryButton.h"
+#import "FlatButton.h"
 #import "User.h"
 #import "UserController.h"
 
 @interface DisplayNameViewController ()
 
 @property IBOutlet UITextField *displayNameTextField;
-@property IBOutlet PrimaryButton *doneButton;
+@property IBOutlet FlatButton *doneButton;
 @property (nonatomic, retain) NSString *displayName;
 @property RLMRealm *defaultRealm;
 @property User *user;

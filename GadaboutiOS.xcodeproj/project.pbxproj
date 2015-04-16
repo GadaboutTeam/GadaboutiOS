@@ -14,9 +14,8 @@
 		63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */; };
 		631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */; };
 		631FA7A11AC4BD1A00429B3E /* Permissions Popover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */; };
-		633004A51AD4826300AB4A2C /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 633004A41AD4826300AB4A2C /* ConversationsViewController.m */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
-		6355B4331A9D10FB00D25215 /* PrimaryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* PrimaryButton.m */; };
+		6355B4331A9D10FB00D25215 /* FlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* FlatButton.m */; };
 		635B80621AC5E84A006AED67 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635B80611AC5E84A006AED67 /* FriendCell.m */; };
 		636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F31A81BA9100A9AE57 /* NavigationBar.m */; };
 		636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F61A81BCB700A9AE57 /* NavigationViewController.m */; };
@@ -67,12 +66,10 @@
 		631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyFriendsViewController.h; sourceTree = "<group>"; };
 		631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyFriendsViewController.m; sourceTree = "<group>"; };
 		631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Permissions Popover.xib"; path = "Custom UI/Permissions Popover.xib"; sourceTree = "<group>"; };
-		633004A31AD4826300AB4A2C /* ConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationsViewController.h; sourceTree = "<group>"; };
-		633004A41AD4826300AB4A2C /* ConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationsViewController.m; sourceTree = "<group>"; };
 		6355B42B1A9CFDF600D25215 /* SetupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupView.h; sourceTree = "<group>"; };
 		6355B42C1A9CFDF600D25215 /* SetupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupView.m; sourceTree = "<group>"; };
-		6355B4311A9D10FB00D25215 /* PrimaryButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaryButton.h; sourceTree = "<group>"; };
-		6355B4321A9D10FB00D25215 /* PrimaryButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryButton.m; sourceTree = "<group>"; };
+		6355B4311A9D10FB00D25215 /* FlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatButton.h; sourceTree = "<group>"; };
+		6355B4321A9D10FB00D25215 /* FlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatButton.m; sourceTree = "<group>"; };
 		635B80601AC5E84A006AED67 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
 		635B80611AC5E84A006AED67 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
 		636185F21A81BA9100A9AE57 /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
@@ -166,15 +163,6 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		633004A61AD4826600AB4A2C /* Messaging */ = {
-			isa = PBXGroup;
-			children = (
-				633004A31AD4826300AB4A2C /* ConversationsViewController.h */,
-				633004A41AD4826300AB4A2C /* ConversationsViewController.m */,
-			);
-			name = Messaging;
-			sourceTree = "<group>";
-		};
 		633004A71AD4827900AB4A2C /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,8 +185,8 @@
 		6355B42A1A9CFB9000D25215 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				6355B4311A9D10FB00D25215 /* PrimaryButton.h */,
-				6355B4321A9D10FB00D25215 /* PrimaryButton.m */,
+				6355B4311A9D10FB00D25215 /* FlatButton.h */,
+				6355B4321A9D10FB00D25215 /* FlatButton.m */,
 			);
 			name = Buttons;
 			path = "../Custom UI/Buttons";
@@ -228,7 +216,6 @@
 				630347761ADC8A4000EB4AB3 /* InvitationViewController.m */,
 				635E44B31AB9ECE600419FB9 /* Setup */,
 				63E59EEE1AC0E2530085D160 /* Helper Views */,
-				633004A61AD4826600AB4A2C /* Messaging */,
 				633004A71AD4827900AB4A2C /* Location */,
 			);
 			path = "View Controllers";
@@ -542,12 +529,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				633004A51AD4826300AB4A2C /* ConversationsViewController.m in Sources */,
 				FA9911941A8069CB00714F7D /* User.m in Sources */,
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				FA2295A11AC5A9B90047EF31 /* FriendsController.m in Sources */,
-				6355B4331A9D10FB00D25215 /* PrimaryButton.m in Sources */,
+				6355B4331A9D10FB00D25215 /* FlatButton.m in Sources */,
 				63E103921AC59E6400C15E9B /* PermissionsViewController.m in Sources */,
 				63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,

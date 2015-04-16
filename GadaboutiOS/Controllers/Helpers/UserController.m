@@ -114,8 +114,6 @@
                 #warning Need to setup aps-environment entitlement string as specified in the documentation: https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingLocalAndPushNotifications.html
                 [self.currentUser setDeviceID:@"woof_woof"];
 
-
-
                 //Persist user
                 [self persistUser:self.currentUser];
 

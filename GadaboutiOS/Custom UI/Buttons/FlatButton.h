@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 IB_DESIGNABLE
-@interface PrimaryButton : UIButton
+@interface FlatButton : UIButton
 
 - (void)setDisabledState;
 - (void)setEnabledState;

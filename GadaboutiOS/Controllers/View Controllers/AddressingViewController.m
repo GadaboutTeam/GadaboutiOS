@@ -34,11 +34,11 @@ static NSString *const cellID = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // token field setup
     [self setupTokenField];
     self.names = [NSMutableArray array];
-    
+
     // table view setup
     __weak typeof(self) weakSelf = self;
     self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
@@ -58,7 +58,7 @@ static NSString *const cellID = @"Cell";
     self.tokenField.dataSource = self;
     self.tokenField.placeholderText = NSLocalizedString(@"Enter Names Here", nil);
     self.tokenField.toLabelText = NSLocalizedString(@"To:", nil);
-    
+
     [self.tokenField setColorScheme:[UIColor colorWithRed:0.27 green:0.52 blue:0.98 alpha:1]];
     [self.tokenField becomeFirstResponder];
 }
@@ -101,14 +101,14 @@ static NSString *const cellID = @"Cell";
 
 - (SignalsTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SignalsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    
+
     if (!cell) {
         cell = [[SignalsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    
+
     User *user = self.array[indexPath.row];
     cell.nameLabel.text = user.displayName;
-    
+
     return cell;
 }
 

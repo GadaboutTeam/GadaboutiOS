@@ -6,6 +6,12 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
+// Framework Import
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <pop/POP.h>
+
+// Projects
 #import "InvitationViewController.h"
 #import "InvitationView.h"
 #import "AddressingViewController.h"
@@ -13,6 +19,7 @@
 @interface InvitationViewController ()
 
 @property (weak, nonatomic) IBOutlet SignalsTextView *textField;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
@@ -20,7 +27,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // initial, default state
+    [self setInitalState];
+
+    [self configureNextButton];
+    [self configureTextField];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,22 +40,41 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - IBActions
+#pragma mark - ReactiveCocoa Setup
 
-- (IBAction)cancelWasPressed:(id)sender {
+- (void)setInitalState {
+    [self.nextButton setEnabled:NO];
+    [self.nextButton setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5] forState:UIControlStateNormal];
+}
+
+- (void)configureTextField {
+    [[self.textField.rac_textSignal
+     filter:^BOOL(NSString *text) {
+         return text.length > 5;
+     }]
+    subscribeNext:^(id x) {
+        [self.nextButton setEnabled:YES];
+        [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    }];
+}
+
+- (void)configureNextButton {
     
 }
 
+#pragma mark - IBActions
+
+- (IBAction)cancelWasPressed:(id)sender {
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)nextWasPressed:(id)sender {
-    
+
 }
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//     Get the new view controller using [segue destinationViewController].
-//     Pass the selected object to the new view controller.
-    
     AddressingViewController *nextViewController = (AddressingViewController *)[[segue destinationViewController] topViewController];
     nextViewController.message = self.textField.text;
 }

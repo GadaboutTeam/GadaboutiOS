@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "PrimaryButton.h"
+#import "FlatButton.h"
 #import <pop/POP.h>
 
-@implementation PrimaryButton
+@implementation FlatButton
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -47,7 +47,7 @@
 
 #pragma mark - Animations
 
-- (void)touchUpInside:(PrimaryButton *)button {
+- (void)touchUpInside:(FlatButton *)button {
     
 }
 
