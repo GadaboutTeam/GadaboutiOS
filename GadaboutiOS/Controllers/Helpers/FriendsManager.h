@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
-@interface FriendsController : NSObject
+@interface FriendsManager : NSObject
 
 + (id)sharedFriendsController;
 - (NSArray *)getNearbyFriends;

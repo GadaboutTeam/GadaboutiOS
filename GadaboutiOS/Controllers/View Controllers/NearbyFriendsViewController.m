@@ -15,7 +15,7 @@
 #import <FBSDKCoreKit/FBSDKProfilePictureView.h>
 
 // Components
-#import "FriendsController.h"
+#import "FriendsManager.h"
 #import "FriendCell.h"
 
 @interface NearbyFriendsViewController ()
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) RLMNotificationToken *notification;
 
 // for accessing friends
-@property (nonatomic, strong) FriendsController *friendsController;
+@property (nonatomic, strong) FriendsManager *friendsController;
 
 @end
 
@@ -37,7 +37,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
 
     self.nearbyFriends = [User objectsWhere:@"userType = 1"];
-    self.friendsController = [FriendsController sharedFriendsController];
+    self.friendsController = [FriendsManager sharedFriendsController];
     [self.friendsController getFacebookFriends];
 
     // updating collection view

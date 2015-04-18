@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "FriendsController.h"
+#import "FriendsManager.h"
 
 // frameworks
 #import <Realm/Realm.h>
@@ -19,7 +19,7 @@
 #import "NetworkingManager.h"
 #import "UserManager.h"
 
-@interface FriendsController ()
+@interface FriendsManager ()
 
 @property UserManager *userController;
 @property NSMutableArray *friendsArray;
@@ -27,10 +27,12 @@
 
 @end
 
-@implementation FriendsController
+@implementation FriendsManager
+
+#pragma mark - Initializers
 
 + (id)sharedFriendsController {
-    static FriendsController *sharedFriendsController = nil;
+    static FriendsManager *sharedFriendsController = nil;
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
@@ -51,6 +53,8 @@
 
     return self;
 }
+
+#pragma mark - Friend Getters
 
 - (NSArray *)getNearbyFriends {
     // initialziation
@@ -103,9 +107,7 @@
             }
         }];
     }
-}
-
-
+}d
 
 - (void)persistFriends:(NSArray *)friends {
     for (NSDictionary *fbFriend in friends) {

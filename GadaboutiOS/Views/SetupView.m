@@ -6,9 +6,11 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "SetupView.h"
+// Framework Imports
 #import <PulsingHalo/PulsingHaloLayer.h>
-#import <PulsingHalo/MultiplePulsingHaloLayer.h>
+
+// App Imports
+#import "SetupView.h"
 
 @implementation SetupView
 
