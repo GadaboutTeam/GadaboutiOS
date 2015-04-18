@@ -6,15 +6,21 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "UserController.h"
-#import "NetworkingManager.h"
+// Framework Imports
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
+// App Imports
+#import "UserController.h"
+#import "NetworkingManager.h"
+
 @interface UserController()
-@property (nonatomic, retain) User *currentUser;
-@property (nonatomic, retain) NSArray *permissions;
-@property (nonatomic, retain) NetworkingManager *networkManager;
+
+@property (nonatomic) User *currentUser;
+@property (nonatomic) NSArray *permissions;
+@property (nonatomic) NetworkingManager *networkManager;
+@property (nonatomic) RLMRealm *userRealm;
+
 @end
 
 @implementation UserController
@@ -130,9 +136,11 @@
 
 - (void)persistCurrentUser {
     @try {
-        [[RLMRealm defaultRealm] beginWriteTransaction];
+        self.userRealm = [RLMRealm defaultRealm];
+
+        [self.userRealm beginWriteTransaction];
         [User createOrUpdateInDefaultRealmWithObject:_currentUser];
-        [[RLMRealm defaultRealm] commitWriteTransaction];
+        [self.userRealm commitWriteTransaction];
     }
     @catch (NSException *exception) {
         NSLog(@"User could not be persisted: %@", [exception description]);

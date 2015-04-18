@@ -51,6 +51,16 @@ static NSString *const cellID = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - IBActions
+
+- (IBAction)cancelWasPressed:(id)sender {
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)sendWasPressed:(id)sender {
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Setup Token Field
 
 - (void)setupTokenField {

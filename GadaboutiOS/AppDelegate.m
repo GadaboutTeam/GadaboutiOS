@@ -52,7 +52,7 @@
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 
     if (![FBSDKAccessToken currentAccessToken]) {
-        // still needs to be filled out.
+        [self setViewController];
     }
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zIR-HR-lcq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wJh-7R-SuN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -95,6 +95,7 @@
                                 </variation>
                                 <connections>
                                     <outlet property="displayName" destination="6cZ-ke-jr3" id="zOh-jE-Pez"/>
+                                    <outlet property="profilePictureView" destination="MSc-PH-RbP" id="zL5-xI-f0y"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -338,6 +339,17 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOR-44-hyG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bq1-tV-Cj3" customClass="CircleButton">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="317" y="13" width="50" height="50"/>
+                                                    </variation>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="LuZ-Ts-O9l" firstAttribute="leading" secondItem="Kpo-Cq-lrb" secondAttribute="leadingMargin" id="2xk-Te-DN5"/>
@@ -350,6 +362,8 @@
                                                 <mask key="subviews">
                                                     <exclude reference="JnS-3f-elq"/>
                                                     <exclude reference="LuZ-Ts-O9l"/>
+                                                    <exclude reference="FOR-44-hyG"/>
+                                                    <exclude reference="Bq1-tV-Cj3"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="MZg-2A-VrY"/>
@@ -363,12 +377,14 @@
                                                 <mask key="subviews">
                                                     <include reference="JnS-3f-elq"/>
                                                     <include reference="LuZ-Ts-O9l"/>
+                                                    <include reference="FOR-44-hyG"/>
+                                                    <include reference="Bq1-tV-Cj3"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="MZg-2A-VrY"/>
                                                     <include reference="ot6-Qt-Juf"/>
                                                     <include reference="2xk-Te-DN5"/>
-                                                    <include reference="Umt-oL-JhH"/>
+                                                    <exclude reference="Umt-oL-JhH"/>
                                                     <include reference="gtd-fM-xqc"/>
                                                 </mask>
                                             </variation>
@@ -430,7 +446,20 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="tBZ-LG-1cS"/>
+                    <navigationItem key="navigationItem" id="tBZ-LG-1cS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RWz-g9-i27">
+                            <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelWasPressed:" destination="iW8-7R-QF6" id="IfO-Eh-Ba5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="jpv-WO-CNK">
+                            <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="sendWasPressed:" destination="iW8-7R-QF6" id="3MS-Ag-igT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="p6u-xP-Poh" id="p3m-rb-zBz"/>
@@ -561,79 +590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972.75" y="1900.5"/>
-        </scene>
-        <!--Display Name View Controller-->
-        <scene sceneID="Aed-qX-chT">
-            <objects>
-                <viewController storyboardIdentifier="DisplayNameVC" id="Ipc-QV-cOD" customClass="DisplayNameViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6fc-uk-58r"/>
-                        <viewControllerLayoutGuide type="bottom" id="6H8-wr-CKr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FSv-nK-2R7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8As-ZK-5y1">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="displayNameChanged:" destination="Ipc-QV-cOD" eventType="editingChanged" id="zKC-vy-kno"/>
-                                    <action selector="doneButtonWasPressed:" destination="Ipc-QV-cOD" eventType="editingDidEndOnExit" id="IfZ-rb-dAe"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9X-eD-AAh" customClass="FlatButton">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButtonWasPressed:" destination="Ipc-QV-cOD" eventType="touchUpInside" id="wZr-21-3oB"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8As-ZK-5y1" firstAttribute="top" secondItem="6fc-uk-58r" secondAttribute="bottom" constant="143" id="hrq-86-3iX"/>
-                            <constraint firstItem="8As-ZK-5y1" firstAttribute="leading" secondItem="FSv-nK-2R7" secondAttribute="leadingMargin" id="l5A-Hb-fvq"/>
-                            <constraint firstItem="8As-ZK-5y1" firstAttribute="trailing" secondItem="FSv-nK-2R7" secondAttribute="trailingMargin" id="ntH-O7-vXP"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="8As-ZK-5y1"/>
-                                <exclude reference="E9X-eD-AAh"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="hrq-86-3iX"/>
-                                <exclude reference="l5A-Hb-fvq"/>
-                                <exclude reference="ntH-O7-vXP"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="8As-ZK-5y1"/>
-                                <include reference="E9X-eD-AAh"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="hrq-86-3iX"/>
-                                <include reference="l5A-Hb-fvq"/>
-                                <include reference="ntH-O7-vXP"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="displayNameTextField" destination="8As-ZK-5y1" id="FMX-b1-VLH"/>
-                        <outlet property="doneButton" destination="E9X-eD-AAh" id="kgU-SY-9qg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="08o-He-PgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1749.75" y="1900.5"/>
+            <point key="canvasLocation" x="1683.75" y="838.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="e40-py-hgd">

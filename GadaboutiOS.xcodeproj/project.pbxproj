@@ -14,6 +14,7 @@
 		63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */; };
 		631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */; };
 		631FA7A11AC4BD1A00429B3E /* Permissions Popover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */; };
+		632CE50E1AE06068008A42E2 /* CircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 632CE50D1AE06068008A42E2 /* CircleButton.m */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
 		6355B4331A9D10FB00D25215 /* FlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* FlatButton.m */; };
 		635B80621AC5E84A006AED67 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635B80611AC5E84A006AED67 /* FriendCell.m */; };
@@ -66,6 +67,8 @@
 		631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyFriendsViewController.h; sourceTree = "<group>"; };
 		631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyFriendsViewController.m; sourceTree = "<group>"; };
 		631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Permissions Popover.xib"; path = "Custom UI/Permissions Popover.xib"; sourceTree = "<group>"; };
+		632CE50C1AE06068008A42E2 /* CircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleButton.h; sourceTree = "<group>"; };
+		632CE50D1AE06068008A42E2 /* CircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleButton.m; sourceTree = "<group>"; };
 		6355B42B1A9CFDF600D25215 /* SetupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupView.h; sourceTree = "<group>"; };
 		6355B42C1A9CFDF600D25215 /* SetupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupView.m; sourceTree = "<group>"; };
 		6355B4311A9D10FB00D25215 /* FlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatButton.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 			children = (
 				63121CC91ADD6FCD00344CA2 /* SignalsTableViewCell.h */,
 				63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */,
+				632CE50C1AE06068008A42E2 /* CircleButton.h */,
+				632CE50D1AE06068008A42E2 /* CircleButton.m */,
 			);
 			name = "Table View Cell Components";
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				FAD941CC1AC23A2B00FEF499 /* DisplayNameViewController.m in Sources */,
 				63FDECE01ADD54C700393118 /* AddressingViewController.m in Sources */,
 				631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */,
+				632CE50E1AE06068008A42E2 /* CircleButton.m in Sources */,
 				63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */,
 				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,
 				630347741ADC88FF00EB4AB3 /* InvitationView.m in Sources */,
@@ -677,6 +683,7 @@
 			baseConfigurationReference = D3B60062277E2CF1D1993697 /* Pods-GadaboutiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -684,6 +691,8 @@
 				INFOPLIST_FILE = "GadaboutiOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GadaboutiOS/Custom UI/Buttons/GadaboutiOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -692,6 +701,7 @@
 			baseConfigurationReference = 4339D894D1CC6D612DA5E6BB /* Pods-GadaboutiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -699,6 +709,7 @@
 				INFOPLIST_FILE = "GadaboutiOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GadaboutiOS/Custom UI/Buttons/GadaboutiOS-Bridging-Header.h";
 			};
 			name = Release;
 		};
