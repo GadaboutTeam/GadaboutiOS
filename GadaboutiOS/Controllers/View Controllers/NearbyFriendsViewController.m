@@ -7,7 +7,7 @@
 //
 
 #import "NearbyFriendsViewController.h"
-#import "UserController.h"
+#import "UserManager.h"
 
 // Frameworks
 #import <Realm/Realm.h>
@@ -56,7 +56,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidAppear:(BOOL)animated {
 #warning The logged in boolean doesn't update properly. Manually changing the value of below if to get access token.
-    if(![[UserController sharedUserController] isLoggedIn]) {
+    if(![[UserManager sharedUserController] isLoggedIn]) {
         UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"loginScreen"];
         [self presentViewController:loginViewController animated:YES completion:^{
             [self.friendsController getFacebookFriends];

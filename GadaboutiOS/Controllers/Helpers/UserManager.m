@@ -11,10 +11,10 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 // App Imports
-#import "UserController.h"
+#import "UserManager.h"
 #import "NetworkingManager.h"
 
-@interface UserController()
+@interface UserManager()
 
 @property (nonatomic) User *currentUser;
 @property (nonatomic) NSArray *permissions;
@@ -23,10 +23,10 @@
 
 @end
 
-@implementation UserController
+@implementation UserManager
 
 + (id)sharedUserController {
-    static UserController *sharedUserControler = nil;
+    static UserManager *sharedUserControler = nil;
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
@@ -136,6 +136,7 @@
 
 - (void)persistCurrentUser {
     @try {
+        // without this property assignment, userRealm would be deallocated.
         self.userRealm = [RLMRealm defaultRealm];
 
         [self.userRealm beginWriteTransaction];

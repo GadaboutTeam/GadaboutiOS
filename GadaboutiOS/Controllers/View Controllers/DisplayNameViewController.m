@@ -10,7 +10,7 @@
 #import "NetworkingManager.h"
 #import "FlatButton.h"
 #import "User.h"
-#import "UserController.h"
+#import "UserManager.h"
 
 @interface DisplayNameViewController ()
 
@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _defaultRealm = [RLMRealm defaultRealm];
-    _user = [[UserController sharedUserController] getCurrentUser];
+    _user = [[UserManager sharedUserController] getCurrentUser];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +50,7 @@
     [self.view endEditing:YES];
     _displayName = [NSString stringWithString:[_displayNameTextField text]];
     [_user setDisplayName:_displayName];
-    [[UserController sharedUserController] persistUser:_user];
+    [[UserManager sharedUserController] persistUser:_user];
 
 
     NetworkingManager *networkingManager = [NetworkingManager sharedNetworkingManger];

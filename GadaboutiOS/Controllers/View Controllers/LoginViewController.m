@@ -10,7 +10,7 @@
 #import "LoginViewController.h"
 #import "PushStoryBoardSegue.h"
 #import "User.h"
-#import "UserController.h"
+#import "UserManager.h"
 #import "NetworkingManager.h"
 
 @interface LoginViewController ()
@@ -33,7 +33,7 @@
 }
 
 - (IBAction)loginWasPressed:(id)sender {
-    [[UserController sharedUserController] login];
+    [[UserManager sharedUserController] login];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate methods

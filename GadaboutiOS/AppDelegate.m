@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "NetworkingManager.h"
-#import "UserController.h"
+#import "UserManager.h"
 
 @interface AppDelegate ()
 
@@ -33,7 +33,7 @@
 }
 
 - (void)setViewController {
-    UserController *userController = [UserController sharedUserController];
+    UserManager *userController = [UserManager sharedUserController];
     if (![userController isLoggedIn]) {
         NSString *initialViewControllerID = @"loginScreen";
         UIViewController *rootVC = [[[[self window] rootViewController] storyboard] instantiateViewControllerWithIdentifier:initialViewControllerID];
@@ -74,7 +74,7 @@
     
     [self sendProviderDeviceToken:[devToken bytes]]; // custom method; e.g., send to a web service and store
 
-    UserController *userController = [UserController sharedUserController];
+    UserManager *userController = [UserManager sharedUserController];
     User *user = [userController getCurrentUser];
     [user setDeviceID:[devToken description]];
     [userController setCurrentUser: user];

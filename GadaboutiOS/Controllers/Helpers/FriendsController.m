@@ -17,11 +17,11 @@
 
 // app specific imports
 #import "NetworkingManager.h"
-#import "UserController.h"
+#import "UserManager.h"
 
 @interface FriendsController ()
 
-@property UserController *userController;
+@property UserManager *userController;
 @property NSMutableArray *friendsArray;
 @property NetworkingManager *networkingManager;
 
@@ -44,7 +44,7 @@
     self = [super init];
 
     if (self) {
-        self.userController = [UserController sharedUserController];
+        self.userController = [UserManager sharedUserController];
         self.networkingManager = [NetworkingManager sharedNetworkingManger];
         self.friendsArray = [[NSMutableArray alloc] init];
     }

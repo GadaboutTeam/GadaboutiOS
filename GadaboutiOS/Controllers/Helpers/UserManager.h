@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
-@interface UserController : NSObject
+@interface UserManager : NSObject
 
 + (id)sharedUserController;
 - (void)login;
