@@ -107,7 +107,7 @@
             }
         }];
     }
-}d
+}
 
 - (void)persistFriends:(NSArray *)friends {
     for (NSDictionary *fbFriend in friends) {
