@@ -10,13 +10,13 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@class LocationController;
+@class LocationManager;
 
 @protocol LocationControllerDelegate
 - (void)permissionStatusChanged:(id)locationController;
 @end
 
-@interface LocationController : NSObject<CLLocationManagerDelegate> {
+@interface LocationManager : NSObject<CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
 }
 

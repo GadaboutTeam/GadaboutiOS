@@ -32,7 +32,7 @@
 		63E103921AC59E6400C15E9B /* PermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E103911AC59E6400C15E9B /* PermissionsViewController.m */; };
 		63FDECE01ADD54C700393118 /* AddressingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDECDF1ADD54C700393118 /* AddressingViewController.m */; };
 		65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */; };
-		FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationController.m */; };
+		FA1923B31A7BE1ED00561568 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationManager.m */; };
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
 		FA22959B1AC4B57B0047EF31 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22959A1AC4B57B0047EF31 /* UserManager.m */; };
 		FA2295A11AC5A9B90047EF31 /* FriendsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2295A01AC5A9B90047EF31 /* FriendsManager.m */; };
@@ -101,8 +101,8 @@
 		63FDECDE1ADD54C700393118 /* AddressingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressingViewController.h; sourceTree = "<group>"; };
 		63FDECDF1ADD54C700393118 /* AddressingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressingViewController.m; sourceTree = "<group>"; };
 		D3B60062277E2CF1D1993697 /* Pods-GadaboutiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.debug.xcconfig"; sourceTree = "<group>"; };
-		FA1923B21A7BE1ED00561568 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
-		FA1923B41A7BE20800561568 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
+		FA1923B21A7BE1ED00561568 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		FA1923B41A7BE20800561568 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		FA1923B51A7BE57A00561568 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FA2295991AC4B57B0047EF31 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		FA22959A1AC4B57B0047EF31 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 		6355B4341A9D222000D25215 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				FA1923B41A7BE20800561568 /* LocationController.h */,
-				FA1923B21A7BE1ED00561568 /* LocationController.m */,
+				FA1923B41A7BE20800561568 /* LocationManager.h */,
+				FA1923B21A7BE1ED00561568 /* LocationManager.m */,
 				63AA4CCF1AA0C86E00B25274 /* NetworkingManager.h */,
 				63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */,
 				FA2295991AC4B57B0047EF31 /* UserManager.h */,
@@ -544,7 +544,7 @@
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
 				FA22959B1AC4B57B0047EF31 /* UserManager.m in Sources */,
-				FA1923B31A7BE1ED00561568 /* LocationController.m in Sources */,
+				FA1923B31A7BE1ED00561568 /* LocationManager.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				638C4D911ADC8193005D1D1D /* SignalsTextView.m in Sources */,
 				635B80621AC5E84A006AED67 /* FriendCell.m in Sources */,

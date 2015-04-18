@@ -6,21 +6,21 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "LocationController.h"
+#import "LocationManager.h"
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
-@interface LocationController()
+@interface LocationManager()
 
 @end
 
-@implementation LocationController
+@implementation LocationManager
 @synthesize delegate;
 
 #pragma mark Singleton Methods
 
 + (id)sharedLocationController {
-    static LocationController *locationController = nil;
+    static LocationManager *locationController = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         locationController = [[self alloc] init];

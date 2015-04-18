@@ -41,7 +41,8 @@
     }
 }
 
-#pragma mark - Application Lifecycle
+
+#pragma mark - Global Setup
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // for white text in navigation bar controllers
@@ -50,10 +51,8 @@
     // for tokens
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
-
-    if (![FBSDKAccessToken currentAccessToken]) {
-        [self setViewController];
-    }
+    
+    [self loadRootViewController:[FBSDKAccessToken currentAccessToken]];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];

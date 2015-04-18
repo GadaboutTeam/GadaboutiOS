@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    locationController = [[LocationController alloc] init];
+    locationController = [[LocationManager alloc] init];
     locationController.delegate = self;
     // Do any additional setup after loading the view.
 }

@@ -346,9 +346,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bq1-tV-Cj3" customClass="CircleButton">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="317" y="13" width="50" height="50"/>
-                                                    </variation>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -595,7 +592,7 @@
         <!--Item-->
         <scene sceneID="e40-py-hgd">
             <objects>
-                <navigationController storyboardIdentifier="mainNavController" automaticallyAdjustsScrollViewInsets="NO" id="zIR-HR-lcq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainScreen" automaticallyAdjustsScrollViewInsets="NO" id="zIR-HR-lcq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="jsc-WN-99w"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

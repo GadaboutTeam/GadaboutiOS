@@ -62,6 +62,7 @@ static NSString * const reuseIdentifier = @"Cell";
             [self.friendsController getFacebookFriends];
         }];
     }
+    
 }
 
 /*
