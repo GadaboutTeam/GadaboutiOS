@@ -14,5 +14,6 @@
 + (id)sharedFriendsController;
 - (NSArray *)getNearbyFriends;
 - (void)getFacebookFriends;
+- (void)getPictureForID:(User *)friend onCompletion:(void (^)())completionBlock;
 
 @end

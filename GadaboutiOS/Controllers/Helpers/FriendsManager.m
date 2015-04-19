@@ -18,6 +18,7 @@
 // app specific imports
 #import "NetworkingManager.h"
 #import "UserManager.h"
+#import "Picture.h"
 
 @interface FriendsManager ()
 
@@ -73,7 +74,7 @@
 }
 
 - (void)getFacebookFriends {
-    NSString *serviceString = @"/me/friends?fields=name,installed";
+    NSString *serviceString = @"/me/friends?fields=name,installed,picture";
     [[[FBSDKGraphRequest alloc] initWithGraphPath:serviceString parameters:nil]
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
          if (!error) {
@@ -128,6 +129,37 @@
         [[RLMRealm defaultRealm] commitWriteTransaction];
 
         NSLog(@"Persisted friend: %@", [friend displayName]);
+    }
+}
+
+- (void)getPictureForID:(User *)friend onCompletion:(void (^)())completionBlock {
+    NSString *graphURL = [NSString stringWithFormat:@"https://graph.facebok.com/%@/picture?width=200", [friend facebookID]];
+    NSURL *url = [NSURL URLWithString:graphURL];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        @autoreleasepool {
+            Picture *picture = [[Picture alloc] init];
+            [picture setPictureData:(NSData *)responseObject];
+            [picture setPictureID:[friend facebookID]];
+
+            [[RLMRealm defaultRealm] beginWriteTransaction];
+            [Picture createOrUpdateInDefaultRealmWithObject:picture];
+            [[RLMRealm defaultRealm] commitWriteTransaction];
+        }
+
+        completionBlock();
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failed to download profile picture for %@: ", [friend displayName]);
+    }];
+
+    // Check for cached version
+    Picture *cachedPicture = [Picture objectForPrimaryKey:[friend facebookID]];
+    if (cachedPicture != nil) {
+        completionBlock();
+    } else {
+        [requestOperation start];
     }
 }
 

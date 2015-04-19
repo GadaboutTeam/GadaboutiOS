@@ -17,6 +17,7 @@
 // Components
 #import "FriendsManager.h"
 #import "FriendCell.h"
+#import "Picture.h"
 
 @interface NearbyFriendsViewController ()
 
@@ -55,6 +56,8 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
 #warning The logged in boolean doesn't update properly. Manually changing the value of below if to get access token.
     if(![[UserManager sharedUserController] isLoggedIn]) {
         UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"loginScreen"];
@@ -82,7 +85,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSLog(@"nearby friends count: %ld", [self.nearbyFriends count]);
     return self.nearbyFriends.count;
 }
 
@@ -93,11 +95,12 @@ static NSString * const reuseIdentifier = @"Cell";
 
     // Configure the cell
     [[cell displayName] setText:[friend getFirstName]];
-    cell.profilePicture = [[FBSDKProfilePictureView alloc] init];
-    [cell.profilePicture setPictureMode:FBSDKProfilePictureModeSquare];
-    [cell.profilePicture setProfileID:[friend facebookID]];
-
-    [cell.profilePictureView addSubview:cell.profilePicture];
+    [self.friendsController getPictureForID:friend onCompletion:^{
+        @autoreleasepool {
+            UIImage *image = [UIImage imageWithData:[[Picture objectForPrimaryKey:[friend facebookID]] pictureData]];
+            [[cell profilePictureView] setImage:image];
+        }
+    }];
 
     return cell;
 }

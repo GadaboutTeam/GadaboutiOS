@@ -29,7 +29,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-
+    [super viewDidAppear:animated];
 }
 
 - (IBAction)loginWasPressed:(id)sender {
