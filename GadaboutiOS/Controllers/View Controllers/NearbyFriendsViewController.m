@@ -13,6 +13,7 @@
 #import <Realm/Realm.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKCoreKit/FBSDKProfilePictureView.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 // Components
 #import "FriendsManager.h"
@@ -26,6 +27,9 @@
 
 // for accessing friends
 @property (nonatomic, strong) FriendsManager *friendsController;
+
+// facebook
+@property (nonatomic, strong) FBSDKAccessToken *accessToken;
 
 @end
 
@@ -55,14 +59,16 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-#warning The logged in boolean doesn't update properly. Manually changing the value of below if to get access token.
-    if(![[UserManager sharedUserController] isLoggedIn]) {
-        UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"loginScreen"];
-        [self presentViewController:loginViewController animated:YES completion:^{
-            [self.friendsController getFacebookFriends];
-        }];
-    }
+    UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main"
+                                                                       bundle:[NSBundle mainBundle]]
+                                             instantiateViewControllerWithIdentifier:@"loginScreen"];
     
+    [RACObserve(self, accessToken) subscribeNext:^(FBSDKAccessToken *accessToken) {
+        if (![FBSDKAccessToken currentAccessToken]) {
+            [self presentViewController:loginViewController animated:YES completion:nil];
+            NSLog(@"called");
+        }
+    }];
 }
 
 /*

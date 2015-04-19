@@ -6,7 +6,12 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
+// Frameworks
 #import <pop/POP.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+// App Imports
 #import "LoginViewController.h"
 #import "PushStoryBoardSegue.h"
 #import "User.h"
@@ -14,7 +19,13 @@
 #import "NetworkingManager.h"
 
 @interface LoginViewController ()
+
+// Realm
 @property RLMRealm *defaultRealm;
+
+// facebook
+@property (nonatomic, strong) FBSDKAccessToken *accessToken;
+
 @end
 
 @implementation LoginViewController
@@ -29,7 +40,9 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (IBAction)loginWasPressed:(id)sender {
