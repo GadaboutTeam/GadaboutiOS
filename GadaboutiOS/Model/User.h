@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, UserType) {
 @property (nonatomic) NSString *deviceID;
 @property (nonatomic) NSString *facebookID;
 @property (nonatomic) NSString *email;
+@property (nonatomic) NSString *pictureURL;
 
 // Us
 @property (nonatomic) UserType userType;

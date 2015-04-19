@@ -13,6 +13,6 @@
 
 @property (retain, nonatomic) FBSDKProfilePictureView *profilePicture;
 @property (retain, nonatomic) IBOutlet UILabel *displayName;
-@property (retain, nonatomic) IBOutlet UIView *profilePictureView;
+@property (retain, nonatomic) IBOutlet UIImageView *profilePictureView;
 
 @end

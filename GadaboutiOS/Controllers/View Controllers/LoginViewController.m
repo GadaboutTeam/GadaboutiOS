@@ -40,6 +40,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
     if ([FBSDKAccessToken currentAccessToken]) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }

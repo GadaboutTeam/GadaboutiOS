@@ -18,6 +18,7 @@
 // Components
 #import "FriendsManager.h"
 #import "FriendCell.h"
+#import "Picture.h"
 
 @interface NearbyFriendsViewController ()
 
@@ -62,7 +63,7 @@ static NSString * const reuseIdentifier = @"Cell";
     UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main"
                                                                        bundle:[NSBundle mainBundle]]
                                              instantiateViewControllerWithIdentifier:@"loginScreen"];
-    
+
     [RACObserve(self, accessToken) subscribeNext:^(FBSDKAccessToken *accessToken) {
         if (![FBSDKAccessToken currentAccessToken]) {
             [self presentViewController:loginViewController animated:YES completion:nil];
@@ -89,7 +90,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSLog(@"nearby friends count: %ld", [self.nearbyFriends count]);
     return self.nearbyFriends.count;
 }
 
@@ -100,11 +100,12 @@ static NSString * const reuseIdentifier = @"Cell";
 
     // Configure the cell
     [[cell displayName] setText:[friend getFirstName]];
-    cell.profilePicture = [[FBSDKProfilePictureView alloc] init];
-    [cell.profilePicture setPictureMode:FBSDKProfilePictureModeSquare];
-    [cell.profilePicture setProfileID:[friend facebookID]];
-
-    [cell.profilePictureView addSubview:cell.profilePicture];
+    [self.friendsController getPictureForID:friend onCompletion:^{
+        @autoreleasepool {
+            UIImage *image = [UIImage imageWithData:[[Picture objectForPrimaryKey:[friend facebookID]] pictureData]];
+            [[cell profilePictureView] setImage:image];
+        }
+    }];
 
     return cell;
 }
@@ -137,7 +138,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+
 }
 */
 

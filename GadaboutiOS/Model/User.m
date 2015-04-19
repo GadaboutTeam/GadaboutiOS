@@ -27,7 +27,7 @@
 {
     return @{@"displayName" : @"displayName", @"authToken" : @"authToken",
              @"deviceID" : @"" , @"email" : @"email",
-             @"hasApp" : @false, @"loggedIn" : @false};
+             @"hasApp" : @false, @"loggedIn" : @false, @"pictureURL" : @"url"};
 }
 
 // Specify properties to ignore (Realm won't persist these)
