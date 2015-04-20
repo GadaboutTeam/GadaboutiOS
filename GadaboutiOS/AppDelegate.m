@@ -8,6 +8,7 @@
 
 // Framework Imports
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <Parse/Parse.h>
 
 // App Imports
 #import "AppDelegate.h"
@@ -51,6 +52,9 @@
     // for tokens
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
+
+    [Parse setApplicationId:@"TH0mKaoKkU2YL6dQrWSIMdBahG1udfFASXVnYPh3"
+                  clientKey:@"pk0bX25aA8PpX0JTD80zYUNdtZSYadXcJ2UJVvL0"];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
@@ -67,11 +71,11 @@
 
 #pragma mark - Notication Token Setup
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
-    NSString *tokenString = [NSString stringWithUTF8String:[devToken bytes]];
-    NSLog(@"Got device token: %@", tokenString);
-    
-    [self sendProviderDeviceToken:devToken]; // custom method; e.g., send to a web service and store
+    PFInstallation *currentInstalation = [PFInstallation currentInstallation];
+    [currentInstalation setDeviceTokenFromData:devToken];
+    [currentInstalation saveInBackground];
 
+    //Legacy code
     UserManager *userController = [UserManager sharedUserController];
     User *user = [userController getCurrentUser];
     [user setDeviceID:[devToken description]];
@@ -81,11 +85,8 @@
     NSLog(@"Error in registration. Error: %@", [err description]);
 }
 
-- (void)sendProviderDeviceToken:(NSData *)devToken {
-    NSDictionary *tokenDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:devToken, @"token", nil];
-    
-    NetworkingManager *networkingManager = [NetworkingManager sharedNetworkingManger];
-    [networkingManager sendDictionary:tokenDictionary toService:@"users"];
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 #pragma mark - First Run Notification

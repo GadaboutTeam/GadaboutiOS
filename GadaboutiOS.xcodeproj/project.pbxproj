@@ -41,8 +41,6 @@
 		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
 		FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */; };
 		FAD0469D1AE4337400D98F62 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD0469C1AE4337400D98F62 /* Picture.m */; };
-		FAD90B501AE483E400DC189A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B4E1AE483E400DC189A /* Bolts.framework */; };
-		FAD90B511AE483E400DC189A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B4F1AE483E400DC189A /* Parse.framework */; };
 		FAD90B531AE4844000DC189A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B521AE4844000DC189A /* AudioToolbox.framework */; };
 		FAD90B551AE4844600DC189A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B541AE4844600DC189A /* CFNetwork.framework */; };
 		FAD90B571AE4844D00DC189A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B561AE4844D00DC189A /* CoreGraphics.framework */; };
@@ -162,9 +160,7 @@
 				FAD90B571AE4844D00DC189A /* CoreGraphics.framework in Frameworks */,
 				FAD90B551AE4844600DC189A /* CFNetwork.framework in Frameworks */,
 				FAD90B531AE4844000DC189A /* AudioToolbox.framework in Frameworks */,
-				FAD90B501AE483E400DC189A /* Bolts.framework in Frameworks */,
 				FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */,
-				FAD90B511AE483E400DC189A /* Parse.framework in Frameworks */,
 				65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

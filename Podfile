@@ -3,6 +3,7 @@ platform :ios, '8.0'
 target 'GadaboutiOS' do
   # Facebook SDK
   pod 'Facebook-iOS-SDK', '~> 4.0'
+  pod 'Parse', '~> 1.7'
 
   # Networking
   pod 'AFNetworking', '~> 2.5.2'
