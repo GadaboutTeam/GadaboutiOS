@@ -35,7 +35,7 @@
 
 - (void)setViewController {
     UserManager *userController = [UserManager sharedUserController];
-    if (![userController isLoggedIn]) {
+    if (![[userController currentUser] loggedIn]) {
         NSString *initialViewControllerID = @"loginScreen";
         UIViewController *rootVC = [[[[self window] rootViewController] storyboard] instantiateViewControllerWithIdentifier:initialViewControllerID];
         [[self window] setRootViewController:rootVC];
@@ -77,7 +77,7 @@
 
     //Legacy code
     UserManager *userController = [UserManager sharedUserController];
-    User *user = [userController getCurrentUser];
+    User *user = [userController currentUser];
     [user setDeviceID:[devToken description]];
 }
 

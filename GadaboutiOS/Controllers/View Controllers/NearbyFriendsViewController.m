@@ -14,6 +14,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKCoreKit/FBSDKProfilePictureView.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <Parse/Parse.h>
 
 // Components
 #import "FriendsManager.h"
@@ -43,15 +44,24 @@ static NSString * const reuseIdentifier = @"Cell";
 
     self.nearbyFriends = [User objectsWhere:@"userType = 1"];
     self.friendsController = [FriendsManager sharedFriendsController];
-    [self.friendsController getFacebookFriends];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFacebookFriends) name:FBSDKProfileDidChangeNotification object:nil];
+    if ([[UserManager sharedUserController] isLoggedIn]) {
+        [self updateFacebookFriends];
+    }
 
     // updating collection view
     __weak typeof(self) weakSelf = self;
     self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
         weakSelf.nearbyFriends = [User objectsWhere:@"userType = 1"];
+        [self sendInviteTest:(NSArray *)weakSelf.nearbyFriends];
         [weakSelf.collectionView reloadData];
     }];
     [self.collectionView reloadData];
+}
+
+- (void)updateFacebookFriends {
+    [self.friendsController getFacebookFriends];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,6 +80,8 @@ static NSString * const reuseIdentifier = @"Cell";
             NSLog(@"called");
         }
     }];
+
+    [[UserManager sharedUserController] registerWithParse];
 }
 
 /*
@@ -108,6 +120,24 @@ static NSString * const reuseIdentifier = @"Cell";
     }];
 
     return cell;
+}
+
+- (void)sendInviteTest:(NSArray *)friendsArray {
+    for (User *user in friendsArray) {
+        PFQuery *friendQuery = [[PFQuery alloc] initWithClassName:@"User"];
+        [friendQuery whereKey:@"auth_id" equalTo:[user facebookID]];
+        [friendQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (object != nil) {
+                NSString *deviceToken = [NSString stringWithFormat:@"%@", [object valueForKey:@"device_id"]];
+                deviceToken = [[deviceToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<> "]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+                PFQuery *installationQuery = [[PFInstallation query] whereKey:@"deviceToken" equalTo:deviceToken];
+                PFPush *push = [[PFPush alloc] init];
+                [push setQuery:installationQuery];
+                [push setMessage:@"Wanna hang?"];
+                [push sendPushInBackground];
+            }
+        }];
+    }
 }
 
 

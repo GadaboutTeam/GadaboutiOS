@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
+#import <Parse/Parse.h>
+
 #import "User.h"
 #import "AppDelegate.h"
 
@@ -25,9 +27,14 @@
 
 + (NSDictionary *)defaultPropertyValues
 {
-    return @{@"displayName" : @"displayName", @"authToken" : @"authToken",
-             @"deviceID" : @"" , @"email" : @"email",
-             @"hasApp" : @false, @"loggedIn" : @false, @"pictureURL" : @"url"};
+    return @{@"displayName" : @"displayName",
+             @"authToken" : @"authToken",
+             @"deviceID" : @"" ,
+             @"email" : @"email",
+             @"hasApp" : @false,
+             @"loggedIn" : @false,
+             @"pictureURL" : @"url",
+             @"facebookID" : @"fbID"};
 }
 
 // Specify properties to ignore (Realm won't persist these)

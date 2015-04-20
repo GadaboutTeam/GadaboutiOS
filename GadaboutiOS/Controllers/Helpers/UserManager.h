@@ -13,9 +13,11 @@
 
 + (id)sharedUserController;
 - (void)login;
-- (User *)getCurrentUser;
+
+- (User *)currentUser;
 - (void)persistCurrentUser;
-- (void)persistUser:(User *)user;
-- (void)setCurrentUser:(User *)user;
+
+//- (void)setCurrentUser:(User *)user;
+- (void)registerWithParse;
 - (BOOL)isLoggedIn;
 @end

@@ -9,6 +9,8 @@
 // Framework Imports
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Realm/Realm.h>
+#import <Parse/Parse.h>
 
 // App Imports
 #import "UserManager.h"
@@ -16,10 +18,9 @@
 
 @interface UserManager()
 
-@property (nonatomic) User *currentUser;
+@property (nonatomic) User *user;
 @property (nonatomic) NSArray *permissions;
 @property (nonatomic) NetworkingManager *networkManager;
-@property (nonatomic) RLMRealm *userRealm;
 
 @end
 
@@ -41,14 +42,13 @@
 
     if (self != nil) {
         @try {
-            _currentUser = [self getCurrentUser];
-            // Remove the line below once we solve the registration issue with Fabric
-            [_currentUser setLoggedIn:YES];
             self.permissions = @[@"public_profile", @"email", @"user_friends"];
 
             [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
 
             self.networkManager = [NetworkingManager sharedNetworkingManger];
+
+            [self createInMemoryCopy];
         }
         @catch (NSException *exception) {
             @throw exception;
@@ -58,48 +58,57 @@
     return self;
 }
 
-- (User *)getCurrentUser {
+- (User *)currentUser {
+    if (self.user != nil) {
+        return self.user;
+    } else {
+        @throw [NSException exceptionWithName:@"Fatal: cannot return user" reason:@"In memory copy of user does not exist" userInfo:nil];
+    }
+
+}
+
+// Instantiates a new or cached version of the current user.
+- (void)createInMemoryCopy {
     User *persistedUser;
 
-    if (_currentUser != nil) {
-        return _currentUser;
-    } else {
-        @try {
-            persistedUser = [self getUserFromRealm];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"UserController: %@", [exception description]);
-            @throw exception;
-        }
+    @try {
+        persistedUser = [self getUserFromRealm];
+    } @catch (NSException *exception) {
+        NSLog(@"Error retrieving user from realm: %@", [exception description]);
+        @throw exception;
     }
 
     if (persistedUser != nil) {
-        return [[User alloc] initWithObject:persistedUser];
+        NSLog(@"Persisted user exists.");
+        [self setCurrentUser:persistedUser];
+        [[self currentUser] setLoggedIn:YES];
     } else {
-        User *user = [[User alloc] init];
-        [user setLoggedIn:NO];
-        return user;
+        NSLog(@"Creating new user.");
+        User *newUser = [[User alloc] init];
+        [newUser setLoggedIn:NO];
+        [self setCurrentUser:newUser];
     }
 }
 
 - (void)setCurrentUser:(User *)user {
-    NSLog(@"Setting current user.");
-    self.currentUser = user;
+    NSLog(@"Setting current user to: %@", [user JSONDictionary]);
+    self.user = [[User alloc] initWithObject:user];
 }
 
 - (User *)getUserFromRealm {
-    User *user;
+    User *realmUser;
     RLMResults *userArray = [User objectsWhere:@"userType = 0"];
 
     if ([userArray count] == 0) {
+        NSLog(@"User has not yet been stored.");
         return nil;
     } else if ([userArray count] > 1) {
         [NSException raise:@"MULTIPLE_USERS_STORED" format:@"There should only be one primary user in Realm."];
     } else {
-        user = [userArray firstObject];
+        realmUser = [userArray firstObject];
     }
 
-    return user;
+    return realmUser;
 }
 
 - (void)login {
@@ -113,53 +122,80 @@
             NSLog(@"User logged in.");
             NSLog(@"Access Token: %@", result.token);
             if ([result.grantedPermissions containsObject:@"email"]) {
-                [self.currentUser setFacebookID:[[FBSDKProfile currentProfile] userID]];
-                [self.currentUser setDisplayName:[[FBSDKProfile currentProfile] name]];
-                [self.currentUser setAuthToken:result.token.tokenString];
-                [self.currentUser setHasApp:true];
-
-                #warning Need to setup aps-environment entitlement string as specified in the documentation: https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingLocalAndPushNotifications.html
-                [self.currentUser setDeviceID:@"woof_woof"];
-
-                //Persist user
-                [self persistUser:self.currentUser];
-
-                //Send user to server
-                [self.networkManager sendDictionary:[[self getUserFromRealm] JSONDictionary] toService:@"users"];
+                [self.user setAuthToken:result.token.tokenString];
+                // Wait for FBSDKProfile to retrieve user information
+                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setAndPersistFacebookProfile) name:FBSDKProfileDidChangeNotification object:nil];
             }
         }
     }];
 }
 
+- (void)setAndPersistFacebookProfile {
+    [self.user setFacebookID:[[FBSDKProfile currentProfile] userID]];
+    [self.user setDisplayName:[[FBSDKProfile currentProfile] name]];
+    [self.user setHasApp:YES];
+    [self.user setLoggedIn:YES];
+
+    [self persistCurrentUser];
+    [self registerWithParse];
+
+    //Send user to server
+    [self.networkManager sendDictionary:[[self getUserFromRealm] JSONDictionary] toService:@"users"];
+}
+
 - (BOOL)isLoggedIn {
-    return [[self getCurrentUser] loggedIn];
+    return [[self currentUser] loggedIn];
 }
 
 - (void)persistCurrentUser {
-    @try {
-        // without this property assignment, userRealm would be deallocated.
-        self.userRealm = [RLMRealm defaultRealm];
-
-        [self.userRealm beginWriteTransaction];
-        [User createOrUpdateInDefaultRealmWithObject:_currentUser];
-        [self.userRealm commitWriteTransaction];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"User could not be persisted: %@", [exception description]);
-    }
-
+    [self persistUser:[self currentUser]];
 }
 
 - (void)persistUser:(User *)user {
-    _currentUser = user;
-    [self persistCurrentUser];
-
-    // Recreate the in-memory copy with an unpersisted copy of the realm version
-    _currentUser = [[User alloc] initWithObject:[self getUserFromRealm]];
+    NSLog(@"Trying to persist user: %@", [user description]);
+    @try {
+        [[RLMRealm defaultRealm] beginWriteTransaction];
+        [User createOrUpdateInDefaultRealmWithObject:[[User alloc] initWithObject:user]];
+        [[RLMRealm defaultRealm] commitWriteTransaction];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"User could not be persisted. Exception: %@", [exception description]);
+    }
 }
 
 - (NSDictionary *)getUserAuthDetailsDictionary {
     return nil;
+}
+
+// Parse data
+- (void)registerWithParse {
+    NSLog(@"Sending dictionary to parse: %@", [[self currentUser] JSONDictionary]);
+
+    PFQuery *query = [[PFQuery alloc] initWithClassName:@"User"];
+    [query whereKey:@"auth_id" equalTo:[[self currentUser] facebookID]];
+    [query countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (error == nil) {
+            PFObject *userObject;
+            if (count == 0) {
+                userObject = [PFObject objectWithClassName:@"User" dictionary:[[self currentUser] JSONDictionary]];
+                [userObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        NSLog(@"User %@ sent to Parse.", [self description]);
+                    } else {
+                        NSLog(@"User %@ could not be saved. Error: %@", [self description], [error description]);
+                    }
+                }];
+            } else {
+                [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+                    if (object != nil) {
+                        PFObject *userObject = [PFObject objectWithClassName:@"User" dictionary:[[self currentUser] JSONDictionary]];
+                        [userObject setValue:[object objectId] forKey:@"objectId"];
+                        [userObject saveInBackground];
+                    }
+                }];
+            }
+        }
+    }];
 }
 
 @end

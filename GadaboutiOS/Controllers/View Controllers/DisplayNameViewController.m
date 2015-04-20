@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _defaultRealm = [RLMRealm defaultRealm];
-    _user = [[UserManager sharedUserController] getCurrentUser];
+    _user = [[UserManager sharedUserController] currentUser];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,9 +48,10 @@
 
 - (IBAction)doneButtonWasPressed:(id) sender {
     [self.view endEditing:YES];
-    _displayName = [NSString stringWithString:[_displayNameTextField text]];
-    [_user setDisplayName:_displayName];
-    [[UserManager sharedUserController] persistUser:_user];
+    self.displayName = [NSString stringWithString:[self.displayNameTextField text]];
+    [self.user setDisplayName:self.displayName];
+//    [[UserManager sharedUserController] setUserInMemory:self.user];
+    [[UserManager sharedUserController] persistCurrentUser];
 
 
     NetworkingManager *networkingManager = [NetworkingManager sharedNetworkingManger];
