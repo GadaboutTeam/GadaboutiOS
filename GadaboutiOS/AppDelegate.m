@@ -67,9 +67,9 @@
 
 #pragma mark - Notication Token Setup
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
-    NSLog(@"Got device token: %@", [devToken description]);
+    NSLog(@"Got device token: %@", devToken);
     
-    [self sendProviderDeviceToken:[devToken bytes]]; // custom method; e.g., send to a web service and store
+    [self sendProviderDeviceToken:devToken]; // custom method; e.g., send to a web service and store
 
     UserManager *userController = [UserManager sharedUserController];
     User *user = [userController getCurrentUser];

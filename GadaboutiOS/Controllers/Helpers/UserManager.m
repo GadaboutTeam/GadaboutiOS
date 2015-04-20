@@ -83,6 +83,7 @@
 }
 
 - (void)setCurrentUser:(User *)user {
+    NSLog(@"Setting current user.");
     self.currentUser = user;
 }
 
