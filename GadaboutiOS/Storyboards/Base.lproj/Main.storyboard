@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zIR-HR-lcq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="utq-mo-UZH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -118,7 +118,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="po1-jR-B5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3858.75" y="543.5"/>
+            <point key="canvasLocation" x="4776.75" y="543.5"/>
         </scene>
         <!--Compose Invitation View Controller-->
         <scene sceneID="wju-9e-eIk">
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8p-xc-48J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4791.75" y="887.5"/>
+            <point key="canvasLocation" x="7545.75" y="887.5"/>
         </scene>
         <!--Addressing View Controller-->
         <scene sceneID="dJo-aj-a8I">
@@ -465,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4I-Iz-P8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6237.75" y="887.5"/>
+            <point key="canvasLocation" x="8991.75" y="887.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bb3-RZ-eKh">
@@ -587,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1683.75" y="838.5"/>
+            <point key="canvasLocation" x="2949.75" y="-237.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="e40-py-hgd">
@@ -608,9 +608,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0x-pv-0nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2907.75" y="543.5"/>
+            <point key="canvasLocation" x="3825.75" y="543.5"/>
         </scene>
-        <!--Received Invitation View Controller-->
+        <!--Item-->
         <scene sceneID="zjY-Bc-Nyq">
             <objects>
                 <viewController id="dwm-EU-Qg4" customClass="ReceivedInvitationViewController" sceneMemberID="viewController">
@@ -807,10 +807,10 @@
                             <constraint firstItem="RdO-bQ-A9Z" firstAttribute="leading" secondItem="3Bm-oQ-n7e" secondAttribute="leading" id="DyP-mP-JLI"/>
                             <constraint firstItem="Wo6-TY-7pI" firstAttribute="leading" secondItem="3Bm-oQ-n7e" secondAttribute="leadingMargin" constant="30" id="FMu-b8-7if"/>
                             <constraint firstItem="Fvi-gV-NhW" firstAttribute="top" secondItem="S0X-pP-4Q8" secondAttribute="bottom" constant="243" id="FPv-Ar-BFP"/>
-                            <constraint firstItem="4Hi-6X-f4r" firstAttribute="top" secondItem="RdO-bQ-A9Z" secondAttribute="bottom" constant="15" id="Hz1-02-LBn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fvi-gV-NhW" secondAttribute="trailing" constant="30" id="JZd-IB-Brc"/>
                             <constraint firstItem="4Yw-oT-cHs" firstAttribute="top" secondItem="S0X-pP-4Q8" secondAttribute="bottom" constant="120" id="Lkf-tb-Cnm"/>
                             <constraint firstItem="J3R-0p-rQH" firstAttribute="leading" secondItem="3Bm-oQ-n7e" secondAttribute="leadingMargin" id="N1h-0J-flg"/>
+                            <constraint firstItem="4Hi-6X-f4r" firstAttribute="top" secondItem="RdO-bQ-A9Z" secondAttribute="bottom" constant="15" id="PoN-pT-c7Q"/>
                             <constraint firstItem="4Yw-oT-cHs" firstAttribute="trailing" secondItem="3Bm-oQ-n7e" secondAttribute="trailingMargin" id="d2I-Wu-H7h"/>
                             <constraint firstItem="J3R-0p-rQH" firstAttribute="top" secondItem="S0X-pP-4Q8" secondAttribute="bottom" id="kIJ-Jb-16T"/>
                             <constraint firstItem="Wo6-TY-7pI" firstAttribute="top" secondItem="S0X-pP-4Q8" secondAttribute="bottom" constant="243" id="le5-Td-l42"/>
@@ -837,7 +837,7 @@
                                 <exclude reference="JZd-IB-Brc"/>
                                 <exclude reference="DyP-mP-JLI"/>
                                 <exclude reference="xQp-e6-JjR"/>
-                                <exclude reference="Hz1-02-LBn"/>
+                                <exclude reference="PoN-pT-c7Q"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -860,10 +860,11 @@
                                 <include reference="JZd-IB-Brc"/>
                                 <include reference="DyP-mP-JLI"/>
                                 <include reference="xQp-e6-JjR"/>
-                                <include reference="Hz1-02-LBn"/>
+                                <include reference="PoN-pT-c7Q"/>
                             </mask>
                         </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="JWk-Co-nSd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="friendStatusView" destination="RdO-bQ-A9Z" id="0hb-4f-S5b"/>
@@ -872,7 +873,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zi7-rD-Q5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2900.25" y="1409.5"/>
+            <point key="canvasLocation" x="3825.75" y="1405.5"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="hBV-Xh-hJc">
@@ -891,7 +892,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbE-nG-jHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5494.5" y="888"/>
+            <point key="canvasLocation" x="8247.75" y="887.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ESw-Ic-f9o">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="utq-mo-UZH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="7bn-aJ-mGb">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zIR-HR-lcq" kind="relationship" relationship="viewControllers" id="cIw-kd-kXS"/>
+                        <segue destination="dwm-EU-Qg4" kind="relationship" relationship="viewControllers" id="nZA-Jq-hyM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="td6-wZ-oDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2779.5" y="901"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
