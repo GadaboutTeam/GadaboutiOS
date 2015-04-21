@@ -10,9 +10,16 @@
 #import <FBSDKCoreKit/FBSDKProfilePictureView.h>
 
 @interface FriendCell : UICollectionViewCell
+typedef NS_ENUM(NSInteger, CellState) {
+    CellStateDeselected,
+    CellStateSelected
+};
 
 @property (retain, nonatomic) FBSDKProfilePictureView *profilePicture;
 @property (retain, nonatomic) IBOutlet UILabel *displayName;
 @property (retain, nonatomic) IBOutlet UIImageView *profilePictureView;
+
+- (void)setCellState:(CellState)cellState;
+- (CellState)cellState;
 
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="utq-mo-UZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="utq-mo-UZH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <scene sceneID="7gm-BO-Yd1">
             <objects>
                 <collectionViewController storyboardIdentifier="ConversationsView" id="QDk-QO-Ahn" customClass="NearbyFriendsViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="102-5n-SJ9">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="102-5n-SJ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98989266157150269" green="0.99006170034408569" blue="0.98988205194473267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -826,18 +826,18 @@
                                 <exclude reference="RdO-bQ-A9Z"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="N1h-0J-flg"/>
-                                <exclude reference="kIJ-Jb-16T"/>
+                                <exclude reference="PoN-pT-c7Q"/>
                                 <exclude reference="Lkf-tb-Cnm"/>
                                 <exclude reference="d2I-Wu-H7h"/>
                                 <exclude reference="zkK-G0-bo2"/>
-                                <exclude reference="FMu-b8-7if"/>
-                                <exclude reference="le5-Td-l42"/>
                                 <exclude reference="FPv-Ar-BFP"/>
                                 <exclude reference="JZd-IB-Brc"/>
+                                <exclude reference="N1h-0J-flg"/>
+                                <exclude reference="kIJ-Jb-16T"/>
+                                <exclude reference="FMu-b8-7if"/>
+                                <exclude reference="le5-Td-l42"/>
                                 <exclude reference="DyP-mP-JLI"/>
                                 <exclude reference="xQp-e6-JjR"/>
-                                <exclude reference="PoN-pT-c7Q"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -849,18 +849,18 @@
                                 <include reference="RdO-bQ-A9Z"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="N1h-0J-flg"/>
-                                <include reference="kIJ-Jb-16T"/>
+                                <include reference="PoN-pT-c7Q"/>
                                 <include reference="Lkf-tb-Cnm"/>
                                 <include reference="d2I-Wu-H7h"/>
                                 <include reference="zkK-G0-bo2"/>
-                                <include reference="FMu-b8-7if"/>
-                                <include reference="le5-Td-l42"/>
                                 <include reference="FPv-Ar-BFP"/>
                                 <include reference="JZd-IB-Brc"/>
+                                <include reference="N1h-0J-flg"/>
+                                <include reference="kIJ-Jb-16T"/>
+                                <include reference="FMu-b8-7if"/>
+                                <include reference="le5-Td-l42"/>
                                 <include reference="DyP-mP-JLI"/>
                                 <include reference="xQp-e6-JjR"/>
-                                <include reference="PoN-pT-c7Q"/>
                             </mask>
                         </variation>
                     </view>
