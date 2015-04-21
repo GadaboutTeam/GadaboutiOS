@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zIR-HR-lcq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zIR-HR-lcq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="3858.75" y="543.5"/>
         </scene>
-        <!--Invitation View Controller-->
+        <!--Compose Invitation View Controller-->
         <scene sceneID="wju-9e-eIk">
             <objects>
-                <viewController id="h8k-SR-Mf9" customClass="InvitationViewController" sceneMemberID="viewController">
+                <viewController id="h8k-SR-Mf9" customClass="ComposeInvitationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wr6-dR-eNE"/>
                         <viewControllerLayoutGuide type="bottom" id="Jv1-CC-5T5"/>

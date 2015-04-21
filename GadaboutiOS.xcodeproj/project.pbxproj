@@ -10,7 +10,7 @@
 		630347701ADC867400EB4AB3 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6303476E1ADC867400EB4AB3 /* checkmark.png */; };
 		630347711ADC867400EB4AB3 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6303476F1ADC867400EB4AB3 /* close.png */; };
 		630347741ADC88FF00EB4AB3 /* InvitationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630347731ADC88FF00EB4AB3 /* InvitationView.m */; };
-		630347771ADC8A4000EB4AB3 /* InvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630347761ADC8A4000EB4AB3 /* InvitationViewController.m */; };
+		630347771ADC8A4000EB4AB3 /* ComposeInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630347761ADC8A4000EB4AB3 /* ComposeInvitationViewController.m */; };
 		63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */; };
 		631BE7031AE5ECA800AB37CF /* ReceivedInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BE7021AE5ECA800AB37CF /* ReceivedInvitationViewController.m */; };
 		631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */; };
@@ -75,8 +75,8 @@
 		6303476F1ADC867400EB4AB3 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		630347721ADC88FF00EB4AB3 /* InvitationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationView.h; sourceTree = "<group>"; };
 		630347731ADC88FF00EB4AB3 /* InvitationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationView.m; sourceTree = "<group>"; };
-		630347751ADC8A4000EB4AB3 /* InvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationViewController.h; sourceTree = "<group>"; };
-		630347761ADC8A4000EB4AB3 /* InvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationViewController.m; sourceTree = "<group>"; };
+		630347751ADC8A4000EB4AB3 /* ComposeInvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeInvitationViewController.h; sourceTree = "<group>"; };
+		630347761ADC8A4000EB4AB3 /* ComposeInvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeInvitationViewController.m; sourceTree = "<group>"; };
 		63121CC91ADD6FCD00344CA2 /* SignalsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalsTableViewCell.h; sourceTree = "<group>"; };
 		63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalsTableViewCell.m; sourceTree = "<group>"; };
 		631BE7011AE5ECA800AB37CF /* ReceivedInvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedInvitationViewController.h; sourceTree = "<group>"; };
@@ -278,8 +278,8 @@
 				631BE7021AE5ECA800AB37CF /* ReceivedInvitationViewController.m */,
 				63FDECDE1ADD54C700393118 /* AddressingViewController.h */,
 				63FDECDF1ADD54C700393118 /* AddressingViewController.m */,
-				630347751ADC8A4000EB4AB3 /* InvitationViewController.h */,
-				630347761ADC8A4000EB4AB3 /* InvitationViewController.m */,
+				630347751ADC8A4000EB4AB3 /* ComposeInvitationViewController.h */,
+				630347761ADC8A4000EB4AB3 /* ComposeInvitationViewController.m */,
 				635E44B31AB9ECE600419FB9 /* Setup */,
 				63E59EEE1AC0E2530085D160 /* Helper Views */,
 				633004A71AD4827900AB4A2C /* Location */,
@@ -631,7 +631,7 @@
 				63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */,
 				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,
 				630347741ADC88FF00EB4AB3 /* InvitationView.m in Sources */,
-				630347771ADC8A4000EB4AB3 /* InvitationViewController.m in Sources */,
+				630347771ADC8A4000EB4AB3 /* ComposeInvitationViewController.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
 				631BE7031AE5ECA800AB37CF /* ReceivedInvitationViewController.m in Sources */,
 				FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */,

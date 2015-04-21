@@ -1,5 +1,5 @@
 //
-//  InvitationViewController.h
+//  ComposeInvitationViewController.h
 //  GadaboutiOS
 //
 //  Created by David Barsky on 4/13/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InvitationViewController : UIViewController
+@interface ComposeInvitationViewController : UIViewController
 
 @end

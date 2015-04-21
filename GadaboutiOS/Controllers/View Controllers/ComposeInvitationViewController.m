@@ -12,18 +12,18 @@
 #import <pop/POP.h>
 
 // Projects
-#import "InvitationViewController.h"
+#import "ComposeInvitationViewController.h"
 #import "InvitationView.h"
 #import "AddressingViewController.h"
 
-@interface InvitationViewController ()
+@interface ComposeInvitationViewController ()
 
 @property (weak, nonatomic) IBOutlet SignalsTextView *textField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
-@implementation InvitationViewController
+@implementation ComposeInvitationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
