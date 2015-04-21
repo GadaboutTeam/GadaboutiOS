@@ -76,8 +76,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
     [RACObserve(self, accessToken) subscribeNext:^(FBSDKAccessToken *accessToken) {
         if (![FBSDKAccessToken currentAccessToken]) {
+            NSLog(@"User not logged in to Facebook. Presenting login screen.");
             [self presentViewController:loginViewController animated:YES completion:nil];
-            NSLog(@"called");
         }
     }];
 }

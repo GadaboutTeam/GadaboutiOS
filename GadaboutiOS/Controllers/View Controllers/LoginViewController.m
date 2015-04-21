@@ -32,6 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissView) name:                FBSDKAccessTokenDidChangeNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,14 +43,14 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
-    if ([FBSDKAccessToken currentAccessToken]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
 }
 
 - (IBAction)loginWasPressed:(id)sender {
     [[UserManager sharedUserController] login];
+}
+
+- (void)dismissView {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate methods
