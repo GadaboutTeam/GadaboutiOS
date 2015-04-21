@@ -10,9 +10,9 @@
 #import "User.h"
 
 FOUNDATION_EXPORT NSString *const DomainURL;
-FOUNDATION_EXPORT NSString *const LKEndPointEventsForUser = @"events_for_user";
-FOUNDATION_EXPORT NSString *const LKEndPointUsersForEvent = @"users_for_events";
-FOUNDATION_EXPORT NSString *const LKEndPointReplyToInvite = @"reply_to_invite";
+FOUNDATION_EXPORT NSString *const LKEndPointEventsForUser;
+FOUNDATION_EXPORT NSString *const LKEndPointUsersForEvent;
+FOUNDATION_EXPORT NSString *const LKEndPointReplyToInvite;
 
 @interface NetworkingManager : AFHTTPSessionManager {
     AFHTTPRequestOperationManager *manager;
