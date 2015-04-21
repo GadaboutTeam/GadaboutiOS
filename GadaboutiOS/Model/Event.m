@@ -10,6 +10,13 @@
 
 @implementation Event
 
+- (id)init {
+    if (self = [super init]) {
+        [self configureEvent];
+    }
+    return self;
+}
+
 + (NSDictionary *)JSONInboundMappingDictionary {
     return @{
              @"title" : @"name",
@@ -26,6 +33,14 @@
 
 + (NSString *)primaryKey {
     return @"event_id";
+}
+
+- (void)configureEvent {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-mm-dd hh:mm:ss"];
+
+    [self setStart_time:[formatter stringFromDate:[NSDate date]]];
+    [self setEnd_time:[formatter stringFromDate:[NSDate dateWithTimeInterval:60*60 sinceDate:[NSDate date]]]];
 }
 
 @end

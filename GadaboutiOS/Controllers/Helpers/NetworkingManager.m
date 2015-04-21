@@ -13,6 +13,7 @@ NSString *const DomainURL = @"http://104.236.228.143:8080/";
 NSString *const LKEndPointEventsForUser = @"events_for_user";
 NSString *const LKEndPointUsersForEvent = @"users_for_events";
 NSString *const LKEndPointReplyToInvite = @"reply_to_invite";
+NSString *const LKEndPointCreateEvent = @"events";
 
 @implementation NetworkingManager
 
@@ -35,9 +36,8 @@ NSString *const LKEndPointReplyToInvite = @"reply_to_invite";
     return self;
 }
 
-- (void)sendDictionary:(NSDictionary *)dictionary toService:(NSString *)service{
+- (void)sendDictionary:(id)dictionary toService:(NSString *)service{
     NSString *postURL = [DomainURL stringByAppendingString:service];
-    
     [manager POST:postURL
        parameters:dictionary
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -48,7 +48,7 @@ NSString *const LKEndPointReplyToInvite = @"reply_to_invite";
           }];
 }
 
-- (void)requestWithDictionary:(NSDictionary *)dictionary fromService:(NSString *)service
+- (void)requestWithDictionary:(id)dictionary fromService:(NSString *)service
                  completion:(void (^)(id, NSError *))completion{
 
     NSString *postURL = [DomainURL stringByAppendingString:service];

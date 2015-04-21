@@ -15,6 +15,7 @@
 #import "LoginViewController.h"
 #import "NetworkingManager.h"
 #import "UserManager.h"
+#import "ReceivedInvitationViewController.h"
 
 @interface AppDelegate ()
 
@@ -55,6 +56,16 @@
 
     [Parse setApplicationId:@"TH0mKaoKkU2YL6dQrWSIMdBahG1udfFASXVnYPh3"
                   clientKey:@"pk0bX25aA8PpX0JTD80zYUNdtZSYadXcJ2UJVvL0"];
+
+    NSDictionary *userInfo = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+    NSDictionary *aps = [userInfo objectForKey:@"aps"];
+
+    if (aps) {
+        NSLog(@"Pending notifications");
+        UIViewController *vc = self.window.rootViewController;
+        ReceivedInvitationViewController *rivc = [vc.storyboard instantiateViewControllerWithIdentifier:@"ReceivedInfitationViewController"];
+        [vc presentViewController:rivc animated:YES completion:nil];
+    }
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];

@@ -7,7 +7,7 @@
 //
 
 #import "NearbyFriendsViewController.h"
-#import "UserManager.h"
+
 
 // Frameworks
 #import <Realm/Realm.h>
@@ -17,16 +17,19 @@
 #import <Parse/Parse.h>
 
 // Components
+#import "ComposeInvitationViewController.h"
 #import "FriendsManager.h"
 #import "PushController.h"
 #import "FriendCell.h"
 #import "Picture.h"
+#import "UserManager.h"
 
 @interface NearbyFriendsViewController ()
 
 // realm
 @property (nonatomic, strong) RLMResults *nearbyFriends;
 @property (nonatomic, strong) RLMNotificationToken *notification;
+@property (nonatomic, retain) NSMutableArray *selectedFriends;
 
 // for accessing friends
 @property (nonatomic, strong) FriendsManager *friendsController;
@@ -45,6 +48,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
     self.nearbyFriends = [User objectsWhere:@"userType = 1"];
     self.friendsController = [FriendsManager sharedFriendsController];
+    self.selectedFriends = [[NSMutableArray alloc] init];
+    [self.createEventButton setEnabled:NO];
     [[self collectionView] setAllowsMultipleSelection:YES];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFacebookFriends) name:FBSDKProfileDidChangeNotification object:nil];
@@ -114,11 +119,23 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.friendsController getPictureForID:friend onCompletion:^{
         @autoreleasepool {
             UIImage *image = [UIImage imageWithData:[[Picture objectForPrimaryKey:[friend facebookID]] pictureData]];
-            [[cell profilePictureView] setImage:image];
+            [[cell profilePictureView] setImage:[self getRoundedRectImageFromImage:image onReferenceView:cell.profilePictureView withCornerRadius:cell.profilePictureView.frame.size.width/2]];
         }
     }];
 
     return cell;
+}
+
+- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
+{
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius] addClip];
+    [image drawInRect:imageView.bounds];
+    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return finalImage;
 }
 
 
@@ -128,14 +145,30 @@ static NSString * const reuseIdentifier = @"Cell";
     FriendCell *cell = (FriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
     [cell setCellState:CellStateSelected];
+    [cell setSelected:YES];
+    [cell setNeedsDisplay];
     NSLog(@"Cell %ld selected", (long)[indexPath row]);
+
+    //Add friend to selected array
+    User *friend = [self.nearbyFriends objectAtIndex:[indexPath row]];
+    [self.selectedFriends addObject:friend];
+    [self.createEventButton setEnabled:YES];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     FriendCell *cell = (FriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
     [cell setCellState:CellStateDeselected];
+    [cell setSelected:NO];
+    [cell setNeedsDisplay];
     NSLog(@"Cell %ld deselected", (long)[indexPath row]);
+
+    //Remove friend from selected array
+    User *friend = [self.nearbyFriends objectAtIndex:[indexPath row]];
+    [self.selectedFriends removeObject:friend];
+    if ([self.selectedFriends count] == 0) {
+        [self.createEventButton setEnabled:NO];
+    }
 }
 
 // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -148,6 +181,19 @@ static NSString * const reuseIdentifier = @"Cell";
 // Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ComposeInvitationViewController *destinationVC = (ComposeInvitationViewController *)[segue destinationViewController];
+    [destinationVC setFriendsArray:self.selectedFriends];
 }
 
 

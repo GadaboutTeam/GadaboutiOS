@@ -12,14 +12,19 @@
 #import <pop/POP.h>
 
 // Projects
-#import "ComposeInvitationViewController.h"
-#import "InvitationView.h"
 #import "AddressingViewController.h"
+#import "ComposeInvitationViewController.h"
+#import "Event.h"
+#import "EventController.h"
+#import "InvitationView.h"
+#import "User.h"
+
 
 @interface ComposeInvitationViewController ()
 
 @property (weak, nonatomic) IBOutlet SignalsTextView *textField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (nonatomic, retain) Event *event;
 
 @end
 
@@ -32,7 +37,14 @@
     [self setInitalState];
 
     [self configureNextButton];
-    [self configureTextField];
+
+    self.event = [[Event alloc] init];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    NSLog(@"Final friends: %@", self.friendsArray);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,21 +56,7 @@
 
 - (void)setInitalState {
     [self.nextButton setEnabled:NO];
-    [self.nextButton setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5] forState:UIControlStateNormal];
-}
-
-- (void)configureTextField {
-    [[self.textField.rac_textSignal filter:^BOOL(NSString *text) {
-        // cludgy workaround. since filter only returns true, thereby activating the nextButton,
-        // the nextButton doesn’t get *deactivated* if the below condition isn't met anymore.
-        [self setInitalState];
-        
-        return text.length > 5;
-    }]
-    subscribeNext:^(id x) {
-        [self.nextButton setEnabled:YES];
-        [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    }];
+    [self.nextButton setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] forState:UIControlStateNormal];
 }
 
 - (void)configureNextButton {
@@ -72,14 +70,39 @@
 }
 
 - (IBAction)nextWasPressed:(id)sender {
+    [self sendEvent];
+}
 
+- (void)sendEvent {
+    NSLog(@"Event request was sent.");
+    [EventController requestEventCreation:self.event withParticipants:self.friendsArray andBlock:^(id response, NSError *error) {
+        if(error == nil) {
+            NSLog(@"Event was created.");
+            [self performSegueWithIdentifier:@"CreateEventSegue" sender:self];
+        } else {
+            NSLog(@"Event creation failed: %@", [error description]);
+        }
+    }];
 }
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    AddressingViewController *nextViewController = (AddressingViewController *)[[segue destinationViewController] topViewController];
-    nextViewController.message = self.textField.text;
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    AddressingViewController *nextViewController = (AddressingViewController *)[[segue destinationViewController] topViewController];
+//    nextViewController.message = self.textField.text;
+//}
+
+#pragma mark - UITextViewDelegate
+
+- (void)textViewDidChange:(UITextView *)textView {
+    NSLog(@"Event name: %@ length: %ld", [textView text], (long)[[textView text] length]);
+    [self.event setName:[textView text]];
+
+    if ([[textView text] length] > 5) {
+        [self.nextButton setEnabled:YES];
+    } else {
+        [self.nextButton setEnabled:NO];
+    }
 }
 
 @end

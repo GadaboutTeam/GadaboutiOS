@@ -10,4 +10,6 @@
 
 @interface NearbyFriendsViewController : UICollectionViewController <UICollectionViewDelegate>
 
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *createEventButton;
+
 @end

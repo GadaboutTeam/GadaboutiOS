@@ -58,6 +58,8 @@
 		FAD90B991AE5EB9C00DC189A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B981AE5EB9C00DC189A /* Event.m */; };
 		FAD90B9C1AE5EE1400DC189A /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B9B1AE5EE1400DC189A /* Invitation.m */; };
 		FAD941CC1AC23A2B00FEF499 /* DisplayNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD941CB1AC23A2B00FEF499 /* DisplayNameViewController.m */; };
+		FADD2FC41AE665870048854E /* EventConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADD2FC31AE665870048854E /* EventConversationViewController.m */; };
+		FADD2FC71AE670720048854E /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADD2FC61AE670720048854E /* EventController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,10 @@
 		FAD90B9B1AE5EE1400DC189A /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invitation.m; sourceTree = "<group>"; };
 		FAD941CA1AC23A2B00FEF499 /* DisplayNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayNameViewController.h; sourceTree = "<group>"; };
 		FAD941CB1AC23A2B00FEF499 /* DisplayNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayNameViewController.m; sourceTree = "<group>"; };
+		FADD2FC21AE665870048854E /* EventConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventConversationViewController.h; sourceTree = "<group>"; };
+		FADD2FC31AE665870048854E /* EventConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventConversationViewController.m; sourceTree = "<group>"; };
+		FADD2FC51AE670720048854E /* EventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventController.h; sourceTree = "<group>"; };
+		FADD2FC61AE670720048854E /* EventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +281,8 @@
 				FA2295A01AC5A9B90047EF31 /* FriendsManager.m */,
 				FAD90B941AE5C0CF00DC189A /* PushController.h */,
 				FAD90B951AE5C0CF00DC189A /* PushController.m */,
+				FADD2FC51AE670720048854E /* EventController.h */,
+				FADD2FC61AE670720048854E /* EventController.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -288,6 +296,8 @@
 				63FDECDF1ADD54C700393118 /* AddressingViewController.m */,
 				630347751ADC8A4000EB4AB3 /* ComposeInvitationViewController.h */,
 				630347761ADC8A4000EB4AB3 /* ComposeInvitationViewController.m */,
+				FADD2FC21AE665870048854E /* EventConversationViewController.h */,
+				FADD2FC31AE665870048854E /* EventConversationViewController.m */,
 				635E44B31AB9ECE600419FB9 /* Setup */,
 				63E59EEE1AC0E2530085D160 /* Helper Views */,
 				633004A71AD4827900AB4A2C /* Location */,
@@ -626,8 +636,10 @@
 				6390C4D01AE5FEC90063277E /* FriendStatusViewCell.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
+				FADD2FC41AE665870048854E /* EventConversationViewController.m in Sources */,
 				FA22959B1AC4B57B0047EF31 /* UserManager.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationManager.m in Sources */,
+				FADD2FC71AE670720048854E /* EventController.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				FAD0469D1AE4337400D98F62 /* Picture.m in Sources */,
 				FAD90B9C1AE5EE1400DC189A /* Invitation.m in Sources */,

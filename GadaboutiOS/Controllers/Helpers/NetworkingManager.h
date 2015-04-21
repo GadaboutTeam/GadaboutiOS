@@ -13,12 +13,13 @@ FOUNDATION_EXPORT NSString *const DomainURL;
 FOUNDATION_EXPORT NSString *const LKEndPointEventsForUser;
 FOUNDATION_EXPORT NSString *const LKEndPointUsersForEvent;
 FOUNDATION_EXPORT NSString *const LKEndPointReplyToInvite;
+FOUNDATION_EXPORT NSString *const LKEndPointCreateEvent;
 
 @interface NetworkingManager : AFHTTPSessionManager {
     AFHTTPRequestOperationManager *manager;
 }
 
 + (id)sharedNetworkingManger;
-- (void)sendDictionary:(NSDictionary*)dictionary toService:(NSString*)service;
-- (void)requestWithDictionary:(NSDictionary *)dictionary fromService:(NSString *)service completion:(void (^)(id, NSError *))completion;
+- (void)sendDictionary:(id)dictionary toService:(NSString*)service;
+- (void)requestWithDictionary:(id)dictionary fromService:(NSString *)service completion:(void (^)(id, NSError *))completion;
 @end

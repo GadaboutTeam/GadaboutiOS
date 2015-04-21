@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ComposeInvitationViewController : UIViewController
+@interface ComposeInvitationViewController : UIViewController<UITextViewDelegate>
+
+@property (nonatomic, retain) NSArray *friendsArray;
 
 @end
