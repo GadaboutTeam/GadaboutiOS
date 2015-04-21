@@ -12,8 +12,8 @@
 
 @property (nonatomic) NSString *event_id;
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSDate *start;
-@property (nonatomic) NSDate *end;
+@property (nonatomic) NSDate *start_time;
+@property (nonatomic) NSDate *end_time;
 @property (nonatomic) BOOL active;
 
 @end
