@@ -78,7 +78,7 @@
     //Legacy code
     UserManager *userController = [UserManager sharedUserController];
     User *user = [userController currentUser];
-    [user setDeviceID:[devToken description]];
+    [user setDeviceID:[[[devToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""]];
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
@@ -86,6 +86,7 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"Received notification: %@", userInfo);
     [PFPush handlePush:userInfo];
 }
 

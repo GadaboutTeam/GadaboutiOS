@@ -52,6 +52,9 @@
 		FAD90B611AE4847200DC189A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B601AE4847200DC189A /* SystemConfiguration.framework */; };
 		FAD90B631AE4847C00DC189A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B621AE4847C00DC189A /* libz.dylib */; };
 		FAD90B651AE4848500DC189A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B641AE4848500DC189A /* libsqlite3.dylib */; };
+		FAD90B961AE5C0CF00DC189A /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B951AE5C0CF00DC189A /* PushController.m */; };
+		FAD90B991AE5EB9C00DC189A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B981AE5EB9C00DC189A /* Event.m */; };
+		FAD90B9C1AE5EE1400DC189A /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B9B1AE5EE1400DC189A /* Invitation.m */; };
 		FAD941CC1AC23A2B00FEF499 /* DisplayNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD941CB1AC23A2B00FEF499 /* DisplayNameViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +147,12 @@
 		FAD90B601AE4847200DC189A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FAD90B621AE4847C00DC189A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FAD90B641AE4848500DC189A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FAD90B941AE5C0CF00DC189A /* PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
+		FAD90B951AE5C0CF00DC189A /* PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
+		FAD90B971AE5EB9C00DC189A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		FAD90B981AE5EB9C00DC189A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		FAD90B9A1AE5EE1400DC189A /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invitation.h; sourceTree = "<group>"; };
+		FAD90B9B1AE5EE1400DC189A /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invitation.m; sourceTree = "<group>"; };
 		FAD941CA1AC23A2B00FEF499 /* DisplayNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayNameViewController.h; sourceTree = "<group>"; };
 		FAD941CB1AC23A2B00FEF499 /* DisplayNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayNameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -256,6 +265,8 @@
 				FA22959A1AC4B57B0047EF31 /* UserManager.m */,
 				FA22959F1AC5A9B90047EF31 /* FriendsManager.h */,
 				FA2295A01AC5A9B90047EF31 /* FriendsManager.m */,
+				FAD90B941AE5C0CF00DC189A /* PushController.h */,
+				FAD90B951AE5C0CF00DC189A /* PushController.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -422,6 +433,10 @@
 				FA9911921A8069CB00714F7D /* User.m */,
 				FAD0469B1AE4337400D98F62 /* Picture.h */,
 				FAD0469C1AE4337400D98F62 /* Picture.m */,
+				FAD90B971AE5EB9C00DC189A /* Event.h */,
+				FAD90B981AE5EB9C00DC189A /* Event.m */,
+				FAD90B9A1AE5EE1400DC189A /* Invitation.h */,
+				FAD90B9B1AE5EE1400DC189A /* Invitation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -591,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9911941A8069CB00714F7D /* User.m in Sources */,
+				FAD90B961AE5C0CF00DC189A /* PushController.m in Sources */,
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				FA2295A11AC5A9B90047EF31 /* FriendsManager.m in Sources */,
@@ -603,12 +619,14 @@
 				FA1923B31A7BE1ED00561568 /* LocationManager.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				FAD0469D1AE4337400D98F62 /* Picture.m in Sources */,
+				FAD90B9C1AE5EE1400DC189A /* Invitation.m in Sources */,
 				638C4D911ADC8193005D1D1D /* SignalsTextView.m in Sources */,
 				635B80621AC5E84A006AED67 /* FriendCell.m in Sources */,
 				6387C6E01ADC76B500BBACC2 /* InvitationAlert.m in Sources */,
 				FAD941CC1AC23A2B00FEF499 /* DisplayNameViewController.m in Sources */,
 				63FDECE01ADD54C700393118 /* AddressingViewController.m in Sources */,
 				631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */,
+				FAD90B991AE5EB9C00DC189A /* Event.m in Sources */,
 				632CE50E1AE06068008A42E2 /* CircleButton.m in Sources */,
 				63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */,
 				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,

@@ -18,6 +18,7 @@
 
 // Components
 #import "FriendsManager.h"
+#import "PushController.h"
 #import "FriendCell.h"
 #import "Picture.h"
 
@@ -54,7 +55,6 @@ static NSString * const reuseIdentifier = @"Cell";
     __weak typeof(self) weakSelf = self;
     self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
         weakSelf.nearbyFriends = [User objectsWhere:@"userType = 1"];
-        [self sendInviteTest:(NSArray *)weakSelf.nearbyFriends];
         [weakSelf.collectionView reloadData];
     }];
     [self.collectionView reloadData];
@@ -80,8 +80,6 @@ static NSString * const reuseIdentifier = @"Cell";
             NSLog(@"called");
         }
     }];
-
-    [[UserManager sharedUserController] registerWithParse];
 }
 
 /*
@@ -120,24 +118,6 @@ static NSString * const reuseIdentifier = @"Cell";
     }];
 
     return cell;
-}
-
-- (void)sendInviteTest:(NSArray *)friendsArray {
-    for (User *user in friendsArray) {
-        PFQuery *friendQuery = [[PFQuery alloc] initWithClassName:@"User"];
-        [friendQuery whereKey:@"auth_id" equalTo:[user facebookID]];
-        [friendQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-            if (object != nil) {
-                NSString *deviceToken = [NSString stringWithFormat:@"%@", [object valueForKey:@"device_id"]];
-                deviceToken = [[deviceToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<> "]] stringByReplacingOccurrencesOfString:@" " withString:@""];
-                PFQuery *installationQuery = [[PFInstallation query] whereKey:@"deviceToken" equalTo:deviceToken];
-                PFPush *push = [[PFPush alloc] init];
-                [push setQuery:installationQuery];
-                [push setMessage:@"Wanna hang?"];
-                [push sendPushInBackground];
-            }
-        }];
-    }
 }
 
 

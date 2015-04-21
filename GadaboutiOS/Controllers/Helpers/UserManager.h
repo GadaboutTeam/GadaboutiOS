@@ -18,6 +18,5 @@
 - (void)persistCurrentUser;
 
 //- (void)setCurrentUser:(User *)user;
-- (void)registerWithParse;
 - (BOOL)isLoggedIn;
 @end
