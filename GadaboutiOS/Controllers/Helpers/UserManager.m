@@ -15,6 +15,8 @@
 // App Imports
 #import "UserManager.h"
 #import "NetworkingManager.h"
+#import "Event.h"
+#import "Invitation.h"
 
 @interface UserManager()
 
@@ -194,6 +196,18 @@
                     }
                 }];
             }
+        }
+    }];
+}
+
+- (void)downloadEvents {
+    NSDictionary *requestDictionary = [NSDictionary dictionaryWithObjects:@[[[self currentUser] facebookID]] forKeys:@[@"auth_id"]];
+
+    [[NetworkingManager sharedNetworkingManger] requestWithDictionary:requestDictionary fromService:LKEndPointEventsForUser completion:^(id response, NSError *error) {
+        if (error) {
+            NSLog(@"Failed to download events: %@", [error description]);
+        } else {
+            [Event createOrUpdateInRealm:[RLMRealm defaultRealm] withJSONArray:(NSArray *)response];
         }
     }];
 }

@@ -10,6 +10,9 @@
 #import <Realm/Realm.h>
 
 NSString *const DomainURL = @"http://104.236.228.143:8080/";
+NSString *const LKEndPointEventsForUser = @"events_for_user";
+NSString *const LKEndPointUsersForEvent = @"users_for_events";
+NSString *const LKEndPointReplyToInvite = @"reply_to_invite";
 
 @implementation NetworkingManager
 
