@@ -10,4 +10,8 @@
 
 @implementation EventConversationViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self.eventTitleLabel setText:[self.event name]];
+}
+
 @end

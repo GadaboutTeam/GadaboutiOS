@@ -37,7 +37,7 @@
 
 - (void)configureEvent {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-mm-dd hh:mm:ss"];
+    [formatter setDateFormat:@"yyyy-mm-dd'T'hh:mm:ssZZ"];
 
     [self setStart_time:[formatter stringFromDate:[NSDate date]]];
     [self setEnd_time:[formatter stringFromDate:[NSDate dateWithTimeInterval:60*60 sinceDate:[NSDate date]]]];
