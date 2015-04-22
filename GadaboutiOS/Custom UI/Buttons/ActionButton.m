@@ -8,7 +8,6 @@
 
 #import "ActionButton.h"
 
-IB_DESIGNABLE
 @implementation ActionButton
 
 - (void)layoutSubviews {

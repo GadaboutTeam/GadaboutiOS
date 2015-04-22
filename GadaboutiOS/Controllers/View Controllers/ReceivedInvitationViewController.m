@@ -21,7 +21,7 @@ NSString const *reuseIdentifier = @"Cell";
 @interface ReceivedInvitationViewController ()
 
 // IBOutlets
-@property (weak, nonatomic) IBOutlet UILabel *invitationNote;
+@property (weak, nonatomic) IBOutlet UITextView *invitationNote;
 @property (weak, nonatomic) IBOutlet UICollectionView *friendStatusView;
 
 // Realm
