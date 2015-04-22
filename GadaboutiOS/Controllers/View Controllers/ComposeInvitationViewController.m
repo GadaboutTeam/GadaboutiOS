@@ -16,6 +16,7 @@
 #import "ComposeInvitationViewController.h"
 #import "Event.h"
 #import "EventController.h"
+#import "EventConversationViewController.h"
 #import "InvitationView.h"
 #import "User.h"
 
@@ -35,7 +36,6 @@
     
     // initial, default state
     [self setInitalState];
-
     [self configureNextButton];
 
     self.event = [[Event alloc] init];
@@ -57,6 +57,7 @@
 - (void)setInitalState {
     [self.nextButton setEnabled:NO];
     [self.nextButton setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] forState:UIControlStateNormal];
+    [self.nextButton setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.2] forState:UIControlStateDisabled];
 }
 
 - (void)configureNextButton {
@@ -87,10 +88,10 @@
 
 #pragma mark - Navigation
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    AddressingViewController *nextViewController = (AddressingViewController *)[[segue destinationViewController] topViewController];
-//    nextViewController.message = self.textField.text;
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    EventConversationViewController *ecvc = (EventConversationViewController *)[segue destinationViewController];
+    ecvc.event = self.event;
+}
 
 #pragma mark - UITextViewDelegate
 
@@ -98,7 +99,7 @@
     NSLog(@"Event name: %@ length: %ld", [textView text], (long)[[textView text] length]);
     [self.event setName:[textView text]];
 
-    if ([[textView text] length] > 5) {
+    if ([[textView text] length] > 2) {
         [self.nextButton setEnabled:YES];
     } else {
         [self.nextButton setEnabled:NO];

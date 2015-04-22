@@ -67,7 +67,7 @@
     
     for (User *friend in self.friendsArray) {
         CLLocation *friendLocation = [[CLLocation alloc] initWithLatitude:friend.lat longitude:friend.lon];
-        CLLocationDistance distance = [myLocation distanceFromLocation:friendLocation];
+//        CLLocationDistance distance = [myLocation distanceFromLocation:friendLocation];
     }
 
     return sortedNearbyFriends;
@@ -78,7 +78,6 @@
     [[[FBSDKGraphRequest alloc] initWithGraphPath:serviceString parameters:nil]
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
          if (!error) {
-             NSLog(@"fetched results: %@", result);
              NSArray *friendsArray = [result valueForKey:@"data"];
              NSString *nextPage = [[result valueForKey:@"paging"] valueForKey:@"next"];
              [self persistFriends:friendsArray];
@@ -101,7 +100,6 @@
                 if (!jsonError) {
                     [self persistFriends:[responseDictionary valueForKey:@"data"]];
                     [self getNextFacebookFriends:[[responseDictionary valueForKey:@"paging"] valueForKey:@"next"]];
-                    NSLog(@"Loaded next page: %@", responseDictionary);
                 } else {
                     NSLog(@"JSON parsing error: %@", [jsonError description]);
                 }

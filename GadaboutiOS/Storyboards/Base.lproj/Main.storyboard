@@ -163,29 +163,6 @@
                                     <outlet property="delegate" destination="h8k-SR-Mf9" id="BYb-WF-oz1"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etC-mh-ZLt">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="cZu-Rf-dqs"/>
-                                </constraints>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="cZu-Rf-dqs"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="cZu-Rf-dqs"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="cancelWasPressed:" destination="h8k-SR-Mf9" eventType="touchUpInside" id="M8q-lM-LDz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc2-3M-qOd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -209,6 +186,29 @@
                                     <action selector="nextWasPressed:" destination="h8k-SR-Mf9" eventType="touchUpInside" id="fw8-RF-ZrU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etC-mh-ZLt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="cZu-Rf-dqs"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cZu-Rf-dqs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="cZu-Rf-dqs"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelWasPressed:" destination="h8k-SR-Mf9" eventType="touchUpInside" id="M8q-lM-LDz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.24705882352941178" green="0.50588235294117645" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -225,8 +225,8 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="eUc-dF-bbP"/>
-                                <exclude reference="etC-mh-ZLt"/>
                                 <exclude reference="Gc2-3M-qOd"/>
+                                <exclude reference="etC-mh-ZLt"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="LNs-ZE-Vr2"/>
@@ -242,8 +242,8 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="eUc-dF-bbP"/>
-                                <include reference="etC-mh-ZLt"/>
                                 <include reference="Gc2-3M-qOd"/>
+                                <include reference="etC-mh-ZLt"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="LNs-ZE-Vr2"/>
@@ -288,21 +288,36 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="clO-Nl-6tg" firstAttribute="top" secondItem="ZZZ-je-MGs" secondAttribute="top" constant="28" id="ZH5-fn-cgE"/>
+                            <constraint firstAttribute="centerX" secondItem="clO-Nl-6tg" secondAttribute="centerX" id="k2S-TB-yjU"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="clO-Nl-6tg"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ZH5-fn-cgE"/>
+                                <exclude reference="k2S-TB-yjU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="clO-Nl-6tg"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="ZH5-fn-cgE"/>
+                                <include reference="k2S-TB-yjU"/>
+                            </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="eventTitleLabel" destination="clO-Nl-6tg" id="K5n-0J-ZaG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aA3-Cb-y90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6783.75" y="543.5"/>
+            <point key="canvasLocation" x="6780.75" y="543.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bb3-RZ-eKh">

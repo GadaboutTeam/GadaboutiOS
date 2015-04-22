@@ -93,7 +93,6 @@
 }
 
 - (void)setCurrentUser:(User *)user {
-    NSLog(@"Setting current user to: %@", [user JSONDictionary]);
     self.user = [[User alloc] initWithObject:user];
 }
 
@@ -154,7 +153,6 @@
 }
 
 - (void)persistUser:(User *)user {
-    NSLog(@"Trying to persist user: %@", [user description]);
     @try {
         [[RLMRealm defaultRealm] beginWriteTransaction];
         [User createOrUpdateInDefaultRealmWithObject:[[User alloc] initWithObject:user]];
