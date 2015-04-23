@@ -10,22 +10,4 @@
 
 @implementation Invitation
 
-+ (NSDictionary *)JSONInboundMappingDictionary {
-    return @{
-             @"title" : @"name",
-             @"id" : @"invitation_id"
-             };
-}
-
-+ (NSDictionary *)JSONOutboundMappingDictionary {
-    return @{
-             @"name" : @"title",
-             @"invitation_id" : @"id"
-             };
-}
-
-+ (NSString *)primaryKey {
-    return @"invitation_id";
-}
-
 @end

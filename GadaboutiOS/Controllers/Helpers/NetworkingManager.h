@@ -22,4 +22,5 @@ FOUNDATION_EXPORT NSString *const LKEndPointCreateEvent;
 + (id)sharedNetworkingManger;
 - (void)sendDictionary:(id)dictionary toService:(NSString*)service;
 - (void)requestWithDictionary:(id)dictionary fromService:(NSString *)service completion:(void (^)(id, NSError *))completion;
+- (void)getRequestWithDictionary:(id)dictionary fromService:(NSString *)service completion:(void (^)(id, NSError *))completion;
 @end

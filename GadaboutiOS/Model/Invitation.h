@@ -16,9 +16,10 @@ typedef NS_ENUM(NSInteger, ReplyStatus) {
     ReplyStatusDenied
 };
 
-@property (nonatomic) NSString *invitation_id;
 @property (nonatomic) NSString *event_id;
 @property (nonatomic) NSString *user_id;
 @property (nonatomic) ReplyStatus reply;
 
 @end
+
+RLM_ARRAY_TYPE(Invitation)

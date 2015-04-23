@@ -10,8 +10,8 @@
 #import <Realm/Realm.h>
 
 NSString *const DomainURL = @"http://104.236.228.143:8080/";
-NSString *const LKEndPointEventsForUser = @"events_for_user";
-NSString *const LKEndPointUsersForEvent = @"users_for_events";
+NSString *const LKEndPointEventsForUser = @"events";
+NSString *const LKEndPointUsersForEvent = @"invitations";
 NSString *const LKEndPointReplyToInvite = @"reply_to_invite";
 NSString *const LKEndPointCreateEvent = @"events";
 
@@ -61,6 +61,18 @@ NSString *const LKEndPointCreateEvent = @"events";
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               completion(nil, error);
           }];
+}
+
+- (void)getRequestWithDictionary:(id)dictionary fromService:(NSString *)service completion:(void (^)(id, NSError *))completion {
+    NSString *getURL = [DomainURL stringByAppendingString:service];
+
+    [manager GET:getURL
+      parameters:dictionary
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             completion(responseObject, nil);
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             completion(nil, error);
+         }];
 }
 
 @end

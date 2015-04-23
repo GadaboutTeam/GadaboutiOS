@@ -17,17 +17,27 @@
     return self;
 }
 
++ (NSDictionary *)defaultPropertyValues {
+    return @{@"invitations" : [[RLMArray alloc] initWithObjectClassName:@"Invitation"]};
+}
+
 + (NSDictionary *)JSONInboundMappingDictionary {
     return @{
              @"title" : @"name",
-             @"id" : @"event_id"
+             @"id" : @"event_id",
+             @"start_time" : @"start_time",
+             @"end_time" : @"end_time",
+             @"active" : @"active"
              };
 }
 
 + (NSDictionary *)JSONOutboundMappingDictionary {
     return @{
              @"name" : @"title",
-             @"event_id" : @"id"
+             @"event_id" : @"id",
+             @"start_time" : @"start_time",
+             @"end_time" : @"end_time",
+             @"active" : @"active"
              };
 }
 

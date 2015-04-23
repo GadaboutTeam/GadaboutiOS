@@ -9,6 +9,7 @@
 #import "EventController.h"
 #import "NetworkingManager.h"
 #import "UserManager.h"
+#import "InvitationController.h"
 
 @implementation EventController
 
@@ -16,6 +17,35 @@
     NSDictionary *dictionary = [EventController prepareRequestDictionaryFromEvent:event andParticipants:participants];
     NSLog(@"jsonDictionary: %@", dictionary);
     [[NetworkingManager sharedNetworkingManger] requestWithDictionary:dictionary fromService:LKEndPointCreateEvent completion:block];
+}
+
++ (void)getUserEventsWithBlock:(void (^)(id, NSError *))block {
+    NSString *authID = [[[UserManager sharedUserController] currentUser] facebookID];
+    NSDictionary *requestDict = [[NSDictionary alloc] initWithObjects:@[authID] forKeys:@[@"auth_id"]];
+
+    [[NetworkingManager sharedNetworkingManger] getRequestWithDictionary:requestDict fromService:LKEndPointEventsForUser completion:^(id response, NSError *error) {
+        if (error) {
+            NSLog(@"[Event Controller] Error retrieving events for user %@: %@", authID, [error description]);
+        } else {
+            [EventController persistEvents:(NSArray *)response];
+        }
+    }];
+}
+
++ (void)persistEvents:(NSArray *)events {
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    for (NSDictionary *eventDict in events) {
+        NSString *event_id = [eventDict objectForKey:@"id"];
+        NSMutableDictionary *md = [NSMutableDictionary dictionaryWithDictionary:eventDict];
+        [md setObject:[NSString stringWithFormat:@"%@ ", event_id] forKey:@"id"];
+        Event *event = [[Event alloc] initWithJSONDictionary:md];
+        [Event createOrUpdateInDefaultRealmWithObject:event];
+    }
+    [[RLMRealm defaultRealm] commitWriteTransaction];
+}
+
++ (void)getInvitationsForEvent:(Event *)event withBlock:(void (^)(id, NSError *))block{
+    [InvitationController getInvitationsForEvent:event withBlock:block];
 }
 
 + (NSDictionary *)prepareRequestDictionaryFromEvent:(Event *)event andParticipants:(NSArray *)participants {

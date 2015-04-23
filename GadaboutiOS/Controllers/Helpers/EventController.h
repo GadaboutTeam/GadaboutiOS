@@ -13,5 +13,7 @@
 @interface EventController : NSObject
 
 + (void)requestEventCreation:(Event *)event withParticipants:(NSArray *)participants andBlock:(void (^)(id, NSError *))block;
++ (void)getUserEventsWithBlock:(void (^)(id, NSError *))block;
++ (void)getInvitationsForEvent:(Event *)event withBlock:(void (^)(id, NSError *))block;
 
 @end
