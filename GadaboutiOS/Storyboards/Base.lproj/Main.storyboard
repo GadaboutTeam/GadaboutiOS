@@ -268,7 +268,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="nextButton" destination="Gc2-3M-qOd" id="ZFq-IF-NFc"/>
                         <outlet property="spinner" destination="hoU-5I-9Gj" id="ghQ-EZ-lpZ"/>
@@ -299,6 +298,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anS-y1-3v6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="FXB-3m-YyS"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -308,6 +313,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="clO-Nl-6tg"/>
+                                <exclude reference="anS-y1-3v6"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ZH5-fn-cgE"/>
@@ -317,6 +323,7 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="clO-Nl-6tg"/>
+                                <include reference="anS-y1-3v6"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ZH5-fn-cgE"/>
@@ -330,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aA3-Cb-y90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6780.75" y="543.5"/>
+            <point key="canvasLocation" x="5793.75" y="1411.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bb3-RZ-eKh">
@@ -551,6 +558,7 @@
                                 <color key="backgroundColor" red="0.24705882352941178" green="0.50588235294117645" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="eventTitleTextField" destination="ruB-uD-tpD" id="3MI-ce-iwW"/>
+                                    <segue destination="4Dv-ry-2In" kind="show" id="rKb-bJ-nxz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -852,5 +860,8 @@
             <point key="canvasLocation" x="3915" y="-243"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Me8-oa-Lk9"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
