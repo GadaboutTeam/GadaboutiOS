@@ -41,6 +41,7 @@
 
     [self setStart_time:[formatter stringFromDate:[NSDate date]]];
     [self setEnd_time:[formatter stringFromDate:[NSDate dateWithTimeInterval:60*60 sinceDate:[NSDate date]]]];
+    [self setActive:YES];
 }
 
 @end

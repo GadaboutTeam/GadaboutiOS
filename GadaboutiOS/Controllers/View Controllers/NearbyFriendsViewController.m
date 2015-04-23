@@ -64,9 +64,9 @@ static NSString * const reuseIdentifier = @"Cell";
     }];
     [self.collectionView reloadData];
 
-    [RACObserve(self, selectedFriends) subscribeNext:^(NSMutableArray *selected) {
-        NSLog(@"selected count: %ld", selected.count);
 
+    // Disable the CreateEventButton if no cells are selected
+    [RACObserve(self, selectedFriends) subscribeNext:^(NSMutableArray *selected) {
         if ([selected count] != 0) {
             [self.createEventButton setEnabled:YES];
         } else {
