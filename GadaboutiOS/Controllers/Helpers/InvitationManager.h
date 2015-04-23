@@ -10,7 +10,7 @@
 #import "Event.h"
 #import "Invitation.h"
 
-@interface InvitationController : NSObject
+@interface InvitationManager : NSObject
 
 + (void)getInvitationsForEvent:(Event *)event;
 + (void)getInvitationsForEvent:(Event *)event withBlock:(void (^)(id, NSError *))block;

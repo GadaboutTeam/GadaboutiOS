@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
-@interface PushController : NSObject
+@interface PushManager : NSObject
 
 + (void)sendParsePushNotificationTo:(NSArray *)usersArray message:(NSString *)message block:(void (^)())block;
 + (void)sendNotificationDictionary:(NSDictionary *)notificationDictionary toService:(NSString *)service

@@ -10,7 +10,7 @@
 
 #import <Realm/Realm.h>
 
-#import "EventController.h"
+#import "EventManager.h"
 #import "EventSummaryCell.h"
 #import "Event.h"
 
@@ -56,7 +56,7 @@ static NSString * const reuseIdentifier = @"EventCell";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    [EventController getUserEventsWithBlock:^(id object, NSError *error) {
+    [EventManager getUserEventsWithBlock:^(id object, NSError *error) {
         if (error) {
             NSLog(@"Error retrieving events for user: %@", [error description]);
         } else {

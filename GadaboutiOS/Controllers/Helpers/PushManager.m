@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "PushController.h"
+#import "PushManager.h"
 
 #import <Parse/Parse.h>
 
@@ -14,7 +14,7 @@
 #import "NetworkingManager.h"
 #import "User.h"
 
-@implementation PushController
+@implementation PushManager
 
 + (void)sendParsePushNotificationTo:(NSArray<User> *)usersArray message:(NSString *)message block:(void (^)())block {
     for (User *user in usersArray) {

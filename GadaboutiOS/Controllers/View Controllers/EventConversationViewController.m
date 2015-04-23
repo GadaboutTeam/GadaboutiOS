@@ -11,7 +11,7 @@
 #import <Realm/Realm.h>
 
 #import "Invitation.h"
-#import "InvitationController.h"
+#import "InvitationManager.h"
 
 @interface EventConversationViewController ()
 
@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [InvitationController getInvitationsForEvent:self.event];
+    [InvitationManager getInvitationsForEvent:self.event];
 
     __weak typeof(self) weakSelf = self;
     weakSelf.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(NSString *notification, RLMRealm *realm) {

@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "EventController.h"
+#import "EventManager.h"
 #import "NetworkingManager.h"
 #import "UserManager.h"
-#import "InvitationController.h"
+#import "InvitationManager.h"
 
-@implementation EventController
+@implementation EventManager
 
 + (void)requestEventCreation:(Event *)event withParticipants:(NSArray *)participants andBlock:(void (^)(id, NSError *))block {
-    NSDictionary *dictionary = [EventController prepareRequestDictionaryFromEvent:event andParticipants:participants];
+    NSDictionary *dictionary = [EventManager prepareRequestDictionaryFromEvent:event andParticipants:participants];
     NSLog(@"jsonDictionary: %@", dictionary);
     [[NetworkingManager sharedNetworkingManger] requestWithDictionary:dictionary fromService:LKEndPointCreateEvent completion:block];
 }
@@ -27,7 +27,7 @@
         if (error) {
             NSLog(@"[Event Controller] Error retrieving events for user %@: %@", authID, [error description]);
         } else {
-            [EventController persistEvents:(NSArray *)response];
+            [EventManager persistEvents:(NSArray *)response];
         }
     }];
 }
@@ -45,7 +45,7 @@
 }
 
 + (void)getInvitationsForEvent:(Event *)event withBlock:(void (^)(id, NSError *))block{
-    [InvitationController getInvitationsForEvent:event withBlock:block];
+    [InvitationManager getInvitationsForEvent:event withBlock:block];
 }
 
 + (NSDictionary *)prepareRequestDictionaryFromEvent:(Event *)event andParticipants:(NSArray *)participants {
