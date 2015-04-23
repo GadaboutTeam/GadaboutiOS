@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="du2-3S-LYC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zIR-HR-lcq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -9,7 +9,7 @@
         <!--Nearby Friends-->
         <scene sceneID="7gm-BO-Yd1">
             <objects>
-                <collectionViewController storyboardIdentifier="ConversationsView" title="Nearby Friends" id="QDk-QO-Ahn" customClass="NearbyFriendsViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ConversationsView" id="QDk-QO-Ahn" customClass="NearbyFriendsViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="102-5n-SJ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,16 +235,16 @@
                                 <exclude reference="hoU-5I-9Gj"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8fe-ch-Sde"/>
+                                <exclude reference="zOm-al-lMl"/>
+                                <exclude reference="LNs-ZE-Vr2"/>
+                                <exclude reference="UAR-6i-QhT"/>
                                 <exclude reference="D2K-lY-hJs"/>
                                 <exclude reference="Jfh-iq-sS6"/>
                                 <exclude reference="N4R-qQ-79q"/>
                                 <exclude reference="U7L-kn-ed0"/>
                                 <exclude reference="n52-Wt-tq7"/>
                                 <exclude reference="veG-nl-X7E"/>
-                                <exclude reference="8fe-ch-Sde"/>
-                                <exclude reference="zOm-al-lMl"/>
-                                <exclude reference="LNs-ZE-Vr2"/>
-                                <exclude reference="UAR-6i-QhT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -255,16 +255,16 @@
                                 <include reference="hoU-5I-9Gj"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8fe-ch-Sde"/>
+                                <include reference="zOm-al-lMl"/>
+                                <include reference="LNs-ZE-Vr2"/>
+                                <include reference="UAR-6i-QhT"/>
                                 <include reference="D2K-lY-hJs"/>
                                 <include reference="Jfh-iq-sS6"/>
                                 <include reference="N4R-qQ-79q"/>
                                 <exclude reference="U7L-kn-ed0"/>
                                 <include reference="n52-Wt-tq7"/>
                                 <include reference="veG-nl-X7E"/>
-                                <include reference="8fe-ch-Sde"/>
-                                <include reference="zOm-al-lMl"/>
-                                <include reference="LNs-ZE-Vr2"/>
-                                <include reference="UAR-6i-QhT"/>
                             </mask>
                         </variation>
                     </view>
@@ -453,25 +453,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdY-Qb-vrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2949.75" y="-237.5"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="tlB-2c-4gu">
-            <objects>
-                <tabBarController id="du2-3S-LYC" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="JqE-FQ-1q7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.96305102109999996" green="1" blue="0.87778401370000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="zIR-HR-lcq" kind="relationship" relationship="viewControllers" id="de3-Ti-Q5R"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jnR-Qy-ueh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2742" y="544"/>
         </scene>
         <!--Item-->
         <scene sceneID="e40-py-hgd">
@@ -777,7 +758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zi7-rD-Q5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4191" y="-237"/>
+            <point key="canvasLocation" x="3825" y="1405"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

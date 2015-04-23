@@ -14,7 +14,6 @@
 		63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */; };
 		631BE7031AE5ECA800AB37CF /* ReceivedInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BE7021AE5ECA800AB37CF /* ReceivedInvitationViewController.m */; };
 		631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */; };
-		631FA7A11AC4BD1A00429B3E /* Permissions Popover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */; };
 		632CE50E1AE06068008A42E2 /* CircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 632CE50D1AE06068008A42E2 /* CircleButton.m */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
 		6355B4331A9D10FB00D25215 /* FlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* FlatButton.m */; };
@@ -31,7 +30,6 @@
 		63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBA1A7BD895009A212E /* Images.xcassets */; };
 		63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */; };
 		63BA5ECA1A7BD895009A212E /* GadaboutiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */; };
-		63E103921AC59E6400C15E9B /* PermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E103911AC59E6400C15E9B /* PermissionsViewController.m */; };
 		63EACADE1AE5F9D100315B6D /* ActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EACADD1AE5F9D100315B6D /* ActionButton.m */; };
 		63FDECE01ADD54C700393118 /* AddressingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDECDF1ADD54C700393118 /* AddressingViewController.m */; };
 		65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */; };
@@ -57,7 +55,6 @@
 		FAD90B961AE5C0CF00DC189A /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B951AE5C0CF00DC189A /* PushController.m */; };
 		FAD90B991AE5EB9C00DC189A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B981AE5EB9C00DC189A /* Event.m */; };
 		FAD90B9C1AE5EE1400DC189A /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B9B1AE5EE1400DC189A /* Invitation.m */; };
-		FAD941CC1AC23A2B00FEF499 /* DisplayNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD941CB1AC23A2B00FEF499 /* DisplayNameViewController.m */; };
 		FADD2FC41AE665870048854E /* EventConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADD2FC31AE665870048854E /* EventConversationViewController.m */; };
 		FADD2FC71AE670720048854E /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADD2FC61AE670720048854E /* EventController.m */; };
 /* End PBXBuildFile section */
@@ -87,7 +84,6 @@
 		631BE7021AE5ECA800AB37CF /* ReceivedInvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedInvitationViewController.m; sourceTree = "<group>"; };
 		631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyFriendsViewController.h; sourceTree = "<group>"; };
 		631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyFriendsViewController.m; sourceTree = "<group>"; };
-		631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Permissions Popover.xib"; path = "Custom UI/Permissions Popover.xib"; sourceTree = "<group>"; };
 		632CE50C1AE06068008A42E2 /* CircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleButton.h; sourceTree = "<group>"; };
 		632CE50D1AE06068008A42E2 /* CircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleButton.m; sourceTree = "<group>"; };
 		6355B42B1A9CFDF600D25215 /* SetupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupView.h; sourceTree = "<group>"; };
@@ -119,8 +115,6 @@
 		63BA5EC31A7BD895009A212E /* GadaboutiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GadaboutiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BA5EC81A7BD895009A212E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GadaboutiOSTests.m; sourceTree = "<group>"; };
-		63E103901AC59E6400C15E9B /* PermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionsViewController.h; sourceTree = "<group>"; };
-		63E103911AC59E6400C15E9B /* PermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionsViewController.m; sourceTree = "<group>"; };
 		63EACADC1AE5F9D100315B6D /* ActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionButton.h; sourceTree = "<group>"; };
 		63EACADD1AE5F9D100315B6D /* ActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionButton.m; sourceTree = "<group>"; };
 		63FDECDE1ADD54C700393118 /* AddressingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressingViewController.h; sourceTree = "<group>"; };
@@ -161,8 +155,6 @@
 		FAD90B981AE5EB9C00DC189A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FAD90B9A1AE5EE1400DC189A /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invitation.h; sourceTree = "<group>"; };
 		FAD90B9B1AE5EE1400DC189A /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invitation.m; sourceTree = "<group>"; };
-		FAD941CA1AC23A2B00FEF499 /* DisplayNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayNameViewController.h; sourceTree = "<group>"; };
-		FAD941CB1AC23A2B00FEF499 /* DisplayNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayNameViewController.m; sourceTree = "<group>"; };
 		FADD2FC21AE665870048854E /* EventConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventConversationViewController.h; sourceTree = "<group>"; };
 		FADD2FC31AE665870048854E /* EventConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventConversationViewController.m; sourceTree = "<group>"; };
 		FADD2FC51AE670720048854E /* EventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventController.h; sourceTree = "<group>"; };
@@ -312,10 +304,6 @@
 				FA99119B1A80A3DF00714F7D /* LoginViewController.m */,
 				FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */,
 				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
-				FAD941CA1AC23A2B00FEF499 /* DisplayNameViewController.h */,
-				FAD941CB1AC23A2B00FEF499 /* DisplayNameViewController.m */,
-				63E103901AC59E6400C15E9B /* PermissionsViewController.h */,
-				63E103911AC59E6400C15E9B /* PermissionsViewController.m */,
 			);
 			name = Setup;
 			sourceTree = "<group>";
@@ -384,7 +372,7 @@
 				FA1923AB1A7BE12C00561568 /* Controllers */,
 				63BA5EB11A7BD895009A212E /* AppDelegate.h */,
 				63BA5EB21A7BD895009A212E /* AppDelegate.m */,
-				63E103931AC5A17D00C15E9B /* Graphical Layout */,
+				63BA5EB71A7BD895009A212E /* Main.storyboard */,
 				63BA5EBA1A7BD895009A212E /* Images.xcassets */,
 				63BA5EBC1A7BD895009A212E /* LaunchScreen.xib */,
 				63BA5EAD1A7BD895009A212E /* Supporting Files */,
@@ -417,15 +405,6 @@
 				63BA5EC81A7BD895009A212E /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		63E103931AC5A17D00C15E9B /* Graphical Layout */ = {
-			isa = PBXGroup;
-			children = (
-				631FA7A01AC4BD1A00429B3E /* Permissions Popover.xib */,
-				63BA5EB71A7BD895009A212E /* Main.storyboard */,
-			);
-			name = "Graphical Layout";
 			sourceTree = "<group>";
 		};
 		63E59EEE1AC0E2530085D160 /* Helper Views */ = {
@@ -572,7 +551,6 @@
 				630347711ADC867400EB4AB3 /* close.png in Resources */,
 				63BA5EB91A7BD895009A212E /* Main.storyboard in Resources */,
 				630347701ADC867400EB4AB3 /* checkmark.png in Resources */,
-				631FA7A11AC4BD1A00429B3E /* Permissions Popover.xib in Resources */,
 				63BA5EBE1A7BD895009A212E /* LaunchScreen.xib in Resources */,
 				63BA5EBB1A7BD895009A212E /* Images.xcassets in Resources */,
 			);
@@ -631,7 +609,6 @@
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				FA2295A11AC5A9B90047EF31 /* FriendsManager.m in Sources */,
 				6355B4331A9D10FB00D25215 /* FlatButton.m in Sources */,
-				63E103921AC59E6400C15E9B /* PermissionsViewController.m in Sources */,
 				63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */,
 				6390C4D01AE5FEC90063277E /* FriendStatusViewCell.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
@@ -647,7 +624,6 @@
 				638C4D911ADC8193005D1D1D /* SignalsTextView.m in Sources */,
 				635B80621AC5E84A006AED67 /* FriendCell.m in Sources */,
 				6387C6E01ADC76B500BBACC2 /* InvitationAlert.m in Sources */,
-				FAD941CC1AC23A2B00FEF499 /* DisplayNameViewController.m in Sources */,
 				63FDECE01ADD54C700393118 /* AddressingViewController.m in Sources */,
 				631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */,
 				FAD90B991AE5EB9C00DC189A /* Event.m in Sources */,
