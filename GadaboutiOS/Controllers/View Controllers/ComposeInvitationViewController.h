@@ -10,6 +10,9 @@
 
 @interface ComposeInvitationViewController : UIViewController<UITextViewDelegate>
 
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
+
 @property (nonatomic, retain) NSArray *friendsArray;
 
 @end

@@ -31,18 +31,27 @@
 
 @implementation ComposeInvitationViewController
 
+- (id)init {
+    if (self = [super init]) {
+
+    }
+
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.event = [[Event alloc] init];
+
     // initial, default state
     [self setInitalState];
     [self configureNextButton];
-
-    self.event = [[Event alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self.textView becomeFirstResponder];
 
     NSLog(@"Final friends: %@", self.friendsArray);
 }
@@ -71,11 +80,16 @@
 }
 
 - (IBAction)nextWasPressed:(id)sender {
+    [self.nextButton setEnabled:NO];
     [self sendEvent];
 }
 
 - (void)sendEvent {
     NSLog(@"Event request was sent.");
+
+    // Cosmetic user feedback
+    [self startActivityFeedback];
+
     [EventController requestEventCreation:self.event withParticipants:self.friendsArray andBlock:^(id response, NSError *error) {
         if(error == nil) {
             NSLog(@"Event was created.");
@@ -83,7 +97,29 @@
         } else {
             NSLog(@"Event creation failed: %@", [error description]);
         }
+        [self stopActivityFeedback];
     }];
+}
+
+- (void)startActivityFeedback {
+    [self.spinner startAnimating];
+
+    [self.textView endEditing:YES];
+    [self.textView setHidden:YES];
+
+    POPSpringAnimation *spinnerAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    [spinnerAnimation setToValue:[NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)]];
+    [spinnerAnimation setFromValue:[NSValue valueWithCGPoint:CGPointMake(0.8, 0.8)]];
+    [spinnerAnimation setRepeatForever:YES];
+    [self.spinner pop_addAnimation:spinnerAnimation forKey:@"springAnimation"];
+}
+
+- (void)stopActivityFeedback {
+    [self.spinner stopAnimating];
+    [self.spinner pop_removeAllAnimations];
+
+    [self.textView setText:@""];
+    [self.textView setHidden:NO];
 }
 
 #pragma mark - Navigation

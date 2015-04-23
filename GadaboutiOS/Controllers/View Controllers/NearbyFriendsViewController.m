@@ -34,7 +34,7 @@
 // for accessing friends
 @property (nonatomic, strong) FriendsManager *friendsController;
 
-// facebook
+// Facebook
 @property (nonatomic, strong) FBSDKAccessToken *accessToken;
 
 @end
@@ -49,7 +49,6 @@ static NSString * const reuseIdentifier = @"Cell";
     self.nearbyFriends = [User objectsWhere:@"userType = 1"];
     self.friendsController = [FriendsManager sharedFriendsController];
     self.selectedFriends = [[NSMutableArray alloc] init];
-    [self.createEventButton setEnabled:NO];
     [[self collectionView] setAllowsMultipleSelection:YES];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFacebookFriends) name:FBSDKProfileDidChangeNotification object:nil];
@@ -64,6 +63,16 @@ static NSString * const reuseIdentifier = @"Cell";
         [weakSelf.collectionView reloadData];
     }];
     [self.collectionView reloadData];
+
+    [RACObserve(self, selectedFriends) subscribeNext:^(NSMutableArray *selected) {
+        NSLog(@"selected count: %ld", selected.count);
+
+        if ([selected count] != 0) {
+            [self.createEventButton setEnabled:YES];
+        } else {
+            [self.createEventButton setEnabled:NO];
+        }
+    }];
 }
 
 - (void)updateFacebookFriends {
@@ -76,6 +85,13 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    // Reset selection when view appears
+    for (FriendCell *cell in self.collectionView.visibleCells) {
+        [cell setSelected:NO];
+    }
+    NSMutableArray *sf = [self mutableArrayValueForKey:@"selectedFriends"];
+    [sf removeAllObjects];
+
     UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main"
                                                                        bundle:[NSBundle mainBundle]]
                                              instantiateViewControllerWithIdentifier:@"loginScreen"];
@@ -151,8 +167,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
     //Add friend to selected array
     User *friend = [self.nearbyFriends objectAtIndex:[indexPath row]];
-    [self.selectedFriends addObject:friend];
-    [self.createEventButton setEnabled:YES];
+    [self addSelectedFriendsObject:friend];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -165,10 +180,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
     //Remove friend from selected array
     User *friend = [self.nearbyFriends objectAtIndex:[indexPath row]];
-    [self.selectedFriends removeObject:friend];
-    if ([self.selectedFriends count] == 0) {
-        [self.createEventButton setEnabled:NO];
-    }
+    [self removeSelectedFriendsObject:friend];
 }
 
 // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -211,5 +223,31 @@ static NSString * const reuseIdentifier = @"Cell";
 
 }
 */
+
+#pragma - KVO Compliant setters/getters
+
+- (NSUInteger)countOfSelectedFriends {
+    return [self.selectedFriends count];
+}
+
+- (void)insertObject:(User *)object inSelectedFriendsAtIndex:(NSUInteger)index {
+    [self.selectedFriends insertObject:object atIndex:index];
+}
+
+- (id)objectInSelectedFriendsAtIndex:(NSUInteger)index {
+    return [self.selectedFriends objectAtIndex:index];
+}
+
+- (void)removeObjectFromSelectedFriendsAtIndex:(NSUInteger)index {
+    [self.selectedFriends removeObjectAtIndex:index];
+}
+
+- (void)addSelectedFriendsObject:(User *)object {
+    [self.selectedFriends addObject:object];
+}
+
+- (void)removeSelectedFriendsObject:(User *)object {
+    [self.selectedFriends removeObject:object];
+}
 
 @end

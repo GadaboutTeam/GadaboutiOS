@@ -76,16 +76,16 @@
     @try {
         persistedUser = [self getUserFromRealm];
     } @catch (NSException *exception) {
-        NSLog(@"Error retrieving user from realm: %@", [exception description]);
+        NSLog(@"UserController: Error retrieving user from realm: %@", [exception description]);
         @throw exception;
     }
 
     if (persistedUser != nil) {
-        NSLog(@"Persisted user exists.");
+        NSLog(@"UserController: Loading cached data.");
         [self setCurrentUser:persistedUser];
         [[self currentUser] setLoggedIn:YES];
     } else {
-        NSLog(@"Creating new user.");
+        NSLog(@"UserController: Creating new user.");
         User *newUser = [[User alloc] init];
         [newUser setLoggedIn:NO];
         [self setCurrentUser:newUser];
@@ -101,7 +101,7 @@
     RLMResults *userArray = [User objectsWhere:@"userType = 0"];
 
     if ([userArray count] == 0) {
-        NSLog(@"User has not yet been stored.");
+        NSLog(@"UserController: User has not yet been stored.");
         return nil;
     } else if ([userArray count] > 1) {
         [NSException raise:@"MULTIPLE_USERS_STORED" format:@"There should only be one primary user in Realm."];
@@ -120,7 +120,7 @@
         } else if (result.isCancelled) {
 
         } else {
-            NSLog(@"User logged in.");
+            NSLog(@"UserController: User logged in.");
             NSLog(@"Access Token: %@", result.token);
             if ([result.grantedPermissions containsObject:@"email"]) {
                 [self.user setAuthToken:result.token.tokenString];
