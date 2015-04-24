@@ -54,7 +54,7 @@
     POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
     springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
     springAnimation.velocity = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
-    springAnimation.springBounciness = 20.0f;
+    springAnimation.springBounciness = 23.0f;
 
     [self.viewForBaselineLayout pop_addAnimation:springAnimation forKey:@"BounceOnTap"];
 }
