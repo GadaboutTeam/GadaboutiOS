@@ -44,7 +44,7 @@
 		FAD0469D1AE4337400D98F62 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD0469C1AE4337400D98F62 /* Picture.m */; };
 		FAD3BCB11AE88EFA0098AF7A /* EventSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3BCB01AE88EFA0098AF7A /* EventSummaryCell.m */; };
 		FAD3BCB71AE894260098AF7A /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3BCB61AE894260098AF7A /* EventListViewController.m */; };
-		FAD3BCBA1AE8A18C0098AF7A /* InvitationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3BCB91AE8A18C0098AF7A /* InvitationController.m */; };
+		FAD3BCBA1AE8A18C0098AF7A /* InvitationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3BCB91AE8A18C0098AF7A /* InvitationManager.m */; };
 		FAD90B531AE4844000DC189A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B521AE4844000DC189A /* AudioToolbox.framework */; };
 		FAD90B551AE4844600DC189A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B541AE4844600DC189A /* CFNetwork.framework */; };
 		FAD90B571AE4844D00DC189A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B561AE4844D00DC189A /* CoreGraphics.framework */; };
@@ -55,11 +55,11 @@
 		FAD90B611AE4847200DC189A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B601AE4847200DC189A /* SystemConfiguration.framework */; };
 		FAD90B631AE4847C00DC189A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B621AE4847C00DC189A /* libz.dylib */; };
 		FAD90B651AE4848500DC189A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD90B641AE4848500DC189A /* libsqlite3.dylib */; };
-		FAD90B961AE5C0CF00DC189A /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B951AE5C0CF00DC189A /* PushController.m */; };
+		FAD90B961AE5C0CF00DC189A /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B951AE5C0CF00DC189A /* PushManager.m */; };
 		FAD90B991AE5EB9C00DC189A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B981AE5EB9C00DC189A /* Event.m */; };
 		FAD90B9C1AE5EE1400DC189A /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD90B9B1AE5EE1400DC189A /* Invitation.m */; };
 		FADD2FC41AE665870048854E /* EventConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADD2FC31AE665870048854E /* EventConversationViewController.m */; };
-		FADD2FC71AE670720048854E /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADD2FC61AE670720048854E /* EventController.m */; };
+		FADD2FC71AE670720048854E /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FADD2FC61AE670720048854E /* EventManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,8 +144,8 @@
 		FAD3BCB01AE88EFA0098AF7A /* EventSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventSummaryCell.m; sourceTree = "<group>"; };
 		FAD3BCB51AE894260098AF7A /* EventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewController.h; sourceTree = "<group>"; };
 		FAD3BCB61AE894260098AF7A /* EventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListViewController.m; sourceTree = "<group>"; };
-		FAD3BCB81AE8A18C0098AF7A /* InvitationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationController.h; sourceTree = "<group>"; };
-		FAD3BCB91AE8A18C0098AF7A /* InvitationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationController.m; sourceTree = "<group>"; };
+		FAD3BCB81AE8A18C0098AF7A /* InvitationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationManager.h; sourceTree = "<group>"; };
+		FAD3BCB91AE8A18C0098AF7A /* InvitationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationManager.m; sourceTree = "<group>"; };
 		FAD90B4E1AE483E400DC189A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FAD90B4F1AE483E400DC189A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		FAD90B521AE4844000DC189A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -158,16 +158,16 @@
 		FAD90B601AE4847200DC189A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FAD90B621AE4847C00DC189A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FAD90B641AE4848500DC189A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		FAD90B941AE5C0CF00DC189A /* PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
-		FAD90B951AE5C0CF00DC189A /* PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
+		FAD90B941AE5C0CF00DC189A /* PushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManager.h; sourceTree = "<group>"; };
+		FAD90B951AE5C0CF00DC189A /* PushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManager.m; sourceTree = "<group>"; };
 		FAD90B971AE5EB9C00DC189A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		FAD90B981AE5EB9C00DC189A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FAD90B9A1AE5EE1400DC189A /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invitation.h; sourceTree = "<group>"; };
 		FAD90B9B1AE5EE1400DC189A /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invitation.m; sourceTree = "<group>"; };
 		FADD2FC21AE665870048854E /* EventConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventConversationViewController.h; sourceTree = "<group>"; };
 		FADD2FC31AE665870048854E /* EventConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventConversationViewController.m; sourceTree = "<group>"; };
-		FADD2FC51AE670720048854E /* EventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventController.h; sourceTree = "<group>"; };
-		FADD2FC61AE670720048854E /* EventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventController.m; sourceTree = "<group>"; };
+		FADD2FC51AE670720048854E /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		FADD2FC61AE670720048854E /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,15 +238,6 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		633004A71AD4827900AB4A2C /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */,
-				631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */,
-			);
-			name = Location;
-			sourceTree = "<group>";
-		};
 		6355B4291A9CFB8100D25215 /* Navigation Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,12 +271,12 @@
 				FA22959A1AC4B57B0047EF31 /* UserManager.m */,
 				FA22959F1AC5A9B90047EF31 /* FriendsManager.h */,
 				FA2295A01AC5A9B90047EF31 /* FriendsManager.m */,
-				FAD90B941AE5C0CF00DC189A /* PushController.h */,
-				FAD90B951AE5C0CF00DC189A /* PushController.m */,
-				FADD2FC51AE670720048854E /* EventController.h */,
-				FADD2FC61AE670720048854E /* EventController.m */,
-				FAD3BCB81AE8A18C0098AF7A /* InvitationController.h */,
-				FAD3BCB91AE8A18C0098AF7A /* InvitationController.m */,
+				FAD90B941AE5C0CF00DC189A /* PushManager.h */,
+				FAD90B951AE5C0CF00DC189A /* PushManager.m */,
+				FADD2FC51AE670720048854E /* EventManager.h */,
+				FADD2FC61AE670720048854E /* EventManager.m */,
+				FAD3BCB81AE8A18C0098AF7A /* InvitationManager.h */,
+				FAD3BCB91AE8A18C0098AF7A /* InvitationManager.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -303,9 +294,10 @@
 				FADD2FC31AE665870048854E /* EventConversationViewController.m */,
 				FAD3BCB51AE894260098AF7A /* EventListViewController.h */,
 				FAD3BCB61AE894260098AF7A /* EventListViewController.m */,
+				631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */,
+				631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */,
 				635E44B31AB9ECE600419FB9 /* Setup */,
 				63E59EEE1AC0E2530085D160 /* Helper Views */,
-				633004A71AD4827900AB4A2C /* Location */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -619,7 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9911941A8069CB00714F7D /* User.m in Sources */,
-				FAD90B961AE5C0CF00DC189A /* PushController.m in Sources */,
+				FAD90B961AE5C0CF00DC189A /* PushManager.m in Sources */,
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				FA2295A11AC5A9B90047EF31 /* FriendsManager.m in Sources */,
@@ -632,7 +624,7 @@
 				FADD2FC41AE665870048854E /* EventConversationViewController.m in Sources */,
 				FA22959B1AC4B57B0047EF31 /* UserManager.m in Sources */,
 				FA1923B31A7BE1ED00561568 /* LocationManager.m in Sources */,
-				FADD2FC71AE670720048854E /* EventController.m in Sources */,
+				FADD2FC71AE670720048854E /* EventManager.m in Sources */,
 				63BA5EB31A7BD895009A212E /* AppDelegate.m in Sources */,
 				FAD0469D1AE4337400D98F62 /* Picture.m in Sources */,
 				FAD90B9C1AE5EE1400DC189A /* Invitation.m in Sources */,
@@ -646,7 +638,7 @@
 				FAD90B991AE5EB9C00DC189A /* Event.m in Sources */,
 				632CE50E1AE06068008A42E2 /* CircleButton.m in Sources */,
 				63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */,
-				FAD3BCBA1AE8A18C0098AF7A /* InvitationController.m in Sources */,
+				FAD3BCBA1AE8A18C0098AF7A /* InvitationManager.m in Sources */,
 				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,
 				630347741ADC88FF00EB4AB3 /* InvitationView.m in Sources */,
 				630347771ADC8A4000EB4AB3 /* ComposeInvitationViewController.m in Sources */,

@@ -19,7 +19,7 @@
 // Components
 #import "ComposeInvitationViewController.h"
 #import "FriendsManager.h"
-#import "PushController.h"
+#import "PushManager.h"
 #import "FriendCell.h"
 #import "Picture.h"
 #import "UserManager.h"

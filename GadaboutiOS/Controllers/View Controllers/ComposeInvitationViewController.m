@@ -15,7 +15,7 @@
 #import "AddressingViewController.h"
 #import "ComposeInvitationViewController.h"
 #import "Event.h"
-#import "EventController.h"
+#import "EventManager.h"
 #import "EventConversationViewController.h"
 #import "InvitationView.h"
 #import "User.h"
@@ -90,7 +90,7 @@
     // Cosmetic user feedback
     [self startActivityFeedback];
 
-    [EventController requestEventCreation:self.event withParticipants:self.friendsArray andBlock:^(id response, NSError *error) {
+    [EventManager requestEventCreation:self.event withParticipants:self.friendsArray andBlock:^(id response, NSError *error) {
         if(error == nil) {
             NSLog(@"Event was created.");
             [self performSegueWithIdentifier:@"CreateEventSegue" sender:self];

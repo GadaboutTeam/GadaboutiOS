@@ -57,22 +57,6 @@
 
 #pragma mark - Friend Getters
 
-- (NSArray *)getNearbyFriends {
-    // initialziation
-    RLMResults *results = [User objectsWhere:[NSString stringWithFormat:@"userType = %ld", UserTypeSelf]];
-    User *me = [results firstObject];
-    CLLocation *myLocation = [[CLLocation alloc] initWithLatitude:me.lat longitude:me.lon];
-
-    NSArray *sortedNearbyFriends;
-    
-    for (User *friend in self.friendsArray) {
-        CLLocation *friendLocation = [[CLLocation alloc] initWithLatitude:friend.lat longitude:friend.lon];
-//        CLLocationDistance distance = [myLocation distanceFromLocation:friendLocation];
-    }
-
-    return sortedNearbyFriends;
-}
-
 - (void)getFacebookFriends {
     NSString *serviceString = @"/me/friends?fields=name,installed,picture";
     [[[FBSDKGraphRequest alloc] initWithGraphPath:serviceString parameters:nil]

@@ -10,8 +10,8 @@
 
 #import <Realm/Realm.h>
 
-#import "EventController.h"
 #import "EventConversationViewController.h"
+#import "EventManager.h"
 #import "EventSummaryCell.h"
 #import "Event.h"
 
@@ -48,7 +48,7 @@ static NSString * const reuseIdentifier = @"EventCell";
 }
 
 - (void)loadUserEvents {
-    [EventController getUserEventsWithBlock:^(id object, NSError *error) {
+    [EventManager getUserEventsWithBlock:^(id object, NSError *error) {
         if (error) {
             NSLog(@"Error retrieving events for user: %@", [error description]);
         } else {
@@ -73,11 +73,11 @@ static NSString * const reuseIdentifier = @"EventCell";
     return [self.events count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (EventSummaryCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EventSummaryCell *cell = (EventSummaryCell *)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
 
     Event *event = [self.events objectAtIndex:[indexPath row]];
-    [cell.eventTitleTextField setText:[event name]];
+    [cell.eventTitleLabel setText:[event name]];
 
     return cell;
 }

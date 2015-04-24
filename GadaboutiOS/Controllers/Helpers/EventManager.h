@@ -10,7 +10,7 @@
 #import "User.h"
 #import "Event.h"
 
-@interface EventController : NSObject
+@interface EventManager : NSObject
 
 + (void)requestEventCreation:(Event *)event withParticipants:(NSArray *)participants andBlock:(void (^)(id, NSError *))block;
 + (void)getUserEventsWithBlock:(void (^)(id, NSError *))block;

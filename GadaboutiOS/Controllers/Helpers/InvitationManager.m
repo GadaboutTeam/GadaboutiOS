@@ -6,21 +6,21 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "InvitationController.h"
+#import "InvitationManager.h"
 
 #import <Realm/Realm.h>
 
 #import "NetworkingManager.h"
 #import "Invitation.h"
 
-@implementation InvitationController
+@implementation InvitationManager
 
 + (void)getInvitationsForEvent:(Event *)event {
     [self getInvitationsForEvent:event withBlock:^(id response, NSError *error) {
         if (error) {
             NSLog(@"[InvitationController] Could not retrieve users for event %ld: %@", (long)[event event_id], error);
         } else {
-            [InvitationController persistInvitations:response];
+            [InvitationManager persistInvitations:response];
         }
     }];
 }
