@@ -605,6 +605,15 @@
                     <navigationItem key="navigationItem" id="pxQ-Bh-itf"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="33O-jt-jk1">
                         <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Pull to Refresh...">
+                                <attributes>
+                                    <font key="NSFont" size="12" name="HelveticaNeue-Thin"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <color key="tintColor" red="0.93622096238938057" green="0.84646693222965408" blue="0.70736135370300346" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <action selector="triggerTableRefresh:" destination="FQM-Ey-QIQ" eventType="valueChanged" id="nP8-4e-ZDw"/>
                         </connections>

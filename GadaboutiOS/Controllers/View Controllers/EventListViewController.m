@@ -39,6 +39,7 @@ static NSString * const reuseIdentifier = @"EventCell";
         [weakSelf.tableView reloadData];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
+            [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"Push to Refresh"]];
         }
     }];
 }
@@ -59,6 +60,7 @@ static NSString * const reuseIdentifier = @"EventCell";
 
 - (IBAction)triggerTableRefresh:(id)sender {
     if ([self.refreshControl isRefreshing]) {
+        [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"Loading events..."]];
         [self loadUserEvents];
     }
 }
