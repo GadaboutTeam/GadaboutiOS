@@ -20,57 +20,47 @@
     self = [super initWithFrame:frame];
     self.state = CellStateDeselected;
 
-    UIView *backgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    [backgroundView setBackgroundColor:[UIColor blueColor]];
-    [backgroundView setAlpha:0.5];
-    [self setSelectedBackgroundView:backgroundView];
-
     return self;
 }
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-
-    if ([self isHighlighted]) {
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetRGBFillColor(context, 1, 0, 0, 1);
-        CGContextFillRect(context, self.bounds);
-    }
+    [[self.profilePictureView layer] setCornerRadius:self.profilePictureView.frame.size.width/2];
+    [[self.profilePictureView layer] setMasksToBounds:YES];
+    [self.profilePictureView.layer setBorderWidth:3.0];
 }
 
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
 
-    if ([self isSelected]) {
-        
+    if (selected) {
+        [self.profilePictureView.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     } else {
-
+        [self animateOnTap];
+        [self.profilePictureView.layer setBorderColor:[[UIColor clearColor] CGColor]];
     }
+
     [self setNeedsDisplay];
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
     [super setHighlighted:highlighted];
+    if (highlighted) {
+        [self animateOnTap];
+    }
 }
 
 - (void)animateOnTap {
     POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
-    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(0.9, 0.9)];
+    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
     springAnimation.velocity = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
     springAnimation.springBounciness = 20.0f;
+
     [self.viewForBaselineLayout pop_addAnimation:springAnimation forKey:@"BounceOnTap"];
 }
 
 - (void)prepareForReuse {
-    [self setCellState:CellStateDeselected];
-}
 
-- (void)setCellState:(CellState)cellState {
-    self.state = cellState;
-}
-
-- (CellState)cellState {
-    return self.state;
 }
 
 @end

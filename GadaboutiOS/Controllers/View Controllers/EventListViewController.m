@@ -29,6 +29,8 @@ static NSString * const reuseIdentifier = @"EventCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUserEvents];
+    self.events = [Event allObjects];
+
     
     __weak typeof(self) weakSelf = self;
     weakSelf.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(NSString *notification, RLMRealm *realm) {

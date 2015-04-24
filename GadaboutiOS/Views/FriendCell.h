@@ -19,7 +19,4 @@ typedef NS_ENUM(NSInteger, CellState) {
 @property (retain, nonatomic) IBOutlet UILabel *displayName;
 @property (retain, nonatomic) IBOutlet UIImageView *profilePictureView;
 
-- (void)setCellState:(CellState)cellState;
-- (CellState)cellState;
-
 @end

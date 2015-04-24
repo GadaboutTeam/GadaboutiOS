@@ -134,7 +134,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.friendsController getPictureForID:friend onCompletion:^{
         @autoreleasepool {
             UIImage *image = [UIImage imageWithData:[[Picture objectForPrimaryKey:[friend facebookID]] pictureData]];
-            [[cell profilePictureView] setImage:[self getRoundedRectImageFromImage:image onReferenceView:cell.profilePictureView withCornerRadius:cell.profilePictureView.frame.size.width/2]];
+            [[cell profilePictureView] setImage:image];
         }
     }];
 
@@ -159,10 +159,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     FriendCell *cell = (FriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
-    [cell setCellState:CellStateSelected];
-    [cell setSelected:YES];
     [cell setNeedsDisplay];
-    NSLog(@"Cell %ld selected", (long)[indexPath row]);
 
     //Add friend to selected array
     User *friend = [self.nearbyFriends objectAtIndex:[indexPath row]];
@@ -172,10 +169,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     FriendCell *cell = (FriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
-    [cell setCellState:CellStateDeselected];
-    [cell setSelected:NO];
     [cell setNeedsDisplay];
-    NSLog(@"Cell %ld deselected", (long)[indexPath row]);
 
     //Remove friend from selected array
     User *friend = [self.nearbyFriends objectAtIndex:[indexPath row]];
