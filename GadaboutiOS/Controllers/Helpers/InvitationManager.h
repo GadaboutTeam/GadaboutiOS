@@ -14,5 +14,7 @@
 
 + (void)getInvitationsForEvent:(Event *)event;
 + (void)getInvitationsForEvent:(Event *)event withBlock:(void (^)(id, NSError *))block;
++ (void)persistInvitations:(NSArray *)invitationsArray;
++ (NSArray *)getInvitationsFromJSONDictionary:(NSArray *)jsonInvitations;
 
 @end

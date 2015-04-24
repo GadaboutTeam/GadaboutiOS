@@ -11,7 +11,7 @@
 
 NSString *const DomainURL = @"http://104.236.228.143:8080/";
 NSString *const LKEndPointEventsForUser = @"events";
-NSString *const LKEndPointUsersForEvent = @"invitations";
+NSString *const LKEndPointInvitationsForEvent = @"invitations";
 NSString *const LKEndPointReplyToInvite = @"reply_to_invite";
 NSString *const LKEndPointCreateEvent = @"events";
 
@@ -65,6 +65,7 @@ NSString *const LKEndPointCreateEvent = @"events";
 
 - (void)getRequestWithDictionary:(id)dictionary fromService:(NSString *)service completion:(void (^)(id, NSError *))completion {
     NSString *getURL = [DomainURL stringByAppendingString:service];
+    NSLog(@"Get URL: %@", getURL);
 
     [manager GET:getURL
       parameters:dictionary

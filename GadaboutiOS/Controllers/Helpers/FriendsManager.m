@@ -19,6 +19,7 @@
 #import "NetworkingManager.h"
 #import "UserManager.h"
 #import "Picture.h"
+#import "Invitation.h"
 
 @interface FriendsManager ()
 
@@ -143,6 +144,17 @@
     } else {
         [requestOperation start];
     }
+}
+
++ (NSArray *)getFriendsFromInvitations:(RLMArray<Invitation> *)invitations {
+    NSMutableArray *users = [[NSMutableArray alloc] init];
+    for(Invitation *invitation in invitations) {
+        User *user = [User objectForPrimaryKey:[invitation user_id]];
+        if (user != nil) {
+            [users addObject:user];
+        }
+    }
+    return users;
 }
 
 

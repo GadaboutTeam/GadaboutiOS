@@ -12,6 +12,8 @@
 
 #import "EventConversationViewController.h"
 #import "EventManager.h"
+#import "FriendsManager.h"
+#import "InvitationManager.h"
 #import "EventSummaryCell.h"
 #import "Event.h"
 
@@ -82,6 +84,9 @@ static NSString * const reuseIdentifier = @"EventCell";
 
     Event *event = [self.events objectAtIndex:[indexPath row]];
     [cell.eventTitleLabel setText:[event name]];
+
+    NSArray *participants = [FriendsManager getFriendsFromInvitations:[[event invitations] NSArray]];
+    [cell.particpantsLabel setText:[NSString stringWithFormat:@"[%@]", [participants componentsJoinedByString:@", "]]];
 
     return cell;
 }

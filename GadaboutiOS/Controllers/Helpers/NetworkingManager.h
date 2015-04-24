@@ -11,7 +11,7 @@
 
 FOUNDATION_EXPORT NSString *const DomainURL;
 FOUNDATION_EXPORT NSString *const LKEndPointEventsForUser;
-FOUNDATION_EXPORT NSString *const LKEndPointUsersForEvent;
+FOUNDATION_EXPORT NSString *const LKEndPointInvitationsForEvent;
 FOUNDATION_EXPORT NSString *const LKEndPointReplyToInvite;
 FOUNDATION_EXPORT NSString *const LKEndPointCreateEvent;
 

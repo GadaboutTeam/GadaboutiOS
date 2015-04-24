@@ -60,7 +60,8 @@
 }
 
 - (void)prepareForReuse {
-
+    [self setSelected:NO];
+    [self setHighlighted:NO];
 }
 
 @end

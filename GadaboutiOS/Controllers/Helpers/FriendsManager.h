@@ -15,5 +15,6 @@
 - (NSArray *)getNearbyFriends;
 - (void)getFacebookFriends;
 - (void)getPictureForID:(User *)friend onCompletion:(void (^)())completionBlock;
++ (NSArray *)getFriendsFromInvitations:(NSArray *)invitations;
 
 @end

@@ -31,24 +31,62 @@
             NSLog(@"[Event Controller] Error retrieving events for user %@: %@", authID, [error description]);
         } else {
             [EventManager persistEvents:(NSArray *)response];
+
+            RLMResults *events = [Event allObjects];
+            NSLog(@"Events: %@", response);
+            for (Event *event in events) {
+                [InvitationManager getInvitationsForEvent:event withBlock:^(id response, NSError *error) {
+                    NSLog(@"Invitations Response: %@", (NSArray *)[response description]);
+                    [[RLMRealm defaultRealm] beginWriteTransaction];
+                    [event setInvitations:(RLMArray<Invitation> *)[Invitation objectsInRealm:[RLMRealm defaultRealm] where:@"event_id = '%@'", [event event_id]]];
+                    [[RLMRealm defaultRealm] commitWriteTransaction];
+                }];
+            }
+
         }
     }];
 }
 
++ (NSArray *)eventsWithJSONArray:(NSArray *)eventsJSONArray {
+    NSMutableArray *eventsArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *eventDictionary in eventsJSONArray) {
+        Event *event = [[Event alloc] initWithJSONDictionary:eventDictionary];
+        [eventsArray addObject:event];
+    }
+    return eventsArray;
+}
+
 + (void)persistEvents:(NSArray *)events {
+    [[RLMRealm defaultRealm] beginWriteTransaction];
     for (NSDictionary *eventDict in events) {
         NSString *event_id = [eventDict objectForKey:@"id"];
         NSMutableDictionary *md = [NSMutableDictionary dictionaryWithDictionary:eventDict];
         [md setObject:[NSString stringWithFormat:@"%@ ", event_id] forKey:@"id"];
         Event *event = [[Event alloc] initWithJSONDictionary:md];
-        [[RLMRealm defaultRealm] beginWriteTransaction];
         [Event createOrUpdateInDefaultRealmWithObject:event];
-        [[RLMRealm defaultRealm] commitWriteTransaction];
     }
+    [[RLMRealm defaultRealm] commitWriteTransaction];
 }
 
 + (void)getInvitationsForEvent:(Event *)event withBlock:(void (^)(id, NSError *))block{
-    [InvitationManager getInvitationsForEvent:event withBlock:block];
+    [InvitationManager getInvitationsForEvent:event withBlock:^(id response, NSError *error) {
+        if (!error) {
+            NSLog(@"[EventManager]Received invitations for event: %@", event);
+            RLMResults *invitations = [Invitation objectsWhere:[NSString stringWithFormat:@"event_id = '%@'", [event event_id]]];
+            [EventManager persistInvitations:(RLMArray<Invitation> *)invitations forEvent:event];
+            if (block!=nil) {
+                block(response, nil);
+            }
+        } else {
+            NSLog(@"Failed to get invitations for event: %@", event);
+        }
+    }];
+}
+
++ (void)persistInvitations:(RLMArray<Invitation> *)invitationsArray forEvent:(Event *)event {
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    [event setInvitations:invitationsArray];
+    [[RLMRealm defaultRealm] commitWriteTransaction];
 }
 
 + (NSDictionary *)prepareRequestDictionaryFromEvent:(Event *)event andParticipants:(NSArray *)participants {

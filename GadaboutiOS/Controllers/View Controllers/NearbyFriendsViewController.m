@@ -19,6 +19,7 @@
 // Components
 #import "ComposeInvitationViewController.h"
 #import "FriendsManager.h"
+#import "InvitationManager.h"
 #import "PushManager.h"
 #import "FriendCell.h"
 #import "Picture.h"
@@ -85,10 +86,6 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    // Reset selection when view appears
-    for (FriendCell *cell in self.collectionView.visibleCells) {
-        [cell setSelected:NO];
-    }
     NSMutableArray *sf = [self mutableArrayValueForKey:@"selectedFriends"];
     [sf removeAllObjects];
 
@@ -102,6 +99,13 @@ static NSString * const reuseIdentifier = @"Cell";
             [self presentViewController:loginViewController animated:YES completion:nil];
         }
     }];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    // Deselect cells
+    for (FriendCell *cell in self.collectionView.visibleCells) {
+        [cell prepareForReuse];
+    }
 }
 
 /*
