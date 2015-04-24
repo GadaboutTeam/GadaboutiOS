@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 GadaboutTeam. All rights reserved.
 //
 
-#import "EventConversationViewController.h"
-
+// Frameworks
 #import <Realm/Realm.h>
 
+//
+#import "EventConversationViewController.h"
 #import "Invitation.h"
 #import "InvitationManager.h"
 
@@ -30,6 +31,7 @@
     __weak typeof(self) weakSelf = self;
     weakSelf.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
         weakSelf.invitations = [Invitation objectsWhere:[NSString stringWithFormat:@"event_id = '%@'", [self.event event_id]]];
+
         RLMArray<Invitation> *invitationsArray = [[RLMArray alloc] initWithObjectClassName:@"Invitation"];
         [invitationsArray addObjects:weakSelf.invitations];
         [weakSelf.event setInvitations:invitationsArray];

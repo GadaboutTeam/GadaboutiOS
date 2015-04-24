@@ -10,6 +10,7 @@
 
 @interface EventSummaryCell : UITableViewCell
 
-@property (nonatomic, retain) IBOutlet UILabel *eventTitleTextField;
+@property (nonatomic, retain) IBOutlet UILabel *eventTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *particpantsLabel;
 
 @end

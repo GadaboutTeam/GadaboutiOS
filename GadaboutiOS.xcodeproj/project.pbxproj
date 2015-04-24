@@ -238,15 +238,6 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		633004A71AD4827900AB4A2C /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */,
-				631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */,
-			);
-			name = Location;
-			sourceTree = "<group>";
-		};
 		6355B4291A9CFB8100D25215 /* Navigation Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,9 +294,10 @@
 				FADD2FC31AE665870048854E /* EventConversationViewController.m */,
 				FAD3BCB51AE894260098AF7A /* EventListViewController.h */,
 				FAD3BCB61AE894260098AF7A /* EventListViewController.m */,
+				631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */,
+				631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */,
 				635E44B31AB9ECE600419FB9 /* Setup */,
 				63E59EEE1AC0E2530085D160 /* Helper Views */,
-				633004A71AD4827900AB4A2C /* Location */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

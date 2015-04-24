@@ -48,7 +48,6 @@ static NSString * const reuseIdentifier = @"EventCell";
             weakSelf.events = [Event allObjects];
         }
 
-
         [weakSelf.tableView reloadData];
     }];
 }
@@ -75,11 +74,11 @@ static NSString * const reuseIdentifier = @"EventCell";
     return [self.events count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (EventSummaryCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EventSummaryCell *cell = (EventSummaryCell *)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
 
     Event *event = [self.events objectAtIndex:[indexPath row]];
-    [cell.eventTitleTextField setText:[event name]];
+    [cell.eventTitleLabel setText:[event name]];
 
     return cell;
 }
