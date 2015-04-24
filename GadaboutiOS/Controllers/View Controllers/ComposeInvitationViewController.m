@@ -10,9 +10,9 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <pop/POP.h>
+#import <TWMessageBarManager/TWMessageBarManager.h>
 
 // Projects
-#import "AddressingViewController.h"
 #import "ComposeInvitationViewController.h"
 #import "Event.h"
 #import "EventManager.h"
@@ -44,6 +44,7 @@
 
     self.event = [[Event alloc] init];
 
+    [self setNeedsStatusBarAppearanceUpdate];
     // initial, default state
     [self setInitalState];
     [self configureNextButton];
@@ -91,15 +92,23 @@
     [self startActivityFeedback];
 
     [EventManager requestEventCreation:self.event withParticipants:self.friendsArray andBlock:^(id response, NSError *error) {
-        if(error == nil) {
+        if (!error) {
             NSLog(@"Event was created.");
             [self performSegueWithIdentifier:@"CreateEventSegue" sender:self];
         } else {
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Something went wrong..."
+                                                           description:@"We’re working on it!"
+                                                                  type:TWMessageBarMessageTypeError
+                                                        statusBarStyle:UIStatusBarStyleLightContent
+                                                              callback:nil];
+            
             NSLog(@"Event creation failed: %@", [error description]);
         }
         [self stopActivityFeedback];
     }];
 }
+
+#pragma mark - Spinners
 
 - (void)startActivityFeedback {
     [self.spinner startAnimating];
@@ -127,6 +136,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     EventConversationViewController *ecvc = (EventConversationViewController *)[segue destinationViewController];
     ecvc.event = self.event;
+}
+
+#pragma mark - Status Bar
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UITextViewDelegate

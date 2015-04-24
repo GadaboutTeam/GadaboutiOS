@@ -25,8 +25,8 @@ target 'GadaboutiOS' do
   # Prepermissions for Location, Notifications, etc.
   pod 'ClusterPrePermissions', '~> 0.1'
 
-  # Input Field
-  pod 'VENTokenField', '~> 2.0'
+  # Notifications
+  pod 'TWMessageBarManager'
 end
 
 target 'GadaboutiOSTests' do
