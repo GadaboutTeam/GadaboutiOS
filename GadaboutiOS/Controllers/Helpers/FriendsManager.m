@@ -149,8 +149,10 @@
 + (NSArray *)getFriendsFromInvitations:(RLMArray<Invitation> *)invitations {
     NSMutableArray *users = [[NSMutableArray alloc] init];
     for(Invitation *invitation in invitations) {
-        User *user = [User objectForPrimaryKey:[invitation user_id]];
-        if (user != nil) {
+        NSString *queryString = [[invitation user_id] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        User *user = [[User objectsWhere:@"facebookID = %@", queryString] firstObject];
+
+        if (user != nil && ![queryString isEqualToString:[[[UserManager sharedUserController] currentUser] facebookID]]) {
             [users addObject:user];
         }
     }

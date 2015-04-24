@@ -33,12 +33,12 @@
             [EventManager persistEvents:(NSArray *)response];
 
             RLMResults *events = [Event allObjects];
-            NSLog(@"Events: %@", response);
+
             for (Event *event in events) {
                 [InvitationManager getInvitationsForEvent:event withBlock:^(id response, NSError *error) {
-                    NSLog(@"Invitations Response: %@", (NSArray *)[response description]);
+                    RLMArray<Invitation> *invitations = (RLMArray<Invitation> *)[Invitation objectsInRealm:[RLMRealm defaultRealm] where:@"event_id = %@", [event event_id]];
                     [[RLMRealm defaultRealm] beginWriteTransaction];
-                    [event setInvitations:(RLMArray<Invitation> *)[Invitation objectsInRealm:[RLMRealm defaultRealm] where:@"event_id = '%@'", [event event_id]]];
+                    [event setInvitations:invitations];
                     [[RLMRealm defaultRealm] commitWriteTransaction];
                 }];
             }

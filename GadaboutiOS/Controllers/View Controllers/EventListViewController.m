@@ -86,7 +86,11 @@ static NSString * const reuseIdentifier = @"EventCell";
     [cell.eventTitleLabel setText:[event name]];
 
     NSArray *participants = [FriendsManager getFriendsFromInvitations:[[event invitations] NSArray]];
-    [cell.particpantsLabel setText:[NSString stringWithFormat:@"[%@]", [participants componentsJoinedByString:@", "]]];
+    NSMutableArray *friendNames = [[NSMutableArray alloc] init];
+    for (User *participant in participants) {
+        [friendNames addObject:[participant getFirstName]];
+    }
+    [cell.particpantsLabel setText:[NSString stringWithFormat:@"[%@]", [friendNames componentsJoinedByString:@", "]]];
 
     return cell;
 }

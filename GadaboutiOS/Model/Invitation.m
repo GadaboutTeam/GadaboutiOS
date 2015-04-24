@@ -18,14 +18,14 @@
     return @{
              @"id" : @"invitation_id",
              @"event_id" : @"event_id",
-             @"sender_id" : @"user_id",
+             @"user_id" : @"user_id",
              @"reply" : @"reply"
              };
 }
 
 + (NSDictionary *)JSONOutboundMappingDictionary {
     return @{
-             @"event_id" : @"id",
+             @"invitation_id" : @"id",
              @"event_id" : @"event_id",
              @"sender_id" : @"user_id",
              @"reply" : @"reply"

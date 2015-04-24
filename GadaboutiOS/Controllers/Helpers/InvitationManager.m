@@ -58,8 +58,19 @@
 }
 
 + (void)persistInvitations:(NSArray *)invitationsArray {
+    NSMutableArray *invitations = [[NSMutableArray alloc] init];
+    for (NSDictionary *invitationDict in invitationsArray) {
+        NSMutableDictionary *md = [NSMutableDictionary dictionaryWithDictionary:invitationDict];
+        [md setValue:[NSString stringWithFormat:@"%@ ", [md valueForKey:@"id"]] forKey:@"id"];
+        [md setValue:[NSString stringWithFormat:@"%@ ", [md valueForKey:@"sender_id"]] forKey:@"sender_id"];
+        [md setValue:[NSString stringWithFormat:@"%@ ", [md valueForKey:@"user_id"]] forKey:@"user_id"];
+        [md setValue:[NSString stringWithFormat:@"%@ ", [md valueForKey:@"event_id"]] forKey:@"event_id"];
+
+        [invitations addObject:md];
+    }
+
     [[RLMRealm defaultRealm] beginWriteTransaction];
-    [Invitation createOrUpdateInRealm:[RLMRealm defaultRealm] withJSONArray:invitationsArray];
+    [Invitation createOrUpdateInRealm:[RLMRealm defaultRealm] withJSONArray:invitations];
     [[RLMRealm defaultRealm] commitWriteTransaction];
 }
 

@@ -48,7 +48,7 @@
 - (void)configureEvent {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-    [formatter setDateFormat:@"yyyy-MM-dd'T'hh:mm:ss"];
+    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 
     [self setStart_time:[formatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:60*60]]];
     [self setEnd_time:[formatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:60*60*2]]];
