@@ -24,6 +24,9 @@
     NSDictionary *requestDict = [[NSDictionary alloc] initWithObjects:@[authID] forKeys:@[@"auth_id"]];
 
     [[NetworkingManager sharedNetworkingManger] getRequestWithDictionary:requestDict fromService:LKEndPointEventsForUser completion:^(id response, NSError *error) {
+        if (block != nil) {
+            block(response, error);
+        }
         if (error) {
             NSLog(@"[Event Controller] Error retrieving events for user %@: %@", authID, [error description]);
         } else {
@@ -33,15 +36,15 @@
 }
 
 + (void)persistEvents:(NSArray *)events {
-    [[RLMRealm defaultRealm] beginWriteTransaction];
     for (NSDictionary *eventDict in events) {
         NSString *event_id = [eventDict objectForKey:@"id"];
         NSMutableDictionary *md = [NSMutableDictionary dictionaryWithDictionary:eventDict];
         [md setObject:[NSString stringWithFormat:@"%@ ", event_id] forKey:@"id"];
         Event *event = [[Event alloc] initWithJSONDictionary:md];
+        [[RLMRealm defaultRealm] beginWriteTransaction];
         [Event createOrUpdateInDefaultRealmWithObject:event];
+        [[RLMRealm defaultRealm] commitWriteTransaction];
     }
-    [[RLMRealm defaultRealm] commitWriteTransaction];
 }
 
 + (void)getInvitationsForEvent:(Event *)event withBlock:(void (^)(id, NSError *))block{

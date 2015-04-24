@@ -11,6 +11,7 @@
 #import <Realm/Realm.h>
 
 #import "EventController.h"
+#import "EventConversationViewController.h"
 #import "EventSummaryCell.h"
 #import "Event.h"
 
@@ -27,35 +28,26 @@ static NSString * const reuseIdentifier = @"EventCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    //DummyEvent
-//    Event *dummyEvent = [[Event alloc] init];
-//    [dummyEvent setValue:@"42" forKey:@"event_id"];
-//    [dummyEvent setName:@"Dummy Event"];
-//    [EventController getInvitationsForEvent:dummyEvent withBlock:^(id response, NSError *error) {
-//        NSLog(@"Response: %@", response);
-//        RLMArray<Invitation> *invArray = (RLMArray<Invitation> *)[[RLMArray alloc] initWithObjectClassName:@"Invitation"];
-//        [invArray addObjects:invArray];
-//        [dummyEvent setInvitations:invArray];
-//    }];
-//
-//    self.events = [[RLMArray alloc] initWithObjectClassName:@"Event"];
-//    [self.events addObject:dummyEvent];
-
+    [self loadUserEvents];
+    
     __weak typeof(self) weakSelf = self;
     weakSelf.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
         if([[Event allObjects] count]!= 0) {
             weakSelf.events = [Event allObjects];
         }
 
-
         [weakSelf.tableView reloadData];
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
     }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+}
 
+- (void)loadUserEvents {
     [EventController getUserEventsWithBlock:^(id object, NSError *error) {
         if (error) {
             NSLog(@"Error retrieving events for user: %@", [error description]);
@@ -63,6 +55,12 @@ static NSString * const reuseIdentifier = @"EventCell";
             NSLog(@"Events downloaded");
         }
     }];
+}
+
+- (IBAction)triggerTableRefresh:(id)sender {
+    if ([self.refreshControl isRefreshing]) {
+        [self loadUserEvents];
+    }
 }
 
 #pragma mark <UITableViewDataSource>
@@ -82,6 +80,16 @@ static NSString * const reuseIdentifier = @"EventCell";
     [cell.eventTitleTextField setText:[event name]];
 
     return cell;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"EventListToConversation"]) {
+        EventConversationViewController *eventVC = (EventConversationViewController *)[segue destinationViewController];
+        Event *event = [self.events objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        [eventVC setEvent:event];
+    }
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface EventListViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+- (IBAction)triggerTableRefresh:(id)sender;
+
 @end

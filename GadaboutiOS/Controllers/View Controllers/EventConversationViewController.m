@@ -40,7 +40,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    [self.eventTitleLabel setText:[self.event name]];
+    [self.eventTitle setTitle:[self.event name]];
 }
 
 @end

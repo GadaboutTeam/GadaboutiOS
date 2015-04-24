@@ -12,6 +12,7 @@
 @interface EventConversationViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet UILabel *eventTitleLabel;
+@property (nonatomic, retain) IBOutlet UINavigationItem *eventTitle;
 @property (nonatomic, retain) Event *event;
 
 @end
