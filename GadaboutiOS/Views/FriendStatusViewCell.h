@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendStatusCollectionViewController.h"
 
 IB_DESIGNABLE
 @interface FriendStatusViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
-@property (weak, nonatomic) IBOutlet UIView *friendStatus;
+@property (nonatomic, retain) IBOutlet UIImageView *profilePicture;
+@property (nonatomic, retain) IBOutlet UIView *friendStatus;
 
 @end

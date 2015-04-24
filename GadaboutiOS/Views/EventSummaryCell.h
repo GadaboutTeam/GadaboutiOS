@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendStatusCollectionViewController.h"
 
 @interface EventSummaryCell : UITableViewCell
 
-@property (nonatomic, retain) IBOutlet UILabel *eventTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *particpantsLabel;
+@property (nonatomic, retain) IBOutlet UICollectionView *friendStatusCV;
+@property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
+@property (nonatomic, retain) FriendStatusCollectionViewController *friendStatusController;
 
 @end

@@ -32,6 +32,7 @@
 		63BA5ECA1A7BD895009A212E /* GadaboutiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EC91A7BD895009A212E /* GadaboutiOSTests.m */; };
 		63EACADE1AE5F9D100315B6D /* ActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EACADD1AE5F9D100315B6D /* ActionButton.m */; };
 		65E2EE0E7104F6A190F93CCC /* libPods-GadaboutiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AE7BC9956A43D35FD1C88 /* libPods-GadaboutiOS.a */; };
+		FA0371241AEAB921006B8CEF /* FriendStatusCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0371231AEAB921006B8CEF /* FriendStatusCollectionViewController.m */; };
 		FA1923B31A7BE1ED00561568 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1923B21A7BE1ED00561568 /* LocationManager.m */; };
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
 		FA22959B1AC4B57B0047EF31 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22959A1AC4B57B0047EF31 /* UserManager.m */; };
@@ -120,6 +121,8 @@
 		63EACADC1AE5F9D100315B6D /* ActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionButton.h; sourceTree = "<group>"; };
 		63EACADD1AE5F9D100315B6D /* ActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionButton.m; sourceTree = "<group>"; };
 		D3B60062277E2CF1D1993697 /* Pods-GadaboutiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GadaboutiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GadaboutiOS/Pods-GadaboutiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0371221AEAB921006B8CEF /* FriendStatusCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendStatusCollectionViewController.h; sourceTree = "<group>"; };
+		FA0371231AEAB921006B8CEF /* FriendStatusCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendStatusCollectionViewController.m; sourceTree = "<group>"; };
 		FA1923B21A7BE1ED00561568 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		FA1923B41A7BE20800561568 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		FA1923B51A7BE57A00561568 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -291,6 +294,8 @@
 				FAD3BCB61AE894260098AF7A /* EventListViewController.m */,
 				631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */,
 				631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */,
+				FA0371221AEAB921006B8CEF /* FriendStatusCollectionViewController.h */,
+				FA0371231AEAB921006B8CEF /* FriendStatusCollectionViewController.m */,
 				635E44B31AB9ECE600419FB9 /* Setup */,
 				63E59EEE1AC0E2530085D160 /* Helper Views */,
 			);
@@ -627,6 +632,7 @@
 				638C4D911ADC8193005D1D1D /* SignalsTextView.m in Sources */,
 				635B80621AC5E84A006AED67 /* FriendCell.m in Sources */,
 				FAD3BCB71AE894260098AF7A /* EventListViewController.m in Sources */,
+				FA0371241AEAB921006B8CEF /* FriendStatusCollectionViewController.m in Sources */,
 				6387C6E01ADC76B500BBACC2 /* InvitationAlert.m in Sources */,
 				631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */,
 				FAD90B991AE5EB9C00DC189A /* Event.m in Sources */,

@@ -81,8 +81,14 @@ static NSString * const reuseIdentifier = @"EventCell";
 
 - (EventSummaryCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EventSummaryCell *cell = (EventSummaryCell *)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    if (cell.friendStatusController == nil) {
+        cell.friendStatusController = [[FriendStatusCollectionViewController alloc] init];
+        [cell.friendStatusCV setDataSource:cell.friendStatusController];
+        [cell.friendStatusCV setDelegate:cell.friendStatusController];
+    }
 
     Event *event = [self.events objectAtIndex:[indexPath row]];
+
     [cell.eventTitleLabel setText:[event name]];
 
     NSArray *participants = [FriendsManager getFriendsFromInvitations:[[event invitations] NSArray]];
@@ -90,7 +96,9 @@ static NSString * const reuseIdentifier = @"EventCell";
     for (User *participant in participants) {
         [friendNames addObject:[participant getFirstName]];
     }
-    [cell.particpantsLabel setText:[NSString stringWithFormat:@"[%@]", [friendNames componentsJoinedByString:@", "]]];
+
+    cell.friendStatusController.friendsArray = [participants copy];
+    [cell.friendStatusCV reloadData];
 
     return cell;
 }

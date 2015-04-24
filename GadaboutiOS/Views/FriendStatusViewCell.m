@@ -10,4 +10,21 @@
 
 @implementation FriendStatusViewCell
 
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    [[self.profilePicture layer] setCornerRadius:self.profilePicture.frame.size.width/2];
+    [[self.profilePicture layer] setMasksToBounds:YES];
+}
+
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    [self setNeedsDisplay];
+}
+
 @end

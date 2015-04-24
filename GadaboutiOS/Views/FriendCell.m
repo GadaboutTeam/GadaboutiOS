@@ -11,14 +11,12 @@
 #import <pop/POP.h>
 
 @interface FriendCell()
-@property (nonatomic) CellState state;
 @end
 
 @implementation FriendCell
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    self.state = CellStateDeselected;
 
     return self;
 }

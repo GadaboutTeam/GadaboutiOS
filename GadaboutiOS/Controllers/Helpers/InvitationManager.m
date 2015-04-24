@@ -31,13 +31,12 @@
     NSString *eventID = [[event event_id] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *userID = [[[UserManager sharedUserController] currentUser] facebookID];
     NSDictionary *requestDictionary = [NSDictionary dictionaryWithObject:userID forKey:@"auth_id"];
-    NSLog(@"Sending GET request.");
+
     [[NetworkingManager sharedNetworkingManger]
      getRequestWithDictionary:requestDictionary
      fromService:[NSString stringWithFormat:@"%@/%@/%@", LKEndPointCreateEvent, eventID, LKEndPointInvitationsForEvent]
      completion:^(id response, NSError *error) {
          if (!error) {
-             NSLog(@"Invitations response: %@", (NSArray *)response);
              [self persistInvitations:(NSArray *)response];
              if(block != nil) {
                  block(response, nil);

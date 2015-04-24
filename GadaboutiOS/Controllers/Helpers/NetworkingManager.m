@@ -65,7 +65,6 @@ NSString *const LKEndPointCreateEvent = @"events";
 
 - (void)getRequestWithDictionary:(id)dictionary fromService:(NSString *)service completion:(void (^)(id, NSError *))completion {
     NSString *getURL = [DomainURL stringByAppendingString:service];
-    NSLog(@"Get URL: %@", getURL);
 
     [manager GET:getURL
       parameters:dictionary
