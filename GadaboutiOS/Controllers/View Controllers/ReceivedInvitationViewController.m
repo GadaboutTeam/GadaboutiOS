@@ -37,9 +37,6 @@ NSString const *reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // token field setup
-    self.friends;
-
     // table view setup
     __weak typeof(self) weakSelf = self;
     self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
@@ -50,6 +47,10 @@ NSString const *reuseIdentifier = @"Cell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"User info: %@", self.userInfo);
 }
 
 #pragma mark - Collection View Setup

@@ -15,6 +15,7 @@
 #import "LoginViewController.h"
 #import "NetworkingManager.h"
 #import "UserManager.h"
+#import "PushManager.h"
 #import "ReceivedInvitationViewController.h"
 
 @interface AppDelegate ()
@@ -98,6 +99,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"Received notification: %@", userInfo);
+    [PushManager handlePushNotification:userInfo navController:(UINavigationController *)self.window.rootViewController];
     [PFPush handlePush:userInfo];
 }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gcf-Is-1Ah">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gcf-Is-1Ah">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -657,7 +657,7 @@
         <!--Item-->
         <scene sceneID="zjY-Bc-Nyq">
             <objects>
-                <viewController storyboardIdentifier="ReceivedInfitationViewController" id="dwm-EU-Qg4" customClass="ReceivedInvitationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReceivedInvitationViewController" id="dwm-EU-Qg4" customClass="ReceivedInvitationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S0X-pP-4Q8"/>
                         <viewControllerLayoutGuide type="bottom" id="4Hi-6X-f4r"/>

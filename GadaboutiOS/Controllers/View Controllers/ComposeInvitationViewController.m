@@ -103,6 +103,7 @@
                                                               callback:nil];
             
             NSLog(@"Event creation failed: %@", [error description]);
+            NSLog(@"Info: %@", self.event);
         }
         [self stopActivityFeedback];
     }];

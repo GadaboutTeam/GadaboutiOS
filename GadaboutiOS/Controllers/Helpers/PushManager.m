@@ -13,6 +13,7 @@
 #import "UserManager.h"
 #import "NetworkingManager.h"
 #import "User.h"
+#import "ReceivedInvitationViewController.h"
 
 @implementation PushManager
 
@@ -40,6 +41,13 @@
 + (void)sendNotificationDictionary:(NSDictionary *)notificationDictionary toService:(NSString *)service
                    completionBlock:(void (^)(id, NSError *))block {
     [[NetworkingManager sharedNetworkingManger] requestWithDictionary:notificationDictionary fromService:service completion:block];
+}
+
++ (void)handlePushNotification:(NSDictionary *)userInfo navController:(UINavigationController *)rootNavController {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    ReceivedInvitationViewController *rivc = (ReceivedInvitationViewController *)[storyboard instantiateViewControllerWithIdentifier:@"ReceivedInvitationViewController"];
+    [rivc setUserInfo:userInfo];
+    [rootNavController.visibleViewController presentViewController:rivc animated:YES completion:nil];
 }
 
 @end

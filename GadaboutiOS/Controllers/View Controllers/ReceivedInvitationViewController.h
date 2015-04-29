@@ -10,4 +10,6 @@
 
 @interface ReceivedInvitationViewController : UIViewController
 
+@property (nonatomic, retain) NSDictionary *userInfo;
+
 @end
