@@ -40,7 +40,6 @@
 		FA9911941A8069CB00714F7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* User.m */; };
 		FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99119B1A80A3DF00714F7D /* LoginViewController.m */; };
 		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
-		FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */; };
 		FAD0469D1AE4337400D98F62 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD0469C1AE4337400D98F62 /* Picture.m */; };
 		FAD3BCB11AE88EFA0098AF7A /* EventSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3BCB01AE88EFA0098AF7A /* EventSummaryCell.m */; };
 		FAD3BCB71AE894260098AF7A /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3BCB61AE894260098AF7A /* EventListViewController.m */; };
@@ -136,8 +135,6 @@
 		FA99119B1A80A3DF00714F7D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA9911A01A80BCB800714F7D /* PushStoryBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushStoryBoardSegue.h; sourceTree = "<group>"; };
 		FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushStoryBoardSegue.m; sourceTree = "<group>"; };
-		FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAuthorizationViewController.h; sourceTree = "<group>"; };
-		FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAuthorizationViewController.m; sourceTree = "<group>"; };
 		FAD0469B1AE4337400D98F62 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
 		FAD0469C1AE4337400D98F62 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		FAD3BCAF1AE88EFA0098AF7A /* EventSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSummaryCell.h; sourceTree = "<group>"; };
@@ -307,8 +304,6 @@
 			children = (
 				FA99119A1A80A3DF00714F7D /* LoginViewController.h */,
 				FA99119B1A80A3DF00714F7D /* LoginViewController.m */,
-				FA9911A41A81A89200714F7D /* LocationAuthorizationViewController.h */,
-				FA9911A51A81A89200714F7D /* LocationAuthorizationViewController.m */,
 			);
 			name = Setup;
 			sourceTree = "<group>";
@@ -644,7 +639,6 @@
 				630347771ADC8A4000EB4AB3 /* ComposeInvitationViewController.m in Sources */,
 				63BA5EB01A7BD895009A212E /* main.m in Sources */,
 				631BE7031AE5ECA800AB37CF /* ReceivedInvitationViewController.m in Sources */,
-				FA9911A61A81A89200714F7D /* LocationAuthorizationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
