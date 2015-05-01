@@ -16,7 +16,7 @@
 #import "User.h"
 #import "Invitation.h"
 
-NSString const *reuseIdentifier = @"Cell";
+NSString *reuseIdentifier = @"Cell";
 
 @interface ReceivedInvitationViewController ()
 
@@ -67,9 +67,6 @@ NSString const *reuseIdentifier = @"Cell";
 
 - (FriendStatusViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FriendStatusViewCell *cell = (FriendStatusViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    #warning needs to be pulled from inviation
-    User *friend = [self.friends objectAtIndex:[indexPath row]];
     
 //    // Configure the cell
 //    [[cell s] setText:[friend getFirstName]];
