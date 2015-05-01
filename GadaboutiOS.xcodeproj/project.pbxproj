@@ -11,14 +11,17 @@
 		630347711ADC867400EB4AB3 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6303476F1ADC867400EB4AB3 /* close.png */; };
 		630347741ADC88FF00EB4AB3 /* InvitationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630347731ADC88FF00EB4AB3 /* InvitationView.m */; };
 		630347771ADC8A4000EB4AB3 /* ComposeInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630347761ADC8A4000EB4AB3 /* ComposeInvitationViewController.m */; };
+		63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */; };
 		631BE7031AE5ECA800AB37CF /* ReceivedInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BE7021AE5ECA800AB37CF /* ReceivedInvitationViewController.m */; };
 		631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */; };
+		632CE50E1AE06068008A42E2 /* CircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 632CE50D1AE06068008A42E2 /* CircleButton.m */; };
 		6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B42C1A9CFDF600D25215 /* SetupView.m */; };
 		6355B4331A9D10FB00D25215 /* FlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6355B4321A9D10FB00D25215 /* FlatButton.m */; };
 		635B80621AC5E84A006AED67 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635B80611AC5E84A006AED67 /* FriendCell.m */; };
 		636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F31A81BA9100A9AE57 /* NavigationBar.m */; };
 		636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636185F61A81BCB700A9AE57 /* NavigationViewController.m */; };
 		6387C6E01ADC76B500BBACC2 /* InvitationAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387C6DF1ADC76B500BBACC2 /* InvitationAlert.m */; };
+		638C4D911ADC8193005D1D1D /* SignalsTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D901ADC8193005D1D1D /* SignalsTextView.m */; };
 		6390C4D01AE5FEC90063277E /* FriendStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6390C4CF1AE5FEC90063277E /* FriendStatusViewCell.m */; };
 		63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AA4CD01AA0C86E00B25274 /* NetworkingManager.m */; };
 		63BA5EB01A7BD895009A212E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5EAF1A7BD895009A212E /* main.m */; };
@@ -77,10 +80,14 @@
 		630347731ADC88FF00EB4AB3 /* InvitationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationView.m; sourceTree = "<group>"; };
 		630347751ADC8A4000EB4AB3 /* ComposeInvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeInvitationViewController.h; sourceTree = "<group>"; };
 		630347761ADC8A4000EB4AB3 /* ComposeInvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeInvitationViewController.m; sourceTree = "<group>"; };
+		63121CC91ADD6FCD00344CA2 /* SignalsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalsTableViewCell.h; sourceTree = "<group>"; };
+		63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalsTableViewCell.m; sourceTree = "<group>"; };
 		631BE7011AE5ECA800AB37CF /* ReceivedInvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedInvitationViewController.h; sourceTree = "<group>"; };
 		631BE7021AE5ECA800AB37CF /* ReceivedInvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedInvitationViewController.m; sourceTree = "<group>"; };
 		631FA79D1AC498BB00429B3E /* NearbyFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyFriendsViewController.h; sourceTree = "<group>"; };
 		631FA79E1AC498BB00429B3E /* NearbyFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyFriendsViewController.m; sourceTree = "<group>"; };
+		632CE50C1AE06068008A42E2 /* CircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleButton.h; sourceTree = "<group>"; };
+		632CE50D1AE06068008A42E2 /* CircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleButton.m; sourceTree = "<group>"; };
 		6355B42B1A9CFDF600D25215 /* SetupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupView.h; sourceTree = "<group>"; };
 		6355B42C1A9CFDF600D25215 /* SetupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupView.m; sourceTree = "<group>"; };
 		6355B4311A9D10FB00D25215 /* FlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatButton.h; sourceTree = "<group>"; };
@@ -93,6 +100,8 @@
 		636185F61A81BCB700A9AE57 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		6387C6DE1ADC76B500BBACC2 /* InvitationAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationAlert.h; sourceTree = "<group>"; };
 		6387C6DF1ADC76B500BBACC2 /* InvitationAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationAlert.m; sourceTree = "<group>"; };
+		638C4D8F1ADC8193005D1D1D /* SignalsTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalsTextView.h; sourceTree = "<group>"; };
+		638C4D901ADC8193005D1D1D /* SignalsTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalsTextView.m; sourceTree = "<group>"; };
 		6390C4CE1AE5FEC90063277E /* FriendStatusViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendStatusViewCell.h; sourceTree = "<group>"; };
 		6390C4CF1AE5FEC90063277E /* FriendStatusViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendStatusViewCell.m; sourceTree = "<group>"; };
 		63AA4CCF1AA0C86E00B25274 /* NetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingManager.h; sourceTree = "<group>"; };
@@ -248,7 +257,7 @@
 			path = "../Custom UI/Buttons";
 			sourceTree = "<group>";
 		};
-		6355B4341A9D222000D25215 /* Managers */ = {
+		6355B4341A9D222000D25215 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				FA1923B41A7BE20800561568 /* LocationManager.h */,
@@ -266,7 +275,6 @@
 				FAD3BCB81AE8A18C0098AF7A /* InvitationManager.h */,
 				FAD3BCB91AE8A18C0098AF7A /* InvitationManager.m */,
 			);
-			name = Managers;
 			path = Helpers;
 			sourceTree = "<group>";
 		};
@@ -305,6 +313,7 @@
 			children = (
 				6390C4CE1AE5FEC90063277E /* FriendStatusViewCell.h */,
 				6390C4CF1AE5FEC90063277E /* FriendStatusViewCell.m */,
+				63B51FAB1ADD981900AC87F2 /* Table View Cell Components */,
 				635B80601AC5E84A006AED67 /* FriendCell.h */,
 				635B80611AC5E84A006AED67 /* FriendCell.m */,
 				6387C6DE1ADC76B500BBACC2 /* InvitationAlert.h */,
@@ -313,6 +322,26 @@
 				FAD3BCB01AE88EFA0098AF7A /* EventSummaryCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		63B51FAB1ADD981900AC87F2 /* Table View Cell Components */ = {
+			isa = PBXGroup;
+			children = (
+				63121CC91ADD6FCD00344CA2 /* SignalsTableViewCell.h */,
+				63121CCA1ADD6FCD00344CA2 /* SignalsTableViewCell.m */,
+				632CE50C1AE06068008A42E2 /* CircleButton.h */,
+				632CE50D1AE06068008A42E2 /* CircleButton.m */,
+			);
+			name = "Table View Cell Components";
+			sourceTree = "<group>";
+		};
+		63B51FAF1ADD997700AC87F2 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				638C4D8F1ADC8193005D1D1D /* SignalsTextView.h */,
+				638C4D901ADC8193005D1D1D /* SignalsTextView.m */,
+			);
+			name = Forms;
 			sourceTree = "<group>";
 		};
 		63BA5EA11A7BD895009A212E = {
@@ -392,7 +421,7 @@
 		FA1923AB1A7BE12C00561568 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6355B4341A9D222000D25215 /* Managers */,
+				6355B4341A9D222000D25215 /* Helpers */,
 				6355B4351A9D224D00D25215 /* View Controllers */,
 			);
 			path = Controllers;
@@ -419,6 +448,7 @@
 				630347721ADC88FF00EB4AB3 /* InvitationView.h */,
 				630347731ADC88FF00EB4AB3 /* InvitationView.m */,
 				6387C6DD1ADC769200BBACC2 /* Cells */,
+				63B51FAF1ADD997700AC87F2 /* Forms */,
 				6355B4291A9CFB8100D25215 /* Navigation Bar */,
 				6355B42A1A9CFB9000D25215 /* Buttons */,
 				6355B42B1A9CFDF600D25215 /* SetupView.h */,
@@ -581,6 +611,7 @@
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				FA2295A11AC5A9B90047EF31 /* FriendsManager.m in Sources */,
 				6355B4331A9D10FB00D25215 /* FlatButton.m in Sources */,
+				63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */,
 				6390C4D01AE5FEC90063277E /* FriendStatusViewCell.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
@@ -593,12 +624,14 @@
 				FAD0469D1AE4337400D98F62 /* Picture.m in Sources */,
 				FAD90B9C1AE5EE1400DC189A /* Invitation.m in Sources */,
 				63EACADE1AE5F9D100315B6D /* ActionButton.m in Sources */,
+				638C4D911ADC8193005D1D1D /* SignalsTextView.m in Sources */,
 				635B80621AC5E84A006AED67 /* FriendCell.m in Sources */,
 				FAD3BCB71AE894260098AF7A /* EventListViewController.m in Sources */,
 				FA0371241AEAB921006B8CEF /* FriendStatusCollectionViewController.m in Sources */,
 				6387C6E01ADC76B500BBACC2 /* InvitationAlert.m in Sources */,
 				631FA79F1AC498BB00429B3E /* NearbyFriendsViewController.m in Sources */,
 				FAD90B991AE5EB9C00DC189A /* Event.m in Sources */,
+				632CE50E1AE06068008A42E2 /* CircleButton.m in Sources */,
 				63AA4CD11AA0C86E00B25274 /* NetworkingManager.m in Sources */,
 				FAD3BCBA1AE8A18C0098AF7A /* InvitationManager.m in Sources */,
 				636185F41A81BA9100A9AE57 /* NavigationBar.m in Sources */,
