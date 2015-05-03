@@ -9,6 +9,9 @@
 // Frameworks
 #import <UIKit/UIKit.h>
 
+// Project
+#import "SignalsTextView.h"
+
 IB_DESIGNABLE
 @interface InvitationView : UIView
 
