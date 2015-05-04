@@ -799,6 +799,7 @@
                                         </variation>
                                         <connections>
                                             <outlet property="friendStatus" destination="Nwq-4V-i9C" id="Ytw-zs-YHQ"/>
+                                            <outlet property="friendStatusView" destination="Nwq-4V-i9C" id="pfd-49-Ad3"/>
                                             <outlet property="profilePicture" destination="Kdy-bw-pFw" id="kMU-Dt-Gc0"/>
                                         </connections>
                                     </collectionViewCell>
@@ -941,7 +942,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rKb-bJ-nxz"/>
+        <segue reference="Me8-oa-Lk9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

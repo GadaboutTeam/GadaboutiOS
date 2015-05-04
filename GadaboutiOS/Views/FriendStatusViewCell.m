@@ -27,4 +27,23 @@
     [self setNeedsDisplay];
 }
 
+
+- (void)setFriendStatus:(FriendStatus)friendStatus {
+    switch (friendStatus) {
+        case friendAccepted:
+            self.friendStatusView.backgroundColor = [UIColor greenColor];
+            break;
+        
+        case friendDenied:
+            self.friendStatusView.backgroundColor = [UIColor redColor];
+            break;
+            
+        case friendUndetermined:
+            self.friendStatusView.backgroundColor = [UIColor grayColor];
+            break;
+        default:
+            break;
+    }
+}
+
 @end
