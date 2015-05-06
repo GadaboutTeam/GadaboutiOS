@@ -115,6 +115,8 @@ static NSString * const nextViewControllerIdentifier = @"ComposeInvitationViewCo
     for (FriendCell *cell in self.collectionView.visibleCells) {
         [cell prepareForReuse];
     }
+    // Hide next button
+    [self hideNextButton];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -271,37 +273,35 @@ static NSString * const nextViewControllerIdentifier = @"ComposeInvitationViewCo
 - (void)hideNextButton {
     float offset = [self.continueButton frame].size.height;
     if ([self.continueButton isEnabled]) {
-        [self translateNextButton:CGAffineTransformMakeTranslation(0.0, offset)];
         [self.continueButton setEnabled:NO];
+        [self translateNextButton:CGAffineTransformMakeTranslation(0.0, offset) withCompletion:^() {
+            [self.continueButton setHidden:YES];
+        }];
     }
 }
 
 - (void)showNextButton {
     float offset = [self.continueButton frame].size.height;
     if (![self.continueButton isEnabled]) {
-        if ([self.continueButton isHidden]) {
-            [self.continueButton setHidden:NO];
-        }
-        [self translateNextButton:CGAffineTransformMakeTranslation(0.0, -offset)];
+        [self.continueButton setHidden:NO];
+        [self translateNextButton:CGAffineTransformMakeTranslation(0.0, -offset) withCompletion:nil];
         [self.continueButton setEnabled:YES];
     }
 }
 
-- (void)translateNextButton:(CGAffineTransform)transform {
+- (void)translateNextButton:(CGAffineTransform)transform withCompletion:(void (^)())completion {
     POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
     springAnimation.toValue = [NSValue valueWithCGRect:
                                CGRectApplyAffineTransform(self.continueButton.frame, transform)];
     springAnimation.velocity = [NSValue valueWithCGRect:CGRectMake(2, 2, 2, 2)];
     springAnimation.springBounciness = 10.0f;
+    if (completion != nil) {
+        [springAnimation setCompletionBlock:^(POPAnimation *animation, BOOL completed) {
+            completion();
+        }];
+    }
 
     [self.continueButton pop_addAnimation:springAnimation forKey:@"MoveButtonAnimation"];
-}
-
-#pragma mark - TransitionDelegate
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                   presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    self.transitionM
 }
 
 @end

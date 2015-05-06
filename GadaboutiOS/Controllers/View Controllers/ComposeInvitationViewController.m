@@ -58,6 +58,11 @@
     NSLog(@"Final friends: %@", self.friendsArray);
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.textView resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
