@@ -41,6 +41,7 @@
 		FA9911941A8069CB00714F7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* User.m */; };
 		FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99119B1A80A3DF00714F7D /* LoginViewController.m */; };
 		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
+		FAA447CA1AFAA57E002CA6C3 /* ActionPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA447C91AFAA57E002CA6C3 /* ActionPickerViewController.m */; };
 		FAD0469D1AE4337400D98F62 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD0469C1AE4337400D98F62 /* Picture.m */; };
 		FAD3BCB11AE88EFA0098AF7A /* EventSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3BCB01AE88EFA0098AF7A /* EventSummaryCell.m */; };
 		FAD3BCB71AE894260098AF7A /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3BCB61AE894260098AF7A /* EventListViewController.m */; };
@@ -137,6 +138,8 @@
 		FA99119B1A80A3DF00714F7D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA9911A01A80BCB800714F7D /* PushStoryBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushStoryBoardSegue.h; sourceTree = "<group>"; };
 		FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushStoryBoardSegue.m; sourceTree = "<group>"; };
+		FAA447C81AFAA57E002CA6C3 /* ActionPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionPickerViewController.h; sourceTree = "<group>"; };
+		FAA447C91AFAA57E002CA6C3 /* ActionPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionPickerViewController.m; sourceTree = "<group>"; };
 		FAD0469B1AE4337400D98F62 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
 		FAD0469C1AE4337400D98F62 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		FAD3BCAF1AE88EFA0098AF7A /* EventSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSummaryCell.h; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 		6355B4351A9D224D00D25215 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAA447C81AFAA57E002CA6C3 /* ActionPickerViewController.h */,
+				FAA447C91AFAA57E002CA6C3 /* ActionPickerViewController.m */,
 				631BE7011AE5ECA800AB37CF /* ReceivedInvitationViewController.h */,
 				631BE7021AE5ECA800AB37CF /* ReceivedInvitationViewController.m */,
 				630347751ADC8A4000EB4AB3 /* ComposeInvitationViewController.h */,
@@ -617,6 +622,7 @@
 				6355B4331A9D10FB00D25215 /* FlatButton.m in Sources */,
 				63121CCB1ADD6FCD00344CA2 /* SignalsTableViewCell.m in Sources */,
 				6390C4D01AE5FEC90063277E /* FriendStatusViewCell.m in Sources */,
+				FAA447CA1AFAA57E002CA6C3 /* ActionPickerViewController.m in Sources */,
 				FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */,
 				FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */,
 				FAD3BCB11AE88EFA0098AF7A /* EventSummaryCell.m in Sources */,
