@@ -37,7 +37,8 @@
 		FA1923B61A7BE57A00561568 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1923B51A7BE57A00561568 /* CoreLocation.framework */; };
 		FA22959B1AC4B57B0047EF31 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22959A1AC4B57B0047EF31 /* UserManager.m */; };
 		FA2295A11AC5A9B90047EF31 /* FriendsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2295A01AC5A9B90047EF31 /* FriendsManager.m */; };
-		FA7ABBEF1AF9B80700C57DD5 /* LKInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7ABBEE1AF9B80700C57DD5 /* LKInteractionController.m */; };
+		FA7ABBF51AFA110F00C57DD5 /* LKAnimatedTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7ABBF41AFA110F00C57DD5 /* LKAnimatedTransitionManager.m */; };
+		FA7ABBF71AFA118100C57DD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7ABBF61AFA118100C57DD5 /* UIKit.framework */; };
 		FA9911941A8069CB00714F7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911921A8069CB00714F7D /* User.m */; };
 		FA99119C1A80A3DF00714F7D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA99119B1A80A3DF00714F7D /* LoginViewController.m */; };
 		FA9911A21A80BCB800714F7D /* PushStoryBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */; };
@@ -130,8 +131,9 @@
 		FA22959A1AC4B57B0047EF31 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		FA22959F1AC5A9B90047EF31 /* FriendsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsManager.h; sourceTree = "<group>"; };
 		FA2295A01AC5A9B90047EF31 /* FriendsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsManager.m; sourceTree = "<group>"; };
-		FA7ABBED1AF9B80700C57DD5 /* LKInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKInteractionController.h; sourceTree = "<group>"; };
-		FA7ABBEE1AF9B80700C57DD5 /* LKInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKInteractionController.m; sourceTree = "<group>"; };
+		FA7ABBF31AFA110F00C57DD5 /* LKAnimatedTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAnimatedTransitionManager.h; sourceTree = "<group>"; };
+		FA7ABBF41AFA110F00C57DD5 /* LKAnimatedTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAnimatedTransitionManager.m; sourceTree = "<group>"; };
+		FA7ABBF61AFA118100C57DD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA9911911A8069CB00714F7D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FA9911921A8069CB00714F7D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FA99119A1A80A3DF00714F7D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7ABBF71AFA118100C57DD5 /* UIKit.framework in Frameworks */,
 				FAD90B651AE4848500DC189A /* libsqlite3.dylib in Frameworks */,
 				FAD90B631AE4847C00DC189A /* libz.dylib in Frameworks */,
 				FAD90B611AE4847200DC189A /* SystemConfiguration.framework in Frameworks */,
@@ -212,6 +215,7 @@
 		56D11405C21761CA26F517D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA7ABBF61AFA118100C57DD5 /* UIKit.framework */,
 				FAD90B641AE4848500DC189A /* libsqlite3.dylib */,
 				FAD90B621AE4847C00DC189A /* libz.dylib */,
 				FAD90B601AE4847200DC189A /* SystemConfiguration.framework */,
@@ -277,8 +281,6 @@
 				FADD2FC61AE670720048854E /* EventManager.m */,
 				FAD3BCB81AE8A18C0098AF7A /* InvitationManager.h */,
 				FAD3BCB91AE8A18C0098AF7A /* InvitationManager.m */,
-				FA7ABBED1AF9B80700C57DD5 /* LKInteractionController.h */,
-				FA7ABBEE1AF9B80700C57DD5 /* LKInteractionController.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -467,6 +469,8 @@
 			children = (
 				FA9911A01A80BCB800714F7D /* PushStoryBoardSegue.h */,
 				FA9911A11A80BCB800714F7D /* PushStoryBoardSegue.m */,
+				FA7ABBF31AFA110F00C57DD5 /* LKAnimatedTransitionManager.h */,
+				FA7ABBF41AFA110F00C57DD5 /* LKAnimatedTransitionManager.m */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -612,7 +616,7 @@
 			files = (
 				FA9911941A8069CB00714F7D /* User.m in Sources */,
 				FAD90B961AE5C0CF00DC189A /* PushManager.m in Sources */,
-				FA7ABBEF1AF9B80700C57DD5 /* LKInteractionController.m in Sources */,
+				FA7ABBF51AFA110F00C57DD5 /* LKAnimatedTransitionManager.m in Sources */,
 				636185F71A81BCB700A9AE57 /* NavigationViewController.m in Sources */,
 				6355B42D1A9CFDF600D25215 /* SetupView.m in Sources */,
 				FA2295A11AC5A9B90047EF31 /* FriendsManager.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NearbyFriendsViewController : UICollectionViewController <UICollectionViewDelegate>
+@interface NearbyFriendsViewController : UICollectionViewController <UICollectionViewDelegate, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *createEventButton;
 

@@ -15,6 +15,7 @@
 #import <FBSDKCoreKit/FBSDKProfilePictureView.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Parse/Parse.h>
+#import <pop/POP.h>
 
 // Components
 #import "ComposeInvitationViewController.h"
@@ -38,11 +39,16 @@
 // Facebook
 @property (nonatomic, strong) FBSDKAccessToken *accessToken;
 
+// UI
+@property (nonatomic, retain) UIButton *continueButton;
+@property (nonatomic, retain) ComposeInvitationViewController *nextViewController;
+
 @end
 
 @implementation NearbyFriendsViewController
 
 static NSString * const reuseIdentifier = @"Cell";
+static NSString * const nextViewControllerIdentifier = @"ComposeInvitationViewController";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,6 +57,8 @@ static NSString * const reuseIdentifier = @"Cell";
     self.friendsController = [FriendsManager sharedFriendsController];
     self.selectedFriends = [[NSMutableArray alloc] init];
     [[self collectionView] setAllowsMultipleSelection:YES];
+
+    [self setupNextButton];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFacebookFriends) name:FBSDKProfileDidChangeNotification object:nil];
     if ([[UserManager sharedUserController] isLoggedIn]) {
@@ -65,13 +73,14 @@ static NSString * const reuseIdentifier = @"Cell";
     }];
     [self.collectionView reloadData];
 
-
     // Disable the CreateEventButton if no cells are selected
     [RACObserve(self, selectedFriends) subscribeNext:^(NSMutableArray *selected) {
         if ([selected count] != 0) {
             [self.createEventButton setEnabled:YES];
+            [self showNextButton];
         } else {
             [self.createEventButton setEnabled:NO];
+            [self hideNextButton];
         }
     }];
 }
@@ -107,16 +116,6 @@ static NSString * const reuseIdentifier = @"Cell";
         [cell prepareForReuse];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -201,8 +200,8 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    ComposeInvitationViewController *destinationVC = (ComposeInvitationViewController *)[segue destinationViewController];
-    [destinationVC setFriendsArray:self.selectedFriends];
+    self.nextViewController = (ComposeInvitationViewController *)[segue destinationViewController];
+    [self.nextViewController setFriendsArray:self.selectedFriends];
 }
 
 
@@ -245,6 +244,64 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)removeSelectedFriendsObject:(User *)object {
     [self.selectedFriends removeObject:object];
+}
+
+#pragma - Next Button
+// I know this is dirty. It's late and it's gonna look cool.
+- (void)setupNextButton {
+    CGRect screen = [UIScreen mainScreen].bounds;
+    float width = CGRectGetWidth(screen);
+    float height = 60.0;
+
+    CGRect frame = CGRectMake(0, CGRectGetHeight(screen) - height*2, width, height);
+    self.continueButton = [[UIButton alloc] initWithFrame:frame];
+    [self.continueButton setTitle:@"Continue" forState:UIControlStateNormal];
+    [self.continueButton setBackgroundColor:[UIColor greenColor]];
+    [self.continueButton addTarget:self action:@selector(goToNextScreen:) forControlEvents:UIControlEventTouchUpInside];
+    [self.continueButton setHidden:YES];
+
+    [self.collectionView addSubview:self.continueButton];
+    [self.collectionView bringSubviewToFront:self.continueButton];
+}
+
+- (IBAction)goToNextScreen:(id)sender {
+    [self performSegueWithIdentifier:@"ComposeInvitationSegue" sender:self];
+}
+
+- (void)hideNextButton {
+    float offset = [self.continueButton frame].size.height;
+    if ([self.continueButton isEnabled]) {
+        [self translateNextButton:CGAffineTransformMakeTranslation(0.0, offset)];
+        [self.continueButton setEnabled:NO];
+    }
+}
+
+- (void)showNextButton {
+    float offset = [self.continueButton frame].size.height;
+    if (![self.continueButton isEnabled]) {
+        if ([self.continueButton isHidden]) {
+            [self.continueButton setHidden:NO];
+        }
+        [self translateNextButton:CGAffineTransformMakeTranslation(0.0, -offset)];
+        [self.continueButton setEnabled:YES];
+    }
+}
+
+- (void)translateNextButton:(CGAffineTransform)transform {
+    POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+    springAnimation.toValue = [NSValue valueWithCGRect:
+                               CGRectApplyAffineTransform(self.continueButton.frame, transform)];
+    springAnimation.velocity = [NSValue valueWithCGRect:CGRectMake(2, 2, 2, 2)];
+    springAnimation.springBounciness = 10.0f;
+
+    [self.continueButton pop_addAnimation:springAnimation forKey:@"MoveButtonAnimation"];
+}
+
+#pragma mark - TransitionDelegate
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                   presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    self.transitionM
 }
 
 @end

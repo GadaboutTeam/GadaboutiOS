@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gcf-Is-1Ah">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zIR-HR-lcq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Nearby Friends-->
+        <!--Pick Your Crew-->
         <scene sceneID="7gm-BO-Yd1">
             <objects>
                 <collectionViewController storyboardIdentifier="ConversationsView" id="QDk-QO-Ahn" customClass="NearbyFriendsViewController" sceneMemberID="viewController">
@@ -104,18 +104,11 @@
                             <outlet property="delegate" destination="QDk-QO-Ahn" id="rMc-9T-ueE"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Nearby Friends" id="Og8-zJ-qo0">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="6WE-oC-sd7">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="h8k-SR-Mf9" kind="presentation" identifier="ComposeInvitationSegue" id="BDJ-dA-oxR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Pick Your Crew" id="Og8-zJ-qo0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collectionView" destination="102-5n-SJ9" id="c15-hR-6Q8"/>
-                        <outlet property="createEventButton" destination="6WE-oC-sd7" id="YoJ-tx-6TF"/>
+                        <segue destination="h8k-SR-Mf9" kind="showDetail" identifier="ComposeInvitationSegue" id="z8H-VS-8TE"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="po1-jR-B5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,7 +118,7 @@
         <!--Compose Invitation View Controller-->
         <scene sceneID="wju-9e-eIk">
             <objects>
-                <viewController id="h8k-SR-Mf9" customClass="ComposeInvitationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComposeInvitationViewController" id="h8k-SR-Mf9" customClass="ComposeInvitationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wr6-dR-eNE"/>
                         <viewControllerLayoutGuide type="bottom" id="Jv1-CC-5T5"/>
@@ -297,12 +290,18 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="135" y="72" width="132" height="30"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8j-zk-7UQ" customClass="ActionButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="8" y="72" width="46" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="goBack:" destination="4Dv-ry-2In" eventType="touchUpInside" id="TQW-L8-8I6"/>
                                 </connections>
@@ -465,38 +464,21 @@
             </objects>
             <point key="canvasLocation" x="2949.75" y="-237.5"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="PT7-pj-Bsm">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pwf-bT-S8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController id="Gcf-Is-1Ah" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="cls-kj-2WU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.16477447748184204" green="0.16070723533630371" blue="0.16479486227035522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="zIR-HR-lcq" kind="relationship" relationship="viewControllers" id="Cco-de-Dni"/>
-                        <segue destination="VtC-J2-B2X" kind="relationship" relationship="viewControllers" id="4GN-vG-wAw"/>
-                    </connections>
-                </tabBarController>
-            </objects>
-            <point key="canvasLocation" x="2610" y="843"/>
-        </scene>
-        <!--Nearby-->
+        <!--Pick Your Crew-->
         <scene sceneID="e40-py-hgd">
             <objects>
-                <navigationController storyboardIdentifier="mainScreen" automaticallyAdjustsScrollViewInsets="NO" id="zIR-HR-lcq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainScreen" title="Pick Your Crew" automaticallyAdjustsScrollViewInsets="NO" id="zIR-HR-lcq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nearby" id="jsc-WN-99w"/>
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QXD-Sb-bBh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.47450980392156861" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.47450980390000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -946,7 +928,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rKb-bJ-nxz"/>
+        <segue reference="Me8-oa-Lk9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.24988710880279541" green="0.50821119546890259" blue="0.99849003553390503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
