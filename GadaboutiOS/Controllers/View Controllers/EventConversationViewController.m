@@ -42,7 +42,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    [self.eventTitle setTitle:[self.event name]];
+    [self.eventTitleLabel setText:[self.event name]];
+}
+
+- (IBAction)goBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gcf-Is-1Ah">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gcf-Is-1Ah">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -298,12 +298,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anS-y1-3v6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="FXB-3m-YyS"/>
-                                </items>
-                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8j-zk-7UQ" customClass="ActionButton">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="8" y="28" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="goBack:" destination="4Dv-ry-2In" eventType="touchUpInside" id="TQW-L8-8I6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -313,7 +319,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="clO-Nl-6tg"/>
-                                <exclude reference="anS-y1-3v6"/>
+                                <exclude reference="r8j-zk-7UQ"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ZH5-fn-cgE"/>
@@ -323,7 +329,7 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="clO-Nl-6tg"/>
-                                <include reference="anS-y1-3v6"/>
+                                <include reference="r8j-zk-7UQ"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ZH5-fn-cgE"/>
@@ -332,6 +338,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="r8j-zk-7UQ" id="7Eq-y7-Dgk"/>
                         <outlet property="eventTitleLabel" destination="clO-Nl-6tg" id="K5n-0J-ZaG"/>
                     </connections>
                 </viewController>
@@ -561,7 +568,7 @@
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f6P-6I-KGt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             </imageView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5b-yH-YB8">
+                                                            <view contentMode="scaleToFill" restorationIdentifier="FriendStatusCell" translatesAutoresizingMaskIntoConstraints="NO" id="G5b-yH-YB8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </view>
@@ -581,7 +588,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <outlet property="friendStatus" destination="G5b-yH-YB8" id="WYr-ZD-UxP"/>
+                                                        <outlet property="friendStatusView" destination="G5b-yH-YB8" id="hMR-xh-fCm"/>
                                                         <outlet property="profilePicture" destination="f6P-6I-KGt" id="5hu-3n-nIJ"/>
                                                     </connections>
                                                 </collectionViewCell>

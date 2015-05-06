@@ -14,7 +14,7 @@
 
 @implementation FriendStatusCollectionViewController
 
-static NSString * const reuseIdentifier = @"FriendStatusCell";
+static NSString* const friendCellIdentifier = @"FriendStatusCell";
 
 - (id)init {
     self = [super init];
@@ -33,7 +33,7 @@ static NSString * const reuseIdentifier = @"FriendStatusCell";
 }
 
 - (FriendStatusViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FriendStatusViewCell *cell = (FriendStatusViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    FriendStatusViewCell *cell = (FriendStatusViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:friendCellIdentifier forIndexPath:indexPath];
 
     User *friend = [self.friendsArray objectAtIndex:[indexPath row]];
 

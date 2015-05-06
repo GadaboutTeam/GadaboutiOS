@@ -18,6 +18,7 @@
 #import "EventManager.h"
 #import "EventConversationViewController.h"
 #import "InvitationView.h"
+#import "SignalsTextView.h"
 #import "User.h"
 
 
@@ -121,6 +122,7 @@
     [spinnerAnimation setToValue:[NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)]];
     [spinnerAnimation setFromValue:[NSValue valueWithCGPoint:CGPointMake(0.8, 0.8)]];
     [spinnerAnimation setRepeatForever:YES];
+    [spinnerAnimation setAutoreverses:YES];
     [self.spinner pop_addAnimation:spinnerAnimation forKey:@"springAnimation"];
 }
 

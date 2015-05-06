@@ -109,7 +109,7 @@ static NSString * const reuseIdentifier = @"EventCell";
     if ([[segue identifier] isEqualToString:@"EventListToConversation"]) {
         EventConversationViewController *eventVC = (EventConversationViewController *)[segue destinationViewController];
         Event *event = [self.events objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        [eventVC setEvent:event];
+        [eventVC setEvent:[[Event alloc] initWithObject:event]];
     }
 }
 
