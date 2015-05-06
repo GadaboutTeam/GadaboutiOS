@@ -303,9 +303,6 @@
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="28" width="46" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="goBack:" destination="4Dv-ry-2In" eventType="touchUpInside" id="TQW-L8-8I6"/>
                                 </connections>
