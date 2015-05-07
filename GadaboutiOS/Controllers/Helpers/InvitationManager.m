@@ -56,6 +56,22 @@
     return invitationsArray;
 }
 
+//+ (Invitation *)getInvitationFromJSONDictionary:(NSDictionary *)jsonInvitation {
+//    NSMutableDictionary *md = [[NSMutableDictionary alloc] initWithDictionary:jsonInvitation];
+//    NSString *newIDValue = [NSString stringWithFormat:@"%@ ", [jsonInvitation valueForKey:@"id"]];
+//    NSString *newEventIDValue = [NSString stringWithFormat:@"%@ ", [jsonInvitation valueForKey:@"event_id"]];
+//    NSString *newUserIDValue = [NSString stringWithFormat:@"%@ ", [jsonInvitation valueForKey:@"user_id"]];
+//
+//    [md setValue:newIDValue forKey:@"id"];
+//    [md setValue:newEventIDValue forKey:@"event_id"];
+//    [md setValue:newUserIDValue forKey:@"user_id"];
+//
+//
+//    NSLog(@"Processed invitation dictionary: %@", md);
+//
+//    return [[Invitation alloc] initWithJSONDictionary:md];
+//}
+
 + (void)persistInvitations:(NSArray *)invitationsArray {
     NSMutableArray *invitations = [[NSMutableArray alloc] init];
     for (NSDictionary *invitationDict in invitationsArray) {
@@ -76,6 +92,24 @@
 + (User *)getUserForInvitation:(Invitation *)invitation {
     User *user = [User objectForPrimaryKey:[invitation user_id]];
     return user;
+}
+
++ (void)sendReply:(Invitation *)invitation withSuccess:(void (^)())successBlock {
+    NSString *eventID = [[invitation event_id] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *userID = [[invitation user_id] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+    Invitation *reply = [[Invitation alloc] initWithObject:invitation];
+    [reply setUser_id:userID];
+
+    NSString *servicePath = [NSString stringWithFormat:@"events/%@/reply", eventID];
+    [[NetworkingManager sharedNetworkingManger] requestWithDictionary:[reply JSONDictionary] fromService:servicePath completion:^(id reply, NSError *error) {
+        if (!error) {
+            NSLog(@"Invitation reply sent.");
+            successBlock();
+        } else {
+            NSLog(@"Couldn't send invitation: %@", [error description]);
+        }
+    }];
 }
 
 @end

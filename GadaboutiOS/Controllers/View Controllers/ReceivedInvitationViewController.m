@@ -15,6 +15,7 @@
 #import "FriendStatusViewCell.h"
 #import "User.h"
 #import "Invitation.h"
+#import "InvitationManager.h"
 
 NSString const *reuseIdentifier = @"Cell";
 
@@ -53,6 +54,10 @@ NSString const *reuseIdentifier = @"Cell";
     NSLog(@"User info: %@", self.userInfo);
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.invitationNote setText:[[self.userInfo valueForKey:@"aps"] valueForKey:@"alert"]];
+}
+
 #pragma mark - Collection View Setup
 
 
@@ -83,17 +88,32 @@ NSString const *reuseIdentifier = @"Cell";
     return cell;
 }
 
+- (void)sendInvitationReply:(ReplyStatus)reply {
+    NSString *invitationID = [NSString stringWithFormat:@"%@ ", [(NSDictionary *)[self.userInfo valueForKey:@"invitation"] valueForKey:@"id"]];
+    [InvitationManager persistInvitations:@[[self.userInfo valueForKey:@"invitation"]]];
+    Invitation *invitation = [Invitation objectForPrimaryKey:invitationID];
+
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    [invitation setReply:reply];
+    [[RLMRealm defaultRealm] commitWriteTransaction];
+
+    [InvitationManager sendReply:invitation withSuccess:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+}
+
 #pragma mark - IBActions
 - (IBAction)closeButtonWasPressed:(id)sender {
-
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)yesButtonWasPressed:(id)sender {
-    
+    [self sendInvitationReply:ReplyStatusAccepted];
+
 }
 
 - (IBAction)noButtonWasPressed:(id)sender {
-    
+    [self sendInvitationReply:ReplyStatusDenied];
 }
 
 @end

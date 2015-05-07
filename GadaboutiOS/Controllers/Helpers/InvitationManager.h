@@ -16,5 +16,7 @@
 + (void)getInvitationsForEvent:(Event *)event withBlock:(void (^)(id, NSError *))block;
 + (void)persistInvitations:(NSArray *)invitationsArray;
 + (NSArray *)getInvitationsFromJSONDictionary:(NSArray *)jsonInvitations;
++ (Invitation *)getInvitationFromJSONDictionary:(NSDictionary *)jsonInvitation;
++ (void)sendReply:(Invitation *)invitation withSuccess:(void (^)())successBlock;
 
 @end

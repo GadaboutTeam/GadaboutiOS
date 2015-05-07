@@ -12,4 +12,7 @@
 
 @property (nonatomic, retain) NSDictionary *userInfo;
 
+@property (nonatomic, retain) IBOutlet UIButton *affirmativeReplyButton;
+@property (nonatomic, retain) IBOutlet UIButton *negativeReplyButton;
+
 @end

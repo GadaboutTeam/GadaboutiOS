@@ -104,6 +104,13 @@
     [EventManager requestEventCreation:self.event withParticipants:self.friendsArray andBlock:^(id response, NSError *error) {
         if (!error) {
             NSLog(@"Event was created.");
+
+            NSString *eventIDString = [NSString stringWithFormat:@"%@", [(NSDictionary *)response valueForKey:@"id"]];
+
+            [[RLMRealm defaultRealm] beginWriteTransaction];
+            [self.event setEvent_id:eventIDString];
+            [[RLMRealm defaultRealm] commitWriteTransaction];
+
             [self performSegueWithIdentifier:@"CreateEventSegue" sender:self];
         } else {
             [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Something went wrong..."

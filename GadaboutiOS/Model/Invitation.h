@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, ReplyStatus) {
 @property (nonatomic) NSString *invitation_id;
 @property (nonatomic) NSString *event_id;
 @property (nonatomic) NSString *user_id;
+@property (nonatomic) NSString *sender_id;
 @property (nonatomic) ReplyStatus reply;
 
 @end

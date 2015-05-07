@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Lowkey</string>
+	<string>lowkey</string>
 	<key>CFBundleDisplayName</key>
-	<string>Lowkey</string>
+	<string>lowkey</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

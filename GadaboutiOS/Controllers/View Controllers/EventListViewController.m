@@ -48,6 +48,11 @@ static NSString * const reuseIdentifier = @"EventCell";
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController setTitle:@"Affairs"];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }

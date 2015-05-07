@@ -14,6 +14,7 @@
 #import "NetworkingManager.h"
 #import "User.h"
 #import "ReceivedInvitationViewController.h"
+#import <pop/POP.h>
 
 @implementation PushManager
 
@@ -47,7 +48,8 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     ReceivedInvitationViewController *rivc = (ReceivedInvitationViewController *)[storyboard instantiateViewControllerWithIdentifier:@"ReceivedInvitationViewController"];
     [rivc setUserInfo:userInfo];
-    [rootNavController.visibleViewController presentViewController:rivc animated:YES completion:nil];
+
+    [rootNavController pushViewController:rivc animated:YES];
 }
 
 @end

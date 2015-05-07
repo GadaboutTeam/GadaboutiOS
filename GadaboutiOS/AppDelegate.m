@@ -101,7 +101,7 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"Received notification: %@", userInfo);
     [PushManager handlePushNotification:userInfo navController:(UINavigationController *)self.window.rootViewController];
-    [PFPush handlePush:userInfo];
+//    [PFPush handlePush:userInfo];
 }
 
 #pragma mark - First Run Notification

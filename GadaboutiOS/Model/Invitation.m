@@ -10,6 +10,10 @@
 
 @implementation Invitation
 
++ (NSDictionary *)defaultPropertyValues {
+    return @{@"sender_id" : @"not_set"};
+}
+
 + (NSString *)primaryKey {
     return @"invitation_id";
 }
@@ -27,7 +31,8 @@
     return @{
              @"invitation_id" : @"id",
              @"event_id" : @"event_id",
-             @"sender_id" : @"user_id",
+             @"sender_id" : @"sender_id",
+             @"user_id" : @"auth_id",
              @"reply" : @"reply"
              };
 }

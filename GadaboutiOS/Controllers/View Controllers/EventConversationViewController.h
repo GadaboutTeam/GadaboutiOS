@@ -14,6 +14,10 @@
 @property (nonatomic, retain) IBOutlet UILabel *eventTitleLabel;
 @property (nonatomic, retain) IBOutlet UINavigationItem *eventTitle;
 @property (nonatomic, retain) IBOutlet UIButton *backButton;
+@property (nonatomic, retain) IBOutlet UITextView *confirmedTextView;
+@property (nonatomic, retain) IBOutlet UITextView *waitingTextView;
+
+
 @property (nonatomic, retain) Event *event;
 
 - (IBAction)goBack:(id)sender;
