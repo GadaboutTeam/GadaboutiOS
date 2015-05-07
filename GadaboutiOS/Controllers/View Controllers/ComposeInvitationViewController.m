@@ -51,6 +51,10 @@
     [self configureNextButton];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.textView becomeFirstResponder];
@@ -83,7 +87,7 @@
 #pragma mark - IBActions
 
 - (IBAction)cancelWasPressed:(id)sender {
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)nextWasPressed:(id)sender {

@@ -18,7 +18,8 @@
 
 - (void)setupColors {
     self.tintColor = [UIColor whiteColor];
-    self.backgroundColor = [UIColor colorWithRed:0.32 green:0.61 blue:0.93 alpha:1];
+//    self.backgroundColor = [UIColor colorWithRed:0.32 green:0.61 blue:0.93 alpha:1]; //81 155 237
+    self.backgroundColor = [UIColor colorWithRed:0.659 green:0.808 blue:0.976 alpha:1.0]; //168 206 249
 }
 
 @end

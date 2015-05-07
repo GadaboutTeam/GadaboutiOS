@@ -31,13 +31,14 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
     [self fadeOutSplashScreen];
 }
 
 - (void)fadeOutSplashScreen {
     UILabel *titleLabel = (UILabel *)[[self.splashView subviews] firstObject];
     CGRect oldFrame = titleLabel.frame;
-    CGRect newFrame = CGRectApplyAffineTransform(oldFrame, CGAffineTransformMakeTranslation(0, -[UIScreen mainScreen].bounds.size.height/2+titleLabel.bounds.size.height*0.8));
+    CGRect newFrame = CGRectApplyAffineTransform(oldFrame, CGAffineTransformMakeTranslation(0, -[UIScreen mainScreen].bounds.size.height/2+titleLabel.bounds.size.height));
     [titleLabel setHidden:YES];
     [self.view addSubview:titleLabel];
 

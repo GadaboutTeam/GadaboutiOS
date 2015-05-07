@@ -11,5 +11,6 @@
 @interface NearbyFriendsViewController : UICollectionViewController <UICollectionViewDelegate, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *createEventButton;
+@property (nonatomic, retain) IBOutlet UIButton *continueButton;
 
 @end

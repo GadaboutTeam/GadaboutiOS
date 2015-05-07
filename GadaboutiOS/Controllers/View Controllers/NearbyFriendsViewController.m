@@ -40,7 +40,6 @@
 @property (nonatomic, strong) FBSDKAccessToken *accessToken;
 
 // UI
-@property (nonatomic, retain) UIButton *continueButton;
 @property (nonatomic, retain) ComposeInvitationViewController *nextViewController;
 
 @end
@@ -83,6 +82,8 @@ static NSString * const nextViewControllerIdentifier = @"ComposeInvitationViewCo
             [self hideNextButton];
         }
     }];
+
+    [self.navigationItem.backBarButtonItem setTitle:@" "];
 }
 
 - (void)updateFacebookFriends {
@@ -92,6 +93,10 @@ static NSString * const nextViewControllerIdentifier = @"ComposeInvitationViewCo
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -206,22 +211,6 @@ static NSString * const nextViewControllerIdentifier = @"ComposeInvitationViewCo
     [self.nextViewController setFriendsArray:self.selectedFriends];
 }
 
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-
-}
-*/
-
 #pragma - KVO Compliant setters/getters
 
 - (NSUInteger)countOfSelectedFriends {
@@ -255,15 +244,15 @@ static NSString * const nextViewControllerIdentifier = @"ComposeInvitationViewCo
     float width = CGRectGetWidth(screen);
     float height = 60.0;
 
-    CGRect frame = CGRectMake(0, CGRectGetHeight(screen) - height*2, width, height);
+    CGRect frame = CGRectMake(0, CGRectGetHeight(screen) - height, width, height);
     self.continueButton = [[UIButton alloc] initWithFrame:frame];
     [self.continueButton setTitle:@"Continue" forState:UIControlStateNormal];
-    [self.continueButton setBackgroundColor:[UIColor greenColor]];
+    [self.continueButton setBackgroundColor:[UIColor colorWithRed:0.4431 green:0.7529 blue:0.2588 alpha:1.0]];
     [self.continueButton addTarget:self action:@selector(goToNextScreen:) forControlEvents:UIControlEventTouchUpInside];
     [self.continueButton setHidden:YES];
 
-    [self.collectionView addSubview:self.continueButton];
-    [self.collectionView bringSubviewToFront:self.continueButton];
+    [self.view addSubview:self.continueButton];
+    [self.view bringSubviewToFront:self.continueButton];
 }
 
 - (IBAction)goToNextScreen:(id)sender {
