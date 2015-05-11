@@ -174,7 +174,8 @@
                                         <exclude reference="cZu-Rf-dqs"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="24" y="278" width="94" height="30"/>
                                     <mask key="constraints">
                                         <include reference="cZu-Rf-dqs"/>
                                     </mask>
@@ -199,7 +200,8 @@
                                         <exclude reference="7sh-gD-iRZ"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="257" y="278" width="94" height="30"/>
                                     <mask key="constraints">
                                         <include reference="7sh-gD-iRZ"/>
                                     </mask>
@@ -631,9 +633,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYc-oc-Ue6" customClass="ActionButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="8lz-hX-3uE">
-                                        <variation key="widthClass=compact" constant="92"/>
-                                    </constraint>
+                                    <constraint firstAttribute="width" constant="269" id="dom-1x-HFj"/>
+                                    <constraint firstAttribute="height" constant="92" id="poG-7X-ETd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Make a Plan">
@@ -641,12 +642,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="8lz-hX-3uE"/>
+                                        <exclude reference="dom-1x-HFj"/>
+                                        <exclude reference="poG-7X-ETd"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="8lz-hX-3uE"/>
+                                        <include reference="dom-1x-HFj"/>
+                                        <include reference="poG-7X-ETd"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -656,9 +659,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SL-Dq-IPn" customClass="ActionButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="Pam-9c-wWT">
-                                        <variation key="widthClass=compact" constant="92"/>
-                                    </constraint>
+                                    <constraint firstAttribute="width" constant="269" id="B9S-Kq-Mle"/>
+                                    <constraint firstAttribute="height" constant="92" id="kGX-mD-6l3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Current Affairs">
@@ -666,12 +668,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Pam-9c-wWT"/>
+                                        <exclude reference="B9S-Kq-Mle"/>
+                                        <exclude reference="kGX-mD-6l3"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Pam-9c-wWT"/>
+                                        <include reference="B9S-Kq-Mle"/>
+                                        <include reference="kGX-mD-6l3"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -681,25 +685,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lYc-oc-Ue6" firstAttribute="leading" secondItem="fY7-Id-frf" secondAttribute="leadingMargin" constant="58" id="8Hf-wB-KQu">
-                                <variation key="widthClass=compact" constant="37"/>
-                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="6SL-Dq-IPn" secondAttribute="centerX" id="E0x-6P-bZC"/>
                             <constraint firstItem="6SL-Dq-IPn" firstAttribute="leading" secondItem="lYc-oc-Ue6" secondAttribute="leading" id="Mws-gA-DiY">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="hCL-Nz-0gR" firstAttribute="top" secondItem="6SL-Dq-IPn" secondAttribute="bottom" priority="999" constant="215" id="Os4-iG-ygb">
-                                <variation key="widthClass=compact" constant="193"/>
-                            </constraint>
-                            <constraint firstItem="6SL-Dq-IPn" firstAttribute="centerX" secondItem="fY7-Id-frf" secondAttribute="centerX" id="P0P-Y7-nNR"/>
                             <constraint firstItem="6SL-Dq-IPn" firstAttribute="trailing" secondItem="lYc-oc-Ue6" secondAttribute="trailing" id="TKh-Oy-yY6">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="lYc-oc-Ue6" firstAttribute="top" secondItem="iyZ-0T-f2e" secondAttribute="bottom" constant="150" id="uUG-dU-3fa">
-                                <variation key="widthClass=compact" constant="133"/>
-                            </constraint>
-                            <constraint firstItem="6SL-Dq-IPn" firstAttribute="top" secondItem="lYc-oc-Ue6" secondAttribute="bottom" constant="21" id="vgK-cN-3SO">
-                                <variation key="widthClass=compact" constant="26"/>
-                            </constraint>
+                            <constraint firstItem="6SL-Dq-IPn" firstAttribute="top" secondItem="lYc-oc-Ue6" secondAttribute="bottom" constant="26" id="epa-2P-DkA"/>
+                            <constraint firstItem="lYc-oc-Ue6" firstAttribute="top" secondItem="iyZ-0T-f2e" secondAttribute="bottom" constant="133" id="t3e-sX-KQl"/>
+                            <constraint firstAttribute="centerX" secondItem="lYc-oc-Ue6" secondAttribute="centerX" id="vo3-cu-thg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -707,13 +702,12 @@
                                 <exclude reference="6SL-Dq-IPn"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Os4-iG-ygb"/>
+                                <exclude reference="t3e-sX-KQl"/>
+                                <exclude reference="vo3-cu-thg"/>
+                                <exclude reference="E0x-6P-bZC"/>
                                 <exclude reference="Mws-gA-DiY"/>
-                                <exclude reference="P0P-Y7-nNR"/>
                                 <exclude reference="TKh-Oy-yY6"/>
-                                <exclude reference="vgK-cN-3SO"/>
-                                <exclude reference="8Hf-wB-KQu"/>
-                                <exclude reference="uUG-dU-3fa"/>
+                                <exclude reference="epa-2P-DkA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -722,13 +716,12 @@
                                 <include reference="6SL-Dq-IPn"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Os4-iG-ygb"/>
+                                <include reference="t3e-sX-KQl"/>
+                                <include reference="vo3-cu-thg"/>
+                                <include reference="E0x-6P-bZC"/>
                                 <include reference="Mws-gA-DiY"/>
-                                <include reference="P0P-Y7-nNR"/>
                                 <include reference="TKh-Oy-yY6"/>
-                                <include reference="vgK-cN-3SO"/>
-                                <include reference="8Hf-wB-KQu"/>
-                                <include reference="uUG-dU-3fa"/>
+                                <include reference="epa-2P-DkA"/>
                             </mask>
                         </variation>
                     </view>
@@ -741,7 +734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAH-d9-93g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850" y="1207"/>
+            <point key="canvasLocation" x="2849.25" y="1110.5"/>
         </scene>
         <!--Affairs-->
         <scene sceneID="SiZ-mW-b3i">
